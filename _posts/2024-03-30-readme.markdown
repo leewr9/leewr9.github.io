@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "README.md"
+date:   2024-03-30 22:10:58 +0900
+categories: notice
+---
+# Let's talk about me from here
+Studying to be the perfect developer.
