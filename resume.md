@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Resume
+subject: Resume
 permalink: /resume/
 ---
 

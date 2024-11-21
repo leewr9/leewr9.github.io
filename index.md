@@ -6,5 +6,6 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 #
 layout: home
-title: Home
+title: Rooam Lee's Blog
+subject: Blog
 ---

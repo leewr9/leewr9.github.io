@@ -8,7 +8,9 @@
   line-height: $base-line-height * $base-font-size * 2.25;
 
   // Positioning context for the mobile navigation icon
-  position: relative;
+  position: sticky;
+  top: 0;
+  background-color: $background-color;
 }
 
 .site-title {
@@ -229,6 +231,8 @@
 
 .post-link {
   display: block;
+  border-bottom: 1px solid $border-color-01;
+  padding-bottom: 25px;
   @include relative-font-size(1.5);
 }
 
