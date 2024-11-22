@@ -8,7 +8,7 @@ layout: base
     <p class="post-meta">
       {%- if page.categories -%}
         {%- for category in page.categories -%}
-        <a class="post-category" href="{{ "/" | relative_url }}category/{{ category }}">{{ category }}</a>&nbsp;|&nbsp;
+        <a class="post-category" href="{{ "/" | relative_url }}category/{{ category | lower }}">{{ category }}</a>&nbsp;|&nbsp;
         {%- endfor -%}
       {%- endif -%}
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
