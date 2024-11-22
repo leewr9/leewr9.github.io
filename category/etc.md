@@ -1,5 +1,6 @@
 ---
 layout: category
 title: ETC
-permalink: /category/etc/
+category: etc
+permalink: /category/c/
 ---
