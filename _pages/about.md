@@ -5,7 +5,6 @@ subject: About
 permalink: /about/
 ---
 
-
 <div>
   <a href="https://github.com/leewr9"><img align="center" src="https://github-readme-stats.vercel.app/api?username=leewr9&theme=transparent&show_icons=true&include_all_commits=true&hide_border=true&layout=compact"/></a>
   <a href="https://github.com/leewr9"><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=leewr9&theme=transparent&hide_border=true&layout=compact"/></a>

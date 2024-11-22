@@ -1,6 +1,6 @@
 ---
 layout: category
-title: Information
+title: information
 category: Information
 permalink: /category/information/
 ---

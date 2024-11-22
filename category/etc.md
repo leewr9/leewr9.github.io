@@ -1,6 +1,6 @@
 ---
 layout: category
-title: ETC
+title: etc
 category: ETC
 permalink: /category/etc/
 ---

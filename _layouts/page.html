@@ -7,21 +7,8 @@ layout: base
     <h1 class="post-title">{{ page.title | escape }}</h1>
   </header>
 
-  <div class="post-content">
-    {%- if page.title != "Category" -%}
-      {{ content }}
-    {%- else -%}
-      <ul class="category-list">
-        {%- for category in site.categories -%}
-        <li>
-            <a href="{{ "/" | relative_url }}category/{{ category[0] }}">
-              {{ category[0] }}
-            </a>
-            ({{ category[1].size }})
-        </li>
-        {%- endfor -%}
-      </ul>
-    {%- endif -%}
+  <div class="post-content">      
+    {{ content }}
   </div>
 
 </article>
