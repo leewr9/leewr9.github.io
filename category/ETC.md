@@ -1,5 +1,5 @@
 ---
 layout: category
 title: ETC
-permalink: /etc/
+permalink: /category/etc/
 ---

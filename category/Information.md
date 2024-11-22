@@ -1,5 +1,5 @@
 ---
 layout: category
 title: Information
-permalink: /information/
+permalink: /category/information/
 ---

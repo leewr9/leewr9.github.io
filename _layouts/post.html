@@ -6,6 +6,11 @@ layout: base
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
+      {%- if page.categories -%}
+        {%- for category in page.categories -%}
+        <a class="post-category" href="{{ "/" | relative_url }}category/{{ category }}">{{ category }}</a>&nbsp;|&nbsp;
+        {%- endfor -%}
+      {%- endif -%}
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {{ page.date | date: date_format }}
