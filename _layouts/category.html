@@ -24,7 +24,7 @@ layout: base
             {{ post.title | escape }}
             <span class="post-meta">{{ post.date | date: date_format }}</span>
           </a>
-          
+          <span class="post-preview">{{ post.content | strip_html | truncatewords: 25 }}</span>
         </h3>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}

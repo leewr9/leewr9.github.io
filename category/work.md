@@ -1,6 +1,6 @@
 ---
 layout: category
 title: Work
-category: work
+category: Work
 permalink: /category/work/
 ---

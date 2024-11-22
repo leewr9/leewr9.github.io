@@ -1,6 +1,6 @@
 ---
 layout: category
 title: Study
-category: study
+category: Study
 permalink: /category/study/
 ---

@@ -236,6 +236,12 @@
   @include relative-font-size(1.5);
 }
 
+.post-preview {
+  font-size: $small-font-size;
+  color: $border-color-01;
+
+}
+
 .post-category {
   font-size: $small-font-size;
   color: $brand-color;

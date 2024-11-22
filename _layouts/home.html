@@ -32,6 +32,7 @@ layout: base
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
+          <span class="post-preview">{{ post.content | strip_html | truncatewords: 25 }}</span>
         </h3>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}

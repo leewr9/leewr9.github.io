@@ -30,6 +30,8 @@ plugins:
 collections:
   pages:
     output: true
+  category:
+    output: true
 
 paginate: 5
 paginate_path: /page/:num/
