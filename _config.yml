@@ -29,7 +29,7 @@ plugins:
 header_pages:
   - header/about.md
   - header/resume.md
-  - header/category.md
+  - category/index.md
 
 # Set to `true` to show excerpts on the homepage.
 #show_excerpts: false
