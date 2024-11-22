@@ -8,7 +8,20 @@ layout: base
   </header>
 
   <div class="post-content">
-    {{ content }}
+    {%- if page.title != "Category" -%}
+      {{ content }}
+    {%- else -%}
+      <ul class="category-list">
+        {%- for category in site.categories -%}
+        <li>
+            <a href="{{ "/" | relative_url }}{{ category[0] }}">
+              {{ category[0] }}
+            </a>
+            ({{ category[1].size }})
+        </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
   </div>
 
 </article>

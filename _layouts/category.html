@@ -1,0 +1,38 @@
+---
+layout: base
+---
+
+<div class="category">
+
+  {% assign category = page.category | default: page.title %}
+  {% assign posts = site.categories[category] %}
+
+  <header class="post-header">
+    <h1 class="post-title">{{ category | escape }} ({{ posts.size }})</h1>
+  </header>
+
+  {%- if posts.size > 0 -%}
+    {%- if page.list_title -%}
+      <h2 class="post-list-heading">{{ page.list_title }}</h2>
+    {%- endif -%}
+    <ul class="post-list">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {%- for post in posts -%}
+      <li>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+          </a>
+          
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+  {%- endif -%}
+
+</div>

@@ -221,21 +221,37 @@
 
   > li {
     margin-bottom: $spacing-unit;
+    border-bottom: 1px solid $border-color-01;
   }
 }
 
 .post-meta {
   font-size: $small-font-size;
   color: $brand-color;
+  
 }
 
 .post-link {
   display: block;
-  border-bottom: 1px solid $border-color-01;
-  padding-bottom: 25px;
   @include relative-font-size(1.5);
 }
 
+.post-category {
+  font-size: $small-font-size;
+  color: $brand-color;
+  
+  &:visited {
+    color: $site-title-color;
+  }
+}
+
+.category-list {
+  list-style: none;
+
+  > li {
+    margin-bottom: $spacing-unit;
+  }
+}
 
 
 /**
@@ -243,6 +259,7 @@
  */
 .post-header {
   margin-bottom: $spacing-unit;
+  border-bottom: 1px solid $border-color-01;
 }
 
 .post-title,
