@@ -1,5 +1,6 @@
 html {
   font-size: $base-font-size;
+  scroll-behavior: smooth;
 }
 
 /**
@@ -213,6 +214,64 @@ pre {
 }
 
 
+
+/**
+ * table-of-contents
+ */
+.table-of-contents {
+  position: absolute;
+  width: calc(#{$content-width} / 3);
+  top: $spacing-unit * 3;
+  right: $spacing-unit;
+  display: none;
+  background-color: $background-color;
+  border: 1px solid $border-color-01;
+  padding-right: $spacing-unit;
+
+  h3 {
+    @include relative-font-size(1.625);
+    float: center;
+    font-weight: 300;
+    letter-spacing: -1px;
+    border-bottom: 2px solid $border-color-03;
+    margin-left: $spacing-unit;
+    margin-bottom: 0;
+  }
+
+  .toc-entry {
+    list-style-type: square;
+    list-style-position: inside;
+    font-size: $small-font-size;
+    line-height: $base-line-height * $base-font-size * 1.75;
+    white-space: nowrap;    
+    overflow: hidden;        
+    text-overflow: ellipsis;
+  }
+
+  @media screen and (min-width: $on-max) {
+    display: block;
+  }
+}
+
+.table-of-contents:not(:has(.toc-entry)) {
+  display: none;
+}
+
+.page-top {
+  position: absolute;
+  width: 3.25em;
+  height:3.25em;
+  top: 90vh;  
+  right: $spacing-unit;
+  background-color: $background-color;
+  border: 1px solid $border-color-01;
+  text-align: center;
+
+  &:hover {
+     border-color: $border-color-02;
+     text-decoration: none;
+  }
+}
 
 /**
  * Clearfix

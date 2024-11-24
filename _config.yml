@@ -51,7 +51,6 @@ paginate_path: /page/:num/
 toc:
   min_level: 1 # default: 1
   max_level: 3 # default: 6
-  ordered_list: true
   no_toc_section_class: no_toc_section
   list_id: toc
   list_class: section-nav

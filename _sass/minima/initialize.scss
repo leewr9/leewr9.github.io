@@ -21,6 +21,7 @@ $on-laptop:        800px !default;
 
 $on-medium:        $on-palm !default;
 $on-large:         $on-laptop !default;
+$on-max:           $on-palm + $on-laptop !default;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
