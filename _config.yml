@@ -72,8 +72,8 @@ comments:
   giscus:
     repo: leewr9/leewr9.github.io
     repo_id: R_kgDONSl-SQ
-    category: General
-    category_id: DIC_kwDONSl-Sc4Ckjku
+    category: Comments
+    category_id: DIC_kwDONSl-Sc4Ckjoj
     theme: transparent_dark
 
 # Minima specific settings, which are only available from Minima 3.0 onward.
