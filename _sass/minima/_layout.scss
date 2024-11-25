@@ -147,6 +147,8 @@
 .social-links {
   @include relative-font-size(0.9375);
   color: $brand-color;
+  display: table;
+  margin: 0 auto;
 }
 
 .footer-col {
@@ -178,7 +180,8 @@
 
 @media screen and (min-width: $on-medium) {
   .footer-col-wrapper {
-    display: flex
+    display: table;
+    margin: 0 auto;
   }
 
   .footer-col {
@@ -259,6 +262,39 @@
   }
 }
 
+ .post-toc {
+  border: 1px solid $border-color-01;
+  padding-bottom: $base-font-size;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+
+  h3 {
+    border-bottom: 2px solid $border-color-03;
+    font-weight: 300;
+    letter-spacing: -1px;
+  }
+
+  li {
+    line-height: $base-line-height * 1.25;
+    font-weight: 300;
+    margin-left: -10px;
+  }
+}
+
+.page-top {
+  display: block;
+  width: $base-font-size;
+  margin-right: $spacing-unit * 0.5;
+  margin-left: auto;
+  padding: $base-font-size;
+  border: 1px solid $border-color-01;
+  text-align: center;
+
+  &:hover {
+     border-color: $border-color-02;
+     text-decoration: none;
+  }
+}
 
 /**
  * Posts
@@ -311,7 +347,6 @@
     @include relative-font-size(1.0625);
   }
 }
-
 
 .social-media-list {
   display: table;

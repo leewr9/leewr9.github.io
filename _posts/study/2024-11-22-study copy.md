@@ -3,6 +3,12 @@ title: Study test
 categories: [Study]
 ---
 
+<nav class="post-toc" markdown="1">
+  <h3>목차</h3>
+* TOC
+{:toc}
+</nav>
+
 #### 선형 배열 (Linear Arrays)
 선형 배열은 데이터들이 선 (line) 처럼 일렬로 늘어선 형태를 말합니다. 보통 프로그래밍에서 배열 (array) 이라고 하면 같은 종류의 데이터가 줄지어 늘어서 있는 것을 뜻하는데요, Python 에서는 서로 다른 종류의 데이터 또한 줄세울 수 있는 리스트 (list) 라는 데이터형이 있습니다.
 
