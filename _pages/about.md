@@ -1,7 +1,6 @@
 ---
 layout: page
-title: About
-subject: About
+title: Rooam Lee's About
 permalink: /about/
 ---
 

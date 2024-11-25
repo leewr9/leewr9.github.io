@@ -1,6 +1,5 @@
 ---
 title: Study test
-subject: Post
 categories: [Study]
 ---
 

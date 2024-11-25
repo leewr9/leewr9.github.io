@@ -21,7 +21,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate
-  - jekyll-toc
 
 # Theme-specific settings
 
@@ -36,7 +35,6 @@ defaults:
       layout: post
       author: Rooam Lee
       permalink: /post/:title
-      toc: true
       comments: true
 
 collections:
@@ -47,16 +45,6 @@ collections:
 
 paginate: 5
 paginate_path: /page/:num/
-
-toc:
-  min_level: 1 # default: 1
-  max_level: 3 # default: 6
-  no_toc_section_class: no_toc_section
-  list_id: toc
-  list_class: section-nav
-  sublist_class: ''
-  item_class: toc-entry
-  item_prefix: toc-
 
 comments:
   active: giscus # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
