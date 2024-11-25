@@ -282,13 +282,12 @@
 }
 
 .page-top {
-  display: block;
-  width: $base-font-size;
+  margin-top: 0 - ($spacing-unit * 0.5);
+  margin-bottom: $spacing-unit * 0.5;
   margin-right: $spacing-unit * 0.5;
   margin-left: auto;
   padding: $base-font-size;
   border: 1px solid $border-color-01;
-  text-align: center;
 
   &:hover {
      border-color: $border-color-02;
