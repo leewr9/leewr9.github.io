@@ -222,7 +222,7 @@
   margin-left: 0;
   list-style: none;
 
-  > li {
+  li {
     margin-bottom: $spacing-unit;
     border-bottom: 1px solid $border-color-01;
   }
@@ -255,10 +255,10 @@
 }
 
 .category-list {
-  list-style: none;
-
-  > li {
+  li {
     margin-bottom: $spacing-unit;
+    padding-bottom: $base-font-size;
+    border-bottom: 1px solid $border-color-01;
   }
 }
 

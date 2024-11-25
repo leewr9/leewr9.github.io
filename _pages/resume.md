@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Rooam Lee's Resume
+title: Resume
 permalink: /resume/
 ---
 
