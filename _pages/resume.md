@@ -5,7 +5,7 @@ permalink: /resume/
 ---
 
 <nav class="post-toc" markdown="1">
-  <h3>목차</h3>
+  <h4>Table of Content</h4>
 * TOC
 {:toc}
 </nav>

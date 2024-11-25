@@ -22,17 +22,18 @@ layout: base
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
       <li>
-        {%- if post.categories -%}
-          {%- for category in post.categories -%}
-          <a class="post-category" href="{{ "/" | relative_url }}category/{{ category | downcase }}">{{ category }}</a>&nbsp;|&nbsp;
-          {%- endfor -%}
-        {%- endif -%}
+        {%- if post.category -%}
+          {%- for category in post.category -%}
+          <a class="post-category" href="{{ "/" | relative_url }}category/{{ category | downcase }}">{{ category }}</a>
+            {%- if forloop.last == false %} | {% endif -%}
+          {%- endfor -%}&nbsp;|&nbsp;
+        {%- endif -%} 
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
-          <sub class="post-preview">{{ post.content | strip_html | truncatewords: 25 }}</sub>
+          <sub class="post-preview">{{ post.content | strip_html | truncatewords: 35 }}</sub>
         </h3>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
