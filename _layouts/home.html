@@ -10,6 +10,7 @@ layout: base
     </svg>
     <form method="get" action="/search" data-search-form>
       <input class="search-input" type="search" name="search" id="search" placeholder="Search..." data-search-input/>
+      <input type="hidden" name="time" id="time" value="{{ site.time | date: '%s' }}"/>
     </form>
   </div>
 
