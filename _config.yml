@@ -27,6 +27,10 @@ plugins:
 # Set to `true` to show excerpts on the homepage.
 #show_excerpts: false
 
+# Set your Google Analytics id to receive `pageview` events.
+# To remove Google Anaylics from your page, remove the line below.
+google_analytics: G-9QNDMD0DLB
+
 defaults:
   - scope:
       path: ""
