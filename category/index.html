@@ -2,6 +2,7 @@
 layout: base
 title: Category
 permalink: /category/
+search_omit: true
 ---
 
 <div class="category">
@@ -11,15 +12,18 @@ permalink: /category/
   </header>
 
   <div class="post-content">
+    {% if site.categories %}
     <ul class="category-list">
       {%- for category in site.categories -%}
       <li>
-          <a href="{{ "/" | relative_url }}category/{{ category[0] | downcase }}">
-            {{ category[0] }}
-          </a>
-          ({{ category[1].size }})
+          <a href="{{ "/" | relative_url }}category/{{ category[0] | downcase }}">{{ category[0] }}</a>
+          <span>{{ category[1].size }} post </span>
       </li>
       {%- endfor -%}
+    {% else %}
+    <p><strong>Category not found :(</strong></p>
+    <p>The site does not seem to have any categories yet.</p>
+    {% endif %}
     </ul>
   </div>
 

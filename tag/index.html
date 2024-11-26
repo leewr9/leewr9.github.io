@@ -1,0 +1,29 @@
+---
+layout: base
+title: Tag
+permalink: /tag/
+search_omit: true
+---
+
+<div class="tag">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content">
+    {% if site.tags %}
+    <div class="tag-list">
+      {%- for tag in site.tags -%}
+      <a class="tag-item" href="{{ "/" | relative_url }}tag/{{ tag[0] | downcase }}">
+        {{ tag[0] }} <span> {{ tag[1].size }} </span>
+      </a>
+      {%- endfor -%}
+    </div>
+    {% else %}
+    <p><strong>Tag not found :(</strong></p>
+    <p>The site does not seem to have any tags yet.</p>
+    {% endif %}
+  </div>
+
+</div>

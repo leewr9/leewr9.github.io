@@ -3,7 +3,7 @@
   {%- include social-item.html item = entry -%}
 {%- endfor -%}
   <li>
-    <a href="{{ site.feed.path | default: 'feed.xml' | absolute_url }}">
+    <a href="{{ site.feed.path | default: 'feed.xml' | absolute_url }}" target="_blank" title="rss">
       <svg class="svg-icon grey">
         <use xlink:href="{{ 'assets/social-icons.svg#rss' | relative_url }}"></use>
       </svg>

@@ -199,7 +199,106 @@
   }
 }
 
+/**
+ * Home content
+ */
+.about {
+  margin-bottom: $spacing-unit * 2;
 
+  #about_img {
+    text-align: center;
+  }
+
+  img {
+    max-width: 50%;
+    height: auto;
+    transition: all .35s ease-in-out;
+    cursor: zoom-in;
+  }
+
+  ul {
+    padding-bottom: $spacing-unit;
+    border-bottom: 1px solid $border-color-01;
+  }
+}
+
+/**
+ * Label content
+ */
+
+ .search {
+  display: flex;
+  align-items: center;
+  border-radius: 7px;
+  padding: 9px $base-font-size;
+  margin-bottom: $base-font-size;
+  border: 1px solid $border-color-01;
+
+  form {
+    flex: 1;
+  }
+ }
+
+ .search-input {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: $background-color;
+  color: $text-color;
+  font-size: $base-font-size;
+  padding-right: $small-font-size;
+  padding-left: $small-font-size;
+  
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration{
+    display: none;
+  }
+}
+
+.search-img {
+  width: 1.25em;
+  height: 1.25em;
+  fill: currentColor;
+}
+
+.category-list {
+  li {
+    font-size: $base-font-size * 1.5;
+    margin-bottom: $spacing-unit;
+    padding-bottom: $base-font-size;
+    border-bottom: 1px solid $border-color-01;
+  }
+  
+  span {
+    font-size: $small-font-size;
+    color: $brand-color;
+  }
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  span {
+    font-size: $small-font-size;
+    color: $brand-color;
+  }
+}
+
+.tag-item {
+  border-radius: 7px;
+  padding: 7px $base-font-size;
+  margin-bottom: $base-font-size;
+  margin-right: $base-font-size;
+  border: 1px solid $border-color-01;
+
+  &:hover { 
+    border-color: $border-color-02;
+    background-color: $border-color-01;
+  }
+}
 
 /**
  * Page content
@@ -253,15 +352,6 @@
   }
 }
 
-.category-list {
-  li {
-    font-size: $base-font-size * 1.25;
-    margin-bottom: $spacing-unit;
-    padding-bottom: $base-font-size;
-    border-bottom: 1px solid $border-color-01;
-  }
-}
-
  .post-toc {
   border: 1px solid $border-color-01;
   padding-bottom: $base-font-size;
@@ -303,11 +393,11 @@
 
 .post-title,
 .post-content h1 {
-  @include relative-font-size(2.625);
+  @include relative-font-size(2.25);
   line-height: 1.15;
 
   @media screen and (min-width: $on-large) {
-    @include relative-font-size(2.625);
+    @include relative-font-size(2.25);
   }
 }
 
@@ -341,6 +431,11 @@
   }
   h6 {
     @include relative-font-size(1.0625);
+  }
+  
+  p {
+    width: 100%;
+    text-align: center;
   }
 }
 

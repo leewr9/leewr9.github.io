@@ -1,0 +1,66 @@
+---
+layout: null
+---
+
+{% assign first = true %}
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+[
+{% for collection in site.collections %}
+    {% for item in collection %}
+        {% for item in site.[item.label] %}
+            {% if item.title != null and item.title != empty %}
+            {% unless first %},{% endunless %}{
+                "title": {{ item.title | jsonify }},
+                "content": {{ item.content | markdownify | strip_html | truncatewords: 35 | jsonify }},
+                "link": "{{ site.url }}{{ item.url }}",
+                "date": "{{ item.date | date: date_format }}",
+                "category": "{{ item.category }}",
+                "clink": "{{ site.url }}/category/{{ item.category }}",
+                "tag": "{{ item.tag }}",
+                "tlink": "{{ site.url }}/tag",
+                "excerpt": "{{ item.snippet }}",
+                "search_omit": "{{ item.search_omit }}"
+            }
+            {% assign first = false %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endfor %}
+
+
+{% for post in site.posts %}
+    {% if post.title != null and post.title != empty %}
+    {% unless first %},{% endunless %}{
+        "title": {{ post.title | jsonify }},
+        "content": {{ post.content | markdownify | strip_html | truncatewords: 35 | jsonify }},
+        "link": "{{ site.url }}{{ post.url }}",
+        "date": "{{ post.date | date: date_format }}",
+        "category": "{{ post.category }}",
+        "clink": "{{ site.url }}/category/{{ post.category }}",
+        "tag": "{{ post.tag }}",
+        "tlink": "{{ site.url }}/tag",
+        "excerpt": "{{ post.snippet }}",
+        "search_omit": "{{ post.search_omit }}"
+    }
+    {% assign first = false %}
+    {% endif %}
+{% endfor %}
+
+{% for page in site.pages %}
+    {% if page.title != null and page.title != empty %}
+    {% unless first %},{% endunless %}{
+        "title": {{ page.title | jsonify }},
+        "content": {{ page.content | strip_html | truncatewords: 35 | jsonify }},
+        "link": "{{ site.url }}{{ page.url | replace: 'index.html', '' }}",
+        "date": "{{ page.date | jsonify | date: date_format }}",
+        "category": "{{ page.category }}",
+        "clink": "{{ site.url }}/category/{{ page.category }}",
+        "tag": "{{ page.tag }}",
+        "tlink": "{{ site.url }}/tag",
+        "excerpt": "{{ page.description | jsonify }}",
+        "search_omit": "{{ page.search_omit }}"
+    }
+    {% assign first = false %}
+    {% endif %}
+{% endfor %}
+]

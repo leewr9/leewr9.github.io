@@ -3,16 +3,23 @@ layout: base
 ---
 
 <div class="home">
+  
+  <div class="search">
+    <svg class="search-img grey">
+      <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+    </svg>
+    <form method="get" action="/search" data-search-form>
+      <input class="search-input" type="search" name="search" id="search" placeholder="Search..." data-search-input/>
+    </form>
+  </div>
 
   {{ content }}
-
 
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
     {% assign posts = site.posts %}
   {% endif %}
-
 
   {%- if posts.size > 0 -%}
     {%- if page.list_title -%}
@@ -23,10 +30,11 @@ layout: base
       {%- for post in posts -%}
       <li>
         {%- if post.category -%}
-          {%- for category in post.category -%}
-          <a class="post-category" href="{{ "/" | relative_url }}category/{{ category | downcase }}">{{ category }}</a>
-            {%- if forloop.last == false %} | {% endif -%}
-          {%- endfor -%}&nbsp;|&nbsp;
+        {%- for category in post.category -%}
+        <a class="post-category" href="{{ "/" | relative_url }}category/{{ category | downcase }}">{{ category }}</a>
+        {%- if forloop.last == false %} | {% endif -%}
+        {%- endfor -%}
+        <span class="post-meta">&nbsp;|&nbsp;</span>
         {%- endif -%} 
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
@@ -59,3 +67,4 @@ layout: base
   {%- endif -%}
 
 </div>
+
