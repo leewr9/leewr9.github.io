@@ -41,7 +41,7 @@ layout: base
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
             <span class="post-meta">{{ post.date | date: date_format }}</span>
-            <sub class="post-preview">{{ post.content | strip_html | truncatewords: 20 }}</sub>
+            <sub class="post-preview">{{ post.content | strip_html | truncatewords: 25 }}</sub>
           </a>
         </h3>
         {%- if site.show_excerpts -%}
