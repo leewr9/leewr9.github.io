@@ -18,6 +18,7 @@ layout: base
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
+    
     <ul class="post-list">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
@@ -25,25 +26,16 @@ layout: base
         {%- if post.category -%}
         {%- for category in post.category -%}
         <a class="post-label" href="{{ "/" | relative_url }}categories/{{ category | downcase }}">{{ category }}</a>
-        {%- if forloop.last == false %} | {% endif -%}
+        {%- if forloop.last == false %}<span class="post-meta">&nbsp;|&nbsp;</span>{% endif -%}
         {%- endfor -%}
         <span class="post-meta">&nbsp;|&nbsp;</span>
         {%- endif -%} 
         <span class="post-meta">{{ post.date | date: date_format }}</span>
-        {%- if post.tag -%}
-        <span class="post-meta">&nbsp;•&nbsp;</span>
-        {%- for tag in post.tag -%}
-        <a class="post-label" href="{{ "/" | relative_url }}tags/{{ tag | downcase }}">{{ tag }}</a>
-        {%- if forloop.last == false %} • {% endif -%}
-        {%- endfor -%}
-        {%- endif -%} 
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
+            <sub class="post-preview">{{ post.content | strip_html | truncatewords: 35 }}</sub>
           </a>
-          <sub class="post-preview">
-            <a href="{{ post.url | relative_url }}">{{ post.content | strip_html | truncatewords: 35 }}</a>
-          </sub>
         </h3>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}

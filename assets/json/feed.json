@@ -11,13 +11,13 @@ layout: null
             {% if item.title != null and item.title != empty %}
             {% unless first %},{% endunless %}{
                 "title": {{ item.title | jsonify }},
-                "content": {{ item.content | markdownify | strip_html | truncatewords: 15 | jsonify }},
+                "content": {{ item.content | markdownify | strip_html | truncatewords: 25 | jsonify }},
                 "link": "{{ site.url }}{{ item.url }}",
                 "date": "{{ item.date | date: date_format }}",
-                "category": "{{ item.category }}",
-                "clink": "{{ site.url }}/categories/{{ item.category }}",
-                "tag": "{{ item.tag }}",
-                "tlink": "{{ site.url }}/tags/{{ item.tag }}",
+                "category": "{{ item.category[0] }}",
+                "clink": "{{ site.url }}/categories/{{ item.category[0] }}",
+                "tag": "{{ item.tag[0] }}",
+                "tlink": "{{ site.url }}/tags/{{ item.tag[0] }}",
                 "excerpt": "{{ item.snippet }}",
                 "search_omit": "{{ item.search_omit }}"
             }
@@ -32,13 +32,13 @@ layout: null
     {% if post.title != null and post.title != empty %}
     {% unless first %},{% endunless %}{
         "title": {{ post.title | jsonify }},
-        "content": {{ post.content | markdownify | strip_html | truncatewords: 15 | jsonify }},
+        "content": {{ post.content | markdownify | strip_html | truncatewords: 25 | jsonify }},
         "link": "{{ site.url }}{{ post.url }}",
         "date": "{{ post.date | date: date_format }}",
-        "category": "{{ post.category }}",
-        "clink": "{{ site.url }}/categories/{{ post.category }}",
-        "tag": "{{ post.tag }}",
-        "tlink": "{{ site.url }}/tags/{{ post.tag }}",
+        "category": "{{ post.category[0] }}",
+        "clink": "{{ site.url }}/categories/{{ post.category[0] }}",
+        "tag": "{{ post.tag[0] }}",
+        "tlink": "{{ site.url }}/tags/{{ post.tag[0] }}",
         "excerpt": "{{ post.snippet }}",
         "search_omit": "{{ post.search_omit }}"
     }
@@ -50,13 +50,13 @@ layout: null
     {% if page.title != null and page.title != empty %}
     {% unless first %},{% endunless %}{
         "title": {{ page.title | jsonify }},
-        "content": {{ page.content | strip_html | truncatewords: 15 | jsonify }},
+        "content": {{ page.content | strip_html | truncatewords: 25 | jsonify }},
         "link": "{{ site.url }}{{ page.url | replace: 'index.html', '' }}",
         "date": "{{ page.date | jsonify | date: date_format }}",
-        "category": "{{ page.category }}",
-        "clink": "{{ site.url }}/category/{{ page.category }}",
-        "tag": "{{ page.tag }}",
-        "tlink": "{{ site.url }}/tags/{{ page.tag }}",
+        "category": "{{ page.category[0] }}",
+        "clink": "{{ site.url }}/category/{{ page.category[0] }}",
+        "tag": "{{ page.tag[0] }}",
+        "tlink": "{{ site.url }}/tags/{{ page.tag[0] }}",
         "excerpt": "{{ page.description | jsonify }}",
         "search_omit": "{{ page.search_omit }}"
     }
