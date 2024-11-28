@@ -4,18 +4,10 @@ layout: base
 
 <div class="home">
   
-  <div class="search">
-    <svg class="search-img grey">
-      <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-    </svg>
-    <form method="get" action="/search" data-search-form>
-      <input class="search-input" type="search" name="search" id="search" placeholder="Search..." data-search-input/>
-      <input type="hidden" name="time" id="time" value="{{ site.time | date: '%s' }}"/>
-    </form>
-  </div>
+  {%- include search.html -%}
 
   {{ content }}
-
+  
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
@@ -32,17 +24,26 @@ layout: base
       <li>
         {%- if post.category -%}
         {%- for category in post.category -%}
-        <a class="post-category" href="{{ "/" | relative_url }}category/{{ category | downcase }}">{{ category }}</a>
+        <a class="post-label" href="{{ "/" | relative_url }}categories/{{ category | downcase }}">{{ category }}</a>
         {%- if forloop.last == false %} | {% endif -%}
         {%- endfor -%}
         <span class="post-meta">&nbsp;|&nbsp;</span>
         {%- endif -%} 
         <span class="post-meta">{{ post.date | date: date_format }}</span>
+        {%- if post.tag -%}
+        <span class="post-meta">&nbsp;•&nbsp;</span>
+        {%- for tag in post.tag -%}
+        <a class="post-label" href="{{ "/" | relative_url }}tags/{{ tag | downcase }}">{{ tag }}</a>
+        {%- if forloop.last == false %} • {% endif -%}
+        {%- endfor -%}
+        {%- endif -%} 
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
-          <sub class="post-preview">{{ post.content | strip_html | truncatewords: 35 }}</sub>
+          <sub class="post-preview">
+            <a href="{{ post.url | relative_url }}">{{ post.content | strip_html | truncatewords: 35 }}</a>
+          </sub>
         </h3>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
@@ -50,20 +51,33 @@ layout: base
       </li>
       {%- endfor -%}
     </ul>
-
-    {% if site.paginate %}
-      <div class="pager">
-        <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- endif %}
-        </ul>
-      </div>
-    {%- endif %}
+  
+  {% if site.paginate %}
+  <div class="pager">
+    <ul class="pagination">
+      <li>
+      {%- if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">
+          <svg class="svg-icon grey">
+            <path d="M7.094 15.938l7.688 7.688-3.719 3.563-11.063-11.063 11.313-11.344 3.531 3.5z"/>
+          </svg>
+        </a>
+      {%- else -%}
+      </li>
+      {%- endif %}
+      <li>
+      {%- if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}" class="next-page">
+          <svg class="svg-icon grey">
+            <path d="M7.75 16.063l-7.688-7.688 3.719-3.594 11.063 11.094-11.344 11.313-3.5-3.469z"/>
+          </svg>
+        </a>
+      {%- else -%}
+      </li>
+      {%- endif %}
+    </ul>
+  </div>
+  {%- endif %}
 
   {%- endif -%}
 

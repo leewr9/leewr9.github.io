@@ -5,19 +5,33 @@ layout: base
 <article class="label">
   
   {% if page.tag %}
+  <nav class="page-breadcrumb">
+    <a class="page-link" href="{{ "/" | relative_url }}">Home</a> >
+    <a class="page-link" href="{{ "/tags" | relative_url }}">Tags</a> >
+    {{ page.title }}
+  </nav>
     {% assign label = page.tag | default: page.title %}
     {% assign posts = site.tags[label] %}
   {% else %}
+  <nav class="page-breadcrumb">
+    <a class="page-link" href="{{ "/" | relative_url }}">Home</a> >
+    <a class="page-link" href="{{ "/categories" | relative_url }}">Categories</a> >
+    {{ page.title }}
+  </nav>
     {% assign label = page.category | default: page.title %}
     {% assign posts = site.categories[label] %}
   {% endif %}
   
   <header class="post-header">
-    <h1 class="post-title">{{ label | escape }} ({{ posts.size }})</h1>
+    <h1 class="post-title">
+      {{ label | escape }}
+      <span class="post-meta"> {{ posts.size }} post</span>
+    </h1>
   </header>
+  
   {%- if posts.size > 0 -%}
     {%- if page.list_title -%}
-      <h2 class="post-list-heading">{{ page.list_title }}</h2>
+    <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
     <ul class="post-list">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -28,7 +42,9 @@ layout: base
             {{ post.title | escape }}
             <span class="post-meta">{{ post.date | date: date_format }}</span>
           </a>
-          <sub class="post-preview">{{ post.content | strip_html | truncatewords: 35 }}</sub>
+          <sub class="post-preview">
+            <a href="{{ post.url | relative_url }}">{{ post.content | strip_html | truncatewords: 20 }}</a>
+          </sub>
         </h3>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}

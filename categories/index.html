@@ -1,11 +1,16 @@
 ---
 layout: base
-title: Category
-permalink: /category/
+title: Categories
+permalink: /categories/
 search_omit: true
 ---
 
 <div class="category">
+  
+  <nav class="page-breadcrumb">
+    <a class="page-link" href="{{ "/" | relative_url }}">Home</a> >
+    {{ page.title }}
+  </nav>
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title | escape }}</h1>
@@ -16,7 +21,7 @@ search_omit: true
     <ul class="category-list">
       {%- for category in site.categories -%}
       <li>
-          <a href="{{ "/" | relative_url }}category/{{ category[0] | downcase }}">{{ category[0] }}</a>
+          <a href="{{ "/" | relative_url }}categories/{{ category[0] | downcase }}">{{ category[0] }}</a>
           <span>{{ category[1].size }} post </span>
       </li>
       {%- endfor -%}

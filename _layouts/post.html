@@ -4,15 +4,19 @@ layout: base
 
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
+  <nav class="page-breadcrumb">
+    <a class="page-link" href="{{ "/" | relative_url }}">Home</a> >
+    {{ page.title }}
+  </nav>
+  
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    
     <p class="post-meta">
       {%- if page.category -%}
-        {%- for category in page.category -%}
-        <a class="post-category" href="{{ "/" | relative_url }}category/{{ category | downcase }}">{{ category }}</a>
-          {%- if forloop.last == false %} | {% endif -%}
-        {%- endfor -%}&nbsp;|
+      {%- for category in page.category -%}
+      <a class="post-label" href="{{ "/" | relative_url }}categories/{{ category | downcase }}">{{ category }}</a>
+        {%- if forloop.last == false %} | {% endif -%}
+      {%- endfor -%}&nbsp;|
       {%- endif -%} 
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
@@ -28,8 +32,9 @@ layout: base
       {%- if page.author -%}
         • {% for author in page.author %}
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-            {%- if forloop.last == false %}, {% endif -%}
+            <span class="p-author h-card" itemprop="name">{{ author }}</span>
+          </span>
+          {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}</p>
   </header>

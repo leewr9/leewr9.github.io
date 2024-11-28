@@ -2,5 +2,5 @@
 layout: label
 title: Category
 category: Category
-permalink: /category/category/
+permalink: /categories/category/
 ---
