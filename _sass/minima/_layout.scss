@@ -150,6 +150,22 @@
   margin: 0 auto;
 }
 
+.social-media-list {
+  display: table;
+  margin: 0 auto;
+  li {
+    float: left;
+    margin: 5px 10px 5px 0;
+    &:last-of-type { margin-right: 0 }
+    a {
+      display: block;
+      padding: 10px 12px;
+      border: 1px solid $border-color-01;
+      &:hover { border-color: $border-color-02 }
+    }
+  }
+}
+
 .footer-col {
   margin-bottom: $spacing-unit * .5;
 }
@@ -199,6 +215,7 @@
   }
 }
 
+
 /**
  * Home content
  */
@@ -222,10 +239,10 @@
   }
 }
 
+
 /**
  * Search content
  */
-
 .search {
   div {
     display: flex;
@@ -292,11 +309,12 @@
   fill: currentColor;
 }
 
+
 /**
  * Label content
  */
 
- .label-list {
+.label-list {
   li {
     margin-bottom: $base-font-size;
     border-bottom: 1px solid $border-color-01;
@@ -328,17 +346,19 @@
 }
 
 .tag-item {
-  border-radius: 7px;
-  padding: 7px $spacing-unit;
   margin-bottom: $base-font-size;
   margin-right: $base-font-size;
+  padding: 7px $spacing-unit;
+  border-radius: 7px;
   border: 1px solid $border-color-01;
+  background-color: $background-color;
 
   &:hover { 
     border-color: $border-color-02;
     background-color: $border-color-01;
   }
 }
+
 
 /**
  * Page content
@@ -351,6 +371,49 @@
 
 .page-heading {
   @include relative-font-size(2);
+}
+
+.page-breadcrumb {
+  color: $brand-color;
+  margin-bottom: $spacing-unit;
+}
+
+.page-top {
+  position: fixed;
+  pointer-events: none;
+  text-align: right;
+  width: 100%;
+  bottom: 0;
+  margin-bottom: $spacing-unit;
+  
+  a {
+    pointer-events: auto;
+    margin-right: $spacing-unit;
+    padding: $small-font-size;
+  
+    &:hover {
+       text-decoration: none;
+    }
+  }
+}
+
+
+/**
+ * Posts
+ */
+.post-header {
+  margin-bottom: $spacing-unit;
+  border-bottom: 1px solid $border-color-01;
+}
+
+.post-title,
+.post-content h1 {
+  @include relative-font-size(2.25);
+  line-height: 1.15;
+
+  @media screen and (min-width: $on-large) {
+    @include relative-font-size(2.25);
+  }
 }
 
 .post-list-heading {
@@ -370,15 +433,6 @@
 .post-meta {
   font-size: $small-font-size;
   color: $brand-color;
-  
-}
-
-.post-dot {    
-  flex-grow: 1;
-  margin-right: $spacing-unit;
-  margin-left: $spacing-unit;
-  margin-bottom: $base-font-size;
-  border-bottom: 2px dotted $border-color-01;
   
 }
 
@@ -414,9 +468,12 @@
 
 .post-tag {
   float: right;
+  margin-top: -1px;
+  margin-right: $small-font-size;
   padding: 7px $base-font-size;
-  margin-left: -1px;
+  border-radius: 7px;
   border: 1px solid $border-color-01;
+  background-color: $background-color;
 
   &:hover { 
     border-color: $border-color-02;
@@ -438,48 +495,6 @@
   li {
     line-height: $base-line-height * 1.25;
     margin-left: -10px;
-  }
-}
-
-.page-breadcrumb {
-  color: $brand-color;
-  margin-bottom: $spacing-unit;
-}
-
-.page-top {
-  position: fixed;
-  pointer-events: none;
-  text-align: right;
-  width: 100%;
-  bottom: 0;
-  margin-bottom: $spacing-unit;
-  
-  a {
-    pointer-events: auto;
-    margin-right: $spacing-unit;
-    padding: $spacing-unit;
-  
-    &:hover {
-       text-decoration: none;
-    }
-  }
-}
-
-/**
- * Posts
- */
-.post-header {
-  margin-bottom: $spacing-unit;
-  border-bottom: 1px solid $border-color-01;
-}
-
-.post-title,
-.post-content h1 {
-  @include relative-font-size(2.25);
-  line-height: 1.15;
-
-  @media screen and (min-width: $on-large) {
-    @include relative-font-size(2.25);
   }
 }
 
@@ -521,23 +536,6 @@
   }
 }
 
-.social-media-list {
-  display: table;
-  margin: 0 auto;
-  li {
-    float: left;
-    margin: 5px 10px 5px 0;
-    &:last-of-type { margin-right: 0 }
-    a {
-      display: block;
-      padding: 10px 12px;
-      border: 1px solid $border-color-01;
-      &:hover { border-color: $border-color-02 }
-    }
-  }
-}
-
-
 
 /**
  * Pagination navbar
@@ -547,6 +545,7 @@
   justify-content: space-between;
   list-style: none;
   margin-left: 0;
+  padding-top: $base-font-size;
   
   li {
     width: 30%;
@@ -564,7 +563,10 @@
       padding-bottom: $base-font-size;
       padding-left: $extra-small-font-size;
       border: 1px solid $border-color-01;
-      &:hover { border-color: $border-color-02 }
+      &:hover { 
+        border-color: $border-color-02;
+        background-color: $border-color-01;
+      }
     }
 
     div {
@@ -579,7 +581,6 @@
     }
   }
 }
-
 
 
 /**

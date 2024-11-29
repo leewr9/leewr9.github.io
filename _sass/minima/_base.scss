@@ -15,6 +15,9 @@ dl, dd, ol, ul, figure {
 
 }
 
+li::marker {
+  color: $brand-color;
+}
 
 
 /**
@@ -37,7 +40,6 @@ body {
 }
 
 
-
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -53,13 +55,13 @@ hr {
   margin-bottom: $spacing-unit;
 }
 
+
 /**
  * `main` element
  */
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
-
 
 
 /**
@@ -69,7 +71,6 @@ img {
   max-width: 100%;
   vertical-align: middle;
 }
-
 
 
 /**
@@ -82,7 +83,6 @@ figure > img {
 figcaption {
   font-size: $small-font-size;
 }
-
 
 
 /**
@@ -100,14 +100,12 @@ li {
 }
 
 
-
 /**
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
 }
-
 
 
 /**
@@ -156,7 +154,6 @@ blockquote {
 }
 
 
-
 /**
  * Code formatting
  */
@@ -195,7 +192,6 @@ pre {
 }
 
 
-
 /**
  * Wrapper
  */
@@ -223,7 +219,6 @@ pre {
   display: table;
   clear: both;
 }
-
 
 
 /**

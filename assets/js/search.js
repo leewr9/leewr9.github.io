@@ -149,6 +149,7 @@ function showSearchResults(results) {
 function populateResultContent(html, item) {
     html = injectContent(html, item.title, 'search.title');
     html = injectContent(html, item.content, 'search.content');
+    html = injectContent(html, item.preview, 'search.preview');
     html = injectContent(html, item.link, 'search.link');
     html = injectContent(html, item.date, 'search.date');
     html = injectContent(html, item.excerpt, 'search.excerpt');
