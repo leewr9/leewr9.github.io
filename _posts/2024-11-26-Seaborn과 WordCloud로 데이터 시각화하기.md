@@ -10,7 +10,7 @@ tag: [Education, WordCloud, Seaborn, Python]
 {:toc}
 </nav>
 
-## `Seaborn ` 라이브러리란?
+## `Seaborn` 라이브러리란?
 > `Seaborn`은 데이터 시각화를 위한 파이썬 라이브러리로, `matplotlib`을 기반으로 더 직관적이고 세련된 그래프를 생성할 수 있습니다. 특히 통계적 데이터 시각화에 강점이 있습니다.
 
 ### 1. 주요 기능  
