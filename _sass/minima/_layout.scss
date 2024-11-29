@@ -366,7 +366,19 @@
 
 .page-content {
   padding: $spacing-unit 0;
+  display: flex;
   flex: 1 0 auto;
+
+  .page-sidebar {
+    display: none;
+  }
+  
+  @media screen and (min-width: $on-max) {
+    .page-sidebar {
+      display: block;
+      width: 50%;
+    }
+  }
 }
 
 .page-heading {
@@ -482,6 +494,7 @@
 }
 
 .post-toc {
+  background-color: $background-color;
   border: 1px solid $border-color-01;
   padding-bottom: $base-font-size;
   padding-right: $spacing-unit;
@@ -495,6 +508,16 @@
   li {
     line-height: $base-line-height * 1.25;
     margin-left: -10px;
+  }
+  
+  @media screen and (min-width: $on-max) {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(20% - (#{$spacing-unit} / 2));
+    margin-top: $spacing-unit * 3;
+    margin-right: $spacing-unit * 3;
   }
 }
 

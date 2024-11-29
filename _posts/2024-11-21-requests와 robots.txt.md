@@ -11,15 +11,15 @@ tag: [Education, Requests, Python]
 </nav>
 
 
-## 1. `requests` 라이브러리란?
+## `requests` 라이브러리란?
 > Python에서 HTTP 요청을 보내기 위한 강력하고 사용이 쉬운 라이브러리입니다. `GET`, `POST`, `PUT` 등의 HTTP 메서드를 간단한 코드로 실행할 수 있습니다.
 
-### 설치
+### 1. 설치
 ```bash
 pip install requests
 ```
 
-### 주요 기능 예제
+### 2. 주요 기능 예제
 #### 1. GET 요청
 * 서버로부터 데이터를 가져오는 데 사용됩니다.
 
@@ -108,7 +108,7 @@ except requests.exceptions.HTTPError as e:
     print(f'HTTP 오류 발생: {e}')
 ```
 
-## 2. robots.txt란?
+## robots.txt란?
 >robots.txt는 웹사이트 소유자가 크롤러의 접근을 제어하기 위해 사용하는 텍스트 파일입니다. 주로 크롤러가 특정 경로를 크롤링하지 않도록 안내합니다.
 
 * robots.txt 예시
@@ -123,7 +123,7 @@ Allow: /public/
 * Disallow: /admin/은 /admin/ 디렉터리에 대한 접근을 차단합니다.
 * Allow: /public/은 /public/ 디렉터리를 허용합니다.
 
-## 3. requests와 robots.txt를 함께 사용하는 크롤링 예제
+## requests와 robots.txt를 함께 사용하는 크롤링 예제
 ```python
 import requests
 
@@ -143,7 +143,7 @@ response = requests.get(target_url)
 print(f"{target_url}에 대한 응답 코드:", response.status_code)
 ```
 
-## 4. 크롤링 시 주의사항
+## 크롤링 시 주의사항
 * robots.txt 준수: 크롤러가 웹사이트 소유자의 요청을 존중하는 것이 중요합니다.
 * 법적 및 윤리적 책임: robots.txt는 법적 강제력이 없지만, 웹사이트 정책을 무시한 크롤링은 법적 문제를 초래할 수 있습니다.
 * 트래픽 관리: 웹사이트에 과도한 트래픽을 유발하지 않도록 주의해야 합니다.

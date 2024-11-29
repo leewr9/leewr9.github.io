@@ -11,7 +11,7 @@ tag: [Education, Crawling, Requests, Python]
 </nav>
 
 
-## 1. `BeautifulSoup` 라이브러리란?
+## `BeautifulSoup` 라이브러리란?
 > `BeautifulSoup`은 가져온 HTML 데이터를 파싱하고 원하는 정보를 추출하는 데 사용됩니다. `requests`와 함께 사용하면 웹 크롤링을 쉽게 구현할 수 있습니다.
 
 ### 1. 설치
