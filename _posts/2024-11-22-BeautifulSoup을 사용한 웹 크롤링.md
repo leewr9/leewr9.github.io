@@ -1,7 +1,7 @@
 ---
 title: BeautifulSoup을 사용한 웹 크롤링
 category: Study
-tag: [Education, Crawling, Requests, Python]
+tag: [Education, Crawling, Requests, BeautifulSoup, Python]
 ---
 
 <nav class="post-toc" markdown="1">
