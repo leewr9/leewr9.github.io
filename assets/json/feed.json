@@ -17,8 +17,8 @@ layout: null
                 "date": "{{ item.date | date: date_format }}",
                 "category": "{{ item.category[0] }}",
                 "clink": "{{ site.url }}/categories/{{ item.category[0] }}",
-                "tag": "{{ item.tag[0] }}",
-                "tlink": "{{ site.url }}/tags/{{ item.tag[0] }}",
+                "tag": "{{ item.tag }}",
+                "tlink": "{{ site.url }}/tags/{{ item.tag }}",
                 "excerpt": "{{ item.snippet }}",
                 "search_omit": "{{ item.search_omit }}"
             }
@@ -39,8 +39,8 @@ layout: null
         "date": "{{ post.date | date: date_format }}",
         "category": "{{ post.category[0] }}",
         "clink": "{{ site.url }}/categories/{{ post.category[0] }}",
-        "tag": "{{ post.tag[0] }}",
-        "tlink": "{{ site.url }}/tags/{{ post.tag[0] }}",
+        "tag": "{{ post.tag }}",
+        "tlink": "{{ site.url }}/tags/{{ post.tag }}",
         "excerpt": "{{ post.snippet }}",
         "search_omit": "{{ post.search_omit }}"
     }
@@ -58,8 +58,8 @@ layout: null
         "date": "{{ page.date | jsonify | date: date_format }}",
         "category": "{{ page.category[0] }}",
         "clink": "{{ site.url }}/category/{{ page.category[0] }}",
-        "tag": "{{ page.tag[0] }}",
-        "tlink": "{{ site.url }}/tags/{{ page.tag[0] }}",
+        "tag": "{{ page.tag }}",
+        "tlink": "{{ site.url }}/tags/{{ page.tag }}",
         "excerpt": "{{ page.description | jsonify }}",
         "search_omit": "{{ page.search_omit }}"
     }

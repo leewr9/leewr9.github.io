@@ -112,7 +112,11 @@ function processData() {
 
         $.each(data, function(index, item) {
             // check if search term is in content or title 
-            if (item.search_omit != "true" && (item.content.toLowerCase().indexOf(search.toLowerCase()) > -1 || item.title.toLowerCase().indexOf(search.toLowerCase()) > -1)) {
+            if (item.search_omit != "true" && 
+                (item.title.toLowerCase().indexOf(search.toLowerCase()) > -1 || 
+                 item.content.toLowerCase().indexOf(search.toLowerCase()) > -1 ||
+                 item.category.toLowerCase().indexOf(search.toLowerCase()) > -1 || 
+                 item.tag.toLowerCase().indexOf(search.toLowerCase()) > -1)) {
                 var result = populateResultContent($resultTemplate.html(), item);
                 resultsCount++;
                 results += result;

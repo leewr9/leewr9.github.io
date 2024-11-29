@@ -222,7 +222,7 @@
 .about {
   margin-bottom: $spacing-unit * 2;
 
-  #about_img {
+  .about_img {
     text-align: center;
   }
 
@@ -543,6 +543,13 @@
   p {
     width: 100%;
     text-align: center;
+  }
+
+  img {
+    width: 100%;
+    margin-bottom: $small-font-size;
+    transition: all .35s ease-in-out;
+    cursor: zoom-in;
   }
 }
 
