@@ -366,19 +366,7 @@
 
 .page-content {
   padding: $spacing-unit 0;
-  display: flex;
   flex: 1 0 auto;
-
-  .page-sidebar {
-    display: none;
-  }
-  
-  @media screen and (min-width: $on-max) {
-    .page-sidebar {
-      display: block;
-      width: 50%;
-    }
-  }
 }
 
 .page-heading {
