@@ -1,5 +1,5 @@
 ---
-title: Seaborn과 WordCloud로 데이터 시각화하기
+title: Seaborn과 WordCloud를 사용한 데이터 시각화
 category: Study
 tag: [Education, WordCloud, Seaborn, Python]
 ---
