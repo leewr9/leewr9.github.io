@@ -13,11 +13,40 @@ tag: [Education, Rest Framework, Django, Python]
 {% raw %}
 
 
-### Django / Rest Framwork 설치
+## Django / Rest Framwork 셋팅
+
+### 1. 설치
 ```bash
 pip install django
 pip install djangorestframework
 ```
+
+### 2. 가상환경 설정
+
+```bash
+# 가상환경 생성 (myvenv는 가상환경 이름, 변경가능)
+python -m venv myvenv
+
+# 가상환경 활성화
+venv\Scripts\activate # Windows
+source venv/bin/activate # macOS/Linux
+
+#가상환경 비활성화
+deactivate
+```
+
+```bash
+pip freeze > requirements.txt # 가상환경 모듈 파일 생성
+pip install -r requirements.txt # 가상환경 모듈 설치
+```
+
+| 이유 | 설명 |
+| - | - |
+| 패키지 충돌 방지 | 프로젝트마다 별도의 패키지 버전 관리 가능 |
+| 전역 환경 오염 방지 | 전역 파이썬 환경을 오염시키지 않음 |
+| 이식성 및 재현성 보장 | requirements.txt로 동일한 환경을 쉽게 재현 가능 |
+| 배포 및 관리 용이성 | 배포 서버에서도 동일한 환경을 유지 가능 |
+| 다중 프로젝트 관리 | 여러 프로젝트를 독립적으로 관리 가능 |
 
 ## 프로젝트 생성하기
 * Django 프로젝트를 시작하려면 다음 명령어를 사용합니다.
@@ -25,7 +54,7 @@ pip install djangorestframework
 * 프로젝트 디렉터리 내부의 settings.py에 Rest Framework을 등록합니다.
 
 ```bash
-django-admin startproject myproject
+django-admin startproject myproject # myproject는 프로젝트 이름, 변경가능
 ```
 
 ```python
@@ -46,7 +75,7 @@ INSTALLED_APPS = [
 * 프로젝트 안에서 특정 기능을 수행하는 앱을 생성하려면 다음을 실행합니다.
 
 ```bash
-python manage.py startapp myapp
+python manage.py startapp myapp # myapp은 앱 이름, 변경가능
 ```
 
 ### 2. 경로 설정하기
