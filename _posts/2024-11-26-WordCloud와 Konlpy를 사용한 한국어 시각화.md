@@ -1,7 +1,7 @@
 ---
 title: WordCloud와 Konlpy를 사용한 한국어 시각화
 category: Study
-tag: [Education, WordCloud, Konlpy, Python]
+tag: [Education, WordCloud, Konlpy, Visualization, Python]
 ---
 
 <nav class='post-toc' markdown='1'>
@@ -11,7 +11,8 @@ tag: [Education, WordCloud, Konlpy, Python]
 </nav>
 
 ## `Konlpy` 라이브러리란?
-> `Konlpy`는 한국어 텍스트 분석을 위한 다양한 기능과 **형태소 분석기**를 제공하는 라이브러리로, 단어 빈도수 분석 등 다양한 텍스트 분석을 쉽게 할 수 있습니다.
+> `Konlpy`는 한국어 텍스트 분석을 위한 다양한 기능과 **형태소 분석기**를 제공하는 라이브러리로, 
+단어 빈도수 분석 등 다양한 텍스트 분석을 쉽게 할 수 있습니다.
 
 ### 1. Hannanum
 [![](/assets/posts/2024-11-26-WordCloud와 Konlpy를 사용한 한국어 시각화/hannanum.png)](/assets/posts/2024-11-26-WordCloud와 Konlpy를 사용한 한국어 시각화/hannanum.png)
@@ -153,9 +154,3 @@ plt.show()
 ## 참고 자료
 * [WordCloud 공식 문서](https://github.com/amueller/word_cloud)
 * [Konlpy 공식 문서](https://konlpy.org/)
-
-
-
-
-
-

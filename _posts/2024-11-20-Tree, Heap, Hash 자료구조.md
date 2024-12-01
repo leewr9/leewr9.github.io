@@ -1,7 +1,7 @@
 ---
-title: 트리, 힙 그리고 해시
+title: Tree, Heap, Hash 자료구조
 category: Study
-tag: [Education, Algorithm, Python]
+tag: [Education, Structure, Python]
 ---
 
 <nav class="post-toc" markdown="1">
@@ -11,7 +11,8 @@ tag: [Education, Algorithm, Python]
 </nav>
 
 ## 트리 (Tree)
-> 트리(Tree)는 비선형 자료구조로, **노드(Node)** 와 **간선(Edge)** 로 구성된 계층적 구조입니다. 트리는 **루트 노드(root node)** 에서 시작해 여러 개의 하위 트리로 나뉘어갑니다.
+> 트리(Tree)는 비선형 자료구조로, **노드(Node)** 와 **간선(Edge)** 로 구성된 계층적 구조입니다. 
+트리는 **루트 노드(root node)** 에서 시작해 여러 개의 하위 트리로 나뉘어갑니다.
 
 ### 1. 트리의 종류
 * 이진 트리(Binary Tree): 각 노드가 최대 2개의 자식 노드를 가질 수 있는 트리
@@ -19,9 +20,9 @@ tag: [Education, Algorithm, Python]
 * 힙(Heap): 트리의 일종으로, 우선순위 큐를 구현하는 데 사용됨
 
 ### 2. Python에서 트리 구현
-> Python에서 트리를 구현하려면 **클래스(Class)** 를 사용하여 트리 구조를 정의할 수 있습니다. 이진 트리 예시를 통해 트리 구조를 구현합니다.
+> Python에서 트리를 구현하려면 **클래스(Class)** 를 사용하여 트리 구조를 정의할 수 있습니다. 
 
-* 예시 1: 이진 트리(Binary Tree) 구현
+* 이진 트리(Binary Tree)
 
 ```python
 class Node:
@@ -47,7 +48,7 @@ def inorder_traversal(node):
 inorder_traversal(root)  # 3 5 7 10 20
 ```
 
-* 예시 2: 이진 탐색 트리(Binary Search Tree, BST)
+* 이진 탐색 트리(Binary Search Tree, BST)
 
 ```python
 class BSTNode:
@@ -78,15 +79,17 @@ insert(bst_root, 7)
 ```
 
 ## 힙 (Heap)
-> 힙(Heap)은 완전 이진 트리를 기반으로 한 자료구조로, 각 부모 노드가 자식 노드보다 우선순위가 높은 구조입니다. 힙은 주로 우선순위 큐(Priority Queue) 구현에 사용됩니다. 힙은 두 가지 유형이 있습니다:
+> 힙(Heap)은 완전 이진 트리를 기반으로 한 자료구조로, 각 부모 노드가 자식 노드보다 우선순위가 높은 구조입니다. 
+힙은 주로 우선순위 큐(Priority Queue) 구현에 사용됩니다. 힙은 두 가지 유형이 있습니다:
 
 * 최소 힙(Min-Heap): 부모 노드의 값이 자식 노드의 값보다 작음.
 * 최대 힙(Max-Heap): 부모 노드의 값이 자식 노드의 값보다 큼.
 
 ### 1. Python에서 힙 사용
-> Python에서는 heapq 모듈을 통해 힙을 쉽게 구현할 수 있습니다. 기본적으로 heapq는 최소 힙(Min-Heap)을 제공합니다.
+> Python에서는 heapq 모듈을 통해 힙을 쉽게 구현할 수 있습니다. 
+기본적으로 heapq는 최소 힙(Min-Heap)을 제공합니다.
 
-* 예시 1: 최소 힙 (Min-Heap) 사용
+* 최소 힙 (Min-Heap)
 
 ```python
 import heapq
@@ -111,7 +114,7 @@ peek = heap[0]
 print(peek)  # 10
 ```
 
-* 예시 2: 최대 힙 (Max-Heap) 구현
+* 최대 힙 (Max-Heap)
 
 ```python
 import heapq
@@ -132,12 +135,12 @@ print(largest)  # 20
 ```
 
 ## 해시 (Hash)
-> 해시는 키-값 쌍으로 데이터를 저장하는 자료구조로, 빠른 검색과 삭제 연산을 지원합니다. 해시는 배열을 이용한 인덱싱 방식으로 데이터를 저장하고 검색하는 방식이기 때문에 매우 효율적입니다.
+> 해시는 키-값 쌍으로 데이터를 저장하는 자료구조로, 빠른 검색과 삭제 연산을 지원합니다. 
+해시는 배열을 이용한 인덱싱 방식으로 데이터를 저장하고 검색하는 방식이기 때문에 매우 효율적입니다.
 
 ### 1. Python에서 해시 사용
-> Python에서는 dict(딕셔너리)를 사용하여 해시를 구현할 수 있습니다. 딕셔너리는 해시 테이블을 기반으로 구현되어 있으며, 키를 통해 값을 빠르게 조회할 수 있습니다.
-
-* 예시 1: 딕셔너리 사용
+> Python에서는 dict(딕셔너리)를 사용하여 해시를 구현할 수 있습니다. 
+딕셔너리는 해시 테이블을 기반으로 구현되어 있으며, 키를 통해 값을 빠르게 조회할 수 있습니다.
 
 ```python
 # 해시맵 (딕셔너리) 생성
@@ -159,24 +162,3 @@ print("orange" in hash_map)  # False
 del hash_map["banana"]
 print(hash_map)  # {'apple': 1, 'cherry': 3}
 ```
-
-* 예시 2: 해시를 사용한 카운팅
-
-```python
-# 문자열에서 각 문자의 빈도수 계산
-text = "apple"
-count = {}
-
-for char in text:
-    if char in count:
-        count[char] += 1
-    else:
-        count[char] = 1
-
-print(count)  # {'a': 1, 'p': 2, 'l': 1, 'e': 1}
-```
-
-## 결론
-* **트리(Tree)** 는 계층적 구조를 표현하는 자료구조로, 이진 트리(Binary Tree), 이진 탐색 트리(Binary Search Tree, BST), 힙(Heap) 등 여러 형태가 있습니다.
-* **힙(Heap)** 은 우선순위 큐를 구현할 때 유용하며, 최소 힙(Min-Heap)과 최대 힙(Max-Heap)으로 나눠집니다. Python에서는 heapq 모듈을 사용하여 구현할 수 있습니다.
-* **해시(Hash)** 는 키-값 쌍으로 데이터를 빠르게 검색하고 저장할 수 있는 자료구조로, Python의 dict를 사용하여 구현할 수 있습니다.

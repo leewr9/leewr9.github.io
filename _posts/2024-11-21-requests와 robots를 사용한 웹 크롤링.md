@@ -1,7 +1,7 @@
 ---
-title: requests와 robots.txt
+title: requests와 robots를 사용한 웹 크롤링
 category: Study
-tag: [Education, Requests, Python]
+tag: [Education, Requests, Crawling, Python]
 ---
 
 <nav class="post-toc" markdown="1">
@@ -19,7 +19,7 @@ tag: [Education, Requests, Python]
 pip install requests
 ```
 
-### 2. 주요 기능 예제
+### 2. 주요 기능
 #### 1. GET 요청
 * 서버로부터 데이터를 가져오는 데 사용됩니다.
 
@@ -111,9 +111,9 @@ except requests.exceptions.HTTPError as e:
 ## robots.txt란?
 >robots.txt는 웹사이트 소유자가 크롤러의 접근을 제어하기 위해 사용하는 텍스트 파일입니다. 주로 크롤러가 특정 경로를 크롤링하지 않도록 안내합니다.
 
-* robots.txt 예시
-
 ``` javascript
+// robots.txt
+
 User-agent: *
 Disallow: /admin/
 Allow: /public/
@@ -123,7 +123,7 @@ Allow: /public/
 * Disallow: /admin/은 /admin/ 디렉터리에 대한 접근을 차단합니다.
 * Allow: /public/은 /public/ 디렉터리를 허용합니다.
 
-## requests와 robots.txt를 함께 사용하는 크롤링 예제
+## requests와 robots.txt를 함께 사용하는 크롤링
 ```python
 import requests
 

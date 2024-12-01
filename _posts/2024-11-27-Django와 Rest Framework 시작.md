@@ -1,7 +1,7 @@
 ---
-title: Django 프로젝트 생성과 사용법
+title: Django와 Rest Framework 시작
 category: Study
-tag: [Education, Django, Python]
+tag: [Education, Rest Framework, Django, Python]
 ---
 
 <nav class='post-toc' markdown='1'>
@@ -10,26 +10,46 @@ tag: [Education, Django, Python]
 {:toc}
 </nav>
 
+{% raw %}
 
-## Project 생성하기
+
+### Django / Rest Framwork 설치
+```bash
+pip install django
+pip install djangorestframework
+```
+
+## 프로젝트 생성하기
 * Django 프로젝트를 시작하려면 다음 명령어를 사용합니다.
 * 명령 실행 후 프로젝트 디렉터리가 생성됩니다.
+* 프로젝트 디렉터리 내부의 settings.py에 Rest Framework을 등록합니다.
 
 ```bash
 django-admin startproject myproject
 ```
-> myproject는 프로젝트 이름이며, 원하는 이름으로 변경 가능합니다.
 
+```python
+# myproject/settings.py
 
-### 1. App 생성하기
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'rest_framework',  # djangorestframework 등록
+]
+```
+
+### 1. 앱 생성하기
 * 프로젝트 안에서 특정 기능을 수행하는 앱을 생성하려면 다음을 실행합니다.
 
 ```bash
 python manage.py startapp myapp
 ```
-> myapp은 앱 이름이며, 원하는 이름으로 변경 가능합니다.
 
-### 2. URL 경로 설정하기
+### 2. 경로 설정하기
 * `urls.py`에서 URL 경로를 설정하여 뷰와 연결할 수 있습니다.
 * 해당 파일이 없을 경우에는 직접 생성합니다.
 
@@ -67,7 +87,7 @@ def home(request):
     return HttpResponse("Welcome to the Home Page!") # 단순한 문자열 응답
 ```
 
-## Django Model 만들기
+## 모델 만들기
 * `models.py`에서 데이터베이스 테이블과 매핑되는 모델을 정의합니다.
 * 모델 필드 종류
   * CharField: 문자열 필드
@@ -92,7 +112,6 @@ class Product(models.Model):
 ```
 
 ### 1. 마이그레이션 (Migration)
-
 * `settings.py`에서 앱을 등록해야 Django가 해당 앱을 인식하고 마이그레이션을 실행할 수 있습니다.
 
 ```python
@@ -153,7 +172,7 @@ sqlite3 db.sqlite3
     * .schema <테이블명>: 특정 테이블의 스키마(구조) 보기
     * .exit: SQLite3 종료
 
-## Django Admin 관리하기
+## 관리자 계정 관리하기
 
 ### 1. 계정 생성
 * 관리자 계정을 생성하려면 다음 명령어를 실행합니다:
@@ -175,7 +194,7 @@ from .models import Product
 admin.site.register(Product)
 ```
 
-## Django Shell 사용하기
+## Shell 사용하기
 * 장고 셸을 사용하여 데이터베이스와 상호 작용하려면 다음 명령어를 실행합니다:
 
 ```bash
@@ -238,7 +257,7 @@ new_product.save()
 print(new_product.id)  # 생성된 객체의 id 확인
 ```
 
-##### 여러 객체 생성
+#### 여러 객체 생성
 * bulk_create()를 사용하여 여러 개의 객체를 한 번에 생성할 수도 있습니다.
 * bulk_create()는 여러 객체를 한 번에 생성하고 데이터베이스에 저장하는 방법입니다.
 * 단, 해당 메서드는 데이터베이스에 바로 저장하는 방법이기에 별도 다른 행동을 취할 수 없습니다.
@@ -311,3 +330,5 @@ print("Deleted product:", product.name)
 
 ## 참고 자료
 * [Django 공식 문서](https://docs.djangoproject.com/en/stable/)
+
+{% endraw %}

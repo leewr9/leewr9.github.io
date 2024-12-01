@@ -1,7 +1,7 @@
 ---
 title: BeautifulSoup을 사용한 웹 크롤링
 category: Study
-tag: [Education, Crawling, Requests, BeautifulSoup, Python]
+tag: [Education, Requests, BeautifulSoup, Crawling, Python]
 ---
 
 <nav class="post-toc" markdown="1">
@@ -12,7 +12,8 @@ tag: [Education, Crawling, Requests, BeautifulSoup, Python]
 
 
 ## `BeautifulSoup` 라이브러리란?
-> `BeautifulSoup`은 가져온 HTML 데이터를 파싱하고 원하는 정보를 추출하는 데 사용됩니다. `requests`와 함께 사용하면 웹 크롤링을 쉽게 구현할 수 있습니다.
+> `BeautifulSoup`은 가져온 HTML 데이터를 파싱하고 원하는 정보를 추출하는 데 사용됩니다. 
+`requests`와 함께 사용하면 웹 크롤링을 쉽게 구현할 수 있습니다.
 
 ### 1. 설치
 ```bash
@@ -21,8 +22,6 @@ pip install requests
 ```
 
 ### 2. 기본 사용법
-* 예제: 웹 페이지에서 제목 태그(`<title>`) 가져오기
-
 ```python
 import requests
 from bs4 import BeautifulSoup
@@ -39,16 +38,12 @@ title_tag = soup.title
 print("페이지 제목:", title_tag.string)
 ```
 
-### 3. 주요 기능 예제
-* (1) 모든 `<a>` 태그에서 링크 추출
-
+### 3. 주요 기능
 ```python
 # 모든 <a> 태그 추출
 for link in soup.find_all('a'):
     print("링크:", link.get('href'))
 ```
-
-* (2) 특정 클래스의 요소 추출
 
 ```python
 # 특정 클래스의 <div> 태그 찾기
@@ -56,8 +51,6 @@ divs = soup.find_all('div', class_='example-class')
 for div in divs:
     print(div.text)
 ```
-
-* (3) ID로 요소 찾기
 
 ```python
 # 특정 ID의 태그 찾기

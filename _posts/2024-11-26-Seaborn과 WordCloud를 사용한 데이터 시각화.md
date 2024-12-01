@@ -1,7 +1,7 @@
 ---
 title: Seaborn과 WordCloud를 사용한 데이터 시각화
 category: Study
-tag: [Education, WordCloud, Seaborn, Python]
+tag: [Education, WordCloud, Seaborn, Visualization, Python]
 ---
 
 <nav class="post-toc" markdown="1">
@@ -11,7 +11,8 @@ tag: [Education, WordCloud, Seaborn, Python]
 </nav>
 
 ## `Seaborn` 라이브러리란?
-> `Seaborn`은 데이터 시각화를 위한 파이썬 라이브러리로, `matplotlib`을 기반으로 더 직관적이고 세련된 그래프를 생성할 수 있습니다. 특히 통계적 데이터 시각화에 강점이 있습니다.
+> `Seaborn`은 데이터 시각화를 위한 파이썬 라이브러리로, `matplotlib`을 기반으로 더 직관적이고 세련된 그래프를 생성할 수 있습니다. 
+특히 통계적 데이터 시각화에 강점이 있습니다.
 
 ### 1. 주요 기능  
 * 다양한 그래프 제공: 산점도, 선 그래프, 박스플롯, 히트맵 등  
@@ -127,7 +128,8 @@ plt.show()
 * 유연성, 범용적, 확장성 높음, 특정 그래프에 특화된 기능 제공
 
 ## `WordCloud` 라이브러리란?
-> `WordCloud`는 텍스트 데이터를 시각화하여 단어의 빈도수를 구름 모양으로 표현하는 라이브러리입니다. 자주 등장하는 단어일수록 크기가 커집니다.
+> `WordCloud`는 텍스트 데이터를 시각화하여 단어의 빈도수를 구름 모양으로 표현하는 라이브러리입니다. 
+자주 등장하는 단어일수록 크기가 커집니다.
 
 ### 1. 주요 기능
 * 텍스트 데이터의 주요 키워드를 시각적으로 표현
@@ -140,7 +142,7 @@ plt.show()
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
-# 샘플 텍스트 데이터: 영화 리뷰 예제
+# 샘플 텍스트 데이터
 text = """The movie was fantastic! The characters were well-developed and the plot was gripping. 
           The visual effects were stunning, and the soundtrack was memorable. Highly recommend!"""
 

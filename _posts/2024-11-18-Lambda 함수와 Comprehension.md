@@ -1,5 +1,5 @@
 ---
-title: Lambda 함수와 컴프리헨션
+title: Lambda 함수와 Comprehension
 category: Study
 tag: [Education, Python]
 ---
@@ -21,24 +21,14 @@ lambda arguments: expression
 # expression: 반환되는 값
 ```
 
-* 예시 1: 두 수의 합을 구하는 람다 함수
-
 ```python
 add = lambda x, y: x + y
 print(add(3, 5))  # 8
-```
 
-* 예시 2: 리스트에서 짝수만 필터링하는 람다 함수
-
-```python
 numbers = [1, 2, 3, 4, 5, 6]
 even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
 print(even_numbers)  # [2, 4, 6]
-```
 
-* 예시 3: 두 리스트에서 요소별 곱을 구하는 람다 함수
-
-```python
 list1 = [1, 2, 3]
 list2 = [4, 5, 6]
 result = list(map(lambda x, y: x * y, list1, list2))
@@ -46,7 +36,8 @@ print(result)  # [4, 10, 18]
 ```
 
 ## 컴프리헨션 (Comprehension)
-> 컴프리헨션은 반복문을 사용하여 새 리스트, 집합, 딕셔너리 등을 생성할 때 유용한 Python의 구문입니다. 주로 리스트 컴프리헨션을 많이 사용하지만, 셋 컴프리헨션과 딕셔너리 컴프리헨션도 존재합니다.
+> 컴프리헨션은 반복문을 사용하여 새 리스트, 집합, 딕셔너리 등을 생성할 때 유용한 Python의 구문입니다. 
+주로 리스트 컴프리헨션을 많이 사용하지만, 셋 컴프리헨션과 딕셔너리 컴프리헨션도 존재합니다.
 
 ### 1 리스트 컴프리헨션 (List Comprehension)
 리스트 컴프리헨션을 사용하면 for 루프를 한 줄로 표현할 수 있습니다.
@@ -61,23 +52,13 @@ print(result)  # [4, 10, 18]
 # condition: 선택적인 조건 (선택적)
 ```
 
-* 예시 1: 1부터 10까지의 짝수 리스트 만들기
-
 ```python
 even_numbers = [x for x in range(1, 11) if x % 2 == 0]
 print(even_numbers)  # [2, 4, 6, 8, 10]
-```
 
-* 예시 2: 각 숫자의 제곱을 구하는 리스트 컴프리헨션
-
-```python
 squares = [x**2 for x in range(1, 6)]
 print(squares)  # [1, 4, 9, 16, 25]
-```
 
-* 예시 3: 문자열의 대문자만 필터링하기
-
-```python
 words = ["apple", "Banana", "cherry", "Date"]
 uppercase_words = [word for word in words if word[0].isupper()]
 print(uppercase_words)  # ['Banana', 'Date']
@@ -85,8 +66,6 @@ print(uppercase_words)  # ['Banana', 'Date']
 
 ### 2 셋 컴프리헨션 (Set Comprehension)
 > 셋 컴프리헨션은 리스트 컴프리헨션과 유사하지만, 중복이 없는 **셋(set)**을 생성합니다.
-
-* 예시 1: 1부터 10까지의 짝수 셋 만들기
 
 ```python
 even_numbers_set = {x for x in range(1, 11) if x % 2 == 0}
@@ -96,26 +75,16 @@ print(even_numbers_set)  # {2, 4, 6, 8, 10}
 ### 3 딕셔너리 컴프리헨션 (Dictionary Comprehension)
 > 딕셔너리 컴프리헨션을 사용하면 키와 값을 간결하게 생성할 수 있습니다.
 
-* 예시 1: 1부터 5까지의 숫자에 대한 제곱을 값으로 갖는 딕셔너리 만들기
-
 ```python
 squares_dict = {x: x**2 for x in range(1, 6)}
 print(squares_dict)  # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 ```
 
 ## 람다 함수와 컴프리헨션 결합
-
 > 람다 함수와 컴프리헨션을 결합하면, 더욱 효율적으로 데이터를 처리할 수 있습니다.
-
-* 예시: 리스트에서 짝수만 필터링하고 제곱하기
 
 ```python
 numbers = [1, 2, 3, 4, 5, 6]
 squares_of_even = [lambda x: x**2 for x in numbers if x % 2 == 0]
 result = [f(2) for f in squares_of_even]  # [4, 16, 36]
 ```
-
-## 결론
-* 람다 함수는 짧고 간결한 익명 함수를 정의할 때 유용합니다.
-* 컴프리헨션은 반복문을 간결하게 작성하고, 가독성을 높이는 데 도움을 줍니다.
-* 람다 함수와 컴프리헨션을 결합하면 코드가 더 간결하고 효율적이 됩니다.

@@ -12,10 +12,11 @@ tag: [Education, Django, Python]
 
 {% raw %}
 
-## Templates(템플릿) 경로 설정
-> Django는 기본적으로 `settings.py > TEMPLATES` 설정에서 템플릿 파일을 찾습니다. 일반적으로 프로젝트의 루트 디렉터리 하위에 templates 디렉터리를 생성하고 사용합니다.
+## 템플릿 경로 설정
+> Django는 기본적으로 `settings.py > TEMPLATES` 설정에서 템플릿 파일을 찾습니다. 
+일반적으로 프로젝트의 루트 디렉터리 하위에 templates 디렉터리를 생성하고 사용합니다.
 
-```arduino
+```bash
 myproject/
 │
 ├── myproject/
@@ -57,7 +58,7 @@ TEMPLATES = [
 ## CSS 및 JS 정적 파일 경로 설정
 > Django에서는 정적 파일(CSS, JS, 이미지 등)을 static 디렉터리에 배치하며, STATICFILES_DIRS와 STATIC_URL을 설정합니다.
 
-```arduino
+```bash
 myproject/
 │
 ├── myproject/
@@ -107,17 +108,6 @@ STATICFILES_DIRS = [
 </body>
 </html>
 ```
-
-## 정리
-
-| 항목 | 디렉터리 위치 예시 | settings.py 설정 예시 |
-| - | - | - |
-| Templates | myproject/templates/ | 'DIRS': [os.path.join(BASE_DIR, 'templates')] |
-| Static Files (CSS, JS) | myproject/static/ | TATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] |
-| App Static | myapp/static/myapp/ | APP_DIRS: True (자동으로 탐색) |
-
-* **Templates**: 프로젝트 루트의 templates/ 또는 각 앱의 templates/를 사용.
-* **Static**: 프로젝트 루트의 static/ 또는 각 앱의 static/을 사용. STATICFILES_DIRS에 추가 가능.
 
 ## 참고 자료
 * [Django 공식 문서](https://docs.djangoproject.com/en/stable/)

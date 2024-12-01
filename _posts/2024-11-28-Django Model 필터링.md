@@ -10,7 +10,9 @@ tag: [Education, Django, Python]
 {:toc}
 </nav>
 
-## `필터링`을 위한 메서드
+{% raw %}
+
+## 필터링을 위한 메서드
 > filter(), exclude()는 조건에 맞는 여러 객체를 쿼리셋 형태로 반환하며, 조건에 맞는 객체가 없으면 빈 쿼리셋을 반환합니다.
 여러 조건이 필요하다면 조건을 결합하여 쿼리할 수 있습니다. 조건들은 모두 AND 연산으로 결합됩니다.
 
@@ -55,7 +57,7 @@ class Order(models.Model):
         return f"Order {self.id} by {self.customer.name}"
 ```
 
-## Model 필터링 
+## 모델 필터링
 
 ### 1. filter()
 * filter()는 조건에 맞는 결과를 반환합니다.
@@ -86,7 +88,7 @@ for customer in customers:
     print(customer.name, customer.age)
 ```
 
-## Model 관계 기반 필터링
+## 관계 기반 모델 필터링
 > Django에서는 ForeignKey 관계를 통해 연결된 모델을 기준으로 데이터를 필터링할 수 있습니다. 
 이때 __(더블 언더스코어)를 사용하여 관련 모델의 필드에 접근합니다.
 
@@ -148,10 +150,7 @@ for customer in customers:
     print(customer.name, customer.email)
 ```
 
-5. 결론
-* Django에서 필터링할 때, filter()와 exclude() 메서드를 활용하여 관련 모델의 데이터를 쉽게 조회할 수 있습니다.
-* __(더블 언더스코어)를 사용하여 관계 모델의 필드에 접근하고 필터링 조건을 설정할 수 있습니다.
-* exact, contains, gt 등의 연산자를 활용하여 다양한 조건으로 데이터를 필터링할 수 있습니다.
-
 ## 참고 자료
 * [Django 공식 문서](https://docs.djangoproject.com/en/stable/)
+
+{% endraw %}

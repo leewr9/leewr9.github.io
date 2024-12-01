@@ -1,7 +1,7 @@
 ---
-title: 스택과 큐
+title: Stack, Queue 자료구조
 category: Study
-tag: [Education, Algorithm, Python]
+tag: [Education, Structure, Python]
 ---
 
 <nav class="post-toc" markdown="1">
@@ -11,7 +11,8 @@ tag: [Education, Algorithm, Python]
 </nav>
 
 ## 스택 (Stack)
-> 스택(Stack)은 후입선출(LIFO, Last In First Out) 방식의 자료구조로, 마지막에 들어온 데이터가 가장 먼저 나오는 구조입니다. 스택은 주로 함수 호출, 웹 브라우저의 뒤로 가기 버튼, 괄호 짝 맞추기 등에서 사용됩니다.
+> 스택(Stack)은 후입선출(LIFO, Last In First Out) 방식의 자료구조로, 마지막에 들어온 데이터가 가장 먼저 나오는 구조입니다. 
+스택은 주로 함수 호출, 웹 브라우저의 뒤로 가기 버튼, 괄호 짝 맞추기 등에서 사용됩니다.
 
 ### 1. 기본 기능
 * push: 데이터를 스택에 추가
@@ -21,8 +22,6 @@ tag: [Education, Algorithm, Python]
 
 ### 2. Python에서 스택 구현
 > Python에서는 기본적으로 **리스트(List)**를 사용하여 스택을 구현할 수 있습니다. 리스트의 append()는 push, pop()은 pop 연산에 해당합니다.
-
-* 예시 1: 스택 구현
 
 ```python
 stack = []
@@ -48,7 +47,8 @@ print(len(stack) == 0)  # False (스택이 비지 않았음)
 ```
 
 ## 큐 (Queue)
-> 큐(Queue)는 선입선출(FIFO, First In First Out) 방식의 자료구조로, 가장 먼저 들어온 데이터가 가장 먼저 나옵니다. 큐는 대기열, 프린터 작업 관리, 데이터 스트리밍 등에 사용됩니다.
+> 큐(Queue)는 선입선출(FIFO, First In First Out) 방식의 자료구조로, 가장 먼저 들어온 데이터가 가장 먼저 나옵니다. 
+큐는 대기열, 프린터 작업 관리, 데이터 스트리밍 등에 사용됩니다.
 
 ### 1. 기본 기능
 * enqueue: 큐에 데이터를 추가
@@ -59,7 +59,7 @@ print(len(stack) == 0)  # False (스택이 비지 않았음)
 ### 2. Python에서 큐 구현
 > Python에서는 **리스트(List)** 를 사용하여 큐를 구현할 수 있지만, collections.deque를 사용하는 것이 더 효율적입니다. 리스트는 pop(0) 연산이 비효율적이지만, deque는 양쪽 끝에서 데이터를 효율적으로 추가하고 제거할 수 있습니다.
 
-* 예시 1: 리스트로 큐 구현
+* list() 사용
 
 ```python
 queue = []
@@ -84,7 +84,7 @@ print(front_element)  # 20
 print(len(queue) == 0)  # False (큐가 비지 않았음)
 ```
 
-* 예시 2: deque로 큐 구현
+* deque() 사용
 
 ```python
 from collections import deque
@@ -118,8 +118,3 @@ print(len(queue) == 0)  # False (큐가 비지 않았음)
 | 작동 방식 | 후입선출(LIFO) | 선입선출(FIFO) |
 | 기본 연산 | push, pop, peek, isEmpty | enqueue, dequeue, peek, isEmpty |
 | 사용 예시	| 함수 호출 스택, 웹 브라우저 뒤로 가기	| 대기열, 프린터 큐, 데이터 스트리밍 |
-
-## 결론
-* **스택(Stack)** 은 후입선출(LIFO) 방식으로, 리스트(List) 또는 deque를 사용해 구현할 수 있습니다.
-* **큐(Queue)** 는 선입선출(FIFO) 방식으로, **리스트(List)** 나 deque를 사용해 구현할 수 있습니다.
-* 큐는 collections.deque를 사용하는 것이 리스트보다 성능상 유리합니다.

@@ -151,6 +151,12 @@ blockquote {
   i, em {
     font-style: normal;
   }
+  
+  p {
+    font-style: normal;
+    font-size: $base-font-size * 1.05;
+    white-space: pre-wrap;
+  }
 }
 
 

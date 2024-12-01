@@ -12,7 +12,7 @@ tag: [Education, Django, Python]
 
 {% raw %}
 
-## Django Views
+## 뷰 (View)
 > 뷰(View)는 사용자의 요청을 처리하고, 처리된 데이터를 템플릿에 전달하는 역할을 합니다. 뷰는 주로 `views.py` 파일에 정의됩니다.
 
 ### 1. 뷰 함수
@@ -57,8 +57,9 @@ class HomeView(View):
         return render(request, 'home.html', context)
 ```
 
-## Django Templates
-> 템플릿은 HTML 파일로, 뷰에서 전달된 데이터를 사용자에게 보여주는 역할을 합니다. Django 템플릿 시스템은 템플릿 언어를 사용하여 동적인 콘텐츠를 삽입할 수 있습니다.
+## 템플릿 (Template)
+> 템플릿은 HTML 파일로, 뷰에서 전달된 데이터를 사용자에게 보여주는 역할을 합니다. 
+Django 템플릿 시스템은 템플릿 언어를 사용하여 동적인 콘텐츠를 삽입할 수 있습니다.
 
 ### 1. 템플릿 문법
 * 템플릿에서 데이터는 **{{}}**을 사용하여 삽입합니다. 이를 통해 뷰에서 전달된 변수를 HTML로 렌더링할 수 있습니다.
@@ -146,7 +147,7 @@ class HomeView(View):
 {% endblock %}
 ```
 
-## 뷰와 템플릿 사용 예제
+## 뷰와 템플릿 사용
 ### 1. URL 연결하기
 * 뷰와 템플릿을 URL과 연결하려면 `urls.py`에서 URL 패턴을 정의합니다.
 
@@ -196,11 +197,6 @@ def product_list(request):
     {% endfor %}
 </ul>
 ```
-
-## 결론
-* Django에서 **뷰(Views)**와 **템플릿(Templates)**는 사용자의 요청을 처리하고, 그 결과를 HTML 형식으로 사용자에게 전달하는 데 중요한 역할을 합니다. 
-* 템플릿 언어를 활용해 조건문, 반복문 등을 통해 동적인 HTML 페이지를 만들 수 있습니다.
-* Django의 뷰 함수와 템플릿 시스템을 잘 활용하면, 데이터를 효율적으로 렌더링하고 웹 애플리케이션의 동적인 콘텐츠를 쉽게 처리할 수 있습니다.
 
 ## 참고 자료
 * [Django 공식 문서](https://docs.djangoproject.com/en/stable/)
