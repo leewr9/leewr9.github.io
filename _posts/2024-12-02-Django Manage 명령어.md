@@ -46,18 +46,6 @@ python manage.py dumpdata myapp.MyModel --indent 2 > mymodel_data.json
 python manage.py loaddata data.json
 ```
 
-* 전체 데이터 복원
-
-```bash
-python manage.py loaddata all_data.json
-```
-
-* 특정 데이터 복원
-
-```bash
-python manage.py loaddata myapp_data.json
-```
-
 * 모든 데이터 삭제
 
 ```bash
