@@ -14,7 +14,7 @@ tag: [Education, Django, Python]
 
 ## `View` 클래스란?
 > `View` 클래스는 Django에서 모든 클래스 기반 뷰의 최상위 클래스입니다. 
-`View`를 상속받아 **HTTP 메서드(GET, POST 등)**에 맞는 처리 로직을 정의할 수 있습니다.
+View를 상속받아 **HTTP 메서드(GET, POST 등)**에 맞는 처리 로직을 정의할 수 있습니다.
 
 * 특징
     * 상속 및 메서드 오버라이딩: View 클래스를 상속받고, get(), post(), put(), delete() 등의 메서드를 오버라이드하여 각 HTTP 메서드에 대한 처리를 정의합니다.

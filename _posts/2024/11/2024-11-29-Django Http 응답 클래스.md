@@ -82,7 +82,7 @@ def redirect_with_params(request):
 ```
 
 ## `reverse()` 함수
-> reverse() 함수는 URL 패턴 이름을 사용하여 해당 뷰에 대한 URL을 동적으로 생성할 수 있습니다.
+> `reverse()` 함수는 URL 패턴 이름을 사용하여 해당 뷰에 대한 URL을 동적으로 생성할 수 있습니다.
 이 함수는 URL을 하드코딩하지 않고, 뷰 이름을 사용하여 URL을 생성할 수 있기 때문에 URL 패턴이 변경되더라도 코드의 유연성을 유지할 수 있습니다.
 
 ```python
@@ -95,8 +95,8 @@ def my_view(request):
     return HttpResponseRedirect(url)
 ```
 
-## reverse_lazy() 함수
-> reverse_lazy()는 reverse() 함수와 비슷하지만, 지연 평가(lazy evaluation)를 지원하는 함수입니다.
+## `reverse_lazy()` 함수
+> `reverse_lazy()`는 reverse() 함수와 비슷하지만, 지연 평가(lazy evaluation)를 지원하는 함수입니다.
 reverse_lazy()는 URL을 즉시 계산하는 대신, 실제로 사용될 때까지 계산을 미룹니다. 이는 주로 **settings.py, 클래스 기반 뷰(CBV)**에서 사용됩니다.
 
 ```python

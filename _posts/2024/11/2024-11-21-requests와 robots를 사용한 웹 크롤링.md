@@ -20,7 +20,7 @@ pip install requests
 ```
 
 ### 2. 주요 기능
-#### 1. GET 요청
+#### GET 요청
 * 서버로부터 데이터를 가져오는 데 사용됩니다.
 
 ```python
@@ -31,7 +31,7 @@ print(response.status_code)  # 상태 코드 출력 (예: 200)
 print(response.text)         # 응답 본문 출력
 ```
 
-#### 2. POST 요청
+#### POST 요청
 * 서버에 데이터를 전송할 때 사용됩니다.
 
 ```python
@@ -40,7 +40,7 @@ response = requests.post('https://httpbin.org/post', data=payload)
 print(response.json())  # JSON 응답 출력
 ```
 
-#### 3. JSON 데이터 전송
+#### JSON 데이터 전송
 * JSON 데이터를 POST 요청으로 보낼 수 있습니다.
 
 ```python
@@ -50,7 +50,7 @@ response = requests.post(url, json=json_data)
 print(response.json())
 ```
 
-#### 4. URL 매개변수 전달 (params)
+#### URL 매개변수 전달 (params)
 * GET 요청에 쿼리 문자열을 추가할 수 있습니다.
 
 ```python
@@ -59,7 +59,7 @@ response = requests.get('https://httpbin.org/get', params=params)
 print(response.url)  # 완성된 URL 출력
 ```
 
-#### 5. 헤더 설정 (headers)
+#### 헤더 설정 (headers)
 * HTTP 헤더를 사용자 정의할 수 있습니다.
 
 ```python
@@ -68,7 +68,7 @@ response = requests.get('https://httpbin.org/get', headers=headers)
 print(response.headers)
 ```
 
-#### 6. 파일 업로드 (files)
+#### 파일 업로드 (files)
 * 파일을 서버에 업로드할 수 있습니다.
 
 ```python
@@ -77,7 +77,7 @@ response = requests.post('https://httpbin.org/post', files=files)
 print(response.text)
 ```
 
-#### 7. 응답 정보 확인
+#### 응답 정보 확인
 * 응답의 다양한 정보를 확인할 수 있습니다.
 
 ```python
@@ -87,7 +87,7 @@ print(response.headers)      # 응답 헤더
 print(response.content)      # 바이트 형태의 응답 내용
 ```
 
-#### 8. 타임아웃 설정 (timeout)
+#### 타임아웃 설정 (timeout)
 * 요청 시간 초과를 설정할 수 있습니다.
 
 ```python
@@ -97,7 +97,7 @@ except requests.exceptions.Timeout:
     print('요청 시간이 초과되었습니다.')
 ```
 
-#### 9. 예외 처리
+#### 예외 처리
 * 요청 중 발생할 수 있는 예외를 처리할 수 있습니다.
 
 ```python

@@ -39,7 +39,7 @@ print(result)  # [4, 10, 18]
 > 컴프리헨션은 반복문을 사용하여 새 리스트, 집합, 딕셔너리 등을 생성할 때 유용한 Python의 구문입니다. 
 주로 리스트 컴프리헨션을 많이 사용하지만, 셋 컴프리헨션과 딕셔너리 컴프리헨션도 존재합니다.
 
-### 1 리스트 컴프리헨션 (List Comprehension)
+### 1. 리스트 컴프리헨션 (List Comprehension)
 리스트 컴프리헨션을 사용하면 for 루프를 한 줄로 표현할 수 있습니다.
 
 #### 기본 문법
@@ -64,7 +64,7 @@ uppercase_words = [word for word in words if word[0].isupper()]
 print(uppercase_words)  # ['Banana', 'Date']
 ```
 
-### 2 셋 컴프리헨션 (Set Comprehension)
+### 2. 셋 컴프리헨션 (Set Comprehension)
 > 셋 컴프리헨션은 리스트 컴프리헨션과 유사하지만, 중복이 없는 **셋(set)**을 생성합니다.
 
 ```python
@@ -72,7 +72,7 @@ even_numbers_set = {x for x in range(1, 11) if x % 2 == 0}
 print(even_numbers_set)  # {2, 4, 6, 8, 10}
 ```
 
-### 3 딕셔너리 컴프리헨션 (Dictionary Comprehension)
+### 3. 딕셔너리 컴프리헨션 (Dictionary Comprehension)
 > 딕셔너리 컴프리헨션을 사용하면 키와 값을 간결하게 생성할 수 있습니다.
 
 ```python

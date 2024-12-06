@@ -58,7 +58,7 @@ class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)  # ForeignKey 필드
 ```
 
-#### on_delete
+### 1. on_delete
 ```python
 class Order(models.Model):
     order_number = models.CharField(max_length=50)
@@ -74,7 +74,7 @@ class Order(models.Model):
   * SET_DEFAULT: 참조된 객체가 삭제되면 기본값으로 설정됨.
   * DO_NOTHING: 아무 작업도 하지 않음.
 
-### 3. ForeignKey 역참조
+## ForeignKey 역참조
 
 ```python
 # Customer 객체에서 관련된 모든 주문을 가져오기
@@ -82,7 +82,7 @@ customer = Customer.objects.get(username='john_doe')
 orders = customer.order_set.all()  # 기본적으로 역참조는 '모델명_set' 형식으로 생성됨
 ```
 
-#### related_name
+### 1. related_name
 * `related_name`을 사용하여 역참조 이름을 변경할 수 있습니다.
 
 ```python

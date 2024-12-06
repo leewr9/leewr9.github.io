@@ -93,7 +93,7 @@ plt.show()
 ### 5. relplot()
 > `relplot()`은 scatterplot()과 lineplot()을 통합한 함수로, 관계형 데이터를 시각화할 때 유용합니다.
 
-#### 1. 산점도 (Scatter Plot)
+#### 산점도 (Scatter Plot)
 [![](/assets/posts/2024-11-26-Seaborn과 WordCloud로 데이터 시각화하기/relplot-scatter.png)](/assets/posts/2024-11-26-Seaborn과 WordCloud로 데이터 시각화하기/relplot-scatter.png)
 
 ```python
@@ -105,7 +105,7 @@ plt.title("Total Bill vs Tip by Gender")
 plt.show()
 ```
 
-#### 2. 선 그래프 (Line Plot)
+#### 선 그래프 (Line Plot)
 [![](/assets/posts/2024-11-26-Seaborn과 WordCloud로 데이터 시각화하기/relplot-line.png)](/assets/posts/2024-11-26-Seaborn과 WordCloud로 데이터 시각화하기/relplot-line.png)
 
 ```python
