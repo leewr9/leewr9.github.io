@@ -24,11 +24,8 @@ layout: base
       {%- for post in posts -%}
       <li>
         {%- if post.category -%}
-        {%- for category in post.category -%}
-        <a class="post-label" href="{{ "/" | relative_url }}categories/{{ category | downcase }}">{{ category }}</a>
-        {%- if forloop.last == false %}<span class="post-meta">&nbsp;|&nbsp;</span>{% endif -%}
-        {%- endfor -%}
-        <span class="post-meta">&nbsp;|&nbsp;</span>
+        <a class="post-label" href="{{ "/" | relative_url }}categories/{{ post.ategory | downcase }}">{{ post.category }}</a>
+        <span class="post-meta">| </span>
         {%- endif -%} 
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>

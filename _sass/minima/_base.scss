@@ -51,8 +51,13 @@ ul, ol, dl, figure,
 }
 
 hr {
+  border-color: $border-color-01;
   margin-top: $spacing-unit;
   margin-bottom: $spacing-unit;
+}
+
+ol > li {
+  margin-bottom: $spacing-unit * 0.5;
 }
 
 
@@ -188,6 +193,7 @@ pre {
 }
 
 .highlight {
+  margin-top: $spacing-unit * 0.5;
   border-radius: 3px;
   background: $code-background-color;
   @extend %vertical-rhythm;
