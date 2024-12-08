@@ -24,7 +24,7 @@ layout: base
       {%- for post in posts -%}
       <li>
         {%- if post.category -%}
-        <a class="post-label" href="{{ "/" | relative_url }}categories/{{ post.ategory | downcase }}">{{ post.category }}</a>
+        <a class="post-label" href="{{ "/" | relative_url }}categories/{{ post.category | downcase }}">{{ post.category }}</a>
         <span class="post-meta">| </span>
         {%- endif -%} 
         <span class="post-meta">{{ post.date | date: date_format }}</span>
