@@ -40,7 +40,7 @@ defaults:
     values:
       layout: post
       author: Rooam Lee
-      permalink: /post/:title
+      permalink: /post/:categories/:title
       comments: true
 
 collections:
