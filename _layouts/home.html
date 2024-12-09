@@ -30,7 +30,7 @@ layout: base
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
+            {{ post.category | escape }} {{ post.title | escape }}
             <sub class="post-preview">{{ post.content | strip_html | truncatewords: 35 }}</sub>
           </a>
         </h3>

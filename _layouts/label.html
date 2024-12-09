@@ -39,6 +39,9 @@ layout: base
       <li>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
+            {% if page.tag %}
+            {{ post.category | escape }}
+            {% endif %}
             {{ post.title | escape }}
             <span class="post-meta">{{ post.date | date: date_format }}</span>
             <sub class="post-preview">{{ post.content | strip_html | truncatewords: 25 }}</sub>
