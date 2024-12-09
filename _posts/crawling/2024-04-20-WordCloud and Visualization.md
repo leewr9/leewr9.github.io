@@ -93,7 +93,6 @@ plt.show()
 
 위 코드는 `Okt` 분석기를 사용하여 텍스트에서 형태소를 추출하고, 이를 기반으로 빈도수를 막대 그래프로 시각화합니다. 이를 통해 텍스트에서 자주 등장하는 형태소를 확인할 수 있습니다.
 
-
 ### Tagging
 `Okt` 분석기는 품사 태깅도 지원합니다. 품사 태깅은 단어가 문장에서 어떤 역할을 하는지 알려주기 때문에, 이를 시각화하면 텍스트의 구조를 더 잘 이해할 수 있습니다.
 
@@ -121,7 +120,7 @@ print(pos_tags)
 
 ## References
 - [Python 공식 문서](https://docs.python.org/3/)
-- [WorldCloud 공식 문서](https://seaborn.pydata.org/)
+- [WorldCloud 공식 문서](https://github.com/amueller/word_cloud/)
 - [Konlpy 공식 문서](https://konlpy.org/en/latest/)
 
 <nav class='post-toc' markdown='1'>
