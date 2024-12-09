@@ -160,7 +160,6 @@ blockquote {
   p {
     font-style: normal;
     font-size: $base-font-size * 1.05;
-    white-space: pre-wrap;
   }
 }
 
@@ -196,6 +195,7 @@ pre {
   margin-top: $spacing-unit * 0.5;
   border-radius: 3px;
   background: $code-background-color;
+  white-space: pre-wrap;
   @extend %vertical-rhythm;
 
   .highlighter-rouge & {
