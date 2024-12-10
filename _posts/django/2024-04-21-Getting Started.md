@@ -1,5 +1,5 @@
 ---
-title: Basic Structure
+title: Getting Started
 category: Django
 tag: [Python, Django]
 ---
@@ -19,10 +19,10 @@ pip install django
 
 # 새로운 프로젝트 생성
 django-admin startproject myproject
+cd myproject
 
 # 새로운 앱 생성
-cd myproject
-python manage.py startapp app_name
+python manage.py startapp myapp
 
 # 서버 실행
 python manage.py runserver
@@ -45,7 +45,7 @@ myproject/
 │   ├── asgi.py       # ASGI 설정
 │   └── wsgi.py       # WSGI 설정
 │
-└── app_name/         # Django 앱 디렉터리
+└── myapp/            # Django 앱 디렉터리
     ├── migrations/   # 데이터베이스 마이그레이션 파일
     ├── __init__.py
     ├── admin.py      # 관리자 인터페이스 설정
@@ -68,8 +68,9 @@ DEBUG = True # 디버깅 모드 활성화
 ```
 
 ### DATABASES
-데이터베이스 설정을 관리합니다. 기본적으로 SQLite 데이터베이스가 사용됩니다.
+데이터베이스 설정을 관리합니다. 기본적으로 `SQLite`가 설정되어 있지만, `MySQL`, `PostgreSQL` 등을 사용할 수도 있습니다.
 
+* SQLite
 ```python
 DATABASES = {
     'default': {
@@ -79,6 +80,20 @@ DATABASES = {
 }
 ```
 
+* MySQL
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mydatabase',
+        'USER': 'myuser',
+        'PASSWORD': 'mypassword',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+
+```
 ### INSTALLED_APPS
 프로젝트에 포함된 앱 목록을 설정합니다.
 
@@ -117,6 +132,8 @@ urlpatterns = [
 ## View Request Flow
 Django의 뷰(Views)는 사용자의 요청에 대한 응답을 처리하는 함수 또는 클래스를 의미합니다. `views.py` 파일에서 요청에 대해 적절한 HTML 페이지를 반환하거나 데이터를 반환하는 등의 작업을 정의할 수 있습니다.
 
+![](\assets\posts\2024-04-21-Getting Started\home.png)
+![](\assets\posts\2024-04-21-Getting Started\about.png)
 ```python
 from django.http import HttpResponse
 

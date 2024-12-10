@@ -54,11 +54,11 @@ from datetime import datetime, timedelta
 posts = Post.objects.all()
 
 # 특정 조건으로 데이터 필터링
-filtered_posts = Post.objects.filter(title__icontains="Python")
+filtered_posts = Post.objects.filter(title__icontains='Python')
 
 # 제목이 'Python'을 포함하고, 생성 날짜가 7일 이내인 게시글
 start_date = datetime.now() - timedelta(days=7)
-filtered_posts = Post.objects.filter(title__icontains="Python", created_at__gte=start_date)
+filtered_posts = Post.objects.filter(title__icontains='Python', created_at__gte=start_date)
 ```
 
 | 연산자 | 연산자 (대소문자 구분하지 않음) | 조건 |
@@ -72,6 +72,13 @@ filtered_posts = Post.objects.filter(title__icontains="Python", created_at__gte=
 | gte | igte | 값이 크거나 같은 |
 | lte | ilte | 값이 작거나 같은 |
 
+### exclude
+`exclude` 메서드는 `filter`와는 반대로 조건에 맞지 않는 데이터를 반환합니다.
+
+```python
+# 게시글 제목에 'Python'이 포함되지 않은 데이터 조회
+filtered_posts = Post.objects.exclude(title__icontains='Python')
+```
 
 ### order_by
 `order_by` 메서드는 특정 필드를 기준으로 데이터를 정렬합니다.
@@ -104,7 +111,7 @@ authors = Post.objects.values('author').distinct()
 ```python
 from django.db.models import Case, When, Value
 
-# 조회수가 100 이상인 게시글은 "인기", 그렇지 않은 게시글은 "일반"으로 라벨링
+# 조회수가 100 이상인 게시글은 '인기', 그렇지 않은 게시글은 '일반'으로 라벨링
 posts = Post.objects.annotate(
     popularity=Case(
         When(views__gte=100, then=Value('Popular')),
@@ -147,10 +154,10 @@ posts = Post.objects.annotate(latest_comment=Subquery(recent_comments))
 from django.db.models import Count
 
 # 특정 작성자가 작성한 게시글 조회
-posts = Post.objects.filter(author__username="john_doe")
+posts = Post.objects.filter(author__username='john_doe')
 
-# 게시글의 카테고리가 "Python"인 게시글 조회
-posts = Post.objects.filter(category__name="Python")
+# 게시글의 카테고리가 'Python'인 게시글 조회
+posts = Post.objects.filter(category__name='Python')
 
 # 댓글 수가 3개 이상인 게시글 조회
 posts = Post.objects.annotate(comment_count=Count('comments')).filter(comment_count__gte=3)
@@ -162,7 +169,7 @@ posts = Post.objects.annotate(comment_count=Count('comments')).filter(comment_co
 
 ```python
 # 특정 태그를 포함한 게시글 조회
-posts = Post.objects.filter(tags__name="Django")
+posts = Post.objects.filter(tags__name='Django')
 ```
 
 ---
@@ -171,7 +178,7 @@ posts = Post.objects.filter(tags__name="Django")
 - [Django 공식 문서](https://www.djangoproject.com/)
 - [Python 공식 문서](https://docs.python.org/3/)
 
-<nav class="post-toc" markdown="1">
+<nav class='post-toc' markdown='1'>
   <h2>Contents</h2>
 * TOC
 {:toc}

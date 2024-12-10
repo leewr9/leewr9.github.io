@@ -131,37 +131,8 @@ class Meta:
 
 ---
 
-## Database
-`settings.py`에서 데이터베이스를 설정합니다. 기본적으로 `SQLite`가 설정되어 있지만, `MySQL`, `PostgreSQL` 등을 사용할 수도 있습니다.
-
-* SQLite
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-```
-
-* MySQL
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydatabase',
-        'USER': 'myuser',
-        'PASSWORD': 'mypassword',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
-```
-
----
-
 ## User Customization
-Django는 기본적으로 제공되는 User 모델이 있지만, 프로젝트에 따라 사용자 데이터를 확장하거나 구조를 변경해야 하는 경우가 많습니다.
+Django는 기본적으로 제공되는 `User` 모델이 있지만, 프로젝트에 따라 사용자 데이터를 확장하거나 구조를 변경해야 하는 경우가 많습니다.
 
 ### AbstractUser
 기본 User 모델을 확장하는 방법은 `AbstractUser`를 상속받아 추가 필드를 정의하는 것입니다.
