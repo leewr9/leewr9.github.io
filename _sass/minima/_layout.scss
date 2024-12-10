@@ -348,7 +348,7 @@
 .tag-item {
   margin-bottom: $base-font-size;
   margin-right: $base-font-size;
-  padding: 7px $spacing-unit;
+  padding: 7px $base-font-size * 1.25;
   border-radius: 7px;
   border: 1px solid $border-color-01;
   background-color: $background-color;
