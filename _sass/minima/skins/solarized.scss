@@ -161,6 +161,7 @@ $table-border-color:    $sol-mono1 !default;
   .gt    { color: $sol-red } // Generic.Traceback
   .kc    { color: $sol-mono01; font-weight: bold } // Keyword.Constant
   .kd    { color: $sol-mono01; font-weight: bold } // Keyword.Declaration
+  .kn    { color: $sol-red } // Keyword.Pseudo
   .kp    { color: $sol-mono01; font-weight: bold } // Keyword.Pseudo
   .kr    { color: $sol-mono01; font-weight: bold } // Keyword.Reserved
   .kt    { color: $sol-violet; font-weight: bold } // Keyword.Type

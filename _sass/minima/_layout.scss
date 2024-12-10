@@ -498,6 +498,7 @@
 
   li {
     line-height: $base-line-height * 1.25;
+    margin-bottom: 0 !important;
   }
   
   @media screen and (min-width: $on-max) {
@@ -554,6 +555,10 @@
     margin-bottom: $small-font-size;
     transition: all .35s ease-in-out;
     cursor: zoom-in;
+  }
+
+  li {
+    margin-bottom: $small-font-size;
   }
 }
 
