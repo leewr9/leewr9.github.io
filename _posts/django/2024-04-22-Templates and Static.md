@@ -8,6 +8,8 @@ tag: [Python, Django]
 
 > Django의 템플릿과 정적 파일 관리는 웹 애플리케이션 개발의 중요한 부분입니다. 템플릿은 HTML 페이지의 구조를 정의하고, 정적 파일은 CSS, JavaScript, 이미지와 같은 리소스를 관리합니다.
 
+---
+
 ## Templates
 Django의 템플릿 시스템은 HTML 파일을 관리하고 서버 데이터를 동적으로 렌더링할 수 있도록 합니다.
 
@@ -108,6 +110,8 @@ Django 템플릿은 데이터 출력과 제어를 위해 필터와 태그를 제
 {% endfor %}
 ```
 
+---
+
 ## Static
 Django에서 정적 파일은 CSS, JavaScript, 이미지와 같은 리소스를 관리합니다. 
 
@@ -150,6 +154,8 @@ project/
 </body>
 </html>
 ```
+
+---
 
 ## References
 - [Django 공식 문서](https://www.djangoproject.com/)
