@@ -482,18 +482,15 @@
 }
 
 .post-toc {
-  background-color: $background-color;
+  grid-row: 2;
+  margin-top: $base-font-size;
   border-top: 1px solid $border-color-01;
-  margin-top: $spacing-unit * 1.5;
 
   h2 {
-    margin-top: $spacing-unit;
     @include relative-font-size(1.75);
 
     @media screen and (min-width: $on-max) {
-      border-top: none;
       border-bottom: 1px solid $border-color-01;
-      padding-bottom: 5px;
       font-size: $large-font-size !important; 
       @include relative-font-size(2);
     }
@@ -515,6 +512,7 @@
 }
 
 .post-content {
+  display: grid;
   margin-bottom: $spacing-unit;
 
   h1, h2, h3, h4, h5, h6 { margin-top: $spacing-unit }

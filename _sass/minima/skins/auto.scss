@@ -62,6 +62,7 @@ $lm-table-border-color:    $lm-border-color-01 !default;
     .gt    { color: #a00 } // Generic.Traceback
     .kc    { font-weight: bold } // Keyword.Constant
     .kd    { font-weight: bold } // Keyword.Declaration
+    .kn    { color: #a00 } // Keyword.Name
     .kp    { font-weight: bold } // Keyword.Pseudo
     .kr    { font-weight: bold } // Keyword.Reserved
     .kt    { color: #458; font-weight: bold } // Keyword.Type
@@ -162,7 +163,7 @@ $dm-table-border-color:    $dm-border-color-01 !default;
     .gt    { color: #f07178 } // Generic.Traceback
     .kc    { font-weight: bold } // Keyword.Constant
     .kd    { font-weight: bold } // Keyword.Declaration
-    .kn    { color: #f07178 } // Keyword.Pseudo
+    .kn    { color: #f07178 } // Keyword.Name
     .kp    { font-weight: bold } // Keyword.Pseudo
     .kr    { font-weight: bold } // Keyword.Reserved
     .kt    { color: #FFCB6B; font-weight: bold } // Keyword.Type
