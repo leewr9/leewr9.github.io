@@ -72,6 +72,20 @@ print(response.text) # 로그인 후의 페이지 내용 등
 
 ---
 
+## Crawling Rules
+`robots.txt`는 웹사이트 소유자가 검색 엔진 크롤러에 대해 사이트의 특정 페이지나 디렉토리에 대한 접근을 제어하기 위해 사용하는 파일입니다. 
+
+- `User-agent`: 특정 검색 엔진 크롤러를 지정합니다.
+- `Disallow`: 크롤링을 허용하지 않는 경로를 지정합니다.
+
+```txt
+User-agent: *  
+Disallow: / 
+```
+위 예시는 모든 크롤러(*)가 전체 디렉토리에 접근하지 못하도록 설정한 것입니다.
+
+---
+
 ## References
 - [Python 공식 문서](https://docs.python.org/3/)
 - [Requests 공식 문서](https://requests.readthedocs.io/en/latest/)
