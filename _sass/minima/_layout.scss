@@ -516,7 +516,8 @@
   display: grid;
   margin-bottom: $spacing-unit;
 
-  h1, h2, h3, h4, h5, h6 { margin-top: $spacing-unit }
+  h1, h2 { margin-top: $spacing-unit }
+  h3, h4, h5, h6 { margin-top: $small-font-size }
 
   h2 {
     @include relative-font-size(1.75);
