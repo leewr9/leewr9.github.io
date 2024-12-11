@@ -15,7 +15,7 @@ tag: [Syntax, Python]
 # 두 수의 합을 반환하는 함수
 add = lambda x, y: x + y
 
-print(add(3, 5))  # 출력: 8
+print(add(3, 5))  # 8
 ```
 람다 함수는 주로 짧은 함수나 일시적인 함수가 필요할 때 유용합니다. 예를 들어, 리스트에서 값을 처리할 때 자주 사용됩니다.
 
@@ -23,7 +23,7 @@ print(add(3, 5))  # 출력: 8
 numbers = [1, 2, 3, 4]
 squared = list(map(lambda x: x**2, numbers))
 
-print(squared)  # 출력: [1, 4, 9, 16]
+print(squared)  # [1, 4, 9, 16]
 ```
 
 ---
@@ -36,7 +36,7 @@ print(squared)  # 출력: [1, 4, 9, 16]
 # 1부터 5까지의 제곱수를 구하는 리스트 컴프리헨션
 squares = [x**2 for x in range(1, 6)]
 
-print(squares)  # 출력: [1, 4, 9, 16, 25]
+print(squares)  # [1, 4, 9, 16, 25]
 ```
 
 ### Dictionary Comprehension
@@ -44,7 +44,7 @@ print(squares)  # 출력: [1, 4, 9, 16, 25]
 # 1부터 5까지의 숫자를 키로, 제곱수를 값으로 가지는 딕셔너리
 squared_dict = {x: x**2 for x in range(1, 6)}
 
-print(squared_dict)  # 출력: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+print(squared_dict)  # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 ```
 
 ---
@@ -68,7 +68,7 @@ def greet():
     print("Hello!")
 
 greet()
-# 출력:
+#
 # Before the function call
 # Hello!
 # After the function call
@@ -85,7 +85,7 @@ def outer(x):
     return inner
 
 closure_func = outer(10)
-print(closure_func(5))  # 출력: 15
+print(closure_func(5))  # 15
 ```
 위 예시에서 `inner` 함수는 `outer` 함수의 `x` 변수를 기억하고 있습니다. 이것이 바로 클로저의 특징입니다.
 
@@ -106,7 +106,7 @@ counter = count_up_to(3)
 
 for num in counter:
     print(num)
-# 출력:
+#
 # 1
 # 2
 # 3

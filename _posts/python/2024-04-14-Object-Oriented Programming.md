@@ -25,7 +25,7 @@ class Person:
 person = Person("Alice", 25)
 
 # 메서드 호출
-print(person.greet()) # 출력: Hello, my name is Alice.
+print(person.greet()) # Hello, my name is Alice.
 ```
 
 ---
@@ -52,7 +52,7 @@ class Cat(Animal):
 animals = [Dog(), Cat()]
 for animal in animals:
     print(animal.speak())
-# 출력: 
+# 
 # Woof!
 # Meow!
 ```
@@ -73,11 +73,11 @@ class Car:
 
 # 객체 생성
 car = Car("Toyota", 50)
-print(car.speed) # 출력: 50
+print(car.speed) # 50
 
 # 메서드 호출
 car.accelerate()
-print(car.speed) # 출력: 60
+print(car.speed) # 60
 ```
 
 ---
@@ -105,7 +105,7 @@ class Rectangle(Shape):
 
 # 객체 생성
 rect = Rectangle(5, 10)
-print(rect.area()) # 출력: 50
+print(rect.area()) # 50
 ```
 
 ---
@@ -129,7 +129,7 @@ class Vector:
 v1 = Vector(1, 2)
 v2 = Vector(3, 4)
 v3 = v1 + v2
-print(v3) # 출력: Vector(4, 6)
+print(v3) # Vector(4, 6)
 ```
 
 ---

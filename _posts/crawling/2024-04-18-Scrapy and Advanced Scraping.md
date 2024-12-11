@@ -21,18 +21,20 @@ pip install scrapy
 ### Structure
 `Scrapy`는 프로젝트 기반으로 작동하며, 기본적인 프로젝트 구조는 다음과 같습니다:
 
-```markdown
+```plaintext
 myproject/
-    scrapy.cfg
-    myproject/
-        __init__.py
-        items.py
-        middlewares.py
-        pipelines.py
-        settings.py
-        spiders/
-            __init__.py
-            myspider.py
+│
+├── scrapy.cfg
+│
+└── myproject/
+    ├── __init__.py
+    ├── items.py
+    ├── middlewares.py
+    ├── pipelines.py
+    ├── settings.py
+    └── spiders/
+        ├── __init__.py
+        └──  myspider.py
 ```
 - `scrapy.cfg`: 프로젝트 설정 파일
 - `myproject/spiders/`: 크롤링할 사이트의 URL을 정의하는 파일

@@ -22,7 +22,7 @@ logging.info("This is an info message")
 logging.warning("This is a warning message")
 logging.error("This is an error message")
 logging.critical("This is a critical message")
-# 출력: 각 로그 레벨에 맞는 메시지가 콘솔에 출력됨.
+# 각 로그 레벨에 맞는 메시지가 콘솔에 출력됨.
 ```
 `logging` 모듈은 다양한 로그 레벨을 제공하며, `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL` 순으로 로그의 중요도를 설정할 수 있습니다. 기본적으로 `logging.basicConfig`를 사용하여 로그의 레벨과 출력 형식을 지정할 수 있습니다.
 
@@ -66,7 +66,7 @@ class TestMathFunctions(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-# 출력: 테스트가 통과되면 아무 메시지 없이 종료됨.
+# 테스트가 통과되면 아무 메시지 없이 종료됨.
 ```
 `unittest` 모듈을 사용하면 `assertEqual`, `assertTrue` 등의 메서드를 사용하여 예상 결과와 실제 결과를 비교할 수 있습니다.
 

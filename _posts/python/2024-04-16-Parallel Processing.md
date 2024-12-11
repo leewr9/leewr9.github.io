@@ -38,7 +38,7 @@ thread1.join()
 thread2.join()
 
 print("Both threads have finished.")
-# 출력: 숫자와 문자들이 번갈아가며 출력되고, "Both threads have finished."가 마지막에 출력됨.
+# 숫자와 문자들이 번갈아가며 출력되고, "Both threads have finished."가 마지막에 출력됨.
 ```
 이 코드에서는 두 개의 스레드를 동시에 실행하여 숫자와 문자를 번갈아 출력합니다. `join()` 메서드는 스레드가 모두 종료될 때까지 기다리게 합니다.
 
@@ -73,7 +73,7 @@ if __name__ == '__main__':
     process2.join()
 
     print("Both processes have finished.")
-# 출력: 3의 제곱과 3의 세제곱이 출력되고, 마지막에 "Both processes have finished."가 출력됨.
+# 3의 제곱과 3의 세제곱이 출력되고, 마지막에 "Both processes have finished."가 출력됨.
 ```
 위 예시에서는 두 개의 프로세스를 동시에 실행하여 각각 제곱과 세제곱을 계산합니다. 멀티프로세싱을 통해 CPU 집약적인 작업을 병렬로 처리할 수 있습니다.
 
@@ -105,7 +105,7 @@ async def main():
 
 # 비동기 프로그래밍 실행
 asyncio.run(main())
-# 출력: 
+# 
 # Fetching data...
 # Processing data...
 # Data fetched!

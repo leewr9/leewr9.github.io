@@ -17,6 +17,8 @@ Django의 템플릿 시스템은 HTML 파일을 관리하고 서버 데이터를
 Django 템플릿은 `settings.py`에서 템플릿 디렉토리를 지정하며, 다음 디렉터리 구조를 가지고 있습니다.
 
 ```python
+# settings.py
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -57,8 +59,9 @@ project/
 ### Inheritance
 Django 템플릿 상속을 사용하면 반복되는 HTML 코드를 효율적으로 관리할 수 있습니다. 템플릿에서 `블록(Block)`은 상속받는 템플릿에서 특정 영역을 변경하거나 추가할 수 있도록 해줍니다. 블록은 `{% block 블록이름 %}`과 `{% endblock %}` 사이에 정의됩니다.
 
-#### base.html
 ```html
+<!-- base.html -->
+
 <!DOCTYPE html>
 <html lang='ko'>
 <head>
@@ -79,8 +82,9 @@ Django 템플릿 상속을 사용하면 반복되는 HTML 코드를 효율적으
 ```
 
 ![](\assets\posts\2024-04-22-Templates and Static\index.png)
-#### index.html
 ```html
+<!-- index.html -->
+ 
 {% extends 'base.html' %} <!-- base.html 상속 -->
 
 {% block title %}Home - My Site{% endblock %}
@@ -119,6 +123,8 @@ Django에서 정적 파일은 CSS, JavaScript, 이미지와 같은 리소스를 
 Django 정적 파일은 `settings.py`에서 정적 파일 디렉토리를 지정하며, 다음 디렉터리 구조를 가지고 있습니다.
 
 ```python
+# settings.py
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles' # 배포 시 사용할 정적 파일 경로

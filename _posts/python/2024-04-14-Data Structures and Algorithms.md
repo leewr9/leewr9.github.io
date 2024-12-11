@@ -23,10 +23,10 @@ numbers.append(6)
 numbers.remove(3)
 
 # 리스트 요소 접근
-print(numbers[0]) # 출력: 1
+print(numbers[0]) # 1
 
 # 리스트 슬라이싱
-print(numbers[1:4]) # 출력: [2, 4, 5]
+print(numbers[1:4]) # [2, 4, 5]
 ```
 
 ---
@@ -39,11 +39,11 @@ print(numbers[1:4]) # 출력: [2, 4, 5]
 coordinates = (10, 20)
 
 # 요소 접근
-print(coordinates[0]) # 출력: 10
+print(coordinates[0]) # 10
 
 # 튜플 언패킹
 x, y = coordinates
-print(x, y) # 출력: 10 20
+print(x, y) # 10 20
 ```
 
 ---
@@ -63,7 +63,7 @@ fruits.discard("banana")
 
 # 집합 연산
 other_fruits = {"apple", "grape"}
-print(fruits.intersection(other_fruits)) # 출력: {'apple'}
+print(fruits.intersection(other_fruits)) # {'apple'}
 ```
 
 ---
@@ -82,7 +82,7 @@ person["job"] = "Engineer"
 del person["age"]
 
 # 키/값 접근
-print(person["name"]) # 출력: Alice
+print(person["name"]) # Alice
 ```
 
 ---
@@ -98,8 +98,8 @@ stack.append(1)
 stack.append(2)
 
 # 팝
-print(stack.pop()) # 출력: 2
-print(stack) # 출력: [1]
+print(stack.pop()) # 2
+print(stack) # [1]
 ```
 
 ---
@@ -117,8 +117,8 @@ queue.append(1)
 queue.append(2)
 
 # 요소 제거
-print(queue.popleft()) # 출력: 1
-print(queue) # 출력: deque([2])
+print(queue.popleft()) # 1
+print(queue) # deque([2])
 ```
 
 ---
@@ -137,8 +137,8 @@ heapq.heappush(heap, 1)
 heapq.heappush(heap, 2)
 
 # 최소값 제거
-print(heapq.heappop(heap)) # 출력: 1
-print(heap) # 출력: [2, 3]
+print(heapq.heappop(heap)) # 1
+print(heap) # [2, 3]
 ```
 
 ---
@@ -153,7 +153,7 @@ hash_table = {}
 hash_table["key1"] = "value1"
 
 # 값 접근
-print(hash_table["key1"]) # 출력: value1
+print(hash_table["key1"]) # value1
 
 # 값 삭제
 del hash_table["key1"]
@@ -182,7 +182,7 @@ def dfs(node, visited):
             dfs(neighbor, visited)
 
 visited = set()
-dfs(1, visited) # 출력: 1 2 4 3
+dfs(1, visited) # 1 2 4 3
 ```
 
 ---
@@ -199,7 +199,7 @@ from collections import Counter
 
 # 요소 개수 세기
 counter = Counter(["apple", "banana", "apple", "orange"])
-print(counter) # 출력: Counter({'apple': 2, 'banana': 1, 'orange': 1})
+print(counter) # Counter({'apple': 2, 'banana': 1, 'orange': 1})
 ```
 
 ---

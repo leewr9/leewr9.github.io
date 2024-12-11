@@ -4,10 +4,11 @@ category: Django
 tag: [Python, Django]
 ---
 
-> QuerySet은 Django ORM에서 데이터베이스 쿼리의 결과 집합을 표현하는 객체입니다. QuerySet은 데이터를 읽고 필터링하거나 정렬하는 데 사용되며, 필요할 때만 실행되므로 성능 면에서도 효율적입니다.
+> QuerySet은 Django에서 데이터베이스 쿼리 결과를 나타내는 객체로, 데이터를 효율적으로 조회하고 관리할 수 있게 해줍니다. 다양한 메서드를 통해 특정 조건을 만족하는 데이터를 필터링하거나, 정렬 및 집계하는 등의 작업을 할 수 있습니다.
 
 ```python
-# 샘플 모델
+# views.py 샘플 모델
+
 from django.db import models
 
 # 작성자 모델

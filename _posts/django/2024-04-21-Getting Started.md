@@ -92,8 +92,8 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
 ```
+
 ### INSTALLED_APPS
 프로젝트에 포함된 앱 목록을 설정합니다.
 
@@ -117,6 +117,8 @@ Django는 URL을 처리할 뷰 함수에 매핑하는 시스템을 제공합니�
 `urls.py` 파일에서 URL 패턴을 정의하고, 각 URL에 해당하는 뷰를 지정합니다.
 
 ```python
+# urls.py
+
 from django.urls import path
 from . import views
 
@@ -135,6 +137,8 @@ Django의 뷰(Views)는 사용자의 요청에 대한 응답을 처리하는 함
 ![](\assets\posts\2024-04-21-Getting Started\home.png)
 ![](\assets\posts\2024-04-21-Getting Started\about.png)
 ```python
+# views.py
+
 from django.http import HttpResponse
 
 def home(request):

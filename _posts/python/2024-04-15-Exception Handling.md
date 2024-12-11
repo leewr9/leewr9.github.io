@@ -44,7 +44,7 @@ def check_age(age):
 try:
     check_age(-5)
 except CustomError as e:
-    print(f"Error: {e}") # 출력: Error: Age cannot be negative.
+    print(f"Error: {e}") # Error: Age cannot be negative.
 ```
 
 ---
@@ -61,7 +61,7 @@ def check_number(number):
 try:
     check_number(-10)
 except ValueError as e:
-    print(f"Error: {e}") # 출력: Error: Number must be positive.
+    print(f"Error: {e}") # Error: Number must be positive.
 예외 처리는 코드의 안정성을 높이고, 오류가 발생해도 프로그램이 비정상 종료되지 않도록 도와줍니다. 예외 처리를 적절히 활용하면 코드의 가독성도 향상됩니다.
 ```
 

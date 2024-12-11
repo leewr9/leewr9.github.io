@@ -18,6 +18,8 @@ python manage.py createsuperuser
 
 ![](\assets\posts\2024-04-22-Admin Configuration\admin.png)
 ```python
+# urls.py
+
 from django.contrib import admin
 from django.urls import path
 
@@ -35,6 +37,8 @@ urlpatterns = [
 ![](\assets\posts\2024-04-22-Admin Configuration\register.png)
 ![](\assets\posts\2024-04-22-Admin Configuration\register_author.png)
 ```python
+# admin.py
+
 from django.contrib import admin
 from .models import Author, Post
 

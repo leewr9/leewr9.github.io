@@ -18,10 +18,10 @@ y = 3.14        # float
 name = "Bob"    # str
 is_active = True # bool
 
-print(x)         # 출력: 42
-print(y)         # 출력: 3.14
-print(name)      # 출력: Bob
-print(is_active) # 출력: True
+print(x)         # 42
+print(y)         # 3.14
+print(name)      # Bob
+print(is_active) # True
 ```
 
 ---
@@ -33,20 +33,20 @@ Python에서는 다양한 연산자를 사용하여 값을 계산하거나 비�
 # 산술 연산자
 a = 10
 b = 3
-print(a + b)  # 출력: 13
-print(a - b)  # 출력: 7
-print(a * b)  # 출력: 30
-print(a ** b) # 출력: 1000 (제곱)
-print(a / b)  # 출력: 3.333...
-print(a // b)  # 출력: 3 (정수 몫만 반환)
+print(a + b)  # 13
+print(a - b)  # 7
+print(a * b)  # 30
+print(a ** b) # 1000 (제곱)
+print(a / b)  # 3.333...
+print(a // b)  # 3 (정수 몫만 반환)
 
 # 비교 연산자
-print(a > b)  # 출력: True
-print(a == b) # 출력: False
+print(a > b)  # True
+print(a == b) # False
 
 # 논리 연산자
-print(a > b and b < 5)  # 출력: True
-print(a > b or b == 5)  # 출력: True
+print(a > b and b < 5)  # True
+print(a > b or b == 5)  # True
 ```
 
 ---
@@ -63,7 +63,7 @@ elif age >= 18 and age < 65:
     print("Adult")
 else:
     print("Senior")
-# 출력: Adult
+# Adult
 ```
 
 ---
@@ -76,7 +76,6 @@ else:
 # for문: 범위 내에서 반복
 for i in range(3):
     print(i)
-# 출력:
 # 0
 # 1
 # 2
@@ -89,7 +88,6 @@ count = 0
 while count < 3:
     print(f"Count: {count}")
     count += 1
-# 출력:
 # Count: 0
 # Count: 1
 # Count: 2
@@ -106,7 +104,7 @@ def greet(name):
     return f"Hello, {name}!"
 
 # 함수 호출
-print(greet("Alice"))  # 출력: Hello, Alice!
+print(greet("Alice"))  # Hello, Alice!
 ```
 
 ---

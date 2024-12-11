@@ -12,6 +12,8 @@ tag: [Python, Django]
 모델은 Django에서 데이터베이스 테이블을 정의하는 방식입니다. Django의 `models.Model` 클래스를 상속받아 모델을 정의하며, 각 모델에 기본적으로 `id`라는 기본키 필드를 추가합니다.
 
 ```python
+# models.py
+
 from django.db import models
 
 class Post(models.Model):
@@ -69,6 +71,10 @@ migrate 명령어는 생성된 마이그레이션 파일을 실행하여 데이�
 Django 모델의 `Meta` 클래스는 모델의 메타데이터를 정의하는 데 사용됩니다.
 
 ```python
+# models.py
+
+from django.db import models
+
 class Author(models.Model):
     name = models.CharField(max_length=100)
 
@@ -138,6 +144,8 @@ Django는 기본적으로 제공되는 `User` 모델이 있지만, 프로젝트�
 기본 User 모델을 확장하는 방법은 `AbstractUser`를 상속받아 추가 필드를 정의하는 것입니다.
 
 ```python
+# models.py
+
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
@@ -153,6 +161,8 @@ class CustomUser(AbstractUser):
 만약 기본 User 모델을 완전히 대체하고 싶다면, `AbstractBaseUser`를 상속받아 새롭게 정의합니다.
 
 ```python
+# models.py
+
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.db import models
 
@@ -188,7 +198,8 @@ class CustomUser(AbstractBaseUser):
 ```
 
 ```python
-# settings.py에서 새로운 User 모델을 설정
+# settings.py
+
 AUTH_USER_MODEL = 'myapp.CustomUser'
 ```
 

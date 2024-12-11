@@ -18,11 +18,11 @@ import numpy as np
 
 # Numpy 배열 생성
 arr = np.array([1, 2, 3, 4, 5])
-print(arr) # 출력: [1 2 3 4 5]
+print(arr) # [1 2 3 4 5]
 
 # 배열의 기본적인 수학 연산
 arr2 = arr * 2
-print(arr2) # 출력: [2 4 6 8 10]
+print(arr2) # [2 4 6 8 10]
 ```
 Numpy 배열은 Python의 리스트보다 훨씬 빠르고 효율적으로 데이터를 처리할 수 있습니다. 여러 수학 함수들을 사용하여 배열을 다룰 수 있습니다.
 
@@ -39,7 +39,7 @@ data = {'Name': ['Alice', 'Bob', 'Charlie'],
 df = pd.DataFrame(data)
 
 print(df)
-# 출력:
+#
 #       Name  Age         City
 # 0    Alice   25     New York
 # 1      Bob   30  Los Angeles
@@ -52,7 +52,7 @@ Pandas는 데이터 프레임을 이용해 데이터를 쉽게 탐색하고 분�
 df = pd.read_csv('data.csv')
 
 # 데이터프레임의 첫 5행 출력
-print(df.head()) # 출력: 첫 5행
+print(df.head()) # 첫 5행
 ```
 
 ---
@@ -74,7 +74,7 @@ plt.plot(x, y)
 plt.title("Simple Line Plot")
 plt.xlabel("X-axis")
 plt.ylabel("Y-axis")
-plt.show() # 출력: 선 그래프
+plt.show() # 선 그래프
 ```
 `plt.plot()`을 사용하여 선 그래프, `plt.bar()`를 사용하여 막대 그래프 등 다양한 시각화 기능을 제공합니다.
 
@@ -91,7 +91,7 @@ tips = sns.load_dataset("tips")
 # 산점도 그리기
 sns.scatterplot(x="total_bill", y="tip", data=tips)
 plt.title("Scatterplot of Total Bill vs Tip")
-plt.show() # 출력: 산점도
+plt.show() # 산점도
 ```
 Seaborn은 `scatterplot()`, `barplot()`, `heatmap()` 등 다양한 시각화 기능을 제공합니다. 데이터의 관계를 더욱 직관적으로 시각화할 수 있습니다.
 
@@ -115,7 +115,7 @@ soup = BeautifulSoup(response.text, 'html.parser')
 
 # 원하는 데이터 추출
 title = soup.title.string
-print(title) # 출력: 웹 페이지의 제목
+print(title) # 웹 페이지의 제목
 ```
 웹 스크래핑은 데이터를 자동으로 추출하여 분석에 활용할 수 있게 해줍니다. 웹 페이지에서 HTML 태그를 탐색하고 필요한 데이터를 가져옵니다.
 
@@ -131,7 +131,7 @@ response = requests.get(url)
 
 # JSON 데이터 처리
 data = response.json()
-print(data['login']) # 출력: octocat (GitHub 사용자 로그인 이름)
+print(data['login']) # octocat (GitHub 사용자 로그인 이름)
 ```
 API는 JSON 형식으로 데이터를 반환하며, 이를 쉽게 처리할 수 있습니다. 위의 예시에서는 GitHub API를 호출하여 사용자 정보를 가져왔습니다.
 
