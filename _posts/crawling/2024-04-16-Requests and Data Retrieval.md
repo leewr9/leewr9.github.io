@@ -28,8 +28,7 @@ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 ## HTTP Requests
 Python에서 HTTP 요청을 보내는 가장 간편한 방법은 `requests` 라이브러리를 사용하는 것입니다. 이 라이브러리를 사용하면 `GET`, `POST` 요청을 쉽게 보낼 수 있으며, 응답도 쉽게 처리할 수 있습니다. `requests` 라이브러리는 HTTP 요청을 처리하고 서버로부터 받은 응답을 Python 객체로 변환해줍니다.
 
-먼저 `requests` 라이브러리를 설치해야 합니다:
-```
+```bash
 pip install requests
 ```
 

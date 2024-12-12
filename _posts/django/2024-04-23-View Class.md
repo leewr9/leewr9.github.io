@@ -103,7 +103,7 @@ myproject/
 ```
 
 ```html
-<!--404.html-->
+<!-- 404.html -->
 
 <!DOCTYPE html>
 <html lang="ko">

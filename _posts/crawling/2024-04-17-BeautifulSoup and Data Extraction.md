@@ -13,8 +13,7 @@ HTML 문서는 트리 구조로 되어 있으며, 각 요소는 "태그"라고 �
 
 DOM은 HTML 문서의 각 태그를 노드(Node)로 변환하여 구조적으로 표현합니다. 예를 들어, `<div>`, `<a>`, `<p>` 같은 HTML 태그들이 DOM 트리에서 각각 하나의 노드로 나타납니다. BeautifulSoup는 이 DOM 구조를 바탕으로 HTML을 파싱하고, 원하는 데이터를 추출할 수 있게 합니다.
 
-BeautifulSoup를 사용하려면 먼저 설치해야 합니다:
-```
+```bash
 pip install beautifulsoup4
 ```
 

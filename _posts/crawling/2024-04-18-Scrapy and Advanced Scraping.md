@@ -11,16 +11,17 @@ tag: [Scrapy, Python, Crawling]
 ## Large-Scale Scraping
 `Scrapy`는 대규모 웹 크롤링 프로젝트에 적합한 프레임워크입니다. `Scrapy`는 요청을 처리하고, 응답을 파싱하며, 데이터를 저장하는 기능을 기본적으로 제공합니다. 대규모 크롤링을 할 때는 `Scrapy`를 통해 여러 페이지를 동시에 처리할 수 있습니다.
 
-`Scrapy`는 비동기식 요청을 처리하며, 각 요청이 끝날 때까지 기다리지 않고 다른 요청을 처리합니다. 이를 통해 크롤링 속도를 크게 향상시킬 수 있습니다. 또한, 분산 크롤링 기능도 지원하여 크롤링 작업을 여러 서버에서 분산시킬 수 있습니다.
-
-Scrapy를 사용하려면 먼저 설치해야 합니다:
-```
+```bash
 pip install scrapy
+
+# 새로운 프로젝트 생성
+scrapy startproject myproject
+
+# 새로운 spider 생성
+scrapy genspider myspider example.com
 ```
 
 ### Structure
-`Scrapy`는 프로젝트 기반으로 작동하며, 기본적인 프로젝트 구조는 다음과 같습니다:
-
 ```plaintext
 myproject/
 │
@@ -36,6 +37,7 @@ myproject/
         ├── __init__.py
         └──  myspider.py
 ```
+
 - `scrapy.cfg`: 프로젝트 설정 파일
 - `myproject/spiders/`: 크롤링할 사이트의 URL을 정의하는 파일
 - `myproject/items.py`: 스크래핑한 데이터를 저장할 클래스
@@ -43,16 +45,7 @@ myproject/
 - `myproject/settings.py`: 프로젝트의 설정 파일
 
 ### Usage
-
-`Scrapy` 프로젝트를 생성하려면 아래 명령어를 사용합니다:
-```bash
-scrapy startproject myproject
-```
-
-크롤러를 작성할 때는 `spider`를 생성합니다:
-```bash
-scrapy genspider myspider example.com
-```
+`Scrapy`는 비동기식 요청을 처리하며, 각 요청이 끝날 때까지 기다리지 않고 다른 요청을 처리합니다. 이를 통해 크롤링 속도를 크게 향상시킬 수 있습니다. 또한, 분산 크롤링 기능도 지원하여 크롤링 작업을 여러 서버에서 분산시킬 수 있습니다.
 
 ```python
 import scrapy

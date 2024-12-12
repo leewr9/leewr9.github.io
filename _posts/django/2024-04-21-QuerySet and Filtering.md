@@ -7,7 +7,7 @@ tag: [Python, Django]
 > QuerySet은 Django에서 데이터베이스 쿼리 결과를 나타내는 객체로, 데이터를 효율적으로 조회하고 관리할 수 있게 해줍니다. 다양한 메서드를 통해 특정 조건을 만족하는 데이터를 필터링하거나, 정렬 및 집계하는 등의 작업을 할 수 있습니다.
 
 ```python
-# views.py 샘플 모델
+# models.py 샘플 모델
 
 from django.db import models
 
@@ -49,6 +49,9 @@ class Post(models.Model):
 필터링은 조건에 맞는 여러 객체를 쿼리셋 형태로 반환하며, 조건에 맞는 객체가 없으면 빈 쿼리셋을 반환합니다. 여러 조건이 필요하다면 조건을 결합하여 쿼리할 수 있으며, 조건들은 모두 `AND` 연산으로 결합됩니다.
 
 ```python
+# shell
+
+from myapp.models import Post
 from datetime import datetime, timedelta
 
 # 모든 게시글 조회

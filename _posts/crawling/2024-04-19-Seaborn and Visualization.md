@@ -11,7 +11,6 @@ tag: [Seaborn, Python, Crawling]
 ## Seaborn Visualization
 `Seaborn`은 Python에서 데이터를 시각화하는 데 매우 유용한 라이브러리입니다. `Matplotlib`을 기반으로 하여 통계적 데이터를 쉽게 시각화할 수 있도록 도와줍니다. `Seaborn`을 사용하면 데이터의 분포, 관계, 트렌드 등을 직관적으로 분석할 수 있습니다.
 
-Seaborn을 사용하려면 먼저 설치해야 합니다:
 ```bash
 pip install seaborn
 ```
