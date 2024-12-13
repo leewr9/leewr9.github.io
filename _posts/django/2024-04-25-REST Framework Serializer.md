@@ -1,5 +1,5 @@
 ---
-title: DRF Serializer
+title: REST Framework Serializer
 category: Django
 tag: [REST Framework, Python, Django]
 ---
@@ -11,7 +11,7 @@ tag: [REST Framework, Python, Django]
 ---
 
 ## Serializer
-`Serializer`는 `DRF`에서 중요한 역할을 합니다. 데이터 모델을 JSON 형식으로 변환하거나, JSON 데이터를 모델의 필드에 맞는 Python 객체로 변환하는 작업을 합니다. Django에서는 `models.py`에서 정의된 모델을 기반으로 데이터를 JSON 형식으로 출력하거나, 그 반대로 변환할 때 `Serializer`를 사용합니다.
+`Serializer`는 DRF에서 중요한 역할을 합니다. 데이터 모델을 JSON 형식으로 변환하거나, JSON 데이터를 모델의 필드에 맞는 Python 객체로 변환하는 작업을 합니다. Django에서는 `models.py`에서 정의된 모델을 기반으로 데이터를 JSON 형식으로 출력하거나, 그 반대로 변환할 때 `Serializer`를 사용합니다.
 
 ```bash
 pip install djangorestframework

@@ -154,6 +154,45 @@ def about(request):
 
 ---
 
+## Custom Command
+Django에서는 기본적으로 제공되는 `manage.py` 명령어 외에도 커스텀 명령어를 작성하여 특정 작업을 자동화하거나 프로젝트의 요구에 맞는 명령어를 추가할 수 있습니다. Django의 커스텀 관리 명령어는 `django.core.management.base.BaseCommand`를 상속하여 만듭니다.
+
+```plaintext
+project/
+│
+├── myproject/
+│   ├── settings.py
+│   └── ...
+│
+└── myapp/
+    ├── management/
+    │   └── commands/
+    │       ├── __init__.py
+    │       └── custom_command.py
+    └── ...
+```
+
+```python
+# custom_command.py
+
+from django.core.management.base import BaseCommand
+
+class Command(BaseCommand):
+    help = 'My custom command'
+
+    def handle(self, *args, **kwargs):
+        # 실행할 작업
+        print("커스텀 명령어가 실행되었습니다!")
+```
+
+```bash
+python manage.py custom_command
+
+# 커스텀 명령어가 실행되었습니다!
+```
+
+---
+
 ## References
 - [Django 공식 문서](https://www.djangoproject.com/)
 - [Python 공식 문서](https://docs.python.org/3/)

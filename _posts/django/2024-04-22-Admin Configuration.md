@@ -63,7 +63,6 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 ```
-
 - `list_display`: 리스트 화면에서 표시할 필드.
 - `search_fields`: 검색 가능한 필드.
 - `readonly_fields`: 수정 불가능한 필드.

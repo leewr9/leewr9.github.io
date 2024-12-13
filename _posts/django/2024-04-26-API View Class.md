@@ -1,12 +1,12 @@
 ---
-title: DRF API View
+title: API View Class
 category: Django
 tag: [REST Framework, Python, Django]
 ---
 
 {% raw %}
 
-> Django REST Framework (DRF)는 웹 애플리케이션에서 RESTful API를 쉽게 구현할 수 있게 도와주는 강력한 도구입니다. API 뷰는 클라이언트가 요청을 보내고 응답을 받을 수 있는 인터페이스를 제공합니다. DRF에서는 함수 기반 API 뷰 (FBV), 클래스 기반 API 뷰 (CBV), ViewSet을 사용하여 API를 더욱 효율적으로 구축할 수 있습니다.
+> Django REST Framework API 뷰는 클라이언트가 요청을 보내고 응답을 받을 수 있는 인터페이스를 제공합니다. DRF에서는 함수 기반 API 뷰 (FBV), 클래스 기반 API 뷰 (CBV), ViewSet을 사용하여 API를 더욱 효율적으로 구축할 수 있습니다.
 
 ---
 
@@ -159,9 +159,7 @@ urlpatterns = [
 ```
 BookViewSet은 `ModelViewSet`을 상속받아, Book 모델에 대한 CRUD 작업을 자동으로 처리합니다. `DefaultRouter`는 BookViewSet을 `books/` 경로에 자동으로 매핑해줍니다. 이 방식은 RESTful API의 구현을 매우 간편하게 만들어 줍니다.
 
----
-
-## Override
+### Override
 `APIView`나` ViewSet`에서 제공하는 다양한 메서드를 오버라이드하여 클라이언트의 요청을 효율적으로 처리하고, 추가적인 비즈니스 로직을 적용할 수 있습니다.
 
 ```python
@@ -189,7 +187,7 @@ class BookViewSet(viewsets.ModelViewSet):
         """
         serializer = BookModelSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()  # 데이터가 유효하면 책을 저장
+            serializer.save() # 데이터가 유효하면 책을 저장
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -198,14 +196,12 @@ class BookViewSet(viewsets.ModelViewSet):
         새로운 책을 저장할 때, 추가적인 로직을 수행할 수 있습니다.
         예를 들어, 책을 저장하기 전에 작성자를 현재 로그인한 사용자로 설정하는 등
         """
-        user = self.request.user  # 현재 로그인한 사용자
-        serializer.save(user=user)  # 책 저장 시 user 필드에 현재 사용자 지정
+        user = self.request.user # 현재 로그인한 사용자
+        serializer.save(user=user) # 책 저장 시 user 필드에 현재 사용자 지정
 ```
 
----
-
-## Filtering
-`Django Filter`를 사용하면 데이터를 조건에 맞게 필터링할 수 있습니다. DRF에서는 `FilterSet`을 사용하여 필터링 조건을 정의합니다. `FilterSet`은 필터링을 위한 조건을 정의할 수 있는 DRF의 도구입니다. `django_filters` 라이브러리를 설치한 후 필터셋을 정의하고 사용합니다.
+### FilterSet
+Django Filter를 사용하면 데이터를 조건에 맞게 필터링할 수 있습니다. DRF에서는 `FilterSet`을 사용하여 필터링 조건을 정의합니다. `FilterSet`은 필터링을 위한 조건을 정의할 수 있는 DRF의 도구입니다. `django_filters` 라이브러리를 설치한 후 필터셋을 정의하고 사용합니다.
 
 ```bash
 pip install django-filter
@@ -213,6 +209,7 @@ pip install django-filter
 
 ```python
 # views.py
+
 import django_filters
 from rest_framework import viewsets
 from .models import Book
@@ -237,9 +234,7 @@ class BookViewSet(viewsets.ModelViewSet):
 - 저자 이름으로 필터링: `GET /api/books/?author=John`
 - 출판 날짜로 필터링: `GET /api/books/?published_date=2020-01-01`
 
----
-
-## Paging
+### Pagination
 DRF에서는 페이징을 설정하여 데이터가 많을 때 성능을 최적화할 수 있습니다. 기본적으로 DRF는 페이지네이션을 지원하며, `settings.py`에서 설정을 변경하거나, `PageNumberPagination` 클래스로 변경하여 사용할 수 있습니다.
 
 ```python
@@ -260,12 +255,63 @@ from .models import Book
 from .serializers import BookModelSerializer
 
 class BookPagination(PageNumberPagination):
-    page_size = 5  # 한 페이지에 5개 데이터만 반환
+    page_size = 5 # 한 페이지에 5개 데이터만 반환
 
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookModelSerializer
     pagination_class = BookPagination
+```
+
+---
+
+## Permission Management
+Django REST Framework는 API에 대한 접근을 제어할 수 있도록 `permission_classes` 속성을 제공합니다. 이 시스템을 통해 특정 사용자나 그룹에만 API 접근을 허용하거나, 사용자가 인증되었는지 등을 검사할 수 있습니다.
+
+```python
+# views.py
+
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+
+class BookView(APIView):
+    permission_classes = [IsAuthenticated]
+    
+    def get(self, request):
+        return Response({'message': 'Hello, world!'})
+```
+- `IsAuthenticated`: 사용자가 인증되었는지 확인합니다. 인증되지 않은 사용자는 접근할 수 없습니다.
+- `IsAdminUser`: 사용자가 관리자 권한을 가지고 있는지 확인합니다. 관리자만 접근할 수 있습니다.
+- `IsAuthenticatedOrReadOnly`: 인증된 사용자에게는 읽기/쓰기 권한을 제공하고, 
+인증되지 않은 사용자에게는 읽기 권한만 제공합니다.
+- `AllowAny`: 모든 사용자가 접근할 수 있습니다. 인증 여부에 관계없이 API에 접근할 수 있도록 허용합니다.
+
+### Customization
+기본 제공되는 권한 클래스 외에도, 자체적인 권한 클래스를 만들어 더 복잡한 권한 로직을 구현할 수 있습니다. 커스텀 권한 클래스는 `permissions.BasePermission`을 상속하여 정의합니다.
+
+```python
+# permissions.py
+
+from rest_framework.permissions import BasePermission
+
+class IsOwner(BasePermission):
+    def has_object_permission(self, request, view, obj):
+        # 객체의 'owner' 필드가 요청한 사용자와 일치하는지 확인
+        return obj.owner == request.user
+```
+
+```python
+from .permissions import IsOwner
+from .models import Book
+
+class BookView(APIView):
+    permission_classes = [IsOwner]
+
+    def get(self, request, pk):
+        obj = Book.objects.get(pk=pk)
+        self.check_object_permissions(request, obj) # has_object_permission 호출
+        return Response({'message': 'You have access to this object.'})
 ```
 
 ---
