@@ -28,7 +28,7 @@ print(squared)  # [1, 4, 9, 16]
 
 ---
 
-## List and Dictionary Comprehension
+## Comprehensions
 리스트 컴프리헨션은 단일 줄에서 리스트를 생성하는 방법입니다. 동일한 방식으로 딕셔너리 컴프리헨션도 가능합니다. 컴프리헨션을 사용하면 코드가 더 간결하고 읽기 쉬워집니다.
 
 ### List Comprehension
@@ -49,9 +49,7 @@ print(squared_dict)  # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 
 ---
 
-## Decorators and Closures
-
-### Decorators
+## Decorators
 데코레이터는 함수를 수정하거나 확장할 수 있게 해주는 기능입니다. 데코레이터는 다른 함수를 인수로 받아, 그 함수의 실행을 수정하거나 확장합니다.
 
 ```python
@@ -75,7 +73,9 @@ greet()
 ```
 데코레이터는 주로 함수나 메서드의 동작을 수정할 때 사용됩니다. `@decorator` 구문을 통해 함수에 적용할 수 있습니다.
 
-### Closures
+---
+
+## Closures
 클로저는 함수 안에서 정의된 다른 함수로, 외부 함수의 변수를 기억하는 특성을 가집니다.
 
 ```python

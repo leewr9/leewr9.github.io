@@ -8,7 +8,7 @@ tag: [Syntax, Python]
 
 ---
 
-## Variables and Data Types
+## Variables
 Python은 동적 타입 언어로, 변수에 값을 할당할 때 그 타입이 자동으로 결정됩니다. 주요 데이터 타입에는 정수(int), 실수(float), 문자열(str), 불리언(bool) 등이 있습니다.
 
 ```python
