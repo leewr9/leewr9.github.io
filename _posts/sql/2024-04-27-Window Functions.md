@@ -104,7 +104,8 @@ FROM sales;
 
 ```sql
 SELECT customer_id, total_spent,
-       LAST_VALUE(total_spent) OVER (ORDER BY sale_date ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS last_spent
+       LAST_VALUE(total_spent) OVER (ORDER BY sale_date 
+       ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS last_spent
 FROM sales;
 ```
 
