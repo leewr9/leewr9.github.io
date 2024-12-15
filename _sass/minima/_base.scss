@@ -188,7 +188,7 @@ pre {
 
 .highlight {
   margin-top: $spacing-unit * 0.5;
-  white-space: pre-wrap;
+  white-space: pre;
   border-radius: 3px;
   background: $code-background-color;
   @extend %vertical-rhythm;
