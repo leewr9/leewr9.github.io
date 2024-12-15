@@ -190,7 +190,6 @@ pre {
   margin-top: $spacing-unit * 0.5;
   border-radius: 3px;
   background: $code-background-color;
-  white-space: pre-wrap;
   @extend %vertical-rhythm;
 
   .highlighter-rouge & {
