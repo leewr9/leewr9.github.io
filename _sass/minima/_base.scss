@@ -172,7 +172,7 @@ code {
 }
 
 code {
-  padding: 5px;
+  padding: 1px 5px;
 }
 
 pre {
@@ -187,8 +187,8 @@ pre {
 }
 
 .highlight {
-  width: 100%;
   margin-top: $spacing-unit * 0.5;
+  white-space: pre-wrap;
   border-radius: 3px;
   background: $code-background-color;
   @extend %vertical-rhythm;
