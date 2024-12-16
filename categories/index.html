@@ -20,10 +20,9 @@ search_omit: true
     {% if site.categories %}
     <ul class="category-list">
       {%- for category in site.categories -%}
-      <li>
-          <a href="{{ "/" | relative_url }}categories/{{ category[0] | downcase }}">{{ category[0] }}</a>
-          <span>{{ category[1].size }} post </span>
-      </li>
+      <a href="{{ "/" | relative_url }}categories/{{ category[0] | downcase }}">
+        <li>{{ category[0] }} <span>{{ category[1].size }} post</span></li>
+      </a>
       {%- endfor -%}
     {% else %}
     <p><strong>Category not found :(</strong></p>

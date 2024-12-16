@@ -321,14 +321,23 @@
 }
 
 .category-list {
-  margin-left:$base-font-size;
+  margin-left:0;
   list-style: none;
   
   li {
-    font-size: $base-font-size * 1.5;
-    margin-bottom: $spacing-unit;
-    padding-bottom: $base-font-size;
-    border-bottom: 1px solid $border-color-01;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    font-size: $base-font-size * 1.25;
+    padding: 15px $base-font-size * 1.25;
+    border-radius: 3px;
+    border: 1px solid $border-color-01;
+    background-color: $background-color;
+  
+    &:hover { 
+      border-color: $border-color-02;
+      background-color: $border-color-01;
+    }
   }
   
   span {
