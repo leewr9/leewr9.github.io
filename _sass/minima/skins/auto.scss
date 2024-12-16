@@ -11,8 +11,8 @@ $color-scheme-dark: false !default;
 // ----------
 
 $lm-brand-color:           #828282 !default;
-$lm-brand-color-light:     lighten($lm-brand-color, 40%) !default;
-$lm-brand-color-dark:      darken($lm-brand-color, 25%) !default;
+$lm-brand-color-light:     lighten($lm-brand-color, 25%) !default;
+$lm-brand-color-dark:      darken($lm-brand-color, 15%) !default;
 
 $lm-site-title-color:      $lm-brand-color-dark !default;
 

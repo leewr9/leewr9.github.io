@@ -52,8 +52,6 @@ ROLLBACK
 ## PROCEDURE
 프로시저는 데이터베이스 내에서 일련의 SQL 명령을 수행하는 프로그램 블록입니다. 프로시저는 매개변수를 받을 수 있으며, 여러 SQL 명령을 포함하여 복잡한 작업을 처리할 수 있습니다. 저장 프로시저는 `CALL` 명령어로 실행됩니다.
 
-예시:
-
 ```sql
 CREATE OR REPLACE PROCEDURE transfer_funds(from_id INT, to_id INT, amount DECIMAL) -- 매개변수
 AS $$
