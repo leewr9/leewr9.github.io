@@ -1,8 +1,22 @@
+
+* {
+  &::-webkit-scrollbar {
+    width: $extra-small-font-size;
+    height: $extra-small-font-size;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $border-color-01;
+    border-radius: 3px;
+    &:hover { background-color: $border-color-02 }
+  }
+}
+
 html {
   font-size: $base-font-size;
   scroll-behavior: smooth;
   letter-spacing: -1px;
 }
+
 
 /**
  * Reset some basic elements
@@ -186,9 +200,13 @@ pre {
   }
 }
 
+.highlighter-rouge {
+  min-width: 0;
+  width: 100%;
+}
+
 .highlight {
   margin-top: $spacing-unit * 0.5;
-  white-space: pre;
   border-radius: 3px;
   background: $code-background-color;
   @extend %vertical-rhythm;
@@ -197,7 +215,6 @@ pre {
     background: $code-background-color;
   }
 }
-
 
 /**
  * Wrapper
