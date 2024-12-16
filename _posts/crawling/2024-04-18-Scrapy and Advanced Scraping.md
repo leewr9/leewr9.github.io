@@ -175,8 +175,8 @@ OpenAPI 문서를 통해 API 엔드포인트와 데이터를 요청하는 방법
 ---
 
 ## References
-- [Python 공식 문서](https://docs.python.org/3/)
 * [Scrapy 문서](https://scrapy.org/)
+- [Python 공식 문서](https://docs.python.org/3/)
 
 <nav class='post-toc' markdown='1'>
   <h2>Contents</h2>

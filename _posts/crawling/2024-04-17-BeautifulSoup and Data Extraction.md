@@ -87,8 +87,8 @@ print(link) # 'https://www.example.com' 출력
 ---
 
 ## References
-- [Python 공식 문서](https://docs.python.org/3/)
 - [BeautifulSoup 공식 문서](https://www.crummy.com/software/BeautifulSoup/)
+- [Python 공식 문서](https://docs.python.org/3/)
 
 <nav class="post-toc" markdown="1">
   <h2>Contents</h2>

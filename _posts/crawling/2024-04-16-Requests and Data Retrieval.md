@@ -84,8 +84,8 @@ Disallow: /
 ---
 
 ## References
-- [Python 공식 문서](https://docs.python.org/3/)
 - [Requests 공식 문서](https://requests.readthedocs.io/en/latest/)
+- [Python 공식 문서](https://docs.python.org/3/)
 
 <nav class="post-toc" markdown="1">
   <h2>Contents</h2>

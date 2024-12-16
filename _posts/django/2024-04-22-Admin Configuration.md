@@ -16,7 +16,7 @@ python manage.py createsuperuser
 ```
 명령어 실행 후 사용자 이름, 이메일, 비밀번호를 입력하여 관리자 계정을 생성합니다.
 
-![](\assets\posts\2024-04-22-Admin Configuration\admin.png)
+[![](\assets\posts\2024-04-22-Admin Configuration\admin.png)](\assets\posts\2024-04-22-Admin Configuration\admin.png)
 ```python
 # urls.py
 
@@ -34,8 +34,8 @@ urlpatterns = [
 ## Model Registration
 모델을 Admin 사이트에서 관리하려면 `admin.py` 파일에 등록해야 합니다.
 
-![](\assets\posts\2024-04-22-Admin Configuration\register.png)
-![](\assets\posts\2024-04-22-Admin Configuration\register_author.png)
+[![](\assets\posts\2024-04-22-Admin Configuration\register.png)](\assets\posts\2024-04-22-Admin Configuration\register.png)
+[![](\assets\posts\2024-04-22-Admin Configuration\register_author.png)](\assets\posts\2024-04-22-Admin Configuration\register_author.png)
 ```python
 # admin.py
 
@@ -52,7 +52,7 @@ admin.site.register(Post)
 ## Customization
 관리 인터페이스를 커스터마이징하려면 `ModelAdmin` 클래스를 사용합니다.
 
-![](\assets\posts\2024-04-22-Admin Configuration\custom.png)
+[![](\assets\posts\2024-04-22-Admin Configuration\custom.png)](\assets\posts\2024-04-22-Admin Configuration\custom.png)
 ```python
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'created_at', 'is_published') # 리스트에 표시할 필드
@@ -72,7 +72,7 @@ admin.site.register(Post, PostAdmin)
 ### Filter
 필터링을 더 세부적으로 설정하려면 커스텀 필터를 정의할 수 있습니다.
 
-![](\assets\posts\2024-04-22-Admin Configuration\filter.png)
+[![](\assets\posts\2024-04-22-Admin Configuration\filter.png)](\assets\posts\2024-04-22-Admin Configuration\filter.png)
 ```python
 class PublishedFilter(admin.SimpleListFilter):
     title = '공개 여부'
@@ -97,7 +97,7 @@ class PostAdmin(admin.ModelAdmin):
 ### Action
 데이터에 대한 사용자 정의 액션을 정의할 수 있습니다.
 
-![](\assets\posts\2024-04-22-Admin Configuration\action.png)
+[![](\assets\posts\2024-04-22-Admin Configuration\action.png)](\assets\posts\2024-04-22-Admin Configuration\action.png)
 ```python
 def mark_as_published(modeladmin, request, queryset):
     queryset.update(is_published=True)

@@ -134,8 +134,8 @@ urlpatterns = [
 ## View Request Flow
 Django의 뷰(Views)는 사용자의 요청에 대한 응답을 처리하는 함수 또는 클래스를 의미합니다. `views.py` 파일에서 요청에 대해 적절한 HTML 페이지를 반환하거나 데이터를 반환하는 등의 작업을 정의할 수 있습니다.
 
-![](\assets\posts\2024-04-21-Getting Started\home.png)
-![](\assets\posts\2024-04-21-Getting Started\about.png)
+[![](\assets\posts\2024-04-21-Getting Started\home.png)](\assets\posts\2024-04-21-Getting Started\home.png)
+[![](\assets\posts\2024-04-21-Getting Started\about.png)](\assets\posts\2024-04-21-Getting Started\about.png)
 ```python
 # views.py
 
