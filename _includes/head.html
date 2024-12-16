@@ -16,6 +16,8 @@
   {%- include favicon.html -%}
   
   <meta property="og:title" content="{{ page.title }}">
-  <meta property="og:description" content="{{ page.content | strip_html | truncatewords: 15 }}">
   <meta property="og:image" content="/assets/images/main.png">
+  {% if page.category && page.tag %}
+    <meta property="og:description" content="{{ page.content | strip_html | truncatewords: 15 }}">
+  {% endif %}
 </head>
