@@ -321,6 +321,9 @@
 }
 
 .category-list {
+  margin-left:$base-font-size;
+  list-style: none;
+  
   li {
     font-size: $base-font-size * 1.5;
     margin-bottom: $spacing-unit;

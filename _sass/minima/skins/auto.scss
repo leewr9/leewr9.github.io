@@ -41,7 +41,6 @@ $lm-table-border-color:    $lm-border-color-01 !default;
 @mixin lm-highlight {
   .highlight {
     .c     { color: #998; font-style: italic } // Comment
-    .err   { color: #a61717; background-color: #e3d2d2 } // Error
     .k     { font-weight: bold } // Keyword
     .o     { font-weight: bold } // Operator
     .cm    { color: #998; font-style: italic } // Comment.Multiline
@@ -142,7 +141,6 @@ $dm-table-border-color:    $dm-border-color-01 !default;
 @mixin dm-highlight {
   .highlight {
     .c     { color: #545454; font-style: italic } // Comment
-    .err   { color: #f07178; background-color: #e3d2d2 } // Error
     .k     { color: #89DDFF; font-weight: bold } // Keyword
     .o     { font-weight: bold } // Operator
     .cm    { color: #545454; font-style: italic } // Comment.Multiline

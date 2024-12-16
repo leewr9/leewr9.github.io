@@ -140,7 +140,6 @@ $table-border-color:    $sol-mono1 !default;
 
 .highlight {
   .c     { color: $sol-mono1; font-style: italic } // Comment
-  .err   { color: $sol-red } // Error
   .k     { color: $sol-mono01; font-weight: bold } // Keyword
   .o     { color: $sol-mono01; font-weight: bold } // Operator
   .cm    { color: $sol-mono1; font-style: italic } // Comment.Multiline
