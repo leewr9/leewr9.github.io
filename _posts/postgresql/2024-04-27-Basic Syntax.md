@@ -1,10 +1,10 @@
 ---
 title: Basic Syntax
-category: SQL
-tag: [Syntax, SQL]
+category: PostgreSQL
+tag: [Syntax, Database, SQL, PostgreSQL]
 ---
 
-> SQL(Structured Query Language)은 관계형 데이터베이스에서 데이터를 관리하고 조작하는 데 사용되는 언어입니다.
+> PostgreSQL은 객체 관계형 데이터베이스 시스템(ORDBMS)으로, SQL(Structured Query Language)을 사용하여 데이터를 관리하고 처리합니다. PostgreSQL은 뛰어난 확장성, 안정성, 그리고 다양한 고급 기능을 제공합니다.
 
 ---
 
