@@ -332,7 +332,7 @@
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    font-size: $base-font-size * 1.25;
+    font-size: $base-font-size * 1.35;
     padding: 15px $base-font-size * 1.25;
     border-radius: 3px;
     border: 1px solid $border-color-01;
@@ -365,10 +365,15 @@
 .tag-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   span {
     font-size: $small-font-size;
     color: $brand-color;
+  }
+  
+  @media screen and (min-width: $on-medium) {
+    justify-content: left;
   }
 }
 
@@ -476,7 +481,14 @@
   display: block;
   text-decoration: none;
   @include relative-font-size(1.5);
-  
+
+  .post-preview {
+    display: inline-block;
+    line-height: $base-line-height * 1.25;
+    font-size: $small-font-size;
+    color: $brand-color;
+  }
+
   &,
   &:visited {
     color: $site-title-color;
@@ -485,14 +497,11 @@
   &:hover {
     text-decoration: none;
     color: $text-color;
-  }
-}
 
-.post-preview {
-  display: inline-block;
-  line-height: $base-line-height * 1.25;
-  font-size: $small-font-size;
-  color: $brand-color;
+    .post-preview {
+      color: $text-color;
+    }
+  }
 }
 
 .post-label {
