@@ -84,8 +84,15 @@ main {
  * Images
  */
 img {
-  max-width: 100%;
-  vertical-align: middle;
+  display: block;
+  max-width: 50%;
+  margin: 0 auto;
+  transition: transform 0.5s;
+  cursor: zoom-in;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 
