@@ -1,7 +1,5 @@
 
 * {
-  scrollbar-width: $extra-small-font-size;
-  scrollbar-color: $border-color-01 transparent;
   -ms-overflow-style: -ms-autohiding-scrollbar; 
 
   &::-webkit-scrollbar {
@@ -91,12 +89,10 @@ img {
   display: block;
   max-width: 50%;
   margin: 0 auto;
-  transition: transform 0.5s;
+  transition: transform 0.25s;
   cursor: zoom-in;
 
-  &:hover {
-    transform: scale(1.05);
-  }
+  &:hover { transform: scale(1.05) }
 }
 
 
@@ -311,6 +307,6 @@ table {
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-            -ms-overflow-style: -ms-autohiding-scrollbar;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
   }
 }
