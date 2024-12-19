@@ -454,7 +454,7 @@
     &:hover { 
       border-color: $border-color-02;
       background-color: $border-color-01;
-      transform: scale(1.05);
+      transform: scale(1.025);
     }
   }
   
@@ -535,10 +535,16 @@
   
   a {
     pointer-events: auto;
-    padding: $base-font-size;
-    margin-right: $spacing-unit;
-  
-    &:hover { text-decoration: none }
+    padding: $spacing-unit;
+
+    &:hover { 
+      text-decoration: none;
+
+      svg {
+        transition: transform 0.25s;
+        transform: scale(1.25);
+      }
+    }
   }
 }
 
@@ -574,10 +580,12 @@
     margin-bottom: $base-font-size;
     border: 1px solid $border-color-01;
     border-radius: 5px;
+    transition: transform 0.25s;
     
     &:hover {
       border-color: $border-color-02;
       background-color: $border-color-01;
+      transform: scale(1.025);
       
       .post-label,
       .post-meta,
