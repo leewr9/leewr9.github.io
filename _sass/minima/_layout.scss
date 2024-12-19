@@ -82,7 +82,7 @@
     height: calc(100vh - 9px);
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.25s ease, visibility 0s;
+    transition: opacity 0.25s ease;
     padding-top: $spacing-unit;
 
     .page-img,
@@ -109,7 +109,6 @@
       
     img {
       width: 25%;
-      border: 1px solid $border-color-01;
       cursor: pointer;
     }
 
@@ -338,6 +337,7 @@
   }
   
   h5 {
+    font-style: italic;
     font-weight: 300;
     color: $border-color-01;
   }
@@ -351,7 +351,7 @@
   a {
     &,
     &:visited {
-      color: $site-title-color;
+      color: $text-color;
     }
     &:hover { text-decoration: none }
   }
@@ -368,21 +368,18 @@
   }
 
   li {
-    border-radius: 5px;
-    border: 1px solid $border-color-01;
-    box-sizing: border-box;
     width: 48%;
+    box-sizing: border-box;
+    border: 1px solid $border-color-01;
+    border-radius: 5px;
     margin-right: 1%;
     margin-left: 1%;
-    padding-top: 2.5%;
-    padding-right: 2.5%;
-    padding-left: 2.5%;
     
     &:hover { border-color: $border-color-02 }
   }
 
   a {
-    font-size: $base-font-size;
+    font-size: $base-font-size * 1.25;
   }
 
   span {
@@ -573,8 +570,21 @@
   list-style: none;
 
   li {
+    padding: $small-font-size;
     margin-bottom: $base-font-size;
-    border-bottom: 1px solid $border-color-01;
+    border: 1px solid $border-color-01;
+    border-radius: 5px;
+    
+    &:hover {
+      border-color: $border-color-02;
+      background-color: $border-color-01;
+      
+      .post-label,
+      .post-meta,
+      .post-link,
+      .post-preview { color: $text-color }
+      .post-link { text-decoration: none }
+    }
   }
 }
 
@@ -598,12 +608,6 @@
 
   &,
   &:visited { color: $site-title-color }
-  
-  &:hover {
-    text-decoration: none;
-    color: $text-color;
-    .post-preview { color: $text-color }
-  }
 }
 
 .post-label {
@@ -701,7 +705,6 @@
 
   img {
     max-width: 100%;
-    border: 1px solid $border-color-01;
   }
   
   p {

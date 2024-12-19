@@ -71,7 +71,7 @@ else:
 ## Loops
 반복문은 일정한 조건을 만족하는 동안 코드를 반복적으로 실행하는 데 사용됩니다. `for`문과 `while`문이 있습니다.
 
-### for Loop
+### for
 ```python
 # for문: 범위 내에서 반복
 for i in range(3):
@@ -81,7 +81,7 @@ for i in range(3):
 # 2
 ```
 
-### while Loop
+### while
 ```python
 # while문: 조건이 참인 동안 반복
 count = 0

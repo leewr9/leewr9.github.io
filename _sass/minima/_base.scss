@@ -90,6 +90,8 @@ img {
   max-width: 50%;
   margin: 0 auto;
   transition: transform 0.25s;
+  border: 1px solid $border-color-01;
+  border-radius: 5px;
   cursor: zoom-in;
 
   &:hover { transform: scale(1.05) }
