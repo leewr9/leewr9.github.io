@@ -1,5 +1,5 @@
 ---
-title: Basic Syntax
+title: Query Syntax
 category: PostgreSQL
 tag: [Syntax, Database, SQL, PostgreSQL]
 ---
@@ -164,6 +164,32 @@ HAVING COUNT(*) >= 5;
  New York      |             12
  Los Angeles   |              8
  Chicago       |              6
+(3 rows)
+```
+
+---
+
+## CASE WHEN
+`CASE WHEN` 구문은 SQL에서 조건문을 처리할 때 사용되는 일반적인 제어 흐름 구문입니다. 주로 조건에 따라 다른 값을 반환하도록 하는 데 사용됩니다.
+
+```sql
+SELECT 
+    customer_id,
+    total_sales,
+    CASE
+        WHEN total_sales > 1000 THEN 'High'
+        WHEN total_sales BETWEEN 500 AND 1000 THEN 'Medium'
+        ELSE 'Low'
+    END AS sales_category
+FROM sales;
+```
+
+```sql
+ customer_id | total_sales | sales_category
+-------------+-------------+---------------
+           1 |        1100 | High
+           2 |         900 | Medium
+           3 |         100 | Low
 (3 rows)
 ```
 

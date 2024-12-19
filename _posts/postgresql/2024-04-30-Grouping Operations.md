@@ -61,9 +61,7 @@ BEGIN
     COMMIT;
 END;
 $$ LANGUAGE plpgsql;
-```
 
-```sql
 CALL transfer_funds(1, 2, 100); --  -- 고객 1에서 고객 2로 100 이체
 ```
 
@@ -83,11 +81,11 @@ BEGIN
     RETURN current_balance;
 END;
 $$ LANGUAGE plpgsql;
+
+SELECT get_balance(1); -- 고객 1의 잔액 조회
 ```
 
 ```sql
-SELECT get_balance(1); -- 고객 1의 잔액 조회
-
  get_balance 
 --------------
         500.00

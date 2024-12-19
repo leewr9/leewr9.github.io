@@ -1,10 +1,10 @@
 ---
-title: Table Merging
+title: Table Operations
 category: PostgreSQL
 tag: [Database, SQL, PostgreSQL]
 ---
 
-> PostgreSQL에서는 여러 테이블을 결합하여 하나의 결과 집합을 생성하는 작업이 가능합니다. 이 작업은 데이터 분석이나 보고서 작성 시 여러 테이블에 분산된 정보를 통합하고, 더 풍부하고 유용한 데이터를 제공하는 데 중요합니다.
+> PostgreSQL에서는 데이터를 효율적으로 처리하기 위해 테이블 형태의 구조를 생성하거나 결합하여 관리하는 방법이 중요합니다. 이 작업은 데이터 분석이나 보고서 작성 시 여러 테이블에 분산된 정보를 통합하고, 더 풍부하고 유용한 데이터를 제공하는 데 중요합니다.
 
 ---
 
@@ -89,6 +89,55 @@ FULL JOIN orders ON customers.customer_id = orders.customer_id;
            4 | Charlie    |      NULL
         NULL | NULL       |      1005
 (6 rows)
+```
+
+---
+
+## CTE
+`CTE (Common Table Expression)`는 쿼리에서 임시 테이블 역할을 하는 SQL 기능입니다.
+쿼리 실행 중에만 존재하며, 데이터베이스에 저장되지 않습니다. 복잡한 서브쿼리를 간단히 작성하거나, 재귀 쿼리를 처리할 때 유용합니다.
+
+```sql
+WITH CustomerSales AS (
+    SELECT customer_id, SUM(amount) AS total_sales
+    FROM sales
+    GROUP BY customer_id
+)
+
+SELECT * FROM CustomerSales
+WHERE total_sales > 1000;
+```
+
+```sql
+ customer_id | total_sales 
+-------------+-------------
+           1 |         1500       
+           2 |         1200       
+(2 rows)
+```
+
+---
+
+## CTAS
+`CTAS (Create Table As Select)`는 데이터를 복사하거나 변환하여 새로운 영구 테이블을 생성하는 SQL 명령문입니다.
+쿼리 결과를 기반으로 데이터를 영구적으로 저장하므로, 데이터 마이그레이션이나 데이터 변환 작업에 적합합니다.
+
+```sql
+CREATE TABLE HighValueCustomers AS
+SELECT customer_id, SUM(amount) AS total_sales
+FROM sales
+GROUP BY customer_id
+HAVING SUM(amount) > 1000;
+
+SELECT * FROM HighValueCustomers;
+```
+
+```sql
+ customer_id | total_sales 
+-------------+-------------
+           1 |         1500       
+           2 |         1200       
+(2 rows)
 ```
 
 ---
