@@ -44,12 +44,9 @@
     width: 35px;
     height: 35px;
     line-height: 0;
-    padding: $spacing-unit * .55 $spacing-unit * .35;
+    padding: $spacing-unit * .65 $spacing-unit * .35;
     text-align: center;
-
-    > svg path {
-      fill: $border-color-03;
-    }
+    > svg path { fill: $border-color-03 }
   }
 
   label[for="nav-trigger"] {
