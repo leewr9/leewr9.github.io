@@ -44,7 +44,7 @@ layout: base
             {% endif %}
             {{ post.title | escape }}
             <span class="post-meta">{{ post.date | date: date_format }}</span>
-            <sub class="post-preview">{{ post.content | strip_html | truncatewords: 15 }}</sub>
+            <sub class="post-preview">{{ post.content | strip_html | truncatewords: 25 }}</sub>
           </a>
         </h3>
         {%- if site.show_excerpts -%}

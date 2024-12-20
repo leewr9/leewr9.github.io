@@ -30,7 +30,6 @@
 
 .site-nav {
   position: absolute;
-  top: 9px;
   right: 0;
   background-color: $background-color;
   border-radius: 5px;
@@ -45,8 +44,7 @@
     width: 35px;
     height: 35px;
     line-height: 0;
-    padding-top: $spacing-unit * .35;
-    padding-right: $spacing-unit * .35;
+    padding: $spacing-unit * .55 $spacing-unit * .35;
     text-align: center;
 
     > svg path {
@@ -60,6 +58,7 @@
     width: 0;
     z-index: 2;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
   
   input ~ .trigger {
@@ -95,10 +94,7 @@
     height: 50vh;
     overflow-y: auto;
     -ms-overflow-style: none;
-    
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    &::-webkit-scrollbar { display: none }
   }
 
   .page-img {
@@ -532,19 +528,12 @@
   width: 100%;
   bottom: 0;
   margin-bottom: $spacing-unit;
-  
+
   a {
     pointer-events: auto;
     padding: $spacing-unit;
-
-    &:hover { 
-      text-decoration: none;
-
-      svg {
-        transition: transform 0.25s;
-        transform: scale(1.25);
-      }
-    }
+    -webkit-tap-highlight-color: transparent;
+    &:hover { text-decoration: none}
   }
 }
 
@@ -580,6 +569,7 @@
     margin-bottom: $base-font-size;
     border: 1px solid $border-color-01;
     border-radius: 5px;
+    background-color: $background-color;
     transition: transform 0.25s;
     
     &:hover {
@@ -620,6 +610,7 @@
 
 .post-label {
   font-size: $small-font-size;
+  margin-bottom: $extra-small-font-size;
   
   &,
   &:visited { color: $site-title-color }
