@@ -20,7 +20,7 @@ layout: base
     {%- endif -%}
     
     <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {%- assign date_format = site.minima.date_format | default: "%Y-%m-%d" -%}
       {%- for post in posts -%}
       <li>
         <h3>

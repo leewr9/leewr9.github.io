@@ -3,7 +3,7 @@ layout: null
 ---
 
 {% assign first = true %}
-{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+{%- assign date_format = site.minima.date_format | default: "%Y-%m-%d" -%}
 [
 {% for collection in site.collections %}
     {% for item in collection %}
