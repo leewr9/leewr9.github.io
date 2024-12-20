@@ -78,7 +78,7 @@
   input:checked ~ .trigger {
     box-sizing: border-box;
     width: 100vw;
-    height: calc(100vh - 9px);
+    height: 100vh;
     opacity: 1;
     visibility: visible;
     transition: opacity 0.25s ease;
