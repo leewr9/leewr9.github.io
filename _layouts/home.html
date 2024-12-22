@@ -20,7 +20,7 @@ layout: base
     {%- endif -%}
     
     <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%Y-%m-%d" -%}
+      {%- assign date_format = site.minima.date_format | default: "%Y년 %m월 %d일" -%}
       {%- for post in posts -%}
       <li>
         <h3>
@@ -34,12 +34,12 @@ layout: base
             </p>
             {%- endif -%} 
             {{ post.category | escape }} {{ post.title | escape }}
-            <span class="post-meta">
-              {{ post.date | date: date_format }}
-            </span>
             <sub class="post-preview">{{ post.content | strip_html | truncatewords: 35 }}</sub>
           </a>
         </h3>
+        <span class="post-meta" style="width: 100%;">
+          {{ post.date | date: date_format }}
+        </span>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
