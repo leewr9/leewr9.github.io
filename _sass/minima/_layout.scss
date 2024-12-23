@@ -356,27 +356,37 @@
  */
 .search {
   div {
+    display: block;
+  }
+
+  .search-form {
     display: flex;
-    flex-wrap: wrap;
   }
 
-  li {
-    width: 48%;
-    box-sizing: border-box;
-    border: 1px solid $border-color-01;
-    border-radius: 5px;
-    margin-right: 1%;
-    margin-left: 1%;
-    
-    &:hover { border-color: $border-color-02 }
-  }
-
-  a {
-    font-size: $base-font-size * 1.25;
-  }
-
-  span {
-    display: inline-block;
+  @media screen and (min-width: $on-medium) {
+    div {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    li {
+      width: 48%;
+      box-sizing: border-box;
+      border: 1px solid $border-color-01;
+      border-radius: 5px;
+      margin-right: 1%;
+      margin-left: 1%;
+      
+      &:hover { border-color: $border-color-02 }
+    }
+  
+    a {
+      font-size: $base-font-size * 1.25;
+    }
+  
+    span {
+      display: inline-block;
+    }
   }
 }
 
@@ -593,6 +603,11 @@
   display: block;
   text-decoration: none;
   @include relative-font-size(1.5);
+
+  h3 {
+    margin: 0;
+    font-size: $base-font-size * 1.5;
+  }
   
   .post-preview {
     display: inline-block;
