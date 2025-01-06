@@ -32,7 +32,18 @@ To run the site locally, follow these steps:
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute it according to the terms of the license.
+### This project license:
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### Third-party libraries used in this project:
+
+- **Jekyll**: A simple and blog-aware static site generator.
+  - License: MIT License
+  - URL: https://github.com/jekyll/jekyll
+
+- **Minima**: A clean and minimalist theme for Jekyll.
+  - License: MIT License
+  - URL: https://github.com/jekyll/minima
 
 ## Author
 
