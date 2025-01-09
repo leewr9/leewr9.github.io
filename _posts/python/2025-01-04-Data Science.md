@@ -62,7 +62,7 @@ print(df.head()) # 첫 5행
 ### Matplotlib
 Matplotlib는 가장 널리 사용되는 데이터 시각화 라이브러리 중 하나로, 다양한 그래프를 그릴 수 있습니다.
 
-[![](\assets\posts\2024-04-16-Data Science\matplotlib.png)](\assets\posts\2024-04-16-Data Science\matplotlib.png)
+[![](\assets\posts\2025-01-04-Data Science\matplotlib.png)](\assets\posts\2025-01-04-Data Science\matplotlib.png)
 ```python
 import matplotlib.pyplot as plt
 
@@ -81,7 +81,7 @@ plt.show() # 선 그래프
 ### Seaborn
 Seaborn은 Matplotlib을 기반으로 한 고급 시각화 라이브러리로, 더 아름답고 간편한 시각화 도구를 제공합니다.
 
-[![](\assets\posts\2024-04-16-Data Science\seaborn.png)](\assets\posts\2024-04-16-Data Science\seaborn.png)
+[![](\assets\posts\2025-01-04-Data Science\seaborn.png)](\assets\posts\2025-01-04-Data Science\seaborn.png)
 ```python
 import seaborn as sns
 

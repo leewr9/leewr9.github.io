@@ -15,7 +15,7 @@ tag: [Konlpy, WordCloud, Python, Crawling]
 pip install wordcloud nltk
 ```
 
-[![](\assets\posts\2024-04-20-WordCloud and Visualization\wordcloud.png)](\assets\posts\2024-04-20-WordCloud and Visualization\wordcloud.png)
+[![](\assets\posts\2025-01-07-WordCloud and Visualization\wordcloud.png)](\assets\posts\2025-01-07-WordCloud and Visualization\wordcloud.png)
 ```python
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
@@ -67,7 +67,7 @@ print(pos_tags)
 pip install konlpy
 ```
 
-[![](\assets\posts\2024-04-20-WordCloud and Visualization\konlpy.png)](\assets\posts\2024-04-20-WordCloud and Visualization\konlpy.png)
+[![](\assets\posts\2025-01-07-WordCloud and Visualization\konlpy.png)](\assets\posts\2025-01-07-WordCloud and Visualization\konlpy.png)
 ```python
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
