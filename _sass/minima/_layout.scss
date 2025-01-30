@@ -9,13 +9,15 @@
   // Positioning context for the mobile navigation icon
   position: sticky;
   top: 0;
-  background-color: $background-color;
+  background-color: $header-color;
 }
 
 .site-title {
   @include relative-font-size(1.625);
   font-weight: 300;
-  margin-bottom: 0;
+  margin: 5px 0px;
+  padding: 0px 10px;
+  border-radius: 5px;
   float: left;
 
   @include media-query($on-palm) {
@@ -23,13 +25,18 @@
   }
 
   &,
-  &:visited {
-    color: $site-title-color;
+  &:visited { color: $site-title-color }
+
+  &:hover { 
+    text-decoration: none;
+    color: $text-color;
+    background-color: $hover-color;
   }
 }
 
 .site-nav {
   position: absolute;
+  margin-top: 5px;
   right: 0;
   background-color: $background-color;
   border-radius: 5px;
@@ -137,7 +144,7 @@
 
     &:hover {
       text-decoration: none;
-      background-color: $border-color-01;
+      background-color: $hover-color;
     }
     
     // Gaps between nav items, but not on the last one
@@ -185,12 +192,18 @@
       font-size: $base-font-size;
       line-height: $base-line-height;
       display: inline;
-      padding: 0;
-      margin-left: auto;
-
-      &:hover {
-        text-decoration: underline;
-        background-color: transparent;
+      padding: 5px 10px;
+      border-radius: 5px;
+  
+      &,
+      &:visited {
+        color: $site-title-color;
+      }
+  
+      &:hover { 
+        text-decoration: none;
+        color: $text-color;
+        background-color: $hover-color;
       }
 
       &:not(:last-child) {
@@ -330,9 +343,7 @@
   }
   
   h5 {
-    font-style: italic;
-    font-weight: 300;
-    color: $border-color-01;
+    color: $border-color-03;
   }
   
   ol {
@@ -455,8 +466,9 @@
     transition: transform 0.25s;
 
     &:hover { 
+      color: $site-title-color;
       border-color: $border-color-02;
-      background-color: $border-color-01;
+      background-color: $hover-color;
       transform: scale(1.025);
     }
   }
@@ -502,9 +514,10 @@
   &:visited { color: $site-title-color }
 
   &:hover { 
+    color: $site-title-color;
     text-decoration: none;
     border-color: $border-color-02;
-    background-color: $border-color-01;
+    background-color: $hover-color;
     transform: scale(1.05);
   }
 }
@@ -540,7 +553,7 @@
     pointer-events: auto;
     padding: $spacing-unit;
     -webkit-tap-highlight-color: transparent;
-    &:hover { text-decoration: none}
+    &:hover { text-decoration: none }
   }
 }
 
@@ -581,7 +594,7 @@
     
     &:hover {
       border-color: $border-color-02;
-      background-color: $border-color-01;
+      background-color: $hover-color;
       transform: scale(1.025);
       
       .post-label,
@@ -617,16 +630,24 @@
   }
 
   &,
-  &:visited { color: $site-title-color }
+  &:visited,
+  &:hover { color: $site-title-color }
 }
 
 .post-label {
   font-size: $small-font-size;
   margin-bottom: $extra-small-font-size;
+
+  svg {
+    margin-bottom: 1px;
+  }
   
   &,
-  &:visited { color: $site-title-color }
-  &:hover { text-decoration: none }
+  &:visited,
+  &:hover { 
+    text-decoration: none;
+    color: $site-title-color;
+  }
 }
 
 .post-tag {
@@ -641,7 +662,7 @@
 
   &:hover { 
     border-color: $border-color-02;
-    background-color: $border-color-01;
+    background-color: $hover-color;
     transform: scale(1.05);
   }
 }
@@ -667,9 +688,16 @@
   }
 
   a {
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+
     &,
     &:visited { color: $site-title-color }
-    &:hover { color: $text-color }
+    &:hover { 
+      color: $text-color;
+      background-color: $hover-color;
+    }
   }
   
   @media screen and (min-width: $on-max) {
@@ -728,7 +756,6 @@
   }
 }
 
-
 /**
  * Pagination navbar
  */
@@ -758,7 +785,7 @@
 
       &:hover { 
         border-color: $border-color-02;
-        background-color: $border-color-01;
+        background-color: $hover-color;
       }
     }
 

@@ -6,16 +6,16 @@ layout: base
   
   {% if page.tag %}
   <nav class="page-breadcrumb">
-    <a class="page-link" href="{{ "/" | relative_url }}">Home</a> >
-    <a class="page-link" href="{{ "/tags" | relative_url }}">Tags</a> >
+    <a class="page-link" href="{{ "/" | relative_url }}">Home</a> /
+    <a class="page-link" href="{{ "/tags" | relative_url }}">Tags</a> /
     {{ page.title }}
   </nav>
     {% assign label = page.tag | default: page.title %}
     {% assign posts = site.tags[label] %}
   {% else %}
   <nav class="page-breadcrumb">
-    <a class="page-link" href="{{ "/" | relative_url }}">Home</a> >
-    <a class="page-link" href="{{ "/categories" | relative_url }}">Categories</a> >
+    <a class="page-link" href="{{ "/" | relative_url }}">Home</a> /
+    <a class="page-link" href="{{ "/categories" | relative_url }}">Categories</a> /
     {{ page.title }}
   </nav>
     {% assign label = page.category | default: page.title %}

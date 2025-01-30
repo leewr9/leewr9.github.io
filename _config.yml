@@ -40,7 +40,7 @@ defaults:
     values:
       layout: post
       author: Rooam Lee
-      permalink: /post/:categories/:title
+      permalink: /post/:categories/:title/
       comments: true
 
 collections:
@@ -65,7 +65,7 @@ comments:
     repo_id: R_kgDONSl-SQ
     category: Comments
     category_id: DIC_kwDONSl-Sc4Ckjoj
-    theme: transparent_dark
+    theme: preferred_color_scheme
 
 # Minima specific settings, which are only available from Minima 3.0 onward.
 minima:

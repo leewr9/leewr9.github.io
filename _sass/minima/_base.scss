@@ -9,7 +9,7 @@
   &::-webkit-scrollbar-thumb {
     background-color: $border-color-01;
     border-radius: 3px;
-    &:hover { background-color: $border-color-02 }
+    &:hover { background-color: $hover-color }
   }
 }
 
@@ -192,20 +192,21 @@ pre,
 code {
   font-family: $code-font-family;
   font-size: 0.9375em;
-  border: 1px solid $border-color-01;
-  border-radius: 3px;
-  background-color: $code-background-color;
 }
 
 code {
-  padding: 1px 5px;
+  background-color: $code-background-color;
+  border-radius: 3px;
+  padding: 5px;
 }
 
 pre {
-  padding: 8px 12px;
+  background-color: $pre-background-color;
+  padding: 15px;
   overflow-x: auto;
 
   > code {
+    background-color: $pre-background-color;
     border: 0;
     padding-right: 0;
     padding-left: 0;
@@ -220,11 +221,11 @@ pre {
 .highlight {
   margin-top: $spacing-unit * .5;
   border-radius: 3px;
-  background: $code-background-color;
+  background: $pre-background-color;
   @extend %vertical-rhythm;
 
   .highlighter-rouge & {
-    background: $code-background-color;
+    background: $pre-background-color;
   }
 }
 
@@ -267,6 +268,10 @@ pre {
 
 .grey {
   color: #828282;
+}
+
+.icon {
+  color: $site-icon-color;
 }
 
 .svg-icon {
