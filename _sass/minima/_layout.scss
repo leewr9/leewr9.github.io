@@ -462,7 +462,7 @@
     padding: 15px $base-font-size * 1.25;
     border-radius: 3px;
     border: 1px solid $border-color-01;
-    background-color: $background-color;
+    background-color: $pre-background-color;
     transition: transform 0.25s;
 
     &:hover { 
@@ -507,7 +507,7 @@
   padding: 7px $base-font-size * 1.25;
   border-radius: 7px;
   border: 1px solid $border-color-01;
-  background-color: $background-color;
+  background-color: $pre-background-color;
   transition: transform 0.25s;
 
   &,
@@ -657,7 +657,7 @@
   padding: 7px $base-font-size;
   border-radius: 7px;
   border: 1px solid $border-color-01;
-  background-color: $background-color;
+  background-color: $pre-background-color;
   transition: transform 0.25s;
 
   &:hover { 
