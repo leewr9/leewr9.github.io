@@ -57,7 +57,7 @@ $lm-table-border-color:    $lm-border-color-01 !default;
     .gd .x { color: #000; background-color: #faa } // Generic.Deleted.Specific
     .ge    { font-style: italic } // Generic.Emph
     .gr    { color: #a00 } // Generic.Error
-    .gh    { color: #CF222E } // Generic.Heading
+    .gh    { color: #1F2328 } // Generic.Heading
     .gi    { color: #000; background-color: #dfd } // Generic.Inserted
     .gi .x { color: #000; background-color: #afa } // Generic.Inserted.Specific
     .go    { color: #888 } // Generic.Output
@@ -101,7 +101,7 @@ $lm-table-border-color:    $lm-border-color-01 !default;
     .sr    { color: #009926 } // Literal.String.Regex
     .s1    { color: #0A3069 } // Literal.String.Single
     .ss    { color: #990073 } // Literal.String.Symbol
-    .bp    { color: #CF222E } // Name.Builtin.Pseudo
+    .bp    { color: #0550AE } // Name.Builtin.Pseudo
     .vc    { color: #6639BA } // Name.Variable.Class
     .vg    { color: #6639BA } // Name.Variable.Global
     .vi    { color: #6639BA } // Name.Variable.Instance
@@ -164,7 +164,7 @@ $dm-table-border-color:    $dm-border-color-01 !default;
     .gd .x { color: #000; background-color: #faa } // Generic.Deleted.Specific
     .ge    { font-style: italic } // Generic.Emph
     .gr    { color: #f07178 } // Generic.Error
-    .gh    { color: #CF222E } // Generic.Heading
+    .gh    { color: #F0F6FC } // Generic.Heading
     .gi    { color: #000; background-color: #dfd } // Generic.Inserted
     .gi .x { color: #000; background-color: #afa } // Generic.Inserted.Specific
     .go    { color: #888 } // Generic.Output
@@ -208,7 +208,7 @@ $dm-table-border-color:    $dm-border-color-01 !default;
     .sr    { color: #A5D6FF } // Literal.String.Regex
     .s1    { color: #A5D6FF } // Literal.String.Single
     .ss    { color: #A5D6FF } // Literal.String.Symbol
-    .bp    { color: #CF222E } // Name.Builtin.Pseudo
+    .bp    { color: #79C0FF } // Name.Builtin.Pseudo
     .vc    { color: #F0F6FC } // Name.Variable.Class
     .vg    { color: #6639BA } // Name.Variable.Global
     .vi    { color: #6639BA } // Name.Variable.Instance
