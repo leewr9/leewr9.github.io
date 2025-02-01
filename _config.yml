@@ -87,13 +87,13 @@ minima:
   # Generate social links in footer.
   social_links:
     - { platform: github,         user_url: "https://github.com/leewr9" }
-    - { platform: codeberg,          user_url: "https://codeberg.org/rooam_lee" }
-    - { platform: devto,          user_url: "https://dev.to/rooam_lee" }
-    - { platform: gitlab,         user_url: "https://gitlab.com/rooam_lee" }
     - { platform: linkedin,       user_url: "https://www.linkedin.com/in/rooam-lee" }
-    - { platform: notion,         user_url: "https://www.notion.so/rooam-lee/" }
-    - { platform: stackoverflow,  user_url: "https://stackoverflow.com/users/28407569/rooam-lee" }
     - { platform: x,              user_url: "https://x.com/rooam_lee" }
     - { platform: youtube,        user_url: "https://www.youtube.com/@rooam_lee" }
+    - { platform: stackoverflow,  user_url: "https://stackoverflow.com/users/28407569/rooam-lee" }
+    - { platform: devto,          user_url: "https://dev.to/rooam_lee" }
+    - { platform: gitlab,         user_url: "https://gitlab.com/rooam_lee" }
+    - { platform: codeberg,       user_url: "https://codeberg.org/rooam_lee" }
+    - { platform: notion,         user_url: "https://www.notion.so/rooam-lee/" }
 
 
