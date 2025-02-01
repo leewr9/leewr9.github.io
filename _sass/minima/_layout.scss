@@ -351,14 +351,6 @@
     padding-bottom: $spacing-unit;
     border-bottom: 1px solid $border-color-01;
   }
-
-  a {
-    &,
-    &:visited {
-      color: $text-color;
-    }
-    &:hover { text-decoration: none }
-  }
 }
 
 
