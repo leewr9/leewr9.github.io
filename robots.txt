@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://leewr9.github.io/sitemap.xml
+Sitemap: https://leewr9.github.io/feed.xml
