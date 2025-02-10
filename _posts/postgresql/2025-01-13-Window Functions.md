@@ -83,7 +83,7 @@ FROM sales;
 `FIRST_VALUE`는 지정된 순서에서 첫 번째 값을 반환합니다.
 
 ```sql
-SELECT customer_id, total_spent,
+SELECT customer_id, sale_date, total_spent,
        FIRST_VALUE(total_spent) OVER (ORDER BY sale_date) AS first_spent
 FROM sales;
 ```
@@ -103,7 +103,7 @@ FROM sales;
 `LAST_VALUE`는 지정된 순서에서 마지막 값을 반환합니다.
 
 ```sql
-SELECT customer_id, total_spent,
+SELECT customer_id, sale_date, total_spent,
        LAST_VALUE(total_spent) OVER (ORDER BY sale_date 
        ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS last_spent
 FROM sales;
