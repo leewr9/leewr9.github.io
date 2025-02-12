@@ -81,7 +81,7 @@ Django 템플릿 상속을 사용하면 반복되는 HTML 코드를 효율적으
 </html>
 ```
 
-[![](\assets\posts\2025-01-10-Templates and Static\index.png)](\assets\posts\2025-01-10-Templates and Static\index.png)
+[![](\assets\posts\2025-01-16-Templates and Static\index.png)](\assets\posts\2025-01-16-Templates and Static\index.png)
 ```html
 <!-- index.html -->
  

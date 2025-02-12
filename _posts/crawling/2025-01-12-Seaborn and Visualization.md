@@ -16,7 +16,7 @@ pip install seaborn
 ```
 
 ### Histplot
-[![](\assets\posts\2025-01-07-Seaborn and Visualization\histplot.png)](\assets\posts\2025-01-07-Seaborn and Visualization\histplot.png)
+[![](\assets\posts\2025-01-12-Seaborn and Visualization\histplot.png)](\assets\posts\2025-01-12-Seaborn and Visualization\histplot.png)
 ```python
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -29,28 +29,28 @@ plt.show()
 ```
 
 ### Boxplot
-[![](\assets\posts\2025-01-07-Seaborn and Visualization\boxplot.png)](\assets\posts\2025-01-07-Seaborn and Visualization\boxplot.png)
+[![](\assets\posts\2025-01-12-Seaborn and Visualization\boxplot.png)](\assets\posts\2025-01-12-Seaborn and Visualization\boxplot.png)
 ```python
 sns.boxplot(x='day', y='total_bill', data=tips)
 plt.show()
 ```
 
 ### Scatterplot
-[![](\assets\posts\2025-01-07-Seaborn and Visualization\scatterplot.png)](\assets\posts\2025-01-07-Seaborn and Visualization\scatterplot.png)
+[![](\assets\posts\2025-01-12-Seaborn and Visualization\scatterplot.png)](\assets\posts\2025-01-12-Seaborn and Visualization\scatterplot.png)
 ```python
 sns.scatterplot(x='total_bill', y='tip', data=tips)
 plt.show()
 ```
 
 ### Lmplot 
-[![](\assets\posts\2025-01-07-Seaborn and Visualization\lmplot.png)](\assets\posts\2025-01-07-Seaborn and Visualization\lmplot.png)
+[![](\assets\posts\2025-01-12-Seaborn and Visualization\lmplot.png)](\assets\posts\2025-01-12-Seaborn and Visualization\lmplot.png)
 ```python
 sns.lmplot(x='total_bill', y='tip', data=tips)
 plt.show()
 ```
 
 ### Swarmplot 
-[![](\assets\posts\2025-01-07-Seaborn and Visualization\swarmplot.png)](\assets\posts\2025-01-07-Seaborn and Visualization\swarmplot.png)
+[![](\assets\posts\2025-01-12-Seaborn and Visualization\swarmplot.png)](\assets\posts\2025-01-12-Seaborn and Visualization\swarmplot.png)
 ```python
 sns.swarmplot(x='total_bill', y='tip', data=tips)
 plt.show()
@@ -62,7 +62,7 @@ plt.show()
 Seaborn의 `replot()` 기능을 사용하면 기존의 플롯을 분할 또는 재사용하거나 새 데이터를 적용하여 업데이트할 수 있습니다.
 
 ### Splitting
-[![](\assets\posts\2025-01-07-Seaborn and Visualization\replot-splittingl.png)](\assets\posts\2025-01-07-Seaborn and Visualization\replot-splittingl.png)
+[![](\assets\posts\2025-01-12-Seaborn and Visualization\replot-splittingl.png)](\assets\posts\2025-01-12-Seaborn and Visualization\replot-splittingl.png)
 ```python
 # relplot을 사용하여 col과 row로 데이터를 분할
 sns.relplot(
@@ -78,8 +78,8 @@ plt.show() # 'time'과 'sex'에 따른 산점도 플롯
 ```
 
 ### Replotting
-[![](\assets\posts\2025-01-07-Seaborn and Visualization\replot-total_bill.png)](\assets\posts\2025-01-07-Seaborn and Visualization\replot-total_bill.png)
-[![](\assets\posts\2025-01-07-Seaborn and Visualization\replot-size.png)](\assets\posts\2025-01-07-Seaborn and Visualization\replot-size.png)
+[![](\assets\posts\2025-01-12-Seaborn and Visualization\replot-total_bill.png)](\assets\posts\2025-01-12-Seaborn and Visualization\replot-total_bill.png)
+[![](\assets\posts\2025-01-12-Seaborn and Visualization\replot-size.png)](\assets\posts\2025-01-12-Seaborn and Visualization\replot-size.png)
 ```python
 # 첫 번째 플롯
 sns.set_theme(style='whitegrid')
