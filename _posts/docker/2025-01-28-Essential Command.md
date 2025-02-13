@@ -74,7 +74,7 @@ docker exec -it <container_name_or_id> <command>
 
 - `--user <username_or_uid>`: 옵션으로 특정 사용자로 명령어 실행
 ```bash
-docker exec -it --user root <container_name_or_id> sh # 관리자 권한으로 셸을 실행
+docker exec -it --user root <container_name_or_id> bash # 관리자 권한으로 셸을 실행
 ```
 
 ---
