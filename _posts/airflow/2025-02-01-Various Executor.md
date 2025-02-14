@@ -9,7 +9,7 @@ tag: [Executor, Airflow]
 ---
 
 ## SequentialExecutor
-SequentialExecutor는 가장 간단한 형태의 Executor입니다. 이 Executor는 단일 프로세스에서 작업을 순차적으로 실행합니다. 보통 개발 환경이나 테스트 환경에서 사용됩니다. 실제 프로덕션 환경에서는 성능이 제한적이기 때문에 사용되지 않습니다.
+SequentialExecutor는 가장 간단한 형태의 Executor입니다. 이 Executor는 단일 프로세스에서 작업을 순차적으로 실행합니다. 
 
 - 단일 프로세스에서 실행
 - 작업을 순차적으로 실행하며, 병렬 처리 불가
@@ -18,7 +18,8 @@ SequentialExecutor는 가장 간단한 형태의 Executor입니다. 이 Executor
 ---
 
 ## LocalExecutor
-LocalExecutor는 단일 머신에서 여러 작업을 병렬로 실행할 수 있는 Executor입니다. 작업을 순차적으로 실행하는 대신, 멀티 프로세싱을 사용하여 여러 작업을 동시에 실행할 수 있습니다. 이 Executor는 작은 규모의 클러스터에서 적당하며, 특히 하드웨어 리소스가 한정된 환경에서 유용합니다.
+LocalExecutor는 단일 머신에서 여러 작업을 병렬로 실행할 수 있는 Executor입니다. 
+작업을 순차적으로 실행하는 대신, 멀티 프로세싱을 사용하여 여러 작업을 동시에 실행할 수 있습니다. 
 
 - 병렬 실행으로 여러 작업을 동시에 실행
 - 단일 머신에서 멀티 프로세싱을 사용
@@ -27,7 +28,8 @@ LocalExecutor는 단일 머신에서 여러 작업을 병렬로 실행할 수 �
 ---
 
 ## CeleryExecutor
-CeleryExecutor는 분산 시스템에서 작업을 실행할 수 있는 Executor입니다. Celery는 메시지 큐를 사용하여 분산 환경에서 작업을 병렬로 처리할 수 있게 해줍니다. 여러 Worker들이 각각의 작업을 받아서 실행하는 방식으로, 성능과 확장성이 뛰어나 대규모 환경에서 많이 사용됩니다.
+CeleryExecutor는 분산 시스템에서 작업을 실행할 수 있는 Executor입니다. Celery는 메시지 큐를 사용하여 분산 환경에서 작업을 병렬로 처리할 수 있게 해줍니다. 
+여러 Worker들이 각각의 작업을 받아서 실행하는 방식으로, 성능과 확장성이 뛰어나 대규모 환경에서 많이 사용됩니다.
 
 - 분산 시스템에서 여러 작업을 병렬로 처리
 - Celery 메시지 큐를 통해 작업을 분배하고 처리
@@ -36,7 +38,8 @@ CeleryExecutor는 분산 시스템에서 작업을 실행할 수 있는 Executor
 ---
 
 ## KubernetesExecutor
-KubernetesExecutor는 `Kubernetes` 클러스터를 이용하여 각 작업을 컨테이너화하여 실행하는 Executor입니다. 각 작업은 독립적인 Pod로 실행되며, `Kubernetes`의 스케줄링과 관리 기능을 활용할 수 있습니다. 클라우드 환경에서 유용하며, 확장성과 유연성을 제공합니다.
+KubernetesExecutor는 `Kubernetes` 클러스터를 이용하여 각 작업을 컨테이너화하여 실행하는 Executor입니다. 
+각 작업은 독립적인 Pod로 실행되며, `Kubernetes`의 스케줄링과 관리 기능을 활용할 수 있습니다. 클라우드 환경에서 유용하며, 확장성과 유연성을 제공합니다.
 
 ### Inside Cluster
 
