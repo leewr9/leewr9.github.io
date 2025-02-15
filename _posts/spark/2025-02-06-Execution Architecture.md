@@ -82,6 +82,16 @@ grouped_df = selected_df.groupBy("department").avg("salary")  # Wide Dependency 
 result = grouped_df.show()
 ```
 
+```bash
++----------+-----------+
+|department|avg(salary)|
++----------+-----------+
+|        HR|     5250.0|
+|        IT|     7100.0|
+|   Finance|     6500.0|
++----------+-----------+
+```
+
 - Job 생성: `show()`가 호출되면서 Job이 생성됩니다.
 - Stage 1: `select()`는 `Narrow Dependency`이므로 같은 Stage에서 실행됩니다.
 - Stage 2: `groupBy()`는 `Wide Dependency`이므로 `Shuffling`이 발생하고 새로운 Stage가 생성됩니다.
@@ -132,8 +142,8 @@ df = df.coalesce(3)      # 3개의 파티션으로 합침
       FROM large_data AS l
       LEFT JOIN small_data AS s
       ON l.key = s.key
-  """).show()
-  ```
+  """)
+```
   
 ---
 

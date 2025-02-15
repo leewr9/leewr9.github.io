@@ -155,6 +155,7 @@ spark.udf.register("categorize_age", categorize_age, StringType())
 df.createOrReplaceTempView("people")
 spark.sql("SELECT Age, categorize_age(Age) FROM people").show()
 ```
+
 ```bash
 +---+-------------------+
 |Age|categorize_age(Age)|

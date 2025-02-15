@@ -22,10 +22,19 @@ rdd = sc.parallelize(data)
 
 # RDD 변환
 rdd_filtered = rdd.filter(lambda x: x[1] > 30)
-rdd_filtered.collect()
+rdd_collect = rdd_filtered.collect()
+
+for rdd_data in rdd_collect:
+    print(rdd_data)
 ```
+
+```bash
+('Alice', 34)
+('Bob', 45)
+```
+
 RDD는 데이터 변환 시 좀 더 세밀한 제어를 할 수 있지만, 그만큼 코드가 길어지고 복잡해질 수 있습니다. 
-또한, D`ataFrame`이나 `Spark SQL`을 사용한 방법에 비해 성능 최적화가 부족할 수 있습니다.
+또한, `DataFrame`이나 `Spark SQL`을 사용한 방법에 비해 성능 최적화가 부족할 수 있습니다.
 
 ---
 
@@ -44,8 +53,18 @@ df = spark.createDataFrame(data, ["Name", "Age"])
 
 # DataFrame 변환
 df_filtered = df.where(df.Age > 30)
-df_filtered.collect()
+df_filtered.show()
 ```
+
+```bash
++-----+---+
+| Name|Age|
++-----+---+
+|Alice| 34|
+|  Bob| 45|
++-----+---+
+```
+
 `DataFrame`은 `RDD`보다 더 간단하고 직관적이며, 성능 최적화가 내장되어 있기 때문에 많은 Spark 사용자에게 선호됩니다. 
 SQL 쿼리처럼 테이블을 다루는 방식은 데이터 처리 과정을 단순화시켜 줍니다.
 
@@ -68,8 +87,18 @@ df.createOrReplaceTempView("people")
 
 # SQL 쿼리 실행
 result = spark.sql("SELECT * FROM people WHERE Age > 30")
-result.collect()
+result.show()
 ```
+
+```bash
++-----+---+
+| Name|Age|
++-----+---+
+|Alice| 34|
+|  Bob| 45|
++-----+---+
+```
+
 `Spark SQL`은 `SQL`을 선호하는 사용자에게 익숙한 인터페이스를 제공하며, 복잡한 데이터 변환을 더 간단한 쿼리로 처리할 수 있습니다. 
 SQL을 사용하면 데이터에 대한 직관적인 접근이 가능하며, `DataFrame`과 동일한 최적화 기능을 활용할 수 있습니다.
 
