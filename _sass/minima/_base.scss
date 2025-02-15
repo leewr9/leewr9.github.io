@@ -196,8 +196,8 @@ code {
 
 code {
   background-color: $code-background-color;
-  border-radius: 3px;
-  padding: 5px;
+  border-radius: 6px;
+  padding: 4px 6px;
 }
 
 pre {
@@ -222,7 +222,6 @@ pre {
 
 .highlight {
   margin-top: $spacing-unit * .5;
-  border-radius: 3px;
   background: $pre-background-color;
   @extend %vertical-rhythm;
 

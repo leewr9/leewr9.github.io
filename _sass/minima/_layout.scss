@@ -705,6 +705,7 @@
 
 .post-content {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   margin-bottom: $spacing-unit;
 
   h1, h2 { margin-top: $spacing-unit }
