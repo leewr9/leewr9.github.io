@@ -68,7 +68,7 @@ ul, ol, dl, figure,
 
 hr {
   border: 0;
-  height: 1px;
+  height: .25em;
   background-color: $border-color-01;
   margin-top: $base-font-size;
 }
@@ -164,7 +164,7 @@ a {
  */
 blockquote {
   color: $brand-color;
-  border-left: 4px solid $border-color-01;
+  border-left: .25em solid $border-color-01;
   padding-left: $spacing-unit * .5;
   @include relative-font-size(1.125);
   font-style: italic;
@@ -294,7 +294,7 @@ table {
   text-align: $table-text-align;
   color: $table-text-color;
   border-collapse: collapse;
-  border: 1px solid $table-border-color;
+  
   tr {
     &:nth-child(even) {
       background-color: $table-zebra-color;
@@ -304,8 +304,8 @@ table {
     padding: ($spacing-unit * 33.3333333333 * .01) ($spacing-unit * .5);
   }
   th {
-    background-color: $table-header-bg-color;
-    border: 1px solid $table-header-border;
+    border: 1px solid $table-border-color;
+    text-align: center;
   }
   td {
     border: 1px solid $table-border-color;

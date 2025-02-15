@@ -660,15 +660,16 @@
 }
 
 .post-toc {
+  min-width: 10vw;
   grid-row: 2;
   margin-top: $base-font-size;
-  border-top: 1px solid $border-color-01;
+  border-top: .25em solid $border-color-01;
 
   h2 {
+    margin-bottom: 0 !important;
     @include relative-font-size(1.75);
 
     @media screen and (min-width: $on-large) {
-      border-bottom: 1px solid $border-color-01;
       font-size: $large-font-size !important; 
       @include relative-font-size(2);
     }
@@ -676,13 +677,16 @@
 
   li {
     line-height: $base-line-height * 1.25;
+    margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 
   a {
+    display: block;
+    width: 100%;
     text-decoration: none;
-    border-radius: 3px;
-    padding: 5px 10px;
+    padding-left: 6px;
+    border-radius: 6px;
 
     &,
     &:visited { color: $site-title-color }
@@ -745,7 +749,8 @@
   }
 
   li {
-    margin-bottom: $small-font-size;
+    margin-top: $small-font-size * 0.5;
+    margin-bottom: $small-font-size* 0.5;
   }
 }
 
