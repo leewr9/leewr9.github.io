@@ -17,6 +17,7 @@ docker compose up -d
 ```
 
 - `-d`: 백그라운드에서 실행
+- `-f`: 실행할 파일 지정
 
 ### down
 Docker Compose로 실행 중인 서비스를 종료하려면 `docker compose down` 명령어를 사용합니다.
