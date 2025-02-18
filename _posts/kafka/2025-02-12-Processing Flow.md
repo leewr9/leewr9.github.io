@@ -9,7 +9,7 @@ tag: [Consumer, Producer, Kafka]
 ---
 
 ## Producer
-`Producer`는 데이터를 **토픽(Topic)**에 전송하며, 카프카는 이를 **파티션(Partition)**에 분배합니다. 기본적으로 메시지의 **키(Key)**를 기준으로 파티션을 결정하고, 각 파티션은 메시지를 **오프셋(Offset)** 번호로 구분해 순서를 관리합니다.
+`Producer`는 데이터를 **토픽(Topic)**에 전송하며, 이를 **파티션(Partition)**에 저장합니다. 메시지는 **키(Key)**를 기반으로 특정 파티션에 할당되며, **오프셋(Offset)**을 통해 순서를 유지합니다. 또한, 데이터를 전송하기 전에 `Serialization`를 통해 바이트 형태로 변환합니다.
 
 [![](\assets\posts\2025-02-12-Processing Flow\producer.png)](\assets\posts\2025-02-12-Processing Flow\producer.png)
 
@@ -55,7 +55,7 @@ producer.close()
 ---
 
 ## Consumer
-`Consumer`는 지정된 토픽과 파티션에서 데이터를 읽습니다. 이때 중요한 것이 **오프셋(Offset)**으로, 이는 파티션 내 메시지의 위치를 나타내며, 메시지를 읽을 때마다 오프셋은 자동으로 증가하고, 성공적으로 처리된 메시지는 **커밋(commit)**되어 저장됩니다. 커밋된 오프셋을 통해, 컨슈머는 다음에 데이터를 어디서부터 읽을지 알 수 있습니다.
+`Consumer`는 **토픽(Topic)**에서 데이터를 읽고, **오프셋(Offset)**을 통해 메시지의 순서를 추적합니다. 메시지를 읽을 때마다 오프셋이 증가하며, 처리된 데이터는 **커밋(Commit)**을 통해 저장됩니다. 또한, 전송된 데이터를 사용하기 전에 `Deserialization`하여 원래 형식으로 변환합니다.
 
 [![](\assets\posts\2025-02-12-Processing Flow\consumer.png)](\assets\posts\2025-02-12-Processing Flow\consumer.png)
 
