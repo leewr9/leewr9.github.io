@@ -95,6 +95,9 @@ driver.implicitly_wait(10) # 최대 10초 대기
 - 특정 조건이 충족될 때까지 기다립니다.
 - 더 복잡한 대기 조건을 정의할 수 있습니다.
 - `WebDriverWait`과 `ExpectedConditions`를 함께 사용합니다.
+    - `presence_of_element_located`: 요소가 DOM에 존재할 때
+    - `visibility_of_element_located`: 요소가 DOM에 존재하며 가시적일 때
+    - `element_to_be_clickable`: 요소가 클릭 가능할 때
 
 ```python
 from selenium.webdriver.support.ui import WebDriverWait
@@ -105,11 +108,6 @@ wait = WebDriverWait(driver, 10)
 dynamic_element = wait.until(EC.presence_of_element_located((By.ID, 'dynamic-content')))
 print('Dynamic Content:', dynamic_element.text)
 ```
-
-- 대기 조건 종류:
-    - `presence_of_element_located`: 요소가 DOM에 존재할 때
-    - `visibility_of_element_located`: 요소가 DOM에 존재하며 가시적일 때
-    - `element_to_be_clickable`: 요소가 클릭 가능할 때
 
 ---
 

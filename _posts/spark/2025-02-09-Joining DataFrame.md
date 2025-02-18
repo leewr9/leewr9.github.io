@@ -32,7 +32,6 @@ result.collect()
 ### Broadcast
 DataFrame API에서는 broadcast()를 사용하여 작은 테이블을 브로드캐스트하여 성능을 향상시킬 수 있습니다.
 
-예제: DataFrame을 이용한 Broadcast 조인
 ```python
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import broadcast

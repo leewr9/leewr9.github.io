@@ -68,7 +68,6 @@ SELECT EXTRACT(YEAR FROM '2024-04-30'::DATE); -- 연도 추출
 ### DATE_TRUNC()
 `DATE_TRUNC()`는 주어진 날짜 값을 원하는 단위(예: 연도, 월, 일 등)로 자르는 데 사용됩니다.
 
-사용 예시:
 ```sql
 SELECT DATE_TRUNC('year', '2024-04-30'::DATE); -- 연도 단위로 자르기
 SELECT DATE_TRUNC('month', '2024-04-30'::DATE); -- 월 단위로 자르기
