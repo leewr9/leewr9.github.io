@@ -18,10 +18,25 @@ search_omit: true
 
   <div class="post-content">
     {% if site.tags %}
+    {%- assign sorted_tags = "" -%}
+    {%- for tag in site.tags -%}
+      {%- assign sort_key = tag[1].size | prepend: "00000" | slice: -5, 5 -%}
+      {%- assign title = tag[0] -%}
+      {%- assign size = tag[1].size -%}
+      {%- capture items -%}
+        {{ sort_key | append: ',' | append: title | append: ',' | append: size }}
+      {%- endcapture -%}
+      {%- assign sorted_tags = sorted_tags | append: items | append: '|' -%}
+    {%- endfor -%}
+
     <div class="tag-list">
-      {%- for tag in site.tags -%}
-      <a class="tag-item" href="{{ "/" | relative_url }}tags/{{ tag[0] | downcase }}">
-        {{ tag[0] }} <span> {{ tag[1].size }} </span>
+      {%- assign sorted_tags = sorted_tags | split: '|' | sort | reverse -%}
+      {%- for tag in sorted_tags -%}
+        {%- assign items = tag | split: ',' -%}
+        {%- assign title = items[1] -%}
+        {%- assign size = items[2] -%}
+      <a class="tag-item" href="{{ "/" | relative_url }}tags/{{ title | downcase }}">
+        {{ title }} <span> {{ size }} </span>
       </a>
       {%- endfor -%}
     </div>

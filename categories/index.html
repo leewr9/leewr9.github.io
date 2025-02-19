@@ -18,10 +18,25 @@ search_omit: true
 
   <div class="post-content">
     {% if site.categories %}
+    {%- assign sorted_categories = "" -%}
+    {%- for category in site.categories -%}
+      {%- assign sort_key = category[1].size | prepend: "00000" | slice: -5, 5 -%}
+      {%- assign title = category[0] -%}
+      {%- assign size = category[1].size -%}
+      {%- capture items -%}
+        {{ sort_key | append: ',' | append: title | append: ',' | append: size }}
+      {%- endcapture -%}
+      {%- assign sorted_categories = sorted_categories | append: items | append: '|' -%}
+    {%- endfor -%}
+
     <ul class="category-list">
-      {%- for category in site.categories -%}
-      <a href="{{ "/" | relative_url }}categories/{{ category[0] | downcase }}">
-        <li>{{ category[0] }} <span>{{ category[1].size }} post</span></li>
+      {%- assign sorted_categories = sorted_categories | split: '|' | sort | reverse -%}
+      {%- for category in sorted_categories -%}
+        {%- assign items = category | split: ',' -%}
+        {%- assign title = items[1] -%}
+        {%- assign size = items[2] -%}
+      <a href="{{ "/" | relative_url }}categories/{{ title | downcase }}">
+        <li>{{ title }} <span>{{ size }} post</span></li>
       </a>
       {%- endfor -%}
     {% else %}

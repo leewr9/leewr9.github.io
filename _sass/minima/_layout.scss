@@ -487,10 +487,6 @@
     font-size: $small-font-size;
     color: $brand-color;
   }
-  
-  @media screen and (min-width: $on-medium) {
-    justify-content: left;
-  }
 }
 
 .tag-item {
