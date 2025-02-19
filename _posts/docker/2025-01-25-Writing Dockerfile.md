@@ -151,19 +151,19 @@ ARG VERSION=1.0
 ## Python Dockerfile
 
 ```Dockerfile
-# 1. Python 베이스 이미지 사용
+# Python 베이스 이미지 사용
 FROM python:3.9-slim
 
-# 2. 작업 디렉토리 설정
+# 작업 디렉토리 설정
 WORKDIR /app
 
-# 3. 로컬 파일을 컨테이너로 복사
+# 로컬 파일을 컨테이너로 복사
 COPY . /app
 
-# 4. 의존성 설치
+# 의존성 설치
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 5. 컨테이너 실행 시 기본 명령어 설정
+# 컨테이너 실행 시 기본 명령어 설정
 CMD ["python", "app.py"]
 ```
 
@@ -176,7 +176,9 @@ CMD ["python", "app.py"]
 ### Usage
 
 ```bash
-$ docker build -t my-python-app .
+# Dockerfile
+
+docker build -t my-python-app .
 # Sending build context to Docker daemon  12.34kB
 # Step 1/5 : FROM python:3.9-slim
 #  ---> 7a2d95b47db2
@@ -190,9 +192,9 @@ $ docker build -t my-python-app .
 ```
 
 ```bash
-$ docker run -d --name python-app my-python-app
+docker run -d --name python-app my-python-app
 ```
-위 명령어는 `my-python-app`이라는 이름으로 이미지를 빌드하고, 이를 기반으로 컨테이너를 실행합니다.
+위 명령어는 `my-python-app`이라는 이름으로 이미지를 빌드하고, 이를 기반으로 `python-app` 컨테이너를 실행합니다.
 
 ---
 
