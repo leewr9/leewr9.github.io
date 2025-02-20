@@ -23,6 +23,9 @@ tag: [ksqlDB, Kafka]
 ```sql
 CREATE STREAM <stream_name> (
     <field_name> <data_type>,
+    -- name STRING,
+    -- birth TIMESTAMP,
+    -- age INT
     ...
 ) WITH (
     KAFKA_TOPIC='<kafka_topic>',
