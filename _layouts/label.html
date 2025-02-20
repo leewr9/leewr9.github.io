@@ -52,24 +52,6 @@ layout: base
         {%- endif -%}
       </li>
       {%- endfor -%}
-      {% if page.title == 'Hello' %}
-      <li>
-        <h3>
-          <a class="post-link" href="{{ "/resume" | relative_url }}">
-            Resume
-            <span class="post-meta">{{ "1995-04-13" | date: date_format }}</span>
-          </a>
-        </h3>
-      </li>
-      <li>
-        <h3>
-          <a class="post-link" href="{{ "/about" | relative_url }}">
-            About
-            <span class="post-meta">{{ "1995-04-13" | date: date_format }}</span>
-          </a>
-        </h3>
-      </li>
-      {% endif %}
     </ul>
 
   {%- endif -%}
