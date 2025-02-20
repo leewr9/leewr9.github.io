@@ -21,12 +21,12 @@ tag: [Kafka Connect, Schema Registry, Kafka]
 
 ---
 
-## Kafka Connect
+## Connect
 `Kafka Connect`는 Kafka와 외부 시스템 간의 데이터 이동을 간소화하는 데 사용되는 프레임워크입니다. Kafka Connect는 `Source Connector`와 `Sink Connector`를 통해 데이터를 Kafka와 다른 시스템 간에 효율적으로 주고받을 수 있도록 합니다.
 
 [![](\assets\posts\2025-02-14-Data Management\connect.png)](\assets\posts\2025-02-14-Data Management\connect.png)
 
-### Source
+### Source Connector
 `Source Connector`는 외부 시스템의 데이터를 Kafka 토픽으로 스트리밍하는 역할을 합니다. 외부 데이터베이스, 파일 시스템, 메시지 큐 등에서 데이터를 가져와 Kafka로 전송합니다. 주로 읽기 작업을 담당하며, Kafka 토픽에 데이터를 입력하는 역할을 합니다.
 
 ```json
@@ -35,7 +35,7 @@ tag: [Kafka Connect, Schema Registry, Kafka]
   "config": {
     "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",  
     "tasks.max": "1",  
-    "topic.prefix": "connector-",  
+    "topic.prefix": "topic-",  
     "connection.url": "jdbc:postgresql://<postgres-host>:5432/<database>",
     "connection.user": "postgres",
     "connection.password": "postgres",
@@ -51,7 +51,7 @@ tag: [Kafka Connect, Schema Registry, Kafka]
 }
 
 ```
-- `topic.prefix`: 토픽 이름에 붙일 접두어 (`connector-source_table`)
+- `topic.prefix`: 토픽 이름에 붙일 접두어 (`topic-source_table`)
 - `connection.~`: 데이터베이스 설정
 - `mode`: 데이터를 어떻게 가져올지 설정
   - `incrementing `: 증가하는 컬럼 기준 (`id`, `no`)
@@ -60,7 +60,7 @@ tag: [Kafka Connect, Schema Registry, Kafka]
 - `transforms.~`: 데이터를 메시지의 Key로 변환하는 설정
 - `table.whitelist`: 데이터를 읽을 테이블을 지정
 
-### Sink
+### Sink Connector
 `Sink Connector`는 Kafka에서 데이터를 소비하여 외부 시스템에 저장하는 역할을 합니다. Kafka 토픽에 쌓인 데이터를 외부 데이터베이스나 파일 시스템, 애플리케이션 등으로 보내는 일을 합니다. 주로 쓰기 작업을 담당하며, Kafka 토픽의 데이터를 소비해 외부 시스템에 저장합니다.
 
 ```json
@@ -69,7 +69,7 @@ tag: [Kafka Connect, Schema Registry, Kafka]
   "config": {
     "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector", 
     "tasks.max": "1",  
-    "topics": "connector-source_table",  
+    "topics": "topic-source_table",  
     "connection.url": "jdbc:postgresql://<postgres-host>:5432/<database>",
     "connection.user": "postgres",  
     "connection.password": "postgres", 
