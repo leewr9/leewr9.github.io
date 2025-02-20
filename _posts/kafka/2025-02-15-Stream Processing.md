@@ -32,6 +32,8 @@ CREATE STREAM <stream_name> (
 SELECT <fields> FROM <stream_name> EMIT CHANGES;
 ```
 
+- `KAFKA_TOPIC`: 토픽 이름
+- `VALUE_FORMAT`: 데이터 포맷 (`JSON`, `AVRO`, `DELIMITED`, `PROTOBUF`, `KAFKA` 등)
 - `EMIT CHANGES`: 실시간으로 결과를 반환
 
 ### TABLE
@@ -47,12 +49,16 @@ CREATE TABLE <table_name> (
     ...
 ) WITH (
     KAFKA_TOPIC='<kafka_topic>',
-    VALUE_FORMAT='<format>',
+    VALUE_FORMAT='<format>', -- JSON / AVRO
     KEY='<key_column>'
 );
 
 SELECT <fields> FROM <table_name>;
 ```
+
+- `KAFKA_TOPIC`: 토픽 이름
+- `VALUE_FORMAT`: 데이터 포맷 (`JSON`, `AVRO`, `DELIMITED`, `PROTOBUF`, `KAFKA` 등)
+- `KEY`: 키 컬럼 (데이터를 구분하는 기준 컬럼)
 
 ---
 
@@ -76,6 +82,8 @@ kafka-console-producer --bootstrap-server <kafka_broker> --topic <topic_name>
 kafka-console-consumer --bootstrap-server <kafka_broker> --topic <topic_name> --from-beginning
 ```
 
+- `--bootstrap-server`: 브로커 주소를 지정
+- `--topic`: 데이터를 보낼 토픽의 이름을 지정
 - `--from-beginning`
   - 지정된 토픽의 데이터를 처음부터 읽어옵니다. 이 옵션을 사용하지 않으면, 기본적으로 새로운 데이터부터 읽게 됩니다.
 
