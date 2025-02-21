@@ -1,15 +1,15 @@
 ---
-title: Selenium and Dynamic Websites
+title: Dynamic Websites
 category: Crawling
 tag: [Selenium, Python, Crawling]
 ---
 
-> Selenium은 동적 웹사이트에서 데이터를 크롤링하는 데 매우 유용한 도구입니다. 최근에는 webdriver-manager 패키지를 사용하여 브라우저 드라이버를 자동으로 설치하고 관리하는 방식이 선호되고 있습니다. 이를 사용하면 번거롭게 드라이버를 직접 다운로드하거나 경로를 설정하지 않아도 됩니다.
+> Selenium은 동적 웹사이트에서 데이터를 크롤링하는 데 매우 유용한 도구입니다. 최근에는 webdriver-manager 패키지를 사용하여 브라우저 드라이버를 자동으로 설치하고 관리하는 방식이 선호되고 있습니다. 
 
 ---
 
 ## Selenium Manager
-아래 명령어를 통해 `selenium`과 `webdriver-manager`를 설치합니다.
+아래 명령어를 통해 `selenium`과 `webdriver-manager`를 설치합니다. 이를 사용하면 번거롭게 드라이버를 직접 다운로드하거나 경로를 설정하지 않아도 됩니다.
 
 ```bash
 pip install selenium webdriver-manager

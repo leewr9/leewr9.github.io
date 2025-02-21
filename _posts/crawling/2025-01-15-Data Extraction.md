@@ -1,5 +1,5 @@
 ---
-title: BeautifulSoup and Data Extraction
+title: Data Extraction
 category: Crawling
 tag: [BeautifulSoup, Python, Crawling]
 ---
@@ -8,10 +8,10 @@ tag: [BeautifulSoup, Python, Crawling]
 
 ---
 
-## HTML Structure and DOM
-HTML 문서는 트리 구조로 되어 있으며, 각 요소는 "태그"라고 불리는 HTML 요소들로 구성됩니다. 이러한 HTML 문서의 구조는 DOM(Document Object Model)이라고 불리며, 웹 페이지의 각 요소에 접근하는 방법을 제공합니다.
+## HTML Structure
+`HTML` 문서는 트리 구조로 되어 있으며, 각 요소는 태그라고 불리는 HTML 요소들로 구성됩니다. 이러한 HTML 문서의 구조는 **DOM(Document Object Model)**이라고 불리며, 웹 페이지의 각 요소에 접근하는 방법을 제공합니다.
 
-DOM은 HTML 문서의 각 태그를 노드(Node)로 변환하여 구조적으로 표현합니다. 예를 들어, `<div>`, `<a>`, `<p>` 같은 HTML 태그들이 DOM 트리에서 각각 하나의 노드로 나타납니다. BeautifulSoup는 이 DOM 구조를 바탕으로 HTML을 파싱하고, 원하는 데이터를 추출할 수 있게 합니다.
+`DOM`은 HTML 문서의 각 태그를 노드(Node)로 변환하여 구조적으로 표현합니다. 예를 들어, `<div>`, `<a>`, `<p>` 같은 HTML 태그들이 DOM 트리에서 각각 하나의 노드로 나타납니다. BeautifulSoup는 이 DOM 구조를 바탕으로 HTML을 파싱하고, 원하는 데이터를 추출할 수 있게 합니다.
 
 ```bash
 pip install beautifulsoup4
@@ -61,7 +61,7 @@ print(main_content.text) # 'Main Content' 출력
 
 ---
 
-## Data Extraction
+## Extraction
 HTML에서 데이터를 추출하는 주요 방법은 텍스트 내용, 태그의 속성, 그리고 리스트 형태로 데이터를 가져오는 것입니다. 
 
 ### text
