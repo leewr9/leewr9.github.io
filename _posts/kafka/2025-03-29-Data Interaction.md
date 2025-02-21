@@ -1,5 +1,5 @@
 ---
-title: Stream Processing
+title: Data Interaction
 category: Kafka
 tag: [ksqlDB, Kafka]
 ---
