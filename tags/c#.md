@@ -2,6 +2,6 @@
 layout: label
 title: C#
 tag: C#
-permalink: /tags/c#/
+permalink: /tags/csharp/
 search_omit: true
 ---

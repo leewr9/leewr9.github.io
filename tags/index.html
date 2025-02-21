@@ -35,7 +35,7 @@ search_omit: true
         {%- assign items = tag | split: ',' -%}
         {%- assign title = items[1] -%}
         {%- assign size = items[2] -%}
-      <a class="tag-item" href="{{ "/" | relative_url }}tags/{{ title | downcase }}">
+      <a class="tag-item" href="{{ "/" | relative_url }}tags/{{ title | downcase | replace: '#', 'sharp' }}">
         {{ title }} <span> {{ size }} </span>
       </a>
       {%- endfor -%}
