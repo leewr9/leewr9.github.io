@@ -1,5 +1,5 @@
 ---
-title: Optimization Error
+title: Optimization and Error
 category: Crawling
 tag: [Python, Crawling]
 ---
