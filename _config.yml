@@ -95,6 +95,6 @@ minima:
     - { platform: gitlab,         user_url: "https://gitlab.com/rooam_lee" }
     - { platform: codeberg,       user_url: "https://codeberg.org/rooam_lee" }
     - { platform: notion,         user_url: "https://www.notion.so/rooam-lee/" }
-
-  # Display posts with future dates.
-  future: false
+    
+# Display posts with future dates.
+future: false
