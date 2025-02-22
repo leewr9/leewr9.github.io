@@ -9,7 +9,6 @@ tag: [Hadoop]
 ---
 
 ## Hadoop 1.0
-
 Hadoop은 대규모 데이터를 분산 처리할 수 있도록 설계된 오픈 소스 프레임워크입니다. `Hadoop 1.0`은 그 초기 버전으로, `MapReduce`와 `HDFS` 두 가지 주요 구성 요소로 구성되어 있습니다.
 
 ### HDFS
@@ -27,6 +26,10 @@ Hadoop의 핵심 파일 시스템인 **HDFS(Hadoop Distributed File System)**는
 
 - `JobTracker`: 작업을 전체적으로 관리하고, 각 작업을 처리할 TaskTracker에 할당합니다.
 - `TaskTracker`: 실제 작업을 실행하는 노드로, JobTracker에서 할당한 작업을 수행합니다.
+[![](\assets\posts\{{ page.name }}\mapreduce.png)](\assets\posts\{{ page.name }}\mapreduce.png)
+  - `Map`: 입력 데이터를 받아 Map 작업을 수행하고 (키, 값) 쌍을 출력
+  - `Shuffle`: 같은 키를 가진 데이터들끼리 그룹화하고 정렬하여 Reduce 단계로 전달
+  - `Reduce`: Shuffle을 통해 전달된 데이터를 처리하여 집계하고 최종 결과를 생성
 
 #### Framework
 MapReduce의 복잡성 및 비효율성을 해결하기 위해 다양한 프레임워크들이 등장했습니다. 이들 프레임워크는 MapReduce를 활용하면서도 보다 효율적이고 사용자 친화적인 데이터 처리 방식을 제공합니다.
@@ -38,8 +41,9 @@ MapReduce의 복잡성 및 비효율성을 해결하기 위해 다양한 프레�
 ---
 
 ## Hadoop 2.0
-
 `Hadoop 2.0`은 `Hadoop 1.0`의 한계를 극복하기 위해 여러 가지 중요한 개선이 이루어진 버전입니다. 주요 변화 중 하나는 **YARN(Yet Another Resource Negotiator)**의 도입으로, YARN은 리소스 관리 및 작업 스케줄링을 담당하며, 이를 통해 여러 애플리케이션이 클러스터 자원을 효율적으로 공유할 수 있게 되었습니다.
+
+[![](\assets\posts\{{ page.name }}\hadoop.png)](\assets\posts\{{ page.name }}\hadoop.png)
 
 ### HDFS
 `HDFS`는 Hadoop 2.0에서도 여전히 핵심 파일 시스템으로 사용됩니다. 그러나 Hadoop 2.0에서는 HDFS의 `확장성`과 `안정성`이 크게 향상되었습니다. 이로 인해 대규모 데이터 처리와 분산 저장 환경에서 더 높은 성능과 안정성을 제공합니다.
@@ -64,6 +68,7 @@ Hadoop 2.0에서 YARN을 활용하여 여러 프레임워크가 동시에 실행
 ---
 
 ## References
+- [Databricks 공식 블로그](https://www.databricks.com/blog)
 - [Hadoop 공식 문서](https://hadoop.apache.org/docs)
 
 <nav class="post-toc" markdown="1">
