@@ -1,15 +1,15 @@
 ---
-title: Command Line Tool
-category: GCP
-tag: [GCS, BigQuery, GCP]
+title: Command Tool
+category: Google Cloud
+tag: [GCS, BigQuery, GCP, Google Cloud]
 ---
 
-> GCP(Google Cloud Project)는 다양한 서비스를 CLI 명령어로 제어할 수 있도록 지원합니다. 그중에서 BigQuery, gsutil, gcloud 명령어는 데이터 처리 및 관리를 위해 자주 사용됩니다. 
+> Google Cloud는 다양한 서비스를 CLI 명령어로 제어할 수 있도록 지원합니다. 그중에서 BigQuery, gsutil, gcloud 명령어는 데이터 처리 및 관리를 위해 자주 사용됩니다. 
 
 ---
 
 ## Google Cloud Project
-`gcloud` 명령어는 `Google Cloud`의 다양한 서비스와 리소스를 관리할 수 있는 가장 기본적인 명령어입니다. 주로 프로젝트 관리, IAM, API 사용 설정, 서비스 배포 등 다양한 작업을 처리합니다.
+`gcloud` 명령어는 `Google Cloud Project`의 다양한 서비스와 리소스를 관리할 수 있는 가장 기본적인 명령어입니다. 주로 프로젝트 관리, IAM, API 사용 설정, 서비스 배포 등 다양한 작업을 처리합니다.
 
 - `auth`: Google 계정이나 서비스 계정으로 인증 진행
 ```bash
