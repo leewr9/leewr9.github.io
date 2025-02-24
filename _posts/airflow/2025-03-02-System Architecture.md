@@ -13,8 +13,7 @@ tag: [Airflow]
 [![](\assets\posts\{{ page.name }}\diagram.png)](\assets\posts\{{ page.name }}\diagram.png)
 
 ### Scheduler
-
-Scheduler는 시스템 내에서 작업을 예약하는 역할을 합니다. 주기적으로 실행될 작업이나, 수동으로 트리거된 작업을 큐에 추가하고, 
+`Scheduler`는 시스템 내에서 작업을 예약하는 역할을 합니다. 주기적으로 실행될 작업이나, 수동으로 트리거된 작업을 큐에 추가하고, 
 해당 작업이 실행될 시점과 우선순위를 결정합니다. Scheduler는 작업의 의존성을 관리하고, 실행할 때 `Worker`에게 작업을 전달합니다.
 
 - 작업 예약 및 실행 시점 결정
@@ -31,7 +30,7 @@ Scheduler는 시스템 내에서 작업을 예약하는 역할을 합니다. 주
    - `CeleryExecutor`: 분산 환경 작업
 
 ### Worker
-Worker는 실제로 `Scheduler`가 예약한 작업을 실행하는 구성 요소입니다. `Scheduler`로부터 받은 작업을 `Executor`가 설정한 환경에 맞춰 실행하고, 
+`Worker`는 실제로 `Scheduler`가 예약한 작업을 실행하는 구성 요소입니다. `Scheduler`로부터 받은 작업을 `Executor`가 설정한 환경에 맞춰 실행하고, 
 그 결과를 다시 `Scheduler`에게 보고합니다. 여러 Worker가 동시에 작업을 실행하여, 병렬 처리로 시스템의 성능을 향상시킬 수 있습니다.
 
 - 작업 실행
