@@ -143,7 +143,7 @@ df = df.coalesce(3)      # 3개의 파티션으로 합침
       LEFT JOIN small_data AS s
       ON l.key = s.key
   """)
-```
+  ```
   
 ---
 

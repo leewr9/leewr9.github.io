@@ -20,10 +20,10 @@ df.write.format("json").save("/path/to/output")
 
 ### mode
 `mode`는 데이터를 저장할 때 기존 데이터를 어떻게 처리할지 지정할 수 있는 옵션입니다.
-- `append`: 기존 데이터를 덮어쓰지 않고 추가합니다.
-- `overwrite`: 기존 데이터를 덮어쓰고 새 데이터를 저장합니다.
-- `ignore`: 기존 데이터가 있을 경우 아무 작업도 하지 않음.
-- `error`: 파일이 이미 존재하면 오류 발생 (기본값).
+- `append`: 기존 데이터를 덮어쓰지 않고 추가
+- `overwrite`: 기존 데이터를 덮어쓰고 새 데이터 저장
+- `ignore`: 기존 데이터가 있을 경우 아무 작업도 하지 않음
+- `error`: 파일이 이미 존재하면 오류 발생 (기본값)
 
 ```python
 df.write.mode("overwrite").parquet("/path/to/output")
@@ -55,20 +55,6 @@ df.write.saveAsTable("my_hive_table")
 ---
 
 ## Optimization
-### coalesce 
-`coalesce`는 파티션 수를 줄이는 데 사용됩니다. 특히, 파티션을 합치는 작업을 효율적으로 처리할 수 있습니다
-
-```python
-df.coalesce(1).write.parquet("/path/to/output")
-```
-
-### repartition
-`repartition`은 데이터를 새로운 파티션 수로 고르게 분배하는 데 사용됩니다. 이 방법은 모든 데이터를 섞어가며 분배하므로 병렬 작업을 분배할 때 유용합니다.
-
-```python
-df.repartition(10).write.parquet("/path/to/output")
-```
-
 ### partitionBy
 `partitionBy`는 특정 컬럼을 기준으로 데이터를 파티셔닝하여 저장합니다. 이렇게 저장된 데이터는 해당 컬럼에 따라 디렉터리가 나뉘어 저장됩니다. 이 방식은 쿼리 성능을 최적화하는 데 유용하며, 특정 컬럼을 기준으로 데이터를 나누어 효율적인 읽기 작업을 할 수 있습니다.
 
@@ -77,8 +63,10 @@ df.write.partitionBy("year", "month").parquet("/path/to/output")
 ```
 
 ```plaintext
-/path/to/output/year=2021/month=01/
-/path/to/output/year=2021/month=02/
+/path/to/output/year=2025/month=01/
+/path/to/output/year=2025/month=02/
+/path/to/output/year=2025/month=03/
+/path/to/output/year=2025/month=04/
 ```
 
 ### bucketBy

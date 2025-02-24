@@ -81,8 +81,11 @@ df2 = spark.createDataFrame(data2, ["DeptID", "DeptName"])
 df1.createOrReplaceTempView("employees")
 df2.createOrReplaceTempView("departments")
 
-result = spark.sql("SELECT e.Name, e.DeptID, d.DeptName "
-                   "FROM employees e JOIN departments d ON e.DeptID = d.DeptID")
+result = spark.sql("""
+  SELECT e.Name, e.DeptID, d.DeptName
+  FROM employees e JOIN departments d 
+  ON e.DeptID = d.DeptID
+""")
 result.collect()
 ```
 
@@ -104,8 +107,12 @@ df1.createOrReplaceTempView("employees")
 df2.createOrReplaceTempView("departments")
 
 # Broadcast Join
-result = spark.sql("SELECT /*+ BROADCAST(d) */ e.Name, e.DeptID, d.DeptName "
-                   "FROM employees e JOIN departments d ON e.DeptID = d.DeptID")
+
+result = spark.sql("""
+  SELECT /*+ BROADCAST(d) */ e.Name, e.DeptID, d.DeptName
+  FROM employees e JOIN departments d 
+  ON e.DeptID = d.DeptID
+""")
 result.show()
 ```
 
