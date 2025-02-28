@@ -59,10 +59,7 @@ spark-submit --master spark://localhost:7077 --deploy-mode client my_app.py
     ```
     - Driver: 로컬 머신에서 실행 (애플리케이션의 중앙 제어를 담당)
 - Cluster
-    ```bash
-spark-submit --master spark://localhost:7077 --deploy-mode cluster my_app.py
-    ```
-    - Driver: 클러스터 내에서 실행 (클러스터 내에서 자원을 할당하고 작업을 관리)
+    - 사용 불가: Standalone 모드에서는 `--deploy-mode cluster`를 사용할 수 없습니다.
 
 ### YARN
 - Master: `YARN ResourceManager` (YARN ResourceManager가 클러스터의 리소스를 관리)
