@@ -63,8 +63,8 @@ my_project/
 dbt 프로젝트를 설정한 후에는 실제로 데이터 모델을 실행할 수 있습니다. 
 dbt 모델은 `.sql` 파일로 작성되며, 데이터베이스에서 실행되어 데이터를 변환합니다. 
 
-```sql
 {% raw %}
+```sql
 -- models/model_a.sql
 
 WITH sales AS (
@@ -75,11 +75,11 @@ SELECT
     SUM(sales_amount) AS total_sales
 FROM sales
 GROUP BY product_id
-{% endraw %}
 ```
+{% endraw %}
 
-```sql
 {% raw %}
+```sql
 -- models/model_b.sql
 
 WITH sales_data AS (
@@ -91,8 +91,8 @@ SELECT
 FROM sales_data
 ORDER BY total_sales DESC
 LIMIT 10
-{% endraw %}
 ```
+{% endraw %}
 
 {% raw %}
  `{{ ref('model_a') }}` 구문은 dbt에게 `model_a` 모델을 먼저 실행하고 결과를 참조하라는 의미입니다. 

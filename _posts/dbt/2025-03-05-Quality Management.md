@@ -4,13 +4,15 @@ category: dbt
 tag: [dbt]
 ---
 
-> dbt (Data Build Tool)는 데이터 파이프라인을 효율적으로 구축하고 관리할 수 있도록 돕는 도구입니다. 데이터 모델을 생성하고, 이를 테스트하고, 추적하며, 필요한 성능 최적화를 위한 다양한 기능을 제공합니다. 
+> dbt (Data Build Tool)는 데이터 파이프라인을 효율적으로 구축하고 관리할 수 있도록 돕는 도구입니다. 데이터 모델을 생성하고, 테스트하며, 이를 문서화하고 추적할 수 있는 다양한 기능을 제공합니다. 또한, 성능 최적화를 위한 여러 옵션을 제공하여 데이터 엔지니어링 워크플로우를 개선할 수 있습니다.
 
 ---
 
 ## Model
-```sql
+dbt는 데이터 모델링을 지원합니다. 이를 통해 데이터 변환을 체계적으로 관리할 수 있으며, 재사용 가능하고 일관된 모델을 구축할 수 있습니다.
+
 {% raw %}
+```sql
 -- models/my_model.sql
 
 {{
@@ -31,8 +33,8 @@ GROUP BY product_id
 {% if is_incremental() %} -- incremental 방식일 경우 처리
 WHERE sales_amount > 0
 {% endif %}
-{% endraw %}
 ```
+{% endraw %}
 
 ### materialized
 `materialized`는 dbt 모델이 어떻게 저장되고 처리될지를 결정하는 중요한 설정입니다. dbt는 여러 가지 방식으로 모델을 처리할 수 있으며, 각각의 방식은 모델을 효율적으로 관리하고 성능을 최적화하는 데 도움이 됩니다.
@@ -91,15 +93,15 @@ dbt source freshness
 ## Test
 dbt는 데이터 테스트를 지원합니다. 이를 통해 데이터의 품질을 자동으로 검증할 수 있으며, 정합성과 유효성을 유지할 수 있습니다. 
 
-```sql
 {% raw %}
+```sql
 -- tests/my_test.sql
 
 SELECT * 
 FROM {{ ref('dim_sales') }}
 WHERE product_id IS NULL -- null 값이 없음을 테스트
-{% endraw %}
 ```
+{% endraw %}
 
 ### schema.yml
 `schema.yml`은 dbt에서 생성하는 모델을 문서화하고 데이터 테스트를 정의하는 파일입니다. 이 파일을 통해 테이블과 컬럼에 대한 설명을 추가할 수 있으며, 데이터 무결성을 검증할 수 있는 테스트도 정의할 수 있습니다.

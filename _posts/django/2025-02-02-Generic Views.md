@@ -42,8 +42,8 @@ class BookListView(ListView):
     context_object_name = 'books'
 ```
 
-```html
 {% raw %}
+```html
 <!-- book_list.html -->
 
 <ul>
@@ -51,8 +51,8 @@ class BookListView(ListView):
     <li>{{ book.title }}</li>
   {% endfor %}
 </ul>
-{% endraw %}
 ```
+{% endraw %}
 
 ### DetailView
 `DetailView`는 특정 모델의 객체를 하나씩 출력하는 뷰입니다. 개별 객체의 세부 정보를 확인할 수 있습니다.
@@ -69,14 +69,14 @@ class BookDetailView(DetailView):
     context_object_name = 'book'
 ```
 
-```html
 {% raw %}
+```html
 <!-- book_detail.html -->
 
 <h1>{{ book.title }}</h1>
 <p>{{ book.description }}</p>
-{% endraw %}
 ```
+{% endraw %}
 
 ---
 

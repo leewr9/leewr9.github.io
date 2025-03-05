@@ -59,8 +59,8 @@ project/
 Django 템플릿 상속을 사용하면 반복되는 HTML 코드를 효율적으로 관리할 수 있습니다. 템플릿에서 `블록(Block)`은 상속받는 템플릿에서 특정 영역을 변경하거나 추가할 수 있도록 해줍니다. 블록은 `{% block 블록이름 %}`과 `{% endblock %}` 사이에 정의됩니다.
 {% endraw %}
 
-```html
 {% raw %}
+```html
 <!-- base.html -->
 
 <!DOCTYPE html>
@@ -80,13 +80,13 @@ Django 템플릿 상속을 사용하면 반복되는 HTML 코드를 효율적으
     </footer>
 </body>
 </html>
-{% endraw %}
 ```
+{% endraw %}
 
 [![](\assets\posts\{{ page.name }}\index.png)](\assets\posts\{{ page.name }}\index.png)
 
-```html
 {% raw %}
+```html
 <!-- index.html -->
  
 {% extends 'base.html' %} <!-- base.html 상속 -->
@@ -97,14 +97,14 @@ Django 템플릿 상속을 사용하면 반복되는 HTML 코드를 효율적으
     <h2>Welcome to My Site</h2>
     <p>This is the home page.</p>
 {% endblock %}
-{% endraw %}
 ```
+{% endraw %}
 
 ### Filters and Tags
 Django 템플릿은 데이터 출력과 제어를 위해 필터와 태그를 제공합니다.
 
-```html
 {% raw %}
+```html
 <p>{{ user.username|upper }}</p> <!-- 사용자 이름을 대문자로 표시 -->
 <p>{{ post.created_at|date:'Y-m-d' }}</p> <!-- 날짜 형식 지정 -->
 
@@ -118,8 +118,8 @@ Django 템플릿은 데이터 출력과 제어를 위해 필터와 태그를 제
     <h3>{{ post.title }}</h3>
     <p>{{ post.content }}</p>
 {% endfor %}
-{% endraw %}
 ```
+{% endraw %}
 
 ---
 
@@ -154,8 +154,8 @@ project/
 ```
 
 ### Using
-```html
 {% raw %}
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -167,8 +167,8 @@ project/
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
-{% endraw %}
 ```
+{% endraw %}
 
 ---
 

@@ -46,8 +46,8 @@ def contact_view(request):
 ```
 
 [![](\assets\posts\{{ page.name }}\form.png)](\assets\posts\{{ page.name }}\form.png)
-```html
 {% raw %}
+```html
 <!-- contact.html -->
 
 <form method="post">
@@ -55,8 +55,8 @@ def contact_view(request):
     {{ form.as_p }}
     <button type="submit">Submit</button>
 </form>
-{% endraw %}
 ```
+{% endraw %}
 
 위 코드는 `name`, `email`, `message` 필드를 가진 폼을 생성합니다. 이 폼을 템플릿에 `as_p`를 사용하여 렌더링하면 HTML 폼 요소들이 `<p>` 태그 안에 자동으로 생성됩니다. `as_table`, `as_ul` 등의 다양한 렌더링 방식도 제공합니다.
 
@@ -120,8 +120,8 @@ def create_article(request):
 
 [![](\assets\posts\{{ page.name }}\model.png)](\assets\posts\{{ page.name }}\model.png)
 
-```html
 {% raw %}
+```html
 <!-- create_article.html -->
 
 <form method="post">
@@ -129,8 +129,8 @@ def create_article(request):
     {{ form.as_p }}
     <button type="submit">Submit</button>
 </form>
-{% endraw %}
 ```
+{% endraw %}
 
 위 코드는 `title`과 `content` 필드를 가진 폼이 자동으로 생성되며, 이를 템플릿에 렌더링할 수 있습니다.
 `ModelForm`을 사용하여 폼 제출 시 모델에 데이터를 자동으로 저장할 수 있어 매우 편리합니다.
