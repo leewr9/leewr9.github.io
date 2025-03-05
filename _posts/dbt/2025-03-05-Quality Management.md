@@ -152,10 +152,10 @@ dbt docs generate
 문서를 생성한 후, `dbt docs serve` 명령어를 사용하여 로컬 서버에서 시각화된 문서를 확인할 수 있습니다. 이 명령어는 로컬 서버를 실행하고, 웹 브라우저에서 HTML 문서를 탐색할 수 있도록 합니다.
 
 ```bash
-dbt docs serve
+dbt docs serve --host localhost --port 8080
 ```
 
-서버가 실행되면, 기본적으로 http://localhost:8080에서 DBT Docs를 확인할 수 있습니다.
+서버가 실행되면, 기본적으로 http://localhost:8080에서 dbt Docs를 확인할 수 있습니다.
 
 [![](\assets\posts\2025-03-05-Quality Management.md\docs.png)](\assets\posts\2025-03-05-Quality Management.md\docs.png)
 
