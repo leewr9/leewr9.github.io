@@ -11,7 +11,7 @@ tag: [ksqlDB, Kafka]
 ## ksqlDB
 `ksqlDB`는 실시간 스트리밍 데이터를 SQL로 처리하고 분석할 수 있는 데이터베이스로, Kafka와 통합되어 실시간 데이터 읽기 및 변환이 가능합니다. 또한, 높은 유연성을 제공해 다양한 스트리밍 데이터 처리 요구에 맞게 쉽게 조정할 수 있습니다.
 
-[![](\assets\posts\{{ page.name }}\ksqldb.png)](\assets\posts\{{ page.name }}\ksqldb.png)
+[![](\assets\posts\2025-03-30-Data Interaction.md\ksqldb.png)](\assets\posts\2025-03-30-Data Interaction.md\ksqldb.png)
 
 ### STREAM
 `STREAM`은 실시간 데이터 스트리밍을 처리하는 구조입니다.STREAM은 데이터가 지속적으로 흐르는 이벤트로 취급되며, 각 이벤트는 독립적이고 순차적으로 처리됩니다. 새로운 데이터가 들어오면 그때그때 처리되며, 과거 데이터는 변경되지 않고 삭제됩니다.

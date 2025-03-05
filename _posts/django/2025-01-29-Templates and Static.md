@@ -83,7 +83,7 @@ Django 템플릿 상속을 사용하면 반복되는 HTML 코드를 효율적으
 ```
 {% endraw %}
 
-[![](\assets\posts\{{ page.name }}\index.png)](\assets\posts\{{ page.name }}\index.png)
+[![](\assets\posts\2025-01-29-Templates and Static.md\index.png)](\assets\posts\2025-01-29-Templates and Static.md\index.png)
 
 {% raw %}
 ```html

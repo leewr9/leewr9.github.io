@@ -11,7 +11,7 @@ tag: [Consumer, Producer, Kafka]
 ## Producer
 `Producer`는 데이터를 **토픽(Topic)**에 전송하며, 이를 **파티션(Partition)**에 저장합니다. 메시지는 **키(Key)**를 기반으로 특정 파티션에 할당되며, **오프셋(Offset)**을 통해 순서를 유지합니다. 또한, 데이터를 전송하기 전에 `Serialization`를 통해 바이트 형태로 변환합니다.
 
-[![](\assets\posts\{{ page.name }}\producer.png)](\assets\posts\{{ page.name }}\producer.png)
+[![](\assets\posts\2025-03-23-Processing Flow.md\producer.png)](\assets\posts\2025-03-23-Processing Flow.md\producer.png)
 
 ```python
 from kafka import KafkaProducer
@@ -57,12 +57,12 @@ producer.close()
 ## Consumer
 `Consumer`는 **토픽(Topic)**에서 데이터를 읽고, **오프셋(Offset)**을 통해 메시지의 순서를 추적합니다. 메시지를 읽을 때마다 오프셋이 증가하며, 처리된 데이터는 **커밋(Commit)**을 통해 저장됩니다. 또한, 전송된 데이터를 사용하기 전에 `Deserialization`하여 원래 형식으로 변환합니다.
 
-[![](\assets\posts\{{ page.name }}\consumer.png)](\assets\posts\{{ page.name }}\consumer.png)
+[![](\assets\posts\2025-03-23-Processing Flow.md\consumer.png)](\assets\posts\2025-03-23-Processing Flow.md\consumer.png)
 
 ### Consumer Group
 `Consumer Group`은 여러 개의 컨슈머가 하나의 그룹으로 묶여 동일한 토픽의 메시지를 분배받아 처리하는 방식입니다. 카프카에서는 각 파티션을 Consumer Group 내의 단 하나의 컨슈머에게만 할당하여, 데이터의 병렬 처리와 메시지 순서를 보장합니다.
 
-[![](\assets\posts\{{ page.name }}\consumer-group.png)](\assets\posts\{{ page.name }}\consumer-group.png)
+[![](\assets\posts\2025-03-23-Processing Flow.md\consumer-group.png)](\assets\posts\2025-03-23-Processing Flow.md\consumer-group.png)
 
 - 파티션 할당
   - 각 파티션은 `Consumer Group` 내의 단 하나의 컨슈머에게만 할당됩니다. 이를 통해 동일한 파티션의 메시지는 중복 처리되지 않으며, 각 컨슈머는 자신에게 할당된 파티션만 처리합니다.

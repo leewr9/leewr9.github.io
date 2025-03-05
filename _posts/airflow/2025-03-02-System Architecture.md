@@ -10,7 +10,7 @@ tag: [Airflow]
 
 ## Lifecycle
 
-[![](\assets\posts\{{ page.name }}\diagram.png)](\assets\posts\{{ page.name }}\diagram.png)
+[![](\assets\posts\2025-03-02-System Architecture.md\diagram.png)](\assets\posts\2025-03-02-System Architecture.md\diagram.png)
 
 ### Scheduler
 `Scheduler`는 시스템 내에서 작업을 예약하는 역할을 합니다. 주기적으로 실행될 작업이나, 수동으로 트리거된 작업을 큐에 추가하고, 
@@ -41,7 +41,7 @@ tag: [Airflow]
 
 ## Architecture
 
-[![](\assets\posts\{{ page.name }}\architecture.png)](\assets\posts\{{ page.name }}\architecture.png)
+[![](\assets\posts\2025-03-02-System Architecture.md\architecture.png)](\assets\posts\2025-03-02-System Architecture.md\architecture.png)
 
 ### Webserver
 Web Server는 클라이언트와 시스템 간의 인터페이스 역할을 합니다. 사용자는 웹 브라우저를 통해 요청을 보내고, 

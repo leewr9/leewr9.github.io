@@ -43,7 +43,7 @@ KubernetesExecutor는 `Kubernetes` 클러스터를 이용하여 각 작업을 �
 
 ### Inside Cluster
 
-[![](\assets\posts\{{ page.name }}\inside.png)](\assets\posts\{{ page.name }}\inside.png)
+[![](\assets\posts\2025-03-02-Various Executor.md\inside.png)](\assets\posts\2025-03-02-Various Executor.md\inside.png)
 
 Kubernetes 클러스터 내부에서 실행되는 경우, Airflow와 작업을 실행하는 컨테이너가 동일한 `Kubernetes` 클러스터 내에 존재하며, 클러스터의 자원만을 활용합니다.
 
@@ -53,7 +53,7 @@ Kubernetes 클러스터 내부에서 실행되는 경우, Airflow와 작업을 �
 
 ### Outside Cluster
 
-[![](\assets\posts\{{ page.name }}\outside.png)](\assets\posts\{{ page.name }}\outside.png)
+[![](\assets\posts\2025-03-02-Various Executor.md\outside.png)](\assets\posts\2025-03-02-Various Executor.md\outside.png)
 
 Kubernetes 클러스터 외부에서 실행하는 경우, Airflow와 작업을 실행하는 컨테이너는 클러스터 외부에서 실행되며, `Kubernetes API`와 연결하여 작업을 실행하고 관리해야 합니다.
 

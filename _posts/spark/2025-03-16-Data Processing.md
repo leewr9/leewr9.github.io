@@ -11,7 +11,7 @@ tag: [RDD, DataFrame, Spark SQL, Spark]
 ## Spark Core
 `Spark Core`는 Spark의 핵심 엔진으로, 분산 데이터 처리를 위한 기반을 제공하며, 작업 스케줄링, 자원 관리, 장애 복구 등의 기본 기능을 담당합니다. `RDD`, `DataFrame`, `Spark SQL`을 포함한 다양한 기능들은 Spark Core의 분산 처리 및 최적화된 실행 환경을 활용하여 동작합니다.
 
-[![](\assets\posts\{{ page.name }}\core.png)](\assets\posts\{{ page.name }}\core.png)
+[![](\assets\posts\2025-03-16-Data Processing.md\core.png)](\assets\posts\2025-03-16-Data Processing.md\core.png)
 
 ### RDD 
 **RDD(Resilient Distributed Dataset)**는 Spark의 기본 데이터 구조로, 불변의 분산 객체입니다. `RDD`는 고급 연산을 지원하며, 데이터에 대한 상세한 제어가 필요할 때 유용합니다. 예를 들어, 복잡한 변환을 직접 구현하고자 할 때 사용합니다.

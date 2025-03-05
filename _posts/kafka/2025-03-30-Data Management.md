@@ -11,7 +11,7 @@ tag: [Kafka Connect, Schema Registry, Kafka]
 ## Schema Registry
 `Schema Registry`는 Kafka에서 전송되는 데이터의 형식을 관리하고 검증하는 중앙 저장소입니다. 데이터가 올바른 형식과 구조를 따르도록 보장하는 중요한 역할을 하며, Kafka에서의 데이터 흐름이 일관되고 정확하게 처리될 수 있도록 도와줍니다.
 
-[![](\assets\posts\{{ page.name }}\schema-registry.png)](\assets\posts\{{ page.name }}\schema-registry.png)
+[![](\assets\posts\2025-03-30-Data Management.md\schema-registry.png)](\assets\posts\2025-03-30-Data Management.md\schema-registry.png)
 
 - 스키마 관리: `Schema Registry`는 각 Kafka 토픽에 대한 스키마를 관리합니다. Producer가 데이터를 전송할 때, 해당 데이터는 지정된 스키마에 맞게 직렬화되고 검증됩니다.
 - 버전 관리: 스키마는 시간이 지남에 따라 변화할 수 있습니다. `Schema Registry`는 스키마 버전 관리를 통해 데이터 형식의 변경을 안전하게 처리할 수 있도록 합니다. 
@@ -24,7 +24,7 @@ tag: [Kafka Connect, Schema Registry, Kafka]
 ## Connect
 `Kafka Connect`는 Kafka와 외부 시스템 간의 데이터 이동을 간소화하는 데 사용되는 프레임워크입니다. Kafka Connect는 `Source Connector`와 `Sink Connector`를 통해 데이터를 Kafka와 다른 시스템 간에 효율적으로 주고받을 수 있도록 합니다.
 
-[![](\assets\posts\{{ page.name }}\connect.png)](\assets\posts\{{ page.name }}\connect.png)
+[![](\assets\posts\2025-03-30-Data Management.md\connect.png)](\assets\posts\2025-03-30-Data Management.md\connect.png)
 
 ### Source Connector
 `Source Connector`는 외부 시스템의 데이터를 Kafka 토픽으로 스트리밍하는 역할을 합니다. 외부 데이터베이스, 파일 시스템, 메시지 큐 등에서 데이터를 가져와 Kafka로 전송합니다. 주로 읽기 작업을 담당하며, Kafka 토픽에 데이터를 입력하는 역할을 합니다.

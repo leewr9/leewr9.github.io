@@ -84,7 +84,7 @@ spark-submit --master k8s://https://<k8s-master-url> --deploy-mode client --conf
     ```
     - Driver: 로컬 머신에서 실행 (로컬 머신에서 애플리케이션을 제어)
 - Cluster
-[![](\assets\posts\{{ page.name }}\k8s.png)](\assets\posts\{{ page.name }}\k8s.png)
+[![](\assets\posts\2025-03-19-Submit Overview.md\k8s.png)](\assets\posts\2025-03-19-Submit Overview.md\k8s.png)
     ```bash
 spark-submit --master k8s://https://<k8s-master-url> --deploy-mode cluster --conf spark kubernetes.container.image=<image-name> my_app.py
     ```

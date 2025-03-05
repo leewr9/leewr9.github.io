@@ -9,7 +9,7 @@ tag: [Spark]
 ---
 
 ## Execution Flow
-[![](\assets\posts\{{ page.name }}\diagram.png)](\assets\posts\{{ page.name }}\diagram.png)
+[![](\assets\posts\2025-03-12-Execution Architecture.md\diagram.png)](\assets\posts\2025-03-12-Execution Architecture.md\diagram.png)
 
 ### Driver
 Spark 애플리케이션이 실행될 때 가장 먼저 시작되는 것은 `Driver`이며, 애플리케이션의 중앙 제어자로써 전반적인 실행을 관리합니다.
@@ -36,7 +36,7 @@ Spark는 다양한 `Cluster Manager`를 지원합니다. 클러스터 관리자�
 ---
 
 ## Execution Plan
-[![](\assets\posts\{{ page.name }}\dag.png)](\assets\posts\{{ page.name }}\dag.png)
+[![](\assets\posts\2025-03-12-Execution Architecture.md\dag.png)](\assets\posts\2025-03-12-Execution Architecture.md\dag.png)
 
 ### Job
 `Job`은 `Action`이 호출될 때 생성되며, Spark는 **DAG(Directed Acyclic Graph)**를 기반으로 실행 계획을 수립하고 실행합니다. 여러 개의 `Transformation`이 수행되더라도 즉시 실행되지 않으며, 최종적으로 Action이 호출될 때 하나의 Job이 생성됩니다.

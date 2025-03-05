@@ -20,7 +20,7 @@ Controller는 Kafka 클러스터 내에서 중요한 메타데이터와 브로�
 - 메타데이터 관리: 클러스터 내 `Topic` 및 `Partition`을 관리하고 업데이트
 
 ### Management
-[![](\assets\posts\{{ page.name }}\management.png)](\assets\posts\{{ page.name }}\management.png)
+[![](\assets\posts\2025-03-26-Messaging System.md\management.png)](\assets\posts\2025-03-26-Messaging System.md\management.png)
 
 #### Zookeeper
 `Zookeeper`는 Kafka 클러스터의 메타데이터를 관리하는 분산 시스템으로, 주로 브로커 간의 조정 및 상태 모니터링을 담당합니다.
@@ -44,7 +44,7 @@ Kafka는 데이터를 여러 서버에 분산하여 저장하고, 데이터가 �
 ### Replica
 Kafka는 데이터를 여러 브로커에 복제하여 가용성과 내구성을 높입니다. 각 파티션에는 리더와 여러 팔로워가 있으며, 리더가 데이터를 처리합니다. **ISR(In-Sync Replica)**는 리더와 동기화된 팔로워들로, 리더가 장애를 겪으면 그 중 하나가 새로운 리더가 될 수 있습니다.
 
-[![](\assets\posts\{{ page.name }}\replica.png)](\assets\posts\{{ page.name }}\replica.png)
+[![](\assets\posts\2025-03-26-Messaging System.md\replica.png)](\assets\posts\2025-03-26-Messaging System.md\replica.png)
 
 - `Leader`: 모든 클라이언트의 읽기 및 쓰기 요청을 처리하는 파티션
 - `Follower`: 리더 파티션의 데이터를 복제하여 고가용성을 보장하는 파티션
@@ -71,7 +71,7 @@ admin_client.create_topics(new_topics=[topic])
 ### Segment
 `Segment`는 파티션 내 로그 파일을 일정 크기나 시간 단위로 분할하여 저장하는 개념입니다. 각 파티션은 로그 파일이 일정 크기나 일정 시간이 지나면 새로운 Segment로 분할됩니다.
 
-[![](\assets\posts\{{ page.name }}\segment.png)](\assets\posts\{{ page.name }}\segment.png)
+[![](\assets\posts\2025-03-26-Messaging System.md\segment.png)](\assets\posts\2025-03-26-Messaging System.md\segment.png)
 
 - 세그먼트 생성: 일정 크기(예: 1GB)나 시간(예: 7일) 후 새 로그 파일 생성
 - 메시지 기록: 최신 로그 파일에 메시지 추가
@@ -80,7 +80,7 @@ admin_client.create_topics(new_topics=[topic])
 #### Compaction
 `Compaction`은 Kafka에서 중복된 키를 가진 메시지를 정리하는 과정입니다. 동일한 키를 가진 여러 메시지가 있을 때, 가장 최신 메시지만 남기고 나머지는 삭제됩니다. 이를 통해 Kafka는 저장 공간을 절약하고, 최신 상태의 데이터만 유지합니다.
 
-[![](\assets\posts\{{ page.name }}\compaction.png)](\assets\posts\{{ page.name }}\compaction.png)
+[![](\assets\posts\2025-03-26-Messaging System.md\compaction.png)](\assets\posts\2025-03-26-Messaging System.md\compaction.png)
 
 
 ### Acknowledgment

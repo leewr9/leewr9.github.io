@@ -157,7 +157,7 @@ dbt docs serve
 
 서버가 실행되면, 기본적으로 http://localhost:8080에서 DBT Docs를 확인할 수 있습니다.
 
-[![](\assets\posts\{{ page.name }}\docs.png)](\assets\posts\{{ page.name }}\docs.png)
+[![](\assets\posts\2025-03-05-Quality Management.md\docs.png)](\assets\posts\2025-03-05-Quality Management.md\docs.png)
 
 ---
 

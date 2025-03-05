@@ -25,7 +25,7 @@ df.persist(StorageLevel.DISK_ONLY)
 df.count()
 ```
 
-[![](\assets\posts\{{ page.name }}\storage.png)](\assets\posts\{{ page.name }}\storage.png)
+[![](\assets\posts\2025-04-06-Optimizing Storage.md\storage.png)](\assets\posts\2025-04-06-Optimizing Storage.md\storage.png)
 
 ---
 

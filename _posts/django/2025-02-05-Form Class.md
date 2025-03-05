@@ -45,7 +45,7 @@ def contact_view(request):
     return render(request, 'contact.html', {'form': form})
 ```
 
-[![](\assets\posts\{{ page.name }}\form.png)](\assets\posts\{{ page.name }}\form.png)
+[![](\assets\posts\2025-02-05-Form Class.md\form.png)](\assets\posts\2025-02-05-Form Class.md\form.png)
 {% raw %}
 ```html
 <!-- contact.html -->
@@ -118,7 +118,7 @@ def create_article(request):
     return render(request, 'create_article.html', {'form': form})
 ```
 
-[![](\assets\posts\{{ page.name }}\model.png)](\assets\posts\{{ page.name }}\model.png)
+[![](\assets\posts\2025-02-05-Form Class.md\model.png)](\assets\posts\2025-02-05-Form Class.md\model.png)
 
 {% raw %}
 ```html
