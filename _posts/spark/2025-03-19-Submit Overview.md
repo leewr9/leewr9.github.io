@@ -51,7 +51,7 @@ spark-submit --master local[4] --deploy-mode client my_app.py
     - 사용 불가: 로컬 모드에서는 `--deploy-mode cluster`를 사용할 수 없습니다.
 
 ### Standalone
-- Master: `spark://localhost:7077` (Standalone 클러스터의 마스터 노드)
+- Master: `spark://<standalone-host>:7077` (Standalone 클러스터의 마스터 노드)
 - Cluster Manager: Spark 자체 클러스터 매니저가 자원 관리 및 작업 스케줄링을 담당
 - Client
     ```bash
