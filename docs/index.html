@@ -1,0 +1,34 @@
+---
+layout: base
+title: Docs
+permalink: /docs/
+search_omit: true
+---
+
+<div class="docs">
+  
+  <nav class="page-breadcrumb">
+    <a class="page-link" href="{{ "/" | relative_url }}">Home</a> /
+    {{ page.title }}
+  </nav>
+  
+  <header class="post-header">
+    <h1 class="post-title">Docs</h1>
+  </header>
+
+  <div class="about_img">
+    <a href="{{ "assets/images/main.png" | absolute_url }}" >
+      <img src="{{ "assets/images/main.png" | absolute_url }}" alt>
+    </a>
+  </div>
+
+  <div class="post-content">
+    <ul>
+      <li><a class="page-link" href="{{ "/docs/resume.pdf" | relative_url }}">Resume</a></li>
+      <li><a class="page-link" href="{{ "/docs/portfolio.pdf" | relative_url }}">Portfolio</a></li>
+      <li><a class="page-link" href="{{ "/docs/career.pdf" | relative_url }}">Career Description</a></li>
+      <li><a class="page-link" href="{{ "/docs/introduction.pdf" | relative_url }}">Self-Introduction</a></li>
+    </ul>
+  </div>
+
+</div>
