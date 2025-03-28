@@ -6,6 +6,11 @@ tag: [Spark SQL, Spark]
 
 > Apache Spark는 대규모 데이터 처리 성능을 극대화하기 위해 데이터를 메모리나 디스크에 캐싱하고 퍼시스팅하는 기능을 제공하는 분산 처리 시스템으로, 반복적인 계산을 최적화하고 시스템 자원을 효율적으로 사용하여 빠르고 확장 가능한 데이터 분석을 가능하게 합니다.
 
+---
+
+## RDD and DataFrame
+Spark에서 `RDD`나 `DataFrame`을 캐시하거나 퍼시스트하는 방법은 데이터 처리 속도를 최적화하는 데 중요한 역할을 합니다. 자주 사용되는 RDD나 DataFrame을 캐시하거나 퍼시스트하면, 반복 작업 시 데이터를 재계산하지 않고 빠르게 액세스할 수 있습니다.
+
 ```python
 from pyspark.sql import SparkSession
 from pyspark.storagelevel import StorageLevel
@@ -27,20 +32,15 @@ df.count()
 
 [![](\assets\posts\2025-04-06-Optimizing Storage.md\storage.png)](\assets\posts\2025-04-06-Optimizing Storage.md\storage.png)
 
----
-
-## DataFrame
-Spark에서 `DataFrame`을 캐시하거나 퍼시스트하는 방법은 데이터 처리 속도를 최적화하는 데 중요한 역할을 합니다. 자주 사용되는 DataFrame을 캐시하거나 퍼시스트하면, 반복 작업 시 데이터를 재계산하지 않고 빠르게 액세스할 수 있습니다.
-
 ### cache()
-`cache()`는 DataFrame을 메모리에 캐시하여, 반복적인 작업에서 빠른 접근을 가능하며, 액션이 실행될 때 캐시가 실제로 이루어집니다.
+`cache()`는 RDD나 DataFrame을 메모리에 캐시하여, 반복적인 작업에서 빠른 접근을 가능하며, 액션이 실행될 때 캐시가 실제로 이루어집니다.
 
 ```python
 df.cache()
 ```
 
 ### persist()
-`persist()`는 DataFrame을 메모리와 디스크에 저장할 수 있도록 설정합니다. `StorageLevel`을 사용해 저장 방식을 세부적으로 조정할 수 있습니다.
+`persist()`는 RDD나 DataFrame을 메모리와 디스크에 저장할 수 있도록 설정합니다. `StorageLevel`을 사용해 저장 방식을 세부적으로 조정할 수 있습니다.
 
 ```python
 from pyspark import StorageLevel
@@ -49,7 +49,7 @@ df.persist(StorageLevel.MEMORY_AND_DISK)
 ```
 
 ### unpersist()
-`unpersist()`는 이미 캐시된 DataFrame의 데이터를 메모리와 디스크에서 제거하는 방법입니다. 이는 더 이상 해당 데이터가 필요 없을 때 사용하여 자원을 해제하고, 메모리 및 디스크 공간을 반환합니다.
+`unpersist()`는 이미 캐시된 RDD나 DataFrame의 데이터를 메모리와 디스크에서 제거하는 방법입니다. 이는 더 이상 해당 데이터가 필요 없을 때 사용하여 자원을 해제하고, 메모리 및 디스크 공간을 반환합니다.
 
 ```python
 df.unpersist()
