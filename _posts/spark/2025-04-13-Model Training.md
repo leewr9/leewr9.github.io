@@ -4,7 +4,7 @@ category: Spark
 tag: [SparkML, Spark]
 ---
 
-> SparkML에서 모델 학습은 데이터에서 패턴을 학습하고, 이를 바탕으로 새로운 데이터에 대한 예측을 가능하게 만드는 과정입니다. PySpark는 분산 환경에서 대규모 데이터를 처리할 수 있도록 돕는 강력한 머신러닝 라이브러리를 제공합니다.
+> SparkML에서 모델 학습은 데이터에서 숨겨진 패턴이나 관계를 학습하고, 이를 기반으로 새로운 데이터에 대한 예측을 수행하는 과정입니다. 이 과정은 데이터를 분석하고, 모델을 구축하여 실제 상황에서 유용한 예측을 할 수 있게 합니다.
 
 ---
 
@@ -21,12 +21,11 @@ tag: [SparkML, Spark]
 ```python
 from pyspark.ml.regression import LinearRegression
 from pyspark.ml.feature import VectorAssembler
-from pyspark.ml.evaluation import RegressionEvaluator
 from pyspark.sql import SparkSession
 
 spark = SparkSession.builder.appName("Regression Example").getOrCreate()
 
-data = [(i, (i / 10), (i * 10)) for i in range(0, 1000)]
+data = [(i, (i + 10), (i * 10)) for i in range(1000)]
 columns = ["id", "label", "value"]
 df = spark.createDataFrame(data, columns)
 
@@ -42,26 +41,19 @@ lr_model = lr.fit(train)
 # 예측 결과 출력
 predictions = lr_model.transform(test)
 predictions.select("id", "value", "prediction").show(5)
-
-# 모델 평가
-evaluator = RegressionEvaluator(labelCol="value", predictionCol="prediction", metricName="rmse")
-rmse = evaluator.evaluate(predictions)
-print(f"RMSE: {rmse}")
 ```
 
 ```bash
-+---+-----+------------------+
-| id|value|        prediction|
-+---+-----+------------------+
-|  1|   10|  9.99999999999748|
-|  4|   40|  39.9999999999975|
-|  8|   80| 79.99999999999751|
-| 14|  140|139.99999999999753|
-| 16|  160|159.99999999999756|
-+---+-----+------------------+
++---+-----+--------------------+
+| id|value|          prediction|
++---+-----+--------------------+
+|  0|    0|2.870592652470804...|
+|  4|   40|  40.000000000002856|
+|  6|   60|   60.00000000000284|
+|  7|   70|   70.00000000000284|
+| 10|  100|  100.00000000000284|
++---+-----+--------------------+
 only showing top 5 rows
-
-RMSE: 1.6382844248711526e-12
 ```
 
 ---
@@ -81,7 +73,6 @@ import random
 from pyspark.ml.classification import LogisticRegression
 from pyspark.ml.feature import VectorAssembler
 from pyspark.sql import SparkSession
-from pyspark.ml.evaluation import BinaryClassificationEvaluator
 
 spark = SparkSession.builder.appName("Classification Example").getOrCreate()
 
@@ -103,14 +94,7 @@ lr_model = lr.fit(train)
 # 예측 결과 출력
 predictions = lr_model.transform(test)
 predictions.select("id", "value", "probability", "prediction").show(5)
-
-# 모델 평가
-evaluator = BinaryClassificationEvaluator(labelCol="value", rawPredictionCol="prediction")
-accuracy = evaluator.evaluate(predictions)
-print(f"Accuracy: {accuracy}")
 ```
-
-[![](\assets\posts\2025-04-13-Model Training.md\classification.png)](\assets\posts\2025-04-13-Model Training.md\classification.png)
 
 ```bash
 +--------------------+-----+--------------------+----------+
@@ -123,8 +107,6 @@ print(f"Accuracy: {accuracy}")
 | 0.06941208209954919|    0|[0.95498469164518...|       0.0|
 +--------------------+-----+--------------------+----------+
 only showing top 5 rows
-
-Accuracy: 0.8054610646317919
 ```
 
 ---
@@ -141,12 +123,11 @@ Accuracy: 0.8054610646317919
 ```python
 from pyspark.ml.clustering import KMeans
 from pyspark.ml.feature import VectorAssembler
-from pyspark.ml.evaluation import ClusteringEvaluator
 from pyspark.sql import SparkSession
 
 spark = SparkSession.builder.appName("Clustering Example").getOrCreate()
 
-data = [(i, i * 10) for i in range(0, 1000)]
+data = [(i, i * 10) for i in range(1000)]
 columns = ["id", "value"]
 df = spark.createDataFrame(data, columns)
 
@@ -158,16 +139,11 @@ train, test = df.randomSplit([0.7, 0.3])
 
 # 모델 학습
 kmeans = KMeans(k=3, seed=7, featuresCol="features", predictionCol="prediction")
-model = kmeans.fit(train)
+km_model = kmeans.fit(train)
 
 # 예측 결과 출력
-predictions = model.transform(test)
+predictions = km_model.transform(test)
 predictions.groupBy("prediction").count().show()
-
-# 모델 평가
-evaluator = ClusteringEvaluator()
-silhouette = evaluator.evaluate(predictions)
-print(f"Silhouette Score: {silhouette}")
 ```
 
 ```bash
@@ -178,8 +154,22 @@ print(f"Silhouette Score: {silhouette}")
 |         2|  107|
 |         0|  108|
 +----------+-----+
+```
 
-Silhouette Score: 0.7475653709556944
+## Persistence
+한 번 학습된 모델을 저장하면, 나중에 다시 불러와서 예측에 사용할 수 있습니다. 이를 통해 모델을 재학습하지 않고도 동일한 성능을 유지하면서 빠르게 결과를 도출할 수 있습니다. 
+
+```python
+from pyspark.ml.regression import LinearRegressionModel
+from pyspark.ml.clustering import KMeansModel
+
+# 모델 저장
+lr_model.save("linear_regression_model")
+km_model.save("kmeans_model")
+
+# 저장된 모델 로드
+loaded_lr_model = LinearRegressionModel.load("linear_regression_model")
+loaded_km_model = LinearRegressionModel.load("kmeans_model")
 ```
 
 ---

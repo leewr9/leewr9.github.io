@@ -18,7 +18,6 @@ tag: [SparkML, Spark]
 ```python
 from pyspark.sql import SparkSession
 from pyspark.ml.feature import Imputer
-from pyspark.ml.linalg import Vectors
 
 spark = SparkSession.builder.appName("Imputer Example").getOrCreate()
 
@@ -96,7 +95,7 @@ from pyspark.ml.feature import StringIndexer
 spark = SparkSession.builder.appName("StringIndexer Example").getOrCreate()
 
 # 데이터 준비
-data = spark.createDataFrame([('Male',), ('Female',), ('Female',)], ["gender"])
+data = spark.createDataFrame([("Male",), ("Female",), ("Female",)], ["gender"])
 
 # StringIndexer 설정
 indexer = StringIndexer(inputCol="gender", outputCol="gender_index")
@@ -126,7 +125,7 @@ from pyspark.ml.feature import StringIndexer, OneHotEncoder
 spark = SparkSession.builder.appName("OneHotEncoder Example").getOrCreate()
 
 # 데이터 준비
-data = spark.createDataFrame([('Male',), ('Female',), ('Other',), ('Female',), ('Other',)], ["gender"])
+data = spark.createDataFrame([("Male",), ("Female",), ("Other",), ("Female",), ("Other",)], ["gender"])
 
 # StringIndexer 설정 
 indexer = StringIndexer(inputCol="gender", outputCol="gender_index")

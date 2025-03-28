@@ -8,7 +8,7 @@ tag: [Spark]
 
 ---
 
-## Partitioning Function
+## Partitioning
 Spark는 데이터를 여러 파티션으로 분배하거나 기존 파티션을 변경하는 함수들을 제공합니다. 이를 통해 데이터 분산 처리 성능을 최적화할 수 있습니다.
 
 ### repartition
