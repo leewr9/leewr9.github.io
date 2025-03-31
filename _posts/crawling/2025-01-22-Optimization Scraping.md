@@ -1,5 +1,5 @@
 ---
-title: Optimization and Error
+title: Optimization Scraping
 category: Crawling
 tag: [Python, Crawling]
 ---
@@ -8,7 +8,7 @@ tag: [Python, Crawling]
 
 ---
 
-## Optimizing Speed
+## Optimizing
 웹 크롤링에서 가장 큰 성능 문제 중 하나는 요청과 응답을 기다리는 시간입니다. 비동기 요청을 활용하면 여러 페이지를 동시에 요청할 수 있어 크롤링 속도를 획기적으로 개선할 수 있습니다.
 
 비동기 요청을 처리하는 데 주로 사용하는 라이브러리는 `aiohttp`와 `asyncio`입니다. 이 두 라이브러리를 사용하여 여러 요청을 동시에 보내고, 응답을 처리할 수 있습니다.
@@ -36,7 +36,7 @@ asyncio.run(main())
 
 ---
 
-## Changing Configuration
+## Configuration
 웹 크롤러가 너무 많은 요청을 보내면 서버에서 차단할 수 있습니다. 이를 방지하기 위해 `User-Agent`를 변경하거나 `Proxy`를 설정하여 IP 차단을 우회할 수 있습니다.
 
 ### User-Agent

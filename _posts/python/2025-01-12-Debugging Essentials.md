@@ -1,5 +1,5 @@
 ---
-title: Testing and Debugging
+title: Debugging Essentials
 category: Python
 tag: [Python]
 ---

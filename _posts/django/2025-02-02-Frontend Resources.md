@@ -1,10 +1,10 @@
 ---
-title: Templates and Static
+title: Frontend Resources
 category: Django
 tag: [Python, Django]
 ---
 
-> Django의 템플릿과 정적 파일 관리는 웹 애플리케이션 개발의 중요한 부분입니다. 템플릿은 HTML 페이지의 구조를 정의하고, 정적 파일은 CSS, JavaScript, 이미지와 같은 리소스를 관리합니다.
+> Django의 프론트엔드 리소스 관리는 웹 애플리케이션 개발에서 중요한 역할을 합니다. 프론트엔드 리소스는 HTML 템플릿을 통해 페이지 구조를 정의하고, CSS, JavaScript, 이미지 등 정적 파일을 관리하여 웹 애플리케이션의 시각적 및 기능적 요소를 제공합니다.
 
 ---
 
@@ -83,7 +83,7 @@ Django 템플릿 상속을 사용하면 반복되는 HTML 코드를 효율적으
 ```
 {% endraw %}
 
-[![](\assets\posts\2025-01-29-Templates and Static.md\index.png)](\assets\posts\2025-01-29-Templates and Static.md\index.png)
+[![](\assets\posts\2025-02-02-Frontend Resources.md\index.png)](\assets\posts\2025-02-02-Frontend Resources.md\index.png)
 
 {% raw %}
 ```html

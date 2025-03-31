@@ -8,7 +8,7 @@ tag: [Data, Python]
 
 ---
 
-## Data Analysis and Processing
+## Data Analysis
 
 ### Numpy
 Numpy는 수치 계산을 위한 라이브러리로, 고성능 다차원 배열 객체와 다양한 수학 함수를 제공합니다.

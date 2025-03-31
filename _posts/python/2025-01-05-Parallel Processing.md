@@ -8,8 +8,10 @@ tag: [Python]
 
 ---
 
-## Multithreading
-`멀티스레딩(Multithreading)`은 하나의 프로세스 내에서 여러 개의 스레드를 생성하여 동시에 여러 작업을 처리하는 기법입니다. Python에서 멀티스레딩은 `threading` 모듈을 통해 구현할 수 있습니다. 그러나 Python의 `Global Interpreter Lock(GIL)` 때문에 멀티스레딩은 CPU 집약적인 작업에서 성능을 크게 향상시키지 않습니다. I/O 작업에서 효과적입니다.
+## Multitasking
+
+### Multithreading
+`Multithreading`은 하나의 프로세스 내에서 여러 개의 스레드를 생성하여 동시에 여러 작업을 처리하는 기법입니다. Python에서 멀티스레딩은 `threading` 모듈을 통해 구현할 수 있습니다. 그러나 Python의 **Global Interpreter Lock(GIL)** 때문에 멀티스레딩은 CPU 집약적인 작업에서 성능을 크게 향상시키지 않습니다. I/O 작업에서 효과적입니다.
 
 ```python
 import threading
@@ -44,8 +46,8 @@ print("Both threads have finished.")
 
 ---
 
-## Multiprocessing
-`멀티프로세싱(Multiprocessing)`은 여러 프로세스를 생성하여 각 프로세스가 독립적으로 실행되도록 하는 기법입니다. 멀티프로세싱은 GIL의 영향을 받지 않기 때문에 CPU 집약적인 작업에서 성능을 극대화할 수 있습니다. Python에서는 `multiprocessing` 모듈을 사용합니다.
+### Multiprocessing
+`Multiprocessing`은 여러 프로세스를 생성하여 각 프로세스가 독립적으로 실행되도록 하는 기법입니다. 멀티프로세싱은 GIL의 영향을 받지 않기 때문에 CPU 집약적인 작업에서 성능을 극대화할 수 있습니다. Python에서는 `multiprocessing` 모듈을 사용합니다.
 
 ```python
 import multiprocessing
@@ -77,10 +79,18 @@ if __name__ == '__main__':
 ```
 위 예시에서는 두 개의 프로세스를 동시에 실행하여 각각 제곱과 세제곱을 계산합니다. 멀티프로세싱을 통해 CPU 집약적인 작업을 병렬로 처리할 수 있습니다.
 
+### Global Interpreter Lock
+`Global Interpreter Lock`은 Python에서 멀티스레딩을 사용할 때 발생하는 제한적인 요소입니다. `GIL`은 한 번에 하나의 스레드만 Python 바이트코드를 실행할 수 있도록 제한합니다. 따라서, Python에서는 멀티스레딩을 사용하더라도 CPU 바운드 작업에서는 성능 향상이 거의 없습니다.
+
+- **CPU 바운드 작업**: GIL로 인해 멀티스레딩 성능 향상에 제한이 있어, 멀티프로세싱을 통해 성능 향상 가능
+    - 이미지 처리, 대량의 수학 연산, 머신 러닝 연산 등
+- **I/O 바운드 작업**: GIL의 영향을 덜 받아 멀티스레딩을 통해 성능 향상 가능
+    - 웹 크롤링, 파일 입출력, 네트워크 요청 등
+
 ---
 
-## Asynchronous Programming
-`비동기 프로그래밍(Asynchronous Programming)`은 하나의 스레드에서 여러 작업을 효율적으로 처리하는 기법입니다. Python에서는 `asyncio` 모듈을 사용하여 비동기 프로그램을 작성할 수 있습니다. 비동기 프로그래밍은 특히 I/O 작업에서 성능을 향상시키는 데 유리합니다.
+## Asynchronous
+`Asynchronous`은 하나의 스레드에서 여러 작업을 효율적으로 처리하는 기법입니다. Python에서는 `asyncio` 모듈을 사용하여 비동기 프로그램을 작성할 수 있습니다. 비동기 프로그래밍은 특히 I/O 작업에서 성능을 향상시키는 데 유리합니다.
 
 ```python
 import asyncio
