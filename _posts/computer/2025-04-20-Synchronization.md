@@ -1,5 +1,5 @@
 ---
-title: Task Synchronization
+title: Synchronization
 category: Computer
 tag: [Python, Spinlock, Semaphore, Mutex, OS]
 ---
@@ -185,7 +185,7 @@ Spinlock: Thread-1 exiting
 ## Issues
 
 ### Race Condition
-`Race Condition`은 둘 이상의 프로세스나 스레드가 공유 자원에 동시에 접근하면서 예기치 않은 결과를 초래하는 현상입니다. 두 개의 스레드가 같은 변수 값을 동시에 변경하려 할 때, 동기화가 되지 않으면 원하지 않는 결과가 발생할 수 있습니다.
+`Race Condition`은 둘 이상의 스레드가 공유 자원에 동시에 접근하면서 예기치 않은 결과를 초래하는 현상입니다. 이런 문제가 발생하는 코드 영역을 **크리티컬 섹션(Critical Section)**이라고 하며, 동기화 없이 실행되면 데이터 충돌이 일어날 수 있습니다
 
 - **해결 방안**
     - `Mutex`: 자원을 사용하는 스레드를 하나로 제한하여 동시에 접근하지 못하게 함

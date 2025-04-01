@@ -1,7 +1,7 @@
 ---
-title: Task Management
+title: Process Management
 category: Computer
-tag: [Python, Thread, Process, Task, OS]
+tag: [Python, Thread, Process, OS]
 ---
 
 > 운영체제는 컴퓨터 하드웨어와 소프트웨어 자원 간의 조정 및 관리를 담당하는 중요한 역할을 합니다. 효율적인 프로그램 실행과 자원 관리를 위해 필요한 핵심 개념들을 이해하는 것은 필수적입니다. 이들 개념을 통해 시스템의 작동 방식과 성능 최적화를 위한 고려사항들을 알아볼 수 있습니다.
