@@ -1,6 +1,6 @@
 ---
-title: Database Processing
-category: Computer
+title: Storage Indexing
+category: Database
 tag: [OLAP, OLTP, Database]
 ---
 
@@ -53,7 +53,7 @@ tag: [OLAP, OLTP, Database]
 ### B-Tree
 `B-Tree`는 데이터베이스에서 가장 많이 사용되는 전통적인 트리 기반 인덱스 구조로, `Balanced Tree` 형태를 유지하면서 검색 성능을 일정하게 보장하지만, 삽입 및 삭제 시 균형을 맞추는 과정에서 성능이 저하될 수 있습니다.
 
-[![](/assets/posts/2025-05-04-Database Processing.md/b-tree.png)](/assets/posts/2025-05-04-Database Processing.md/b-tree.png)
+[![](/assets/posts/2025-05-11-Storage Indexing.md/b-tree.png)](/assets/posts/2025-05-11-Storage Indexing.md/b-tree.png)
 
 - **균형 트리 구조**: 모든 리프 노드가 동일한 깊이를 유지하므로 검색 속도가 일정함
 - **노드에 키와 데이터 저장**: 각 노드가 키와 함께 데이터를 직접 저장하여 중간 노드에서도 데이터를 찾을 수 있음
@@ -63,7 +63,7 @@ tag: [OLAP, OLTP, Database]
 ### B+Tree
 `B+Tree`는 `B-Tree`를 확장하여 리프 노드에서만 데이터를 저장하는 구조로, 범위 검색 성능이 뛰어나지만, 중간 노드에는 키 값만 저장되므로 특정 키를 찾을 때 더 많은 단계를 거칠 수 있습니다.
 
-[![](/assets/posts/2025-05-04-Database Processing.md/b+tree.png)](/assets/posts/2025-05-04-Database Processing.md/b+tree.png)
+[![](/assets/posts/2025-05-11-Storage Indexing.md/b+tree.png)](/assets/posts/2025-05-11-Storage Indexing.md/b+tree.png)
 
 - **B-Tree의 확장 버전**: 내부 노드에는 키 값만 저장하고, 리프 노드에서만 데이터를 저장하여 검색 성능을 최적화함
 - **순차 접근 최적화**: 리프 노드들이 `Linked List` 형태로 연결되어 있어 범위 검색이 빠름

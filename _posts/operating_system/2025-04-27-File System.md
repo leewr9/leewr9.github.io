@@ -1,7 +1,7 @@
 ---
 title: File System
-category: Computer
-tag: [File, OS]
+category: Operating System
+tag: [File, OS, Operating System]
 ---
 
 > 운영체제에서 파일 시스템은 데이터를 저장, 검색, 삭제하고 무결성을 유지하는 핵심 컴포넌트입니다. 파일 시스템 구조에 따라 성능과 안정성이 달라지며, 현대적인 파일 시스템은 저널링, 캐싱, 암호화 등의 기능을 통해 효율적인 데이터 관리를 제공합니다.

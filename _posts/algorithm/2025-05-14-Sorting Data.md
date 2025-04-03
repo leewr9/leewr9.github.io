@@ -1,6 +1,6 @@
 ---
-title: Sorting Algorithm
-category: Computer
+title: Sorting Data
+category: Algorithm
 tag: [Python, Sorting, Algorithm]
 ---
 
@@ -14,7 +14,7 @@ tag: [Python, Sorting, Algorithm]
 ### Merge Sort
 `Merge Sort`은 분할 정복 기법을 사용하여 배열을 절반으로 나누고, 각각 정렬한 후 병합하는 방식이다. 항상 정렬된 상태를 유지하며 데이터를 합치기 때문에 안정 정렬에 속한다. 다만, 정렬 과정에서 추가적인 메모리 공간이 필요하다.
 
-[![](/assets/posts/2025-05-04-Sorting Algorithm.md/merge.gif)](/assets/posts/2025-05-04-Sorting Algorithm.md/merge.gif)
+[![](/assets/posts/2025-05-14-Sorting Data.md/merge.gif)](/assets/posts/2025-05-14-Sorting Data.md/merge.gif)
 
 - **시간 복잡도**
     - 최악, 평균, 최선: `O(N log N)`
@@ -35,20 +35,20 @@ def merge_sort(arr):
     return merge(left, right)
 
 def merge(left, right):
-    sorted_arr = []
+    arr = []
     i = j = 0
 
     while i < len(left) and j < len(right):
         if left[i] < right[j]:
-            sorted_arr.append(left[i])
+            arr.append(left[i])
             i += 1
         else:
-            sorted_arr.append(right[j])
+            arr.append(right[j])
             j += 1
 
-    sorted_arr.extend(left[i:])
-    sorted_arr.extend(right[j:])
-    return sorted_arr
+    arr.extend(left[i:])
+    arr.extend(right[j:])
+    return arr
 
 if __name__ == "__main__":
     start = time.time()
@@ -72,7 +72,7 @@ Execution time: 2.19 seconds
 ### Quick Sort
 `Quick Sort`는 기준 값을 정하고, 이를 중심으로 작은 값과 큰 값으로 나눈 뒤 재귀적으로 정렬하는 방식이다. 제자리 정렬이 가능해 메모리 효율이 좋지만, 피벗 선택이 잘못되면 성능이 저하될 수 있다.
 
-[![](/assets/posts/2025-05-04-Sorting Algorithm.md/quick.gif)](/assets/posts/2025-05-04-Sorting Algorithm.md/quick.gif)
+[![](/assets/posts/2025-05-14-Sorting Data.md/quick.gif)](/assets/posts/2025-05-14-Sorting Data.md/quick.gif)
 
 - **시간 복잡도**
     - 최선, 평균: `O(N log N)`
@@ -99,7 +99,7 @@ Execution time: 1.86 seconds
 ### Heap Sort
 `Heap Sort`는 힙 자료구조를 사용하여 최댓값 또는 최솟값을 반복적으로 추출하며 정렬하는 방식이다. 항상 일정한 성능을 보장하지만, 힙을 유지하는 과정에서 연산량이 많아 실제 실행 속도는 `Quick Sort`보다 느릴 수 있다.
 
-[![](/assets/posts/2025-05-04-Sorting Algorithm.md/heap.gif)](/assets/posts/2025-05-04-Sorting Algorithm.md/heap.gif)
+[![](/assets/posts/2025-05-14-Sorting Data.md/heap.gif)](/assets/posts/2025-05-14-Sorting Data.md/heap.gif)
 
 - **시간 복잡도**
     - 최악, 평균, 최선: `O(N log N)`
@@ -154,11 +154,11 @@ def counting_sort(arr):
     for num in arr:
         count[num] += 1
 
-    sorted_arr = []
+    arr = []
     for i in range(len(count)):
-        sorted_arr.extend([i] * count[i])
+        arr.extend([i] * count[i])
 
-    return sorted_arr
+    return arr
 ```
 
 ```bash
@@ -211,6 +211,7 @@ Execution time: 1.35 seconds
 
 ## References
 - [Wikipedia 공식 문서](https://wikipedia.org/wiki/)
+- [Python 공식 문서](https://docs.python.org/3/)
 
 <nav class="post-toc" markdown="1">
   <h2>Contents</h2>

@@ -1,6 +1,6 @@
 ---
 title: Traffic Management
-category: Computer
+category: Network
 tag: [Load Balancing, Routing, Network]
 ---
 
@@ -11,7 +11,7 @@ tag: [Load Balancing, Routing, Network]
 ## Routing
 `Routing`은 네트워크 상의 데이터 패킷이 목적지까지 효율적으로 전달될 수 있도록 경로를 선택하는 과정입니다. 
 
-[![](/assets/posts/2025-04-30-Traffic Management.md/routing.png)](/assets/posts/2025-04-30-Traffic Management.md/routing.png)
+[![](/assets/posts/2025-05-07-Traffic Management.md/routing.png)](/assets/posts/2025-05-07-Traffic Management.md/routing.png)
 
 ### Static Routing
 `Static Routing`은 네트워크 관리자가 수동으로 경로를 설정하는 방식입니다. 관리자는 라우팅 테이블을 직접 설정하며, 네트워크의 변화에 따라 수동으로 수정해야 합니다. 정적 라우팅은 네트워크가 작거나 변화가 적을 때 유용합니다.
@@ -42,7 +42,7 @@ tag: [Load Balancing, Routing, Network]
 ## Load Balancing
 `Load Balancing`은 서버나 네트워크의 부하를 여러 시스템에 고르게 분배하여 성능을 최적화하고, 서비스의 고가용성과 확장성을 제공합니다. 이를 통해 트래픽 증가에 맞춰 서버를 추가하고, 서버가 다운되더라도 다른 서버가 대신 처리하여 서비스를 지속할 수 있습니다.
 
-[![](/assets/posts/2025-04-30-Traffic Management.md/balancing.png)](/assets/posts/2025-04-30-Traffic Management.md/balancing.png)
+[![](/assets/posts/2025-05-07-Traffic Management.md/balancing.png)](/assets/posts/2025-05-07-Traffic Management.md/balancing.png)
 
 - `L4 Load Balancer`: OSI 모델의 `Transport Layer`에서 IP 주소와 `TCP/UDP` 포트를 기반으로 트래픽을 분배합니다. 빠르고 간단하지만 요청에 대한 심층 분석은 하지 않습니다.
 - `L7 Load Balancer`: OSI 모델의 `Application Layer`에서 HTTP 요청, URL 경로, 헤더, 쿠키 등을 기반으로 트래픽을 분배합니다. 더 정교한 트래픽 관리가 가능하지만, 상대적으로 처리 속도는 느릴 수 있습니다.

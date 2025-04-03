@@ -1,6 +1,6 @@
 ---
-title: Transport Layer
-category: Computer
+title: OSI Transport Layer
+category: Network
 tag: [UDP, TCP, Network]
 ---
 
@@ -20,7 +20,7 @@ tag: [UDP, TCP, Network]
 #### 3-Way Handshake
 TCP 연결을 설정할 때, 데이터 전송이 가능하도록 상대방과의 연결을 확립하는 3단계 과정으로 이루어집니다.
 
-[![](/assets/posts/2025-04-27-Transport Layer.md/3way.gif)](/assets/posts/2025-04-27-Transport Layer.md/3way.gif)
+[![](/assets/posts/2025-05-04-OSI Transport Layer.md/3way.gif)](/assets/posts/2025-05-04-OSI Transport Layer.md/3way.gif)
 
 - `SYN`: 클라이언트가 서버에게 연결을 요청하는 패킷을 보냅니다.
 - `SYN-ACK`: 서버는 클라이언트의 요청을 받아들이고, 그에 대한 응답을 보냅니다.
@@ -29,7 +29,7 @@ TCP 연결을 설정할 때, 데이터 전송이 가능하도록 상대방과의
 #### 4-Way Handshake
 TCP 연결을 종료할 때에는 4단계 종료 절차가 필요합니다. 이를 통해 양측은 안전하게 연결을 종료할 수 있습니다.
 
-[![](/assets/posts/2025-04-27-Transport Layer.md/4way.png)](/assets/posts/2025-04-27-Transport Layer.md/4way.png)
+[![](/assets/posts/2025-05-04-OSI Transport Layer.md/4way.png)](/assets/posts/2025-05-04-OSI Transport Layer.md/4way.png)
 
 - `FIN`: 한 쪽이 연결 종료를 요청합니다.
 - `ACK`: 상대방은 연결 종료 요청을 받아들이고, ACK 패킷을 보냅니다.

@@ -1,6 +1,6 @@
 ---
-title: Network Protocol
-category: Computer
+title: Protocol Model
+category: Network
 tag: [Topology, Layer, Network]
 ---
 
@@ -13,7 +13,7 @@ tag: [Topology, Layer, Network]
 ### OSI
 **OSI(Open Systems Interconnection)** 모델은 네트워크 통신을 7개의 계층으로 나누어 각 계층이 독립적으로 작동하면서도 전체적으로 협력하여 통신을 이루게 합니다. `OSI` 모델은 네트워크에서 발생하는 다양한 문제를 해결하기 위해 각 계층을 분리하여 구조화한 모델로, 네트워크 프로토콜을 설계하고 문제를 해결하는 데 유용합니다.
 
-[![](/assets/posts/2025-04-27-Network Protocol.md/osi.png)](/assets/posts/2025-04-27-Network Protocol.md/osi.png)
+[![](/assets/posts/2025-04-30-Protocol Model.md/osi.png)](/assets/posts/2025-04-30-Protocol Model.md/osi.png)
 
 - `Physical Layer`: 물리적 전송 담당
 - `Data Link Layer`: 데이터 오류 감지 및 프레임 생성 담당
@@ -26,7 +26,7 @@ tag: [Topology, Layer, Network]
 ### TCP/IP
 `TCP/IP` 모델은 `OSI` 모델을 간소화한 4계층 모델로, 인터넷 프로토콜을 기준으로 네트워크 통신을 분류합니다. TCP/IP는 실제로 인터넷을 구성하는 주요 프로토콜이며, OSI 모델에 비해 좀 더 간단한 구조를 가지고 있습니다.
 
-[![](/assets/posts/2025-04-27-Network Protocol.md/tcpip.png)](/assets/posts/2025-04-27-Network Protocol.md/tcpip.png)
+[![](/assets/posts/2025-04-30-Protocol Model.md/tcpip.png)](/assets/posts/2025-04-30-Protocol Model.md/tcpip.png)
 
 - `Link Layer`: 물리적 전송 담당
 - `Internet Layer`: IP 주소 기반 라우팅 담당
@@ -40,7 +40,7 @@ tag: [Topology, Layer, Network]
 ### Packet
 `Packet` 교환 방식은 데이터를 작은 패킷으로 나누어 네트워크를 통해 전송하는 방식입니다. 각 패킷은 독립적으로 전달되며, 목적지에서 다시 원래의 데이터로 재조합됩니다. 이는 네트워크 자원을 효율적으로 사용하며, 장애 발생 시 복구가 용이합니다.
 
-[![](/assets/posts/2025-04-27-Network Protocol.md/packet.gif)](/assets/posts/2025-04-27-Network Protocol.md/packet.gif)
+[![](/assets/posts/2025-04-30-Protocol Model.md/packet.gif)](/assets/posts/2025-04-30-Protocol Model.md/packet.gif)
 
 - 장점: 네트워크 자원의 효율적 사용과 장애에 대한 강한 내성을 가지고 있습니다.
 - 단점: 패킷 손실이 있을 경우 재전송이 필요하며, 패킷 순서가 바뀔 수 있습니다.
@@ -56,7 +56,7 @@ tag: [Topology, Layer, Network]
 ## Topology
 `Topology`는 장치들이 서로 연결되는 방식을 의미합니다. 네트워크의 성능, 확장성, 유지보수 비용에 영향을 주므로, 목적에 따라 적절한 구조를 선택해야 합니다.
 
-[![](/assets/posts/2025-04-27-Network Protocol.md/topology.png)](/assets/posts/2025-04-27-Network Protocol.md/topology.png)
+[![](/assets/posts/2025-04-30-Protocol Model.md/topology.png)](/assets/posts/2025-04-30-Protocol Model.md/topology.png)
 
 | 종류 | 설명 | 장점 | 단점 |
 |-|-|-|-|

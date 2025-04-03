@@ -1,7 +1,7 @@
 ---
 title: Synchronization
-category: Computer
-tag: [Python, Spinlock, Semaphore, Mutex, OS]
+category: Operating System
+tag: [Python, Spinlock, Semaphore, Mutex, OS, Operating System]
 ---
 
 > 운영체제는 다양한 동기화 기법과 메모리 관리 기법을 통해 효율적인 작업 처리를 보장합니다. 동기화는 여러 스레드가 공유 자원에 동시에 접근할 때 발생할 수 있는 문제를 해결하는 기법입니다. 이를 통해 스레드 간 충돌을 방지하고, 순차적으로 자원을 접근하게 할 수 있습니다.
@@ -198,7 +198,7 @@ Spinlock: Thread-1 exiting
     - **자원 순서 정하기**: 자원 요청 순서를 미리 정해놓고, 항상 그 순서대로 요청하도록 함
     - **타임아웃**: 자원을 일정 시간 이상 기다리면 다시 시도하도록 설정
 
-[![](\assets\posts\2025-04-20-Task Synchronization.md\deadlock.png)](\assets\posts\2025-04-20-Task Synchronization.md\deadlock.png)
+[![](\assets\posts\2025-04-20-Synchronization.md\deadlock.png)](\assets\posts\2025-04-20-Synchronization.md\deadlock.png)
 
 ### Livelock
 `Livelock`은 둘 이상의 프로세스나 스레드가 서로 자원을 요청하는 동안 상태가 변하지만 자원을 얻지 못하고 무한히 반복하는 상태입니다. 데드락처럼 진행되지 않지만, 시스템은 무한히 상태 변화를 진행합니다.

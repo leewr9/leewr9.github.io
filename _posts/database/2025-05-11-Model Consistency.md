@@ -1,6 +1,6 @@
 ---
-title: Database Concepts
-category: Computer
+title: Model Consistency
+category: Database
 tag: [NewSQL, NoSQL, RDBMS, Database]
 ---
 
@@ -44,7 +44,7 @@ tag: [NewSQL, NoSQL, RDBMS, Database]
 ### CAP
 `CAP` 이론은 분산 시스템에서 트랜잭션의 일관성, 가용성, 네트워크 분할 허용성 간의 상충 관계를 정의하는 원리입니다. 이를 통해 시스템이 어떤 속성을 우선할 것인지 결정할 수 있으며, 분산 데이터베이스에서 필수적으로 고려됩니다.
 
-[![](/assets/posts/2025-05-04-Database Concept.md/cap.png)](/assets/posts/2025-05-04-Database Concept.md/cap.png)
+[![](/assets/posts/2025-05-11-Model Consistency.md/cap.png)](/assets/posts/2025-05-11-Model Consistency.md/cap.png)
 
 - `Consistency`: 모든 노드에서 동일한 데이터를 조회할 수 있도록 보장합니다.
 - `Availability`: 모든 요청에 대해 응답할 수 있도록 보장하지만, 최신 데이터가 아닐 수도 있습니다.

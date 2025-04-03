@@ -1,7 +1,7 @@
 ---
-title: Process Management
-category: Computer
-tag: [Python, Thread, Process, OS]
+title: Execution Model
+category: Operating System
+tag: [Python, Thread, Process, OS, Operating System]
 ---
 
 > 운영체제는 컴퓨터 하드웨어와 소프트웨어 자원 간의 조정 및 관리를 담당하는 중요한 역할을 합니다. 효율적인 프로그램 실행과 자원 관리를 위해 필요한 핵심 개념들을 이해하는 것은 필수적입니다. 이들 개념을 통해 시스템의 작동 방식과 성능 최적화를 위한 고려사항들을 알아볼 수 있습니다.
@@ -22,7 +22,7 @@ tag: [Python, Thread, Process, OS]
 - **자원 공유 용이**: 스레드 간 자원 공유가 용이하지만, 동시에 접근하는 경우 동기화 문제가 발생할 수 있습니다.
 - **경량화된 실행 단위**: 스레드는 프로세스에 비해 상대적으로 가벼운 실행 단위로, 문맥 교환 비용이 낮습니다.
 
-[![](\assets\posts\2025-04-20-Task Management.md\process.png)](\assets\posts\2025-04-20-Task Management.md\process.png)
+[![](\assets\posts\2025-04-20-Execution Model.md\process.png)](\assets\posts\2025-04-20-Execution Model.md\process.png)
 
 ---
 
