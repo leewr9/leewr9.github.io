@@ -259,6 +259,17 @@
       border: 1px solid $border-color-01;
       &:hover { border-color: $border-color-02 }
     }
+    span {
+      display: none;
+    }
+
+    @media screen and (min-width: $on-medium) {
+      span {
+        display: inline;
+        font-weight: bold;
+        color: $brand-color;
+      }
+    }
   }
 }
 

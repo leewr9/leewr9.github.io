@@ -3,5 +3,6 @@
     <svg class="svg-icon grey">
       <use xlink:href="{{ '/assets/social-icons.svg#' | append: entry.platform | relative_url }}"></use>
     </svg>
+    <span>{{ entry.title | default: entry.platform }}</span>
   </a>
 </li>
