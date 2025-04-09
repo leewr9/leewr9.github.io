@@ -24,11 +24,11 @@ To run the site locally, follow these steps
         ```
 
 3. **Start the Local Server**
-    ```bash
-    bundle exec jekyll serve
-    ```
+```bash
+bundle exec jekyll serve
+```
 
-Now, visit `http://localhost:4000` to preview the site.  
+Visit the site at [http://localhost:4000/](http://localhost:4000/).
 
 ## License  
 This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.  
