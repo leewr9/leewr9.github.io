@@ -1,4 +1,4 @@
-# leewr9.github.io  
+# leewr9.github.io
 
 This is my personal GitHub Pages site hosted at [leewr9.github.io](https://leewr9.github.io).  
 The site is built using Jekyll minima, a simple and blog-aware static site generator.  
