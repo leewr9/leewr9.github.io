@@ -266,8 +266,8 @@
     @media screen and (min-width: $on-medium) {
       span {
         display: inline;
-        font-weight: bold;
         color: $brand-color;
+        margin-left: 3px;
       }
     }
   }
