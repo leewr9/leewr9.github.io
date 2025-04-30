@@ -324,36 +324,34 @@
 
 
 /**
- * Home content
+ * Page content
  */
-.about {
+.page {
   margin-bottom: $spacing-unit * 2;
 
-  p {
-    margin-top: $spacing-unit * .5;
-    font-weight: 300;
-    font-style: italic;
+  .page-header {
     text-align: center;
+    margin-bottom: $spacing-unit;
+  }
+
+  img {
+    margin-bottom: $spacing-unit * .5;
+    min-width: 15% !important;
+    max-width: 25% !important;
+    width: 25%;
+  }
+
+  h3 {
+    padding-top: $spacing-unit * .75;
+    border-top: 1px solid $border-color-01;
+  }
+
+  h6, h7 {
+    display: inline-block;
   }
   
-  ul {
-    padding-bottom: $spacing-unit;
-    border-bottom: 1px solid $border-color-01;
-  }
-}
-
-
-/**
- * Docs content
- */
-.docs {
-  margin-bottom: $spacing-unit * 2;
-
-  h4, h5 {
-    display: inline;
-  }
-  
-  h5 {
+  h5, h7, a {
+    font-size: 1rem !important;
     color: $border-color-03;
   }
   
@@ -361,6 +359,12 @@
     padding-top: $spacing-unit * .5;
     padding-bottom: $spacing-unit;
     border-bottom: 1px solid $border-color-01;
+  }
+
+  p {    
+    overflow-wrap: break-word;
+    word-break: break-all;
+    white-space: pre-wrap;
   }
 }
 
@@ -816,5 +820,15 @@
 @media screen and (min-width: $on-large) {
   .one-half {
     width: calc(50% - (#{$spacing-unit} / 2));
+  }
+}
+
+
+/**
+ * Print helpers
+ */
+@media print {
+  .site-header, .site-footer, .page-breadcrumb {
+    display: none;
   }
 }

@@ -1,32 +1,28 @@
 ---
-layout: base
+layout: page
 title: Docs
 permalink: /docs/
 search_omit: true
 ---
 
-<div class="docs">
-  
-  <nav class="page-breadcrumb">
-    <a class="page-link" href="{{ "/" | relative_url }}">Home</a> /
-    {{ page.title }}
-  </nav>
-  
-  <header class="post-header">
-    <h1 class="post-title">Docs</h1>
-  </header>
+<div class="page">
 
-  <div class="about_img">
+  <div>
     <a href="{{ "assets/images/profile.png" | absolute_url }}" >
       <img src="{{ "assets/images/profile.png" | absolute_url }}" alt>
     </a>
   </div>
 
   <div class="post-content">
-    <h3 id="document">Document</h3>
+    <h3 id="resumes">Resumes</h3>
     <ul>
-      <li><a class="page-link" href="https://docs.google.com/presentation/d/1PrtLOAxm-Zfi7KPPE3ggEoK948bXtWd-8kOCQwPHcB4/edit?usp=sharing">Resume</a></li>
-      <li><a class="page-link" href="https://docs.google.com/presentation/d/1mKVYtwkyKJBZziwEPBnfBGR9iFGQyaBG2k1-_dSL1WE/edit?usp=sharing">Portfolio</a></li>
+      <li><a class="page-link" href="{{ "/docs/resume/data_engineer" | relative_url }}">Data Engineer</a></li>
+      <li><a class="page-link" href="{{ "/docs/resume/python_developer" | relative_url }}">Python Developer</a></li>
+    </ul>
+    <h3 id="portfolios">Portfolios</h3>
+    <ul>
+      <li><a class="page-link" href="{{ "/docs/portfolio/data_engineer" | relative_url }}">Data Engineer</a></li>
+      <li><a class="page-link" href="{{ "/docs/portfolio/python_developer" | relative_url }}">Python Developer</a></li>
     </ul>
   </div>
 
