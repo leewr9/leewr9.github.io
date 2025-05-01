@@ -331,19 +331,56 @@
 
   .page-header {
     text-align: center;
-    margin-bottom: $spacing-unit;
+    margin-bottom: $spacing-unit * .75;
+
+    img {
+      margin-bottom: $spacing-unit * .5;
+      min-width: 15% !important;
+      max-width: 25% !important;
+      width: 25%;
+    }
   }
 
-  img {
+  .page-portfolio {
     margin-bottom: $spacing-unit * .5;
-    min-width: 15% !important;
-    max-width: 25% !important;
-    width: 25%;
+
+    div, img {
+      display: inline-block;
+      margin: 0;
+    }
+
+    img {
+      min-width: 15% !important;
+      max-width: 25% !important;
+      width: 20%;
+    }
+
+    div {
+      margin-left: $spacing-unit * .5;
+    }
+  }
+
+  .page-project {
+    h2, h5 {
+      text-align: center;
+    }
+  }
+
+  h2 {
+    margin-bottom: $spacing-unit * .25;
   }
 
   h3 {
     padding-top: $spacing-unit * .75;
     border-top: 1px solid $border-color-01;
+  }
+
+  h4 {
+    margin-top: $spacing-unit !important;
+  }
+
+  h2, h3, h4, h6 {
+    font-weight: bold;
   }
 
   h6, h7 {
@@ -353,6 +390,10 @@
   h5, h7, a {
     font-size: 1rem !important;
     color: $border-color-03;
+  }
+
+  img {
+    cursor: pointer;
   }
   
   ol {
@@ -830,5 +871,9 @@
 @media print {
   .site-header, .site-footer, .page-breadcrumb {
     display: none;
+  }
+
+  .page-project {
+    height: 1000px;
   }
 }

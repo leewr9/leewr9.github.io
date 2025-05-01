@@ -1,0 +1,87 @@
+---
+layout: page
+title: Python Developer
+permalink: /docs/portfolio/python_developer
+search_omit: true
+---
+
+<div class="page">
+
+  <div class="page-portfolio">
+    <img src="{{ "assets/images/profile.png" | absolute_url }}" alt>
+    <div>
+      <h2>이우람</h2>
+      <h7>1995.04.13 | 010-9770-7390 | leewr9@gmail.com</h7>
+    </div>
+  </div>
+
+  <div class="post-content">
+    <h3>Python 기반의 자동화 및 서비스를 설계하는 개발자입니다</h3>
+    <p>Django와 Flask를 활용하여 확장 가능한 웹 서비스를 구현해왔고, API 연동 및 웹 크롤링을 통해 데이터 수집 및 처리를 자동화하는 데 집중해왔습니다. 특히 Jenkins, GitHub Actions 등을 활용한 CI/CD 자동화 경험을 바탕으로 개발과 배포의 생산성을 높이며, 프로젝트 전반에서 안정성과 효율성을 동시에 확보해왔습니다. 또한 모니터링 및 알림 시스템 구축에도 관여하여 운영 편의성을 향상시켰습니다.</p>
+    <h3>도전과 실전 경험을 통해 기술적 문제 해결 능력을 키워왔습니다</h3>
+    <p>다양한 도메인의 데이터를 수집하고 분석하는 실전 프로젝트를 수행하며, 실무 중심의 Python 스크립트 작성 역량을 쌓았습니다. 데이터 기반 웹 시각화 서비스 개발 경험을 통해 사용자 관점의 설계 역량을 키웠고, 반복적인 업무를 자동화하여 조직의 운영 효율을 개선하는 데 기여했습니다. 앞으로도 효율적인 데이터 솔루션 개발을 위해 지속적으로 도전하고 성장할 계획입니다.</p>
+    <h3>Skills</h3>
+    <ul>
+      <li>Python, JavaScript</li>
+      <li>Flask, Django</li>
+      <li>PostgreSQL, MySQL, MariaDB</li>
+      <li>HTML5, CSS3, AWS, GCP, GitHub Actions, Jenkins, Git, GitHub 외 여러 오픈소스</li>
+    </ul>
+    <h3>WebToon Grepp</h3>
+    <h5>2025.02 - 2025.03 (1개월) | <a href="https://github.com/WebToon-Grepp">GitHub</a></h5>
+    <a href="https://github.com/WebToon-Grepp"><img src="{{ "assets/docs/WebToon Grepp/main.png" | absolute_url }}" alt></a>
+    <h4>개요</h4>
+    <p>웹툰 시장은 급속도로 성장하고 있으며, 사용자들의 소비 패턴을 분석하는 것이 중요해지고 있습니다. 본 프로젝트는 네이버 및 카카오 웹툰 데이터를 크롤링하여 조회수, 댓글 수, 좋아요 수, 장르별 통계를 분석하는 데이터 파이프라인을 구축하는 것을 목표로 합니다. 이를 통해 사용자들에게 인사이트를 제공하고, 데이터 기반 의사 결정을 지원할 수 있도록 합니다.</p>
+    <h4>역할</h4>
+    <ul>
+      <li>V1 – Python 크롤러와 Spark 기반 ETL을 통해 웹툰 데이터 수집 및 가공 자동화</li>
+      <li>V2 – Airflow와 AWS를 활용한 데이터 파이프라인 및 클라우드 인프라 운영</li>
+      <li>V3 – Flask 기반 웹 서비스 개발 및 데이터 시각화 제공</li>
+    </ul>
+    <h4>기술 스택</h4>
+    <ul>
+      <li>Python, Requests, Flask</li>
+      <li>Airflow, Spark, PostgreSQL</li>
+      <li>AWS, EC2, S3, Redshift</li>
+      <li>Docker, Nginx, Gunicorn, GitHub Actions, Git, GitHub</li>
+    </ul>
+    <div class="page-project">
+      <h4>웹툰 데이터 크롤링 시스템 개발</h4>
+      <p>웹툰 데이터를 자동으로 수집하는 시스템을 구축하여, 웹툰 관련 정보를 효율적으로 처리하고 제공할 수 있는 기반을 마련했습니다. 이 시스템은 대규모 웹툰 데이터를 빠르고 안정적으로 크롤링할 수 있도록 설계되었습니다.</p>
+      <h4>데이터 크롤링 속도 개선</h4>
+      <h6>기존 방식</h6>
+      <p>단일 프로세스 환경에서 웹툰 데이터를 순차적으로 수집하는 방식으로, 데이터를 하나씩 처리하면서 수집 시간이 길어지고, 서버에 과도한 부하가 발생했습니다. 이러한 방식은 대규모 데이터를 처리하는 데 비효율적이며, 크롤링 속도가 매우 느려서 전체적인 데이터 수집에 시간이 많이 소요되었습니다.</p>
+      <h6>개선된 방식</h6>
+      <p><strong>concurrent.futures</strong>를 활용해 멀티 스레딩 기반의 병렬 크롤링 환경을 구축하였고, 이를 통해 전체 크롤링 속도를 약 60% 개선했습니다. 병렬 처리를 통해 크롤링 효율성뿐만 아니라 안정성도 향상되었으며, 대규모 데이터를 빠르게 수집하고 저장할 수 있는 구조로 개선되었습니다. 이로 인해 크롤링 처리 시간 단축과 서버 부하 분산이 가능해졌습니다.</p>
+      <h4>대용량 ETL 처리 성능 개선</h4>
+      <h6>기존 방식</h6>
+      <p>Pandas를 사용하여 데이터를 처리하는 방식은 주로 메모리 내에서 작업을 진행했기 때문에, 데이터의 양이 많아질수록 메모리 부족 현상이 발생하고 처리 속도가 저하되었습니다. 또한, 데이터 흐름의 확장성이 부족해 대규모 데이터를 처리하기 위한 최적화가 어려웠습니다.</p>
+      <h6>개선된 방식</h6>
+      <p>Spark 환경으로 전환하여 분산 처리 기반의 ETL 파이프라인을 구성했습니다. 데이터 흐름을 <strong>raw → optimized → processed</strong> 3단계로 구조화하여 각 단계별로 책임을 분리하였고, 이를 통해 메모리 부족 문제를 해결하고 처리 성능을 크게 향상시켰습니다. Spark의 분산 처리 기능을 활용해 대규모 데이터를 효율적으로 처리할 수 있게 되었으며, 시스템의 확장성도 개선되었습니다.</p>
+    </div>
+    <div class="page-project">
+      <h4>데이터 파이프라인 자동화 및 운영 효율화</h4>
+      <p>데이터 수집 및 변환 작업을 Airflow를 활용하여 파이프라인을 자동화하고, DAG(Directed Acyclic Graph) 기반으로 데이터 처리 흐름을 관리했습니다. 또한, Slack 알림 기능을 연동하여 실시간으로 DAG 상태를 모니터링할 수 있게 구성하였으며, 커스텀 Operator와 Hook을 직접 구현하여 다양한 형태의 작업을 유연하게 처리할 수 있도록 했습니다. 이로 인해 데이터 파이프라인의 안정성과 효율성이 크게 향상되었습니다.</p>
+      <img src="{{ "assets/docs/WebToon Grepp/airflow.png" | absolute_url }}" alt>
+      <h5>Airflow Pipeline</h5>
+      <img src="{{ "assets/docs/WebToon Grepp/dag.png" | absolute_url }}" alt>
+      <h5>DAG Dependencies</h5>
+    </div>
+    <div class="page-project">
+      <h4>AWS 기반 인프라 구축 및 배포 자동화</h4>
+      <p>AWS 기반으로 클라우드 인프라를 구축하고, 이를 효율적으로 운영하기 위한 환경을 GitHub Actions와 AWS SSM을 연동하여 배포 시스템을 구축했습니다. 이를 통해 SSH 접속 없이 안전하고 효율적인 배포가 가능해졌습니다.</p>
+      <img src="{{ "assets/docs/WebToon Grepp/aws.png" | absolute_url }}" alt>
+      <h5>AWS Architecture</h5>
+    </div>
+    <div class="page-project">
+      <h4>데이터 시각화 웹 서비스 제작</h4>
+      <p>Flask를 이용해 웹 서비스를 구축하고, 프로덕션 DB와 연동하여 데이터 시각화를 제공하는 웹 인터페이스를 구현했습니다. 사용자 친화적인 UI를 통해 웹툰 데이터를 시각화하고 제공하는 시스템을 구현했습니다.</p>
+      <img src="{{ "assets/docs/WebToon Grepp/web.png" | absolute_url }}" alt>
+      <h5>Web UI</h5>
+    </div>
+  </div>
+  <div class="page-project">
+    <h2>감사합니다.</h2>
+  </div>
+
+</div>
