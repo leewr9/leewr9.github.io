@@ -361,8 +361,16 @@
   }
 
   .page-project {
+    h6 {
+      display: block;
+    }
+    
     h2, h5 {
       text-align: center;
+    }
+    
+    h4, h7 {
+      display: inline-block;
     }
   }
 

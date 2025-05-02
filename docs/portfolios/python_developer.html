@@ -52,6 +52,7 @@ search_omit: true
       </div>
       <div class="page-project">
         <h4>웹툰 데이터 크롤링 시스템 개발</h4>
+        <h7><a href="https://github.com/WebToon-Grepp/webtoon-crawler/tree/master/kakao">[ Code ]</a></h7>
         <p>웹툰 데이터를 자동으로 수집하는 시스템을 구축하여, 웹툰 관련 정보를 효율적으로 처리하고 제공할 수 있는 기반을 마련했습니다. 이 시스템은 대규모 웹툰 데이터를 빠르고 안정적으로 크롤링할 수 있도록 설계되었습니다.</p>
         <h4>데이터 크롤링 속도 개선</h4>
         <h6>기존 방식</h6>
@@ -66,6 +67,7 @@ search_omit: true
       </div>
       <div class="page-project">
         <h4>데이터 파이프라인 자동화 및 운영 효율화</h4>
+        <h7><a href="https://github.com/WebToon-Grepp/webtoon-pipeline">[ Code ]</a></h7>
         <p>데이터 수집 및 변환 작업을 Airflow를 활용하여 파이프라인을 자동화하고, DAG(Directed Acyclic Graph) 기반으로 데이터 처리 흐름을 관리했습니다. 또한, Slack 알림 기능을 연동하여 실시간으로 DAG 상태를 모니터링할 수 있게 구성하였으며, 커스텀 Operator와 Hook을 직접 구현하여 다양한 형태의 작업을 유연하게 처리할 수 있도록 했습니다. 이로 인해 데이터 파이프라인의 안정성과 효율성이 크게 향상되었습니다.</p>
         <img src="{{ "assets/docs/webtoon_grepp/airflow.png" | absolute_url }}" alt>
         <h5>Airflow Pipeline</h5>
@@ -74,12 +76,14 @@ search_omit: true
       </div>
       <div class="page-project">
         <h4>AWS 기반 인프라 구축 및 배포 자동화</h4>
+        <h7><a href="https://github.com/WebToon-Grepp/webtoon-pipeline/blob/master/.github/workflows/deploy_ec2.yml">[ Code ]</a></h7>
         <p>AWS 기반으로 클라우드 인프라를 구축하고, 이를 효율적으로 운영하기 위한 환경을 GitHub Actions와 AWS SSM을 연동하여 배포 시스템을 구축했습니다. 이를 통해 SSH 접속 없이 안전하고 효율적인 배포가 가능해졌습니다.</p>
         <img src="{{ "assets/docs/webtoon_grepp/aws.png" | absolute_url }}" alt>
         <h5>AWS Architecture</h5>
       </div>
       <div class="page-project">
         <h4>데이터 시각화 웹 서비스 구축</h4>
+        <h7><a href="https://github.com/WebToon-Grepp/webtoon-site">[ Code ]</a></h7>
         <p>Flask를 이용해 웹 서비스를 구축하고, 프로덕션 DB와 연동하여 데이터 시각화를 제공하는 웹 인터페이스를 구현했습니다. 사용자 친화적인 UI를 통해 웹툰 데이터를 시각화하고 제공하는 시스템을 구현했습니다.</p>
         <img src="{{ "assets/docs/webtoon_grepp/web.png" | absolute_url }}" alt>
         <h5>Web UI</h5>
