@@ -371,7 +371,7 @@
     margin-bottom: 0;
   }
 
-  h3 {
+  h2, h3 {
     padding-top: $spacing-unit * .75;
     border-top: 1px solid $border-color-01;
   }
@@ -388,11 +388,9 @@
   img {
     cursor: pointer;
   }
-  
-  ol {
-    padding-top: $spacing-unit * .5;
-    padding-bottom: $spacing-unit;
-    border-bottom: 1px solid $border-color-01;
+
+  ul {
+    padding-bottom: $spacing-unit * .25;
   }
 
   p {    
