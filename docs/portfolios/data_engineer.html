@@ -46,7 +46,7 @@ search_omit: true
         <ul>
           <li>Python, Flask, pytest, PostgreSQL</li>
           <li>Airflow, dbt</li>
-          <li>GCP, GCS, BigQuery, Docker, GitHub Actions</li>
+          <li>GCP (GCS, BigQuery), Docker, GitHub Actions</li>
         </ul>
       </div>
       <div class="page-project">
@@ -63,13 +63,13 @@ search_omit: true
         <h6>기존 방식</h6>
         <p> 수집한 원시 데이터를 DB에 저장한 뒤, 분석용 테이블 생성을 위해 복잡한 SQL 쿼리를 직접 작성해 실행했습니다. 쿼리 재사용이나 관리가 어려워 유지보수가 번거로웠고, 반복적인 수작업이 많아 데이터 파이프라인 관리에 시간이 많이 소요되었습니다.</p>
         <h6>개선된 방식</h6>
-        <p> dbt를 도입하여 ELT 프로세스를 표준화했습니다. 모델 단위의 SQL 관리와 버전 관리가 가능해졌고, 자동 문서화 및 테스트 기능을 통해 신뢰도 높은 데이터 모델링이 가능해졌습니다. 또한 Airflow와 연계해 dbt 모델을 주기적으로 실행함으로써, 최신 데이터를 자동 반영하는 구조로 개선했습니다.</p>
+        <p> dbt를 도입하여 ELT 프로세스를 표준화했습니다. 모델 단위의 SQL 관리와 버전 관리가 가능해졌고, 자동 문서화 및 테스트 기능을 통해 신뢰도 높은 데이터 모델링이 가능해졌습니다. 또한, Airflow와 연계해 dbt 모델을 주기적으로 실행함으로써, 최신 데이터를 자동 반영하는 구조로 개선했습니다.</p>
       </div>
       <div class="page-project">
         <h4>크롤링 로직 검증 및 테스트 자동화</h4>
         <h7><a href="https://github.com/leewr9/kbo-data-collector/actions/workflows/test_scraper.yml">[ Code ]</a></h7>
         <p> 데이터 수집 과정의 안정성과 정확성을 높이기 위해, 크롤링 로직의 정상 동작 여부를 확인하고 수집된 데이터가 기존 포맷과 일치하는지를 검증하는 pytest 기반 테스트 스크립트를 추가했습니다. 
-  또한 GitHub Actions와 연동하여 코드가 push될 때마다 자동으로 테스트가 실행되도록 구성함으로써, 문제를 조기에 감지하고 안정적인 데이터 파이프라인 운영을 가능하게 했습니다.</p>
+  또한, GitHub Actions와 연동하여 코드가 push될 때마다 자동으로 테스트가 실행되도록 구성함으로써, 문제를 조기에 감지하고 안정적인 데이터 파이프라인 운영을 가능하게 했습니다.</p>
         <img src="{{ "assets/docs/kbo_data_portal/test.png" | absolute_url }}" alt>
         <h5>Test Scraper</h5>
       </div>
