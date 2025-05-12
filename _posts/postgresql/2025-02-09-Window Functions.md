@@ -122,6 +122,11 @@ FROM sales;
 
 `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`은 윈도우 함수에서 윈도우 범위를 설정할 때 사용됩니다. 이 범위는 첫 번째 행부터 마지막 행까지의 모든 데이터를 포함합니다.
 
+- `PRECEDING`: 현재 행 이전의 데이터를 포함
+- `FOLLOWING`: 현재 행 이후의 데이터를 포함
+- `UNBOUNDED`: 제한 없이 모든 범위를 포함
+- `CURRENT ROW`: 현재 행만 포함
+
 ### LAG
 `LAG`는 이전 행의 값을 반환합니다. 
 
