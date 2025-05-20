@@ -42,12 +42,14 @@ search_omit: true
           <li>V1 – Python 크롤러와 dbt를 활용한 데이터 수집 및 모델링 자동화</li>
           <li>V2 – Airflow와 GCP 기반 파이프라인 구성 및 GCS 연동 저장</li>
           <li>V3 – Flask 기반 웹 서비스 개발 및 Highcharts 시각화 제공</li>
+          <li>V4 – Scikit-learn 기반 머신러닝 모델로 승부 예측 기능 구현</li>
+          <li>V5 – GCE 기반 API 서버 구축 및 카카오 챗봇 연동 기능 제공</li>
         </ul>
         <h4>기술 스택</h4>
         <ul>
           <li>Python, Flask, pytest, PostgreSQL</li>
-          <li>Airflow, dbt</li>
-          <li>GCP (GCS, BigQuery), Docker, GitHub Actions</li>
+          <li>Airflow, dbt, Scikit-learn</li>
+          <li>GCP (GCE, GCS, BigQuery), Docker, GitHub Actions</li>
         </ul>
       </div>
       <div class="page-project">
@@ -65,6 +67,22 @@ search_omit: true
         <p> 수집한 원시 데이터를 DB에 저장한 뒤, 분석용 테이블 생성을 위해 복잡한 SQL 쿼리를 직접 작성해 실행했습니다. 쿼리 재사용이나 관리가 어려워 유지보수가 번거로웠고, 반복적인 수작업이 많아 데이터 파이프라인 관리에 시간이 많이 소요되었습니다.</p>
         <h6>개선된 방식</h6>
         <p> dbt를 도입하여 ELT 프로세스를 표준화했습니다. 모델 단위의 SQL 관리와 버전 관리가 가능해졌고, 자동 문서화 및 테스트 기능을 통해 신뢰도 높은 데이터 모델링이 가능해졌습니다. 또한, Airflow와 연계해 dbt 모델을 주기적으로 실행함으로써, 최신 데이터를 자동 반영하는 구조로 개선했습니다.</p>
+      </div>
+      <div class="page-project">
+        <h4>머신러닝 기반 KBO 경기 승부 예측</h4>
+        <h7><a href="https://github.com/leewr9/kbo-data-pipeline/tree/master/learning">[ Code ]</a></h7>
+        <p> <strong>Scikit-learn</strong> 기반의 머신러닝 모델을 활용해 KBO 경기의 승부를 예측하는 기능을 구현했습니다. 크롤링한 과거 경기 데이터를 기반으로 경기 일자, 시즌 및 최근 팀 성적 등의 주요 피처를 선별하였으며, <strong>LightGBM</strong> 모델을 사용하여 승패를 예측합니다. 
+  이 과정에서 데이터 전처리, 학습/테스트 분리, 모델 성능 평가를 수행하였고, 예측 결과를 시각화하여 모델 신뢰도를 분석할 수 있도록 구성했습니다. (F1-score 약 65.9%, AUC 약 77.0%)</p>
+        <img src="{{ "assets/docs/kbo_data_portal/model.png" | absolute_url }}" alt>
+        <h5>Metrics</h5>
+      </div>
+      <div class="page-project">
+        <h4>KBO 경기 일정 및 승부 예측 챗봇 서비스 구현</h4>
+        <h7><a href="https://github.com/leewr9/kbo-data-portal/blob/master/routes/chatbot.py">[ Code ]</a></h7>
+        <h7><a href="https://pf.kakao.com/_xnxeYBn">[ Link ]</a></h7>
+        <p> Flask 기반의 API 서버를 구축하고, 이를 카카오 챗봇과 연동하여 KBO 경기 일정 조회 및 승부 예측 기능을 제공하는 서비스를 구현했습니다. 사용자는 카카오톡 챗봇을 통해 오늘의 경기 일정이나 특정 팀의 향후 일정을 조회할 수 있으며, Flask 서버에서 머신러닝 모델을 통해 예측된 승패 결과도 함께 제공합니다.</p>
+        <img src="{{ "assets/docs/kbo_data_portal/chatbot.png" | absolute_url }}" alt>
+        <h5>ChatBot</h5>
       </div>
       <div class="page-project">
         <h4>크롤링 로직 검증 및 테스트 자동화</h4>
