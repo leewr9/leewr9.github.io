@@ -195,6 +195,54 @@ FROM sales;
 
 ---
 
+## DISTINCT
+`DISTINCT`와 `DISTINCT ON`은 SQL에서 중복된 행을 제거할 때 사용하는 구문입니다. `DISTINCT`는 전체 행이 동일한 경우 중복을 제거하고, `DISTINCT ON`은 특정 컬럼 기준으로 중복을 제거합니다.
+
+```sql
+ customer_id | total_sales | sales_category
+-------------+-------------+---------------
+           1 |        1100 | High
+           1 |        1100 | High
+           1 |         100 | Low
+           2 |        1100 | Low
+           2 |         900 | Medium
+           2 |        1100 | Low
+           3 |         900 | Medium
+           3 |         900 | Medium
+           3 |         100 | Low
+(7 rows)
+```
+
+```sql
+SELECT DISTINCT customer_id, total_sales
+FROM sales;
+
+SELECT DISTINCT ON (customer_id) customer_id, total_sales
+FROM sales
+ORDER BY customer_id, total_sales DESC;
+```
+
+```sql
+ customer_id | total_sales | sales_category
+-------------+-------------+---------------
+           1 |        1100 | High
+           1 |         100 | Low
+           2 |        1100 | Low
+           2 |         900 | Medium
+           3 |         900 | Medium
+           3 |         100 | Low
+(6 rows)
+
+ customer_id | total_sales | sales_category
+-------------+-------------+---------------
+           1 |        1100 | High
+           2 |        1100 | Low
+           3 |         900 | Medium
+(3 rows)
+```
+
+---
+
 ## References
 - [PostgreSQL 공식 문서](https://www.postgresql.org/docs/current/)
 
