@@ -1,7 +1,7 @@
 ---
 title: Table Operations
 category: PostgreSQL
-tag: [Database, SQL, PostgreSQL]
+tag: [Table, Database, SQL, PostgreSQL]
 ---
 
 > PostgreSQL에서는 데이터를 효율적으로 처리하기 위해 테이블 형태의 구조를 생성하거나 결합하여 관리하는 방법이 중요합니다. 이 작업은 데이터 분석이나 보고서 작성 시 여러 테이블에 분산된 정보를 통합하고, 더 풍부하고 유용한 데이터를 제공하는 데 중요합니다.
