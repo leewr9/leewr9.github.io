@@ -22,7 +22,7 @@ $$ LANGUAGE plpgsql;
 SELECT add_numbers(10, 20);
 ```
 
-```bash
+```sql
  add_numbers
 -------------
           30
@@ -82,7 +82,7 @@ SELECT * FROM users;
 SELECT * FROM user_insert;
 ```
 
-```bash
+```sql
  id | name
 ----+-------
   1 | JOHN
@@ -121,7 +121,7 @@ SELECT * FROM users;
 SELECT * FROM user_delete;
 ```
 
-```bash
+```sql
  id | name
 ----+-------
   2 | ALICE
@@ -156,7 +156,7 @@ SELECT * FROM users;
 SELECT * FROM user_update;
 ```
 
-```bash
+```sql
  id | name
 ----+-------
   2 | Charlie
@@ -185,7 +185,7 @@ INSERT INTO users(name) VALUES ('David'), ('Eve'), ('Frank');
 SELECT * FROM user_insert;
 ```
 
-```bash
+```sql
  id | name    | action |          log_time
 ----+---------+--------+----------------------------
   2 | Charlie | INSERT | 2025-05-21 12:06:49.503228  # trg_user_insert
