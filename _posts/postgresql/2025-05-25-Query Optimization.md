@@ -184,14 +184,14 @@ EXPLAIN ANALYZE SELECT * FROM employees WHERE name = 'John';
  Execution Time: 0.482 ms
 ```
 
-- `Seq Scan`: 테이블 전체를 순차적으로 읽음.
-- `Index Scan`: 인덱스로 필요한 행만 찾아서 읽음.
-- `Index Only Scan`: 인덱스만으로 결과 반환, 테이블 접근 불필요.
-- `Bitmap Index Scan`: 조건에 맞는 행을 비트맵으로 생성.
-- `Bitmap Heap Scan`: 비트맵을 이용해 테이블에서 데이터 읽음.
-- `Tid Scan`: 특정 행 식별자(ctid)로 직접 조회.
-- `CTE Scan`: 공통 테이블 표현식 결과를 스캔.
-- `Foreign Scan`: 외부 데이터 소스에서 데이터 조회.
+- `Seq Scan`: 테이블 전체를 순차적으로 읽음
+- `Index Scan`: 인덱스로 필요한 행만 찾아서 읽음
+- `Index Only Scan`: 인덱스만으로 결과 반환, 테이블 접근 불필요
+- `Bitmap Index Scan`: 조건에 맞는 행을 비트맵으로 생성
+- `Bitmap Heap Scan`: 비트맵을 이용해 테이블에서 데이터 읽음
+- `Tid Scan`: 특정 행 식별자(ctid)로 직접 조회
+- `CTE Scan`: 공통 테이블 표현식 결과를 스캔
+- `Foreign Scan`: 외부 데이터 소스에서 데이터 조회
 
 ---
 
