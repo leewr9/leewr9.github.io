@@ -157,12 +157,6 @@ REFRESH MATERIALIZED VIEW mv_salary_summary;
 
 ## Execution Plan
 
-- `Seq Scan`: 테이블을 처음부터 끝까지 순차적으로 읽음. 인덱스가 없거나 조건에 맞는 행이 많을 때 사용됨.
-- `Index Scan`: 인덱스를 통해 원하는 행만 찾아 힙(테이블)에서 읽음. 특정 값 조회 시 효율적.
-- `Index Only Scan`: 인덱스 내에 필요한 모든 컬럼 데이터가 있어 힙 접근 없이 인덱스만으로 결과 반환 가능.
-- `Bitmap Index Scan`: 여러 조건에 맞는 행 후보를 비트맵으로 만들어 효율적인 후속 힙 조회 준비.
-- `Bitmap Heap Scan`: 비트맵을 사용해 실제 힙에서 데이터를 읽음. 복합 조건이나 대량 조회 시 효과적.
-
 ### EXPLAIN
 `EXPLAIN`는 쿼리를 실제 실행하지 않고, 쿼리를 어떻게 수행할지에 대한 실행 계획 을 보여주는 명령어입니다. 쿼리가 어떤 인덱스를 사용하는지, 테이블은 어떻게 읽는지, 조인은 어떤 방식으로 하는지 등 상세한 처리 방식을 미리 분석할 수 있습니다.
 
@@ -189,6 +183,15 @@ EXPLAIN ANALYZE SELECT * FROM employees WHERE name = 'John';
  Planning Time: 0.062 ms
  Execution Time: 0.482 ms
 ```
+
+- `Seq Scan`: 테이블 전체를 순차적으로 읽음.
+- `Index Scan`: 인덱스로 필요한 행만 찾아서 읽음.
+- `Index Only Scan`: 인덱스만으로 결과 반환, 테이블 접근 불필요.
+- `Bitmap Index Scan`: 조건에 맞는 행을 비트맵으로 생성.
+- `Bitmap Heap Scan`: 비트맵을 이용해 테이블에서 데이터 읽음.
+- `Tid Scan`: 특정 행 식별자(ctid)로 직접 조회.
+- `CTE Scan`: 공통 테이블 표현식 결과를 스캔.
+- `Foreign Scan`: 외부 데이터 소스에서 데이터 조회.
 
 ---
 
