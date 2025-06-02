@@ -19,7 +19,7 @@ db.users.find(
 ); // age가 20 이상인 문서 중에서 name과 age 필드만 조회
 ```
 
-- Operators
+- **Operators**
   - `$eq`: 값이 같은 문서 검색 (equal)
   - `$ne`: 값이 같지 않은 문서 검색 (not equal)
   - `$gt`: 값이 크다 (greater than)
