@@ -4,7 +4,7 @@ category: PostgreSQL
 tag: [Syntax, Database, SQL, PostgreSQL]
 ---
 
-> PostgreSQL은 객체 관계형 데이터베이스 시스템(ORDBMS)으로, SQL(Structured Query Language)을 사용하여 데이터를 관리하고 처리합니다. PostgreSQL은 뛰어난 확장성, 안정성, 그리고 다양한 고급 기능을 제공합니다.
+> PostgreSQL는 객체 지향적 특징을 결합한 관계형 데이터베이스 관리 시스템으로, 데이터를 효율적으로 저장하고 처리하기 위해 표준 SQL 문법을 기반으로 합니다. 구조화된 쿼리를 통해 데이터 조회, 삽입, 수정, 삭제 등의 작업을 수행할 수 있으며, 복잡한 트랜잭션 처리와 고급 분석 기능도 지원합니다.
 
 ---
 

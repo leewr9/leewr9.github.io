@@ -51,8 +51,8 @@ CREATE INDEX idx_employees_hiredate_brin ON employees USING BRIN(hire_date); -- 
 ## Partitioning
 `Partitioning`은 큰 테이블을 파티션 키 기준으로 여러 작은 테이블으로 나누어 관리하는 기능입니다. 특정 파티션만 스캔함으로써 성능을 높이고, 데이터 관리가 용이해집니다.
 
-### Range Partitioning
-`Range Partitioning`은 연속된 값을 기준으로 데이터를 분할합니다. 쿼리에서 `BETWEEN`, `>=`, `<=` 조건이 자주 사용되는 컬럼에 적합하며, 조회 시 자동으로 해당 범위의 파티션만 스캔하게 되어 성능이 향상됩니다.
+### RANGE
+`RANGE`는 연속된 값을 기준으로 데이터를 분할합니다. 쿼리에서 `BETWEEN`, `>=`, `<=` 조건이 자주 사용되는 컬럼에 적합하며, 조회 시 자동으로 해당 범위의 파티션만 스캔하게 되어 성능이 향상됩니다.
 
 ````sql
 CREATE TABLE range_partitioned (
@@ -76,8 +76,8 @@ WHERE created_at BETWEEN '2023-06-01' AND '2023-06-30';
    Filter: ((created_at >= '2023-06-01'::date) AND (created_at <= '2023-06-30'::date))
 ```
 
-### List Partitioning
-`List Partitioning`은 컬럼 값의 명시된 리스트에 따라 데이터를 분할합니다. 주로 범주형 데이터를 분리할 때 유용하며, 제한된 값을 가진 컬럼에 적합합니다. 각 파티션은 특정 값 목록에 대해 정의되고, 해당 값이 입력되면 자동으로 그 파티션에 저장됩니다.
+### LIST
+`LIST`는 컬럼 값의 명시된 리스트에 따라 데이터를 분할합니다. 주로 범주형 데이터를 분리할 때 유용하며, 제한된 값을 가진 컬럼에 적합합니다. 각 파티션은 특정 값 목록에 대해 정의되고, 해당 값이 입력되면 자동으로 그 파티션에 저장됩니다.
 
 ```sql
 CREATE TABLE list_partitioned (
@@ -100,8 +100,8 @@ EXPLAIN SELECT * FROM list_partitioned WHERE country = 'KR';
    Filter: (country = 'KR'::text)
 ```
 
-### Hash Partitioning
-`Hash Partitioning`은 특정 컬럼의 해시값을 기반으로 데이터를 균등하게 분산합니다. 이는 데이터 값 자체에 연속성이나 범주성이 없을 때 유용하며, 보통 고르게 분산된 파티션 구조를 만들고 싶을 때 사용합니다.
+### HASH
+`HASH`는 특정 컬럼의 해시값을 기반으로 데이터를 균등하게 분산합니다. 이는 데이터 값 자체에 연속성이나 범주성이 없을 때 유용하며, 보통 고르게 분산된 파티션 구조를 만들고 싶을 때 사용합니다.
 
 
 ```sql
