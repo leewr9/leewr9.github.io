@@ -1,0 +1,234 @@
+---
+layout: print
+title: Portfolio
+permalink: /docs/portfolio
+search_omit: true
+---
+
+<div class="page">
+
+  <div class="page-portfolio">
+    <img class="profile" src="{{ "assets/images/profile.png" | absolute_url }}" alt />
+    <img class="picture" src="{{ "assets/images/picture.png" | absolute_url }}" alt />
+    <div>
+      <h2>이우람</h2>
+      <h7>1995.04.13 | 010-9770-7390 | leewr9@gmail.com</h7>
+    </div>
+  </div>
+
+  <div class="post-content">
+    <div class="page-about">
+      <h3>다양한 기술 스택으로 폭넓은 개발과 자동화를 경험한 개발자입니다</h3>
+      <p>Python, Bash 기반의 자동화 스크립트 개발과 함께 Airflow, Spark, Kafka를 활용해 안정적이고 확장 가능한 데이터 파이프라인을 구축해왔습니다. Jenkins, GitHub Actions 등 CI/CD 도구를 통해 배포 자동화 환경을 설계 및 운영하며, 효율적인 인프라 관리와 서비스 안정성 확보에 기여했습니다.</p>
+      <h3>데이터 수집과 내부 도구 개발로 업무 효율을 향상시킵니다</h3>
+      <p>PostgreSQL, MariaDB, API 연동, 웹 크롤링 등 다양한 데이터 수집 방법을 실무에 적용했고, Python과 Ruby를 활용한 내부 지원 도구 개발을 통해 협업과 업무 효율성 향상에 힘썼습니다. 변화하는 환경에 맞춰 유연하게 기술을 습득하며 안정적이고 지속 가능한 시스템 구축을 지향합니다.</p>
+      <h3>Skills</h3>
+      <ul>
+        <li>Python, Java, C#, C++, Ruby, Bash, JavaScript</li>
+        <li>Flask, Django, Nginx, Gunicorn</li>
+        <li>PostgreSQL, MariaDB, MongoDB, Redshift, BigQuery, SQLAlchemy, Superset</li>
+        <li>Scikit-learn, PyTorch, Spark, Kafka, Airflow, dbt</li>
+        <li>AWS (EC2, S3), GCP (GCE, GCS), Docker, Jenkins, GitHub Actions, Linux</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      
+  <div class="kbo-data-portal">
+
+    <div class="page-project">
+      <h2>KBO 데이터 포털</h2>
+      <h5>2025.03 - 2025.05 | <a href="https://github.com/leewr9/kbo-data-pipeline">GitHub</a></h5>
+      <a href="https://github.com/leewr9/kbo-data-pipeline"><img src="{{ "assets/docs/kbo_data_portal/main.png" | absolute_url }}" alt></a>
+      <h4>개요</h4>
+      <p> KBO 리그는 팬들의 관심이 높아지는 스포츠 콘텐츠로, 팀과 선수 간 데이터를 분석하는 것이 중요해지고 있습니다. 본 프로젝트는 KBO 데이터를 크롤링하여 팀/선수의 기록을 수집·비교·분석하며 승부 예측까지 수행하는 데이터 파이프라인을 구축하는 것을 목표로 합니다. 이를 통해 팬들에게 인사이트를 제공하고, 데이터 기반 분석을 지원할 수 있도록 합니다.</p>
+      <h4>역할</h4>
+      <ul>
+        <li>V1 – Python 크롤러와 dbt를 활용한 데이터 수집 및 모델링 자동화</li>
+        <li>V2 – Airflow와 GCP 기반 파이프라인 구성 및 GCS 연동 저장</li>
+        <li>V3 – Flask 기반 웹 서비스 개발 및 Highcharts 시각화 제공</li>
+        <li>V4 – Scikit-learn 기반 머신러닝 모델로 승부 예측 기능 구현</li>
+        <li>V5 – GCE 기반 API 서버 구축 및 카카오 챗봇 연동 기능 제공</li>
+      </ul>
+      <h4>기술 스택</h4>
+      <ul>
+        <li>Python, Flask, pytest, PostgreSQL</li>
+        <li>Airflow, dbt, Scikit-learn</li>
+        <li>GCP (GCE, GCS, BigQuery), Docker, GitHub Actions</li>
+      </ul>
+    </div>
+
+    <div class="page-project">
+      <h4>KBO 데이터 수집 및 분석 시스템 개발</h4>
+      <p> KBO 리그 관련 데이터를 자동으로 수집하고 분석하는 시스템을 구축하여, 팀 및 선수 데이터를 효과적으로 처리하고 비교할 수 있는 기반을 마련했습니다. 이 시스템은 다양한 경기 정보와 통계를 빠르게 수집하고 활용할 수 있도록 설계되었습니다.</p>
+      <h4>크롤링 로직 클래스화 및 구조 개선</h4>
+      <h7><a href="https://github.com/leewr9/kbo-data-collector/tree/master/scrapers">[ Code ]</a></h7>
+      <h6>기존 방식</h6>
+      <p> 기존에는 단일 스크립트 내에서 모든 데이터를 순차적으로 수집하는 방식으로, 기능 확장이 어렵고 관리가 복잡했습니다. 또한, 경기 일정, 팀, 선수 데이터를 하나의 흐름에서 처리하면서 유지보수가 비효율적이었습니다.</p>
+      <h6>개선된 방식</h6>
+      <p> 경기 일정 및 결과, 선수 데이터를 클래스로 분리하고, 날짜별·선수별로 파티션 구조를 적용하여 데이터 처리의 확장성과 효율성을 향상시켰습니다. 이로 인해 데이터 수집 로직이 명확하게 구분되고, 재사용 및 추가 기능 개발이 쉬워졌습니다. 또한, 데이터 저장 구조가 명확해져 쿼리 성능도 개선되었습니다.</p>
+      <h4>dbt 기반 ELT 모델링 개선</h4>
+      <h7><a href="https://github.com/leewr9/kbo-data-pipeline/tree/master/analytics">[ Code ]</a></h7>
+      <h6>기존 방식</h6>
+      <p> 수집한 원시 데이터를 DB에 저장한 뒤, 분석용 테이블 생성을 위해 복잡한 SQL 쿼리를 직접 작성해 실행했습니다. 쿼리 재사용이나 관리가 어려워 유지보수가 번거로웠고, 반복적인 수작업이 많아 데이터 파이프라인 관리에 시간이 많이 소요되었습니다.</p>
+      <h6>개선된 방식</h6>
+      <p> dbt를 도입하여 ELT 프로세스를 표준화했습니다. 모델 단위의 SQL 관리와 버전 관리가 가능해졌고, 자동 문서화 및 테스트 기능을 통해 신뢰도 높은 데이터 모델링이 가능해졌습니다. 또한, Airflow와 연계해 dbt 모델을 주기적으로 실행함으로써, 최신 데이터를 자동 반영하는 구조로 개선했습니다.</p>
+    </div>
+
+    <div class="page-project">
+      <h4>크롤링 로직 검증 및 테스트 자동화</h4>
+      <h7><a href="https://github.com/leewr9/kbo-data-collector/actions/workflows/test_scraper.yml">[ Code ]</a></h7>
+      <p> 데이터 수집 과정의 안정성과 정확성을 높이기 위해, 크롤링 로직의 정상 동작 여부를 확인하고 수집된 데이터가 기존 포맷과 일치하는지를 검증하는 pytest 기반 테스트 스크립트를 추가했습니다. 
+  또한, GitHub Actions와 연동하여 코드가 push될 때마다 자동으로 테스트가 실행되도록 구성함으로써, 문제를 조기에 감지하고 안정적인 데이터 파이프라인 운영을 가능하게 했습니다.</p>
+      <img src="{{ "assets/docs/kbo_data_portal/test.png" | absolute_url }}" alt>
+      <h5>Test Scraper</h5>
+    </div>
+
+    <div class="page-project">
+      <h4>머신러닝 기반 KBO 경기 승부 예측</h4>
+      <h7><a href="https://github.com/leewr9/kbo-data-pipeline/tree/master/learning">[ Code ]</a></h7>
+      <p> <strong>Scikit-learn</strong> 기반의 머신러닝 모델을 활용해 KBO 경기의 승부를 예측하는 기능을 구현했습니다. 크롤링한 과거 경기 데이터를 기반으로 경기 일자, 시즌 및 최근 팀 성적 등의 주요 피처를 선별하였으며, <strong>LightGBM</strong> 모델을 사용하여 승패를 예측합니다. 
+  이 과정에서 데이터 전처리, 학습/테스트 분리, 모델 성능 평가를 수행하였고, 예측 결과를 시각화하여 모델 신뢰도를 분석할 수 있도록 구성했습니다. (F1-score 약 65.9%, AUC 약 77.0%)</p>
+      <img src="{{ "assets/docs/kbo_data_portal/model.png" | absolute_url }}" alt>
+      <h5>Metrics</h5>
+    </div>
+
+    <div class="page-project">
+      <h4>KBO 경기 일정 및 승부 예측 챗봇 서비스 구현</h4>
+      <h7><a href="https://github.com/leewr9/kbo-data-portal/blob/master/routes/chatbot.py">[ Code ]</a></h7>
+      <h7><a href="https://pf.kakao.com/_xnxeYBn">[ Link ]</a></h7>
+      <p> Flask 기반의 API 서버를 구축하고, 이를 카카오 챗봇과 연동하여 KBO 경기 일정 조회 및 승부 예측 기능을 제공하는 서비스를 구현했습니다. 사용자는 카카오톡 챗봇을 통해 오늘의 경기 일정이나 특정 팀의 향후 일정을 조회할 수 있으며, Flask 서버에서 머신러닝 모델을 통해 예측된 승패 결과도 함께 제공합니다.</p>
+      <img src="{{ "assets/docs/kbo_data_portal/chatbot.png" | absolute_url }}" alt>
+      <h5>ChatBot</h5>
+    </div>
+
+    <div class="page-project">
+      <h4>데이터 시각화 웹 서비스 구축</h4>
+      <h7><a href="https://github.com/leewr9/kbo-data-portal/blob/master/routes/web.py">[ Code ]</a></h7>
+      <p> Flask 프레임워크를 활용해 웹 기반 시각화 서비스를 구축했습니다. 크롤링한 KBO 데이터를 사용자에게 제공하기 위한 웹 인터페이스를 구성하였으며, KBO 공식 홈페이지와 유사한 UI 디자인을 적용하여 익숙하고 직관적인 사용자 경험을 제공합니다. 이를 통해 웹사이트 방문자는 원하는 팀이나 선수 데이터를 손쉽게 탐색하고 접근할 수 있습니다.</p>
+      <img src="{{ "assets/docs/kbo_data_portal/web.png" | absolute_url }}" alt>
+      <h5>Web UI</h5>
+    </div>
+
+    <div class="page-project">
+      <h4>Highcharts 기반 비교 분석 차트 시각화</h4>
+      <h7><a href="https://github.com/leewr9/kbo-data-portal/blob/master/static/js/chart.js">[ Code ]</a></h7>
+      <p> 데이터 시각화는 <strong>Highcharts</strong> 라이브러리를 활용하여 구현했으며, 이를 통해 팀 및 선수 간의 통계 비교, 시즌별 추이 시각화, 주요 지표 분석을 제공합니다. 사용자는 동적인 그래프를 통해 여러 팀의 경기력을 비교하거나 특정 선수의 성과를 시각적으로 확인할 수 있으며, 이를 통해 KBO 데이터를 보다 심층적으로 해석할 수 있는 기반을 마련했습니다.</p>
+      <img src="{{ "assets/docs/kbo_data_portal/chart.png" | absolute_url }}" alt>
+      <h5>Chart</h5>
+      <h4>회고</h4>
+      <p>KBO 데이터를 자동으로 수집하고 분석하는 시스템을 구축하면서, Airflow와 Flask를 활용해 데이터 파이프라인과 시각화 기능을 성공적으로 구현했습니다. dbt를 도입해 데이터 모델링이 훨씬 간편해졌고, 나아가 머신러닝 기반의 승부 예측 기능까지 완성하여 LightGBM 모델을 활용한 경기 결과 예측도 가능합니다. 또한, 예측 결과를 카카오 챗봇과 연동하여 사용자와의 실시간 인터페이스를 구축하는 데에도 성공했습니다. 프로젝트를 통해 자동화, 데이터 처리 효율성, 실시간 사용자 서비스 제공 측면에서 큰 발전을 이루었고, 이 경험을 바탕으로 지속적인 개선을 이어가고 있습니다.</p>
+    </div>
+    
+  </div>
+  
+  <div class="webtoon-grepp">
+
+    <div class="page-project">
+      <h2>WebToon Grepp</h2>
+      <h5>2025.02 - 2025.03 (1개월) | <a href="https://github.com/WebToon-Grepp">GitHub</a></h5>
+      <a href="https://github.com/WebToon-Grepp"><img src="{{ "assets/docs/webtoon_grepp/main.png" | absolute_url }}" alt></a>
+      <h4>개요</h4>
+      <p> 웹툰 시장은 급속도로 성장하고 있으며, 사용자들의 소비 패턴을 분석하는 것이 중요해지고 있습니다. 본 프로젝트는 네이버 및 카카오 웹툰 데이터를 크롤링하여 조회수, 댓글 수, 좋아요 수, 장르별 통계를 분석하는 데이터 파이프라인을 구축하는 것을 목표로 합니다. 이를 통해 사용자들에게 인사이트를 제공하고, 데이터 기반 의사 결정을 지원할 수 있도록 합니다.</p>
+      <h4>역할</h4>
+      <ul>
+        <li>V1 – Python 크롤러와 Spark 기반 ETL을 통해 웹툰 데이터 수집 및 가공 자동화</li>
+        <li>V2 – Airflow와 AWS를 활용한 데이터 파이프라인 및 클라우드 인프라 운영</li>
+        <li>V3 – Flask 기반 웹 서비스 개발 및 데이터 시각화 제공</li>
+      </ul>
+      <h4>기술 스택</h4>
+      <ul>
+        <li>Python, Flask, PostgreSQL</li>
+        <li>Airflow, Spark, dbt</li>
+        <li>AWS (EC2, S3, Redshift), Docker, GitHub Actions, Nginx, Gunicorn</li>
+      </ul>
+    </div>
+
+    <div class="page-project">
+      <h4>데이터 파이프라인 자동화 및 운영 효율화</h4>
+      <h7><a href="https://github.com/WebToon-Grepp/webtoon-pipeline">[ Code ]</a></h7>
+      <p> 데이터 수집 및 변환 작업을 Airflow를 활용하여 파이프라인을 자동화하고, DAG(Directed Acyclic Graph) 기반으로 데이터 처리 흐름을 관리했습니다. 
+  또한, Slack 알림 기능을 연동하여 실시간으로 DAG 상태를 모니터링할 수 있게 구성하였으며, 커스텀 Operator와 Hook을 직접 구현하여 다양한 형태의 작업을 유연하게 처리할 수 있도록 했습니다. 이로 인해 데이터 파이프라인의 안정성과 효율성이 크게 향상되었습니다.</p>
+      <img src="{{ "assets/docs/webtoon_grepp/airflow.png" | absolute_url }}" alt>
+      <h5>Airflow Pipeline</h5>
+      <img src="{{ "assets/docs/webtoon_grepp/dag.png" | absolute_url }}" alt>
+      <h5>DAG Dependencies</h5>
+    </div>
+
+    <div class="page-project">
+      <h4>웹툰 데이터 크롤링 시스템 개발</h4>
+      <h7><a href="https://github.com/WebToon-Grepp/webtoon-crawler/tree/master/kakao">[ Code ]</a></h7>
+      <p> 웹툰 데이터를 자동으로 수집하는 시스템을 구축하여, 웹툰 관련 정보를 효율적으로 처리하고 제공할 수 있는 기반을 마련했습니다. 이 시스템은 대규모 웹툰 데이터를 빠르고 안정적으로 크롤링할 수 있도록 설계되었습니다.</p>
+      <h4>데이터 크롤링 속도 개선</h4>
+      <h6>기존 방식</h6>
+      <p> 단일 프로세스 환경에서 웹툰 데이터를 순차적으로 수집하는 방식으로, 데이터를 하나씩 처리하면서 수집 시간이 길어지고, 서버에 과도한 부하가 발생했습니다. 이러한 방식은 대규모 데이터를 처리하는 데 비효율적이며, 크롤링 속도가 매우 느려서 전체적인 데이터 수집에 시간이 많이 소요되었습니다.</p>
+      <h6>개선된 방식</h6>
+      <p> <strong>concurrent.futures</strong>를 활용해 멀티 스레딩 기반의 병렬 크롤링 환경을 구축하였고, 이를 통해 전체 크롤링 속도를 약 60% 개선했습니다. 병렬 처리를 통해 크롤링 효율성뿐만 아니라 안정성도 향상되었으며, 대규모 데이터를 빠르게 수집하고 저장할 수 있는 구조로 개선되었습니다.</p>
+      <h4>대용량 ETL 처리 성능 개선</h4>
+      <h6>기존 방식</h6>
+      <p> Pandas를 사용하여 데이터를 처리하는 방식은 주로 메모리 내에서 작업을 진행했기 때문에, 데이터의 양이 많아질수록 메모리 부족 현상이 발생하고 처리 속도가 저하되었습니다. 또한, 데이터 흐름의 확장성이 부족해 대규모 데이터를 처리하기 위한 최적화가 어려웠습니다.</p>
+      <h6>개선된 방식</h6>
+      <p> Spark 환경으로 전환하여 분산 처리 기반의 ETL 파이프라인을 구성했습니다. 데이터 흐름을 <strong>raw → optimized → processed</strong> 3단계로 구조화하여 각 단계별로 책임을 분리하였고, 이를 통해 메모리 부족 문제를 해결하고 처리 성능을 크게 향상시켰습니다.</p>
+    </div>
+
+    <div class="page-project">
+      <h4>AWS 기반 인프라 구축 및 배포 자동화</h4>
+      <h7><a href="https://github.com/WebToon-Grepp/webtoon-pipeline/blob/master/.github/workflows/deploy_ec2.yml">[ Code ]</a></h7>
+      <p> AWS 기반으로 클라우드 인프라를 구축하고, 이를 효율적으로 운영하기 위한 환경을 GitHub Actions와 AWS SSM을 연동하여 배포 시스템을 구축했습니다. 이를 통해 SSH 접속 없이 안전하고 효율적인 배포가 가능해졌습니다.</p>
+      <img src="{{ "assets/docs/webtoon_grepp/aws.png" | absolute_url }}" alt>
+      <h5>AWS Architecture</h5>
+    </div>
+
+    <div class="page-project">
+      <h4>데이터 시각화 웹 서비스 구축</h4>
+      <h7><a href="https://github.com/WebToon-Grepp/webtoon-site">[ Code ]</a></h7>
+      <p> Flask를 이용해 웹 서비스를 구축하고, 프로덕션 DB와 연동하여 데이터 시각화를 제공하는 웹 인터페이스를 구현했습니다. 사용자 친화적인 UI를 통해 웹툰 데이터를 시각화하고 제공하는 시스템을 구현했습니다.</p>
+      <img src="{{ "assets/docs/webtoon_grepp/web.png" | absolute_url }}" alt>
+      <h5>Web UI</h5>
+       <h4>회고</h4>
+      <p> 웹툰 데이터를 기반으로 사용자 소비 패턴과 인기 트렌드를 분석하며 추천 시스템과 콘텐츠 기획에 인사이트를 제공해볼 수 있었고, Spark를 활용해 대용량 데이터를 효율적으로 처리한 점도 의미 있었습니다. 댓글 분석의 부족, 플랫폼 다양성의 한계, 리소스 제약 등 아쉬운 부분도 있었지만, 데이터 기반 문제 해결 과정을 직접 경험해볼 수 있었던 좋은 경험이었습니다.</p>
+    </div>
+
+  </div>
+
+    </div>
+
+    <div class="other">
+
+      <div class="page-project">
+        <h3>Others Projects</h3>
+        <ul>
+          <li>
+            <h6>Exchangify</h6>
+            <h7>2025.01 - 2025.01 (1주일) | Full-stack Developer | <a href="https://github.com/leewr9/exchangify">GitHub</a></h7>
+            <p>한국수출입은행 환율 데이터를 기반으로 한 환율 조회 및 비교 웹 서비스
+<strong>주요 역할:</strong> 공공 API 데이터 수집, Django 기반 풀스택 개발, Chart.js를 활용한 시각화 기능 구현
+API 설계부터 디자인까지 전반을 직접 개발하여 환율 변동을 직관적으로 확인할 수 있는 서비스 구축</p>
+            <img src="{{ "assets/docs/exchangify/main.png" | absolute_url }}" alt>
+          </li>
+        </ul>
+        <h3>Others</h3>
+        <h4>Certifications</h3>
+        <ul>
+          <li>
+            <h6>정보처리산업기사</h6>
+            <h7>2020.12 | 한국산업인력공단</h7>
+          </li>
+        </ul>
+        <h4>Awards</h3>
+        <ul>
+          <li>
+            <h6>데이터 엔지니어링 데브코스 - 우수 프로젝트</h6>
+            <h7>2025.03 | ㈜그렙</h7>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-project">
+      <h2>감사합니다.</h2>
+    </div>
+
+  </div>
+
+</div>
