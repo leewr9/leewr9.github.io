@@ -16,6 +16,8 @@ tag: [Poetry, uv, Python]
 - `pyproject.toml` 기반의 표준 프로젝트 관리
 - 가상환경, Python 설치, 빌드 기능 내장
 
+### Commands
+
 ```bash
 pip install uv
 
@@ -39,6 +41,10 @@ uv build
 uv publish
 ```
 
+`uv`를 설치하고 프로젝트를 초기화한 뒤, 패키지를 추가하고 빌드 및 배포까지 진행하는 기본 흐름입니다.
+
+### Structure
+
 ```plaintext
 uv_project
 ├── .gitignore
@@ -47,6 +53,8 @@ uv_project
 ├── pyproject.toml
 └── README.md
 ```
+
+`uv init`으로 생성된 프로젝트 기본 구조입니다. `main.py`는 진입점 스크립트로 자동 생성되며, .`python-version`은 uv가 사용하는 Python 버전을 명시합니다.
 
 ---
 
@@ -57,6 +65,8 @@ uv_project
 - `poetry.lock`으로 안정적인 환경 보장
 - 자동 가상환경 생성 및 `poetry run` 실행
 - PyPI 배포 및 프로젝트 초기화 기능 내장
+
+### Commands
 
 ```bash
 pip install poetry
@@ -81,6 +91,10 @@ poetry build
 poetry publish
 ```
 
+`poetry`를 설치하고 프로젝트를 초기화한 뒤, 패키지를 추가하고 빌드 및 배포까지 진행하는 기본 흐름입니다.
+
+### Structure
+
 ```plaintext
 poetry_project
 ├── pyproject.toml
@@ -91,6 +105,47 @@ poetry_project
 └── tests
     └── __init__.py
 ```
+
+`poetry new`로 생성된 프로젝트 기본 구조입니다. `src/` 폴더 아래에 실제 패키지 소스가 위치하며, `tests/` 폴더에는 테스트 코드가 들어갑니다.
+
+## pyproject.toml
+`pyproject.toml`은 프로젝트의 메타데이터와 의존성, 빌드 설정 등을 정의하는 중앙 설정 파일로, 패키지 추가, 설치, 빌드, 배포 시 참조됩니다.
+
+- uv
+  ```toml
+  [project]
+  name = "uv-project"
+  version = "0.1.0"
+  description = "Add your description here"
+  readme = "README.md"
+  requires-python = ">=3.11"
+  dependencies = [
+      "requests>=2.32.4",
+  ]
+  ```
+- Poetry
+  ```toml
+  [project]
+  name = "poetry-project"
+  version = "0.1.0"
+  description = ""
+  authors = [
+      {name = "User Name",email = "User Email"}
+  ]
+  readme = "README.md"
+  requires-python = ">=3.12"
+  dependencies = [
+      "requests (>=2.32.4,<3.0.0)"
+  ]
+
+  [tool.poetry]
+  packages = [{include = "poetry_project", from = "src"}]
+
+
+  [build-system]
+  requires = ["poetry-core>=2.0.0,<3.0.0"]
+  build-backend = "poetry.core.masonry.api"
+  ```
 
 ---
 
