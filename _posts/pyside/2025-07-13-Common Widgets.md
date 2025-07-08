@@ -27,6 +27,18 @@ img_label.setAlignment(Qt.AlignCenter)
 
 [![](/assets/posts/2025-07-13-Common Widgets.md/qlabel.png)](/assets/posts/2025-07-13-Common Widgets.md/qlabel.png)
 
+### QProgressBar
+`QProgressBar`은 진행률을 시각적으로 표시하는 위젯으로, `setValue`, `setRange`, `setMaximum`, `setMinimum` 등을 사용하며 자동 갱신됩니다.
+
+```python
+from PySide6.QtWidgets import QProgressBar
+
+progress = QProgressBar()
+progress.setValue(75)
+```
+
+[![](/assets/posts/2025-07-13-Common Widgets.md/qprogressbar.png)](/assets/posts/2025-07-13-Common Widgets.md/qprogressbar.png)
+
 ### QTableWidget
 `QTableWidget`은 행과 열로 구성된 2차원 표 형식의 데이터를 표시하는 위젯으로, 각 셀에 직접 위젯 삽입이 가능하고 `cellClicked`, `itemChanged` 등으로 상태 변화를 감지할 수 있습니다.
 
@@ -44,17 +56,20 @@ table.setItem(1, 1, QTableWidgetItem("34"))
 
 [![](/assets/posts/2025-07-13-Common Widgets.md/qtablewidget.png)](/assets/posts/2025-07-13-Common Widgets.md/qtablewidget.png)
 
-### QProgressBar
-`QProgressBar`은 진행률을 시각적으로 표시하는 위젯으로, `setValue`, `setRange`, `setMaximum`, `setMinimum` 등을 사용하며 자동 갱신됩니다.
+### QListWidget
+`QListWidget`은 스크롤 가능한 리스트에 항목을 표시하는 위젯으로, 항목 클릭·선택·드래그 등이 가능하며 `itemClicked`, `itemSelectionChanged` 등의 시그널로 인터랙션을 감지할 수 있습니다.
 
 ```python
-from PySide6.QtWidgets import QProgressBar
+from PySide6.QtWidgets import QListWidget
 
-progress = QProgressBar()
-progress.setValue(75)
+list_widget = QListWidget()
+list_widget.addItems(["Hello", "Bye"])
+list_widget.itemClicked.connect(
+    lambda item: label.setText(f"{item.text()}, PySide6!")
+)
 ```
 
-[![](/assets/posts/2025-07-13-Common Widgets.md/qprogressbar.png)](/assets/posts/2025-07-13-Common Widgets.md/qprogressbar.png)
+[![](/assets/posts/2025-07-13-Common Widgets.md/qlistwidget.png)](/assets/posts/2025-07-13-Common Widgets.md/qlistwidget.png)
 
 ---
 
@@ -156,21 +171,6 @@ combobox.currentIndexChanged.connect(
 ```
 
 [![](/assets/posts/2025-07-13-Common Widgets.md/qcombobox.png)](/assets/posts/2025-07-13-Common Widgets.md/qcombobox.png)
-
-### QListWidget
-`QListWidget`은 스크롤 가능한 리스트에 항목을 표시하는 위젯으로, 항목 클릭·선택·드래그 등이 가능하며 `itemClicked`, `itemSelectionChanged` 등의 시그널로 인터랙션을 감지할 수 있습니다.
-
-```python
-from PySide6.QtWidgets import QListWidget
-
-list_widget = QListWidget()
-list_widget.addItems(["Hello", "Bye"])
-list_widget.itemClicked.connect(
-    lambda item: label.setText(f"{item.text()}, PySide6!")
-)
-```
-
-[![](/assets/posts/2025-07-13-Common Widgets.md/qlistwidget.png)](/assets/posts/2025-07-13-Common Widgets.md/qlistwidget.png)
 
 ---
 
