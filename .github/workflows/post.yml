@@ -1,0 +1,32 @@
+name: Weekly Post
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+  
+jobs:
+  push-temp-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Git config
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create temp file
+        run: |
+          echo "Last updated at $(date -u)" > _temp
+
+      - name: Commit changes
+        run: |
+          git add _temp
+          git commit -m "posts:: weekly post timestamp updated" || echo "Nothing to commit"
+
+      - name: Push changes
+        run: |
+          git push origin HEAD
