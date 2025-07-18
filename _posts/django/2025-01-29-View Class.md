@@ -42,9 +42,8 @@ class MyView(View):
 
 ---
 
-## Function-Based Views
-`함수 기반 뷰(FBV)`는 Python 함수로 뷰를 정의하는 방식입니다. 
-`request` 방식에 따라 조건문으로 처리 가능합니다.
+## Function-Based
+함수 기반 뷰는 Python 함수로 뷰를 정의하는 방식입니다. `request` 방식에 따라 조건문으로 처리 가능합니다.
 
 ```python
 # views.py
@@ -60,8 +59,8 @@ def my_view(request):
 
 ---
 
-## Class-Based Views
-`클래스 기반 뷰(CBV)`는 클래스를 사용하여 뷰를 정의합니다. `객체 지향 프로그래밍(OOP)`을 기반으로 작성되기 때문에, 뷰를 함수로 바로 호출할 수 없습니다. 대신, `as_view()` 메서드를 사용하여 `urls.py`에서 클래스 기반 뷰를 뷰 함수로 변환합니다.
+## Class-Based
+클래스 기반 뷰는 클래스를 사용하여 뷰를 정의합니다. 객체 지향 프로그래밍을 기반으로 작성되기 때문에, 뷰를 함수로 바로 호출할 수 없습니다. 대신, `as_view()` 메서드를 사용하여 `urls.py`에서 클래스 기반 뷰를 뷰 함수로 변환합니다.
 
 ```python
 # views.py

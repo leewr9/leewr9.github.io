@@ -8,7 +8,7 @@ tag: [REST Framework, Python, Django]
 
 ---
 
-## Function-Based API Views
+## Function-Based
 함수 기반 뷰는 간단한 API 구현에 적합한 방식으로, HTTP 요청에 따라 처리할 로직을 함수로 정의합니다. `DRF`에서는 `@api_view` 데코레이터를 사용하여 함수 기반 뷰를 구현할 수 있습니다.
 
 ```python
@@ -38,7 +38,7 @@ def book_list(request):
 
 ---
 
-## Class-Based API Views
+## Class-Based
 클래스 기반 API 뷰는 보다 구조적이고 확장 가능한 방식으로, 클래스 내에서 여러 HTTP 메서드를 처리하는 로직을 정의합니다. `DRF`에서는 `APIView` 클래스를 상속받아 메서드를 구현합니다.
 
 ```python
@@ -161,7 +161,7 @@ urlpatterns = [
 ]
 ```
 
-BookViewSet은 `ModelViewSet`을 상속받아, Book 모델에 대한 CRUD 작업을 자동으로 처리합니다. `DefaultRouter`는 BookViewSet을 `books/` 경로에 자동으로 매핑해줍니다. 이 방식은 RESTful API의 구현을 매우 간편하게 만들어 줍니다.
+BookViewSet은 `ModelViewSet`을 상속받아, Book 모델에 대한 CRUD 작업을 자동으로 처리합니다. `DefaultRouter`는 BookViewSet을 `/api/books/` 경로에 자동으로 매핑해줍니다. 이 방식은 RESTful API의 구현을 매우 간편하게 만들어 줍니다.
 
 ### Override
 `APIView`나` ViewSet`에서 제공하는 다양한 메서드를 오버라이드하여 클라이언트의 요청을 효율적으로 처리하고, 추가적인 비즈니스 로직을 적용할 수 있습니다.
@@ -204,73 +204,48 @@ class BookViewSet(viewsets.ModelViewSet):
         serializer.save(user=user) # 책 저장 시 user 필드에 현재 사용자 지정
 ```
 
-### FilterSet
-Django Filter를 사용하면 데이터를 조건에 맞게 필터링할 수 있습니다. DRF에서는 `FilterSet`을 사용하여 필터링 조건을 정의합니다. `FilterSet`은 필터링을 위한 조건을 정의할 수 있는 DRF의 도구입니다. `django_filters` 라이브러리를 설치한 후 필터셋을 정의하고 사용합니다.
-
-```bash
-pip install django-filter
-```
-
+### Custom Action
+기본 제공되는 CRUD 액션(`list`, `retrieve`, `create`, `update`, `destroy`) 외에도,
+ViewSet에 특정 비즈니스 로직을 수행하는 커스텀 엔드포인트를 추가하고 싶을 때 사용할 수 있습니다.
 ```python
-# views.py
-
-import django_filters
-from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
+from rest_framework import status, viewsets
 from .models import Book
-from .serializers import BookModelSerializer
-
-class BookFilter(django_filters.FilterSet):
-    title = django_filters.CharFilter(lookup_expr='icontains')
-    author = django_filters.CharFilter(lookup_expr='icontains')
-    published_date = django_filters.DateFilter()
-
-    class Meta:
-        model = Book
-        fields = ['title', 'author', 'published_date']
+from .serializers import BookSerializer
 
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
-    serializer_class = BookModelSerializer
-    filterset_class = BookFilter
+    serializer_class = BookSerializer
 
+    @action(detail=True, methods=['post'])
+    def like(self, request, pk=None):
+        """
+        특정 Book 인스턴스에 대해 '좋아요'를 추가하는 커스텀 액션입니다.
+        """
+        book = self.get_object()
+        book.likes += 1
+        book.save()
+        return Response({'status': 'liked', 'likes': book.likes}, status=status.HTTP_200_OK)
+
+    @action(detail=False, methods=['get'])
+    def recent(self, request):
+        """
+        최근에 생성된 Book 목록 5개를 반환하는 커스텀 액션입니다.
+        """
+        recent_books = self.get_queryset().order_by('-created_at')[:5]
+        serializer = self.get_serializer(recent_books, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 ```
-위 예시에서는 BookFilter를 사용하여 `title`, `author`, `published_date`를 필터링할 수 있도록 설정하였습니다. 이제 API 요청에 필터링 조건을 추가하면 해당 조건에 맞는 데이터만 반환됩니다.
-- 제목으로 필터링: `GET /api/books/?title=django`
-- 저자 이름으로 필터링: `GET /api/books/?author=John`
-- 출판 날짜로 필터링: `GET /api/books/?published_date=2020-01-01`
-
-### Pagination
-DRF에서는 페이징을 설정하여 데이터가 많을 때 성능을 최적화할 수 있습니다. 기본적으로 DRF는 페이지네이션을 지원하며, `settings.py`에서 설정을 변경하거나, `PageNumberPagination` 클래스로 변경하여 사용할 수 있습니다.
-
-```python
-# settings.py
-
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10, # 한 페이지에 10개 데이터만 반환
-}
-```
-
-```python
-# views.py
-
-from rest_framework.pagination import PageNumberPagination
-from rest_framework import viewsets
-from .models import Book
-from .serializers import BookModelSerializer
-
-class BookPagination(PageNumberPagination):
-    page_size = 5 # 한 페이지에 5개 데이터만 반환
-
-class BookViewSet(viewsets.ModelViewSet):
-    queryset = Book.objects.all()
-    serializer_class = BookModelSerializer
-    pagination_class = BookPagination
-```
+- `@action`: 커스텀 URL 및 HTTP 메서드를 추가할 때 사용합니다.
+- `detail`: 단일 객체에 대한 액션인지 여부를 나타냅니다. `True`일 경우 URL에 `pk`가 포함됩니다.
+- `methods=['post']`: 커스텀 액션에서 사용할 HTTP 메서드를 지정합니다.
+- `get_object()`: 요청에서 전달된 pk에 해당하는 객체를 조회합니다. (`detail=True` 사용)
+- `get_queryset()`: 요청에서 정의한 쿼리셋 전체를 가져옵니다. (`detail=False` 사용)
 
 ---
 
-## Permission Management
+## Permission
 Django REST Framework는 API에 대한 접근을 제어할 수 있도록 `permission_classes` 속성을 제공합니다. 이 시스템을 통해 특정 사용자나 그룹에만 API 접근을 허용하거나, 사용자가 인증되었는지 등을 검사할 수 있습니다.
 
 ```python
@@ -292,7 +267,7 @@ class BookView(APIView):
 인증되지 않은 사용자에게는 읽기 권한만 제공합니다.
 - `AllowAny`: 모든 사용자가 접근할 수 있습니다. 인증 여부에 관계없이 API에 접근할 수 있도록 허용합니다.
 
-### Customization
+### Custom
 기본 제공되는 권한 클래스 외에도, 자체적인 권한 클래스를 만들어 더 복잡한 권한 로직을 구현할 수 있습니다. 커스텀 권한 클래스는 `permissions.BasePermission`을 상속하여 정의합니다.
 
 ```python
