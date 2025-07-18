@@ -1,5 +1,5 @@
 ---
-title: Testing and API
+title: Test Management
 category: Django
 tag: [REST Framework, Python, Django]
 ---
