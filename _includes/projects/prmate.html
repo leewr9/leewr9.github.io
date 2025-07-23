@@ -1,56 +1,54 @@
 <div class="prmate">
 
   <div class="page-project">
-    <h2>Exchangify</h2>
-    <h5>2025.03 - present | <a href="https://github.com/leewr9/exchangify">GitHub</a></h5>
-    <a href="https://github.com/leewr9/exchangify"><img src="{{ "assets/docs/exchangify/title.png" | absolute_url }}" alt></a>
+    <h2>PRMate</h2>
+    <h5>2025.07 - present | <a href="https://github.com/leewr9/prmate">GitHub</a></h5>
+    <a href="https://github.com/leewr9/prmate"><img src="{{ "assets/docs/prmate/title.png" | absolute_url }}" alt></a>
     <h4>개요</h4>
-    <p> 한국수출입은행이 제공하는 환율 데이터를 기반으로, 다양한 통화의 환율 변동을 손쉽게 조회하고 비교할 수 있는 웹 서비스를 개발했습니다. 환율은 글로벌 비즈니스와 개인 투자에서 중요한 지표로, 본 프로젝트는 환율 정보의 가시성 향상과 사용자 편의성 제공을 목표로 합니다.</p>
+    <p> 개인 개발자와 소규모 팀은 코드 리뷰 과정에서 반복적인 작업과 시간 소모가 많아 효율적인 자동화 도구가 필요합니다. 본 프로젝트는 GitHub Pull Request의 변경 사항을 AI가 자동으로 분석하고 빠르고 일관된 피드백을 제공하는 코드 리뷰 자동화 시스템을 구축하는 것을 목표로 합니다.</p>
     <h4>역할</h4>
     <ul>
-      <li>V1 – 한국수출입은행 API를 활용한 환율 데이터 수집 자동화</li>
-      <li>V2 – Django 기반 환율 조회 웹 서비스 구축</li>
-      <li>V3 – Chart.js를 활용한 환율 비교 시각화 기능 구현</li>
+
+      <li>V1 - LangChain과 OpenAI 기반 코드 리뷰 프롬프트 설계 및 응답 구조 구성</li>
+      <li>V2 - GitHub API 연동 및 diff 추출 처리 로직 개발</li>
+      <li>V3 - GitHub Actions 워크플로우 및 CI/CD 자동화 구성</li>
+      <li>V4 - 로컬 CLI 실행 및 self-hosted runner 환경 지원 기능 개발</li>
     </ul>
     <h4>기술 스택</h4>
     <ul>
-      <li>Python, Django, requests</li>
-      <li>JavaScript, Chart.js, SQLite, GitHub</li>
+      <li>Python, LangChain, OpenAI API, Ollama</li>
+      <li>GitHub Actions, GitHub REST API</li>
     </ul>
   </div>
 
   <div class="page-project">
+    <h4>Pull Request 리뷰 자동화 시스템 구축</h4>
+    <h7><a href="https://github.com/leewr9/prmate/blob/master/app/main.py">[ Code ]</a></h7>
+    <p> GitHub PR의 변경 사항을 분석하고, LangChain과 LLM을 활용해 자동으로 코드 리뷰 코멘트를 생성했습니다. 리뷰 언어, 엄격도 등의 설정을 반영해 일관된 피드백을 제공하도록 구성했습니다.</p>
+    <img src="{{ "assets/docs/prmate/review.png" | absolute_url }}" alt>
+    <h5>Review</h5>
+    <h4>GitHub API 기반 메타데이터 처리</h4>
+    <h7><a href="https://github.com/leewr9/prmate/blob/master/app/github.py">[ Code ]</a></h7>
+    <p> GitHub API를 통해 PR 번호, 레포지토리 정보, diff 등을 수집하는 로직을 구현했습니다. 리뷰 대상 코드를 효율적으로 추출해 리뷰 엔진에 전달할 수 있도록 했습니다.</p>
+    <h4>로컬 CLI 리뷰 실행 기능</h4>
+    <p> PR 번호와 레포지토리 이름을 입력받아 로컬 환경에서도 리뷰를 실행할 수 있는 CLI 명령어를 구현했습니다. GitHub Actions 없이도 코드 리뷰를 테스트할 수 있도록 했습니다.</p>
+  </div>
+
+  <div class="page-project">
+    <h4>GitHub Actions 연동 자동화</h4>
+    <h7><a href="https://github.com/leewr9/prmate/blob/master/action.yml">[ Code ]</a></h7>
+    <h7><a href="https://github.com/marketplace/actions/prmate-review">[ Marketplace ]</a></h7>
+    <p> PR 생성 시 자동으로 리뷰가 실행되도록 GitHub Actions 워크플로우를 구성하고, 설정만으로 바로 사용할 수 있도록 GitHub Marketplace에 배포했습니다. 테스트 및 배포와 함께 코드 리뷰까지 자동화하여 개발 효율과 사용자 접근성을 높였습니다.</p>
+    <img src="{{ "assets/docs/prmate/marketplace.png" | absolute_url }}" alt>
+    <h5>Review</h5>
+    <h4>LLM 선택 실행 지원</h4>
+    <h7><a href="https://github.com/leewr9/prmate/blob/master/app/llm/chain.py">[ Code ]</a></h7>
+    <p> 리뷰 엔진 백엔드를 Ollama 또는 OpenAI로 선택할 수 있는 구조를 구현했습니다. 환경 변수 기반 설정으로 유연하게 실행 백엔드를 구성할 수 있도록 했습니다.</p>
     
-    <h4>Django 기반 웹 서비스 개발</h4>
-    <h7><a href="https://github.com/leewr9/exchangify">[ Code ]</a></h7>
-    <p> Django 프레임워크를 사용해 백엔드 로직을 구현하고, URL 라우팅 및 템플릿 엔진을 활용해 사용자 인터페이스와 연동되는 웹 애플리케이션을 구성했습니다.</p>
-    <img src="{{ "assets/docs/exchangify/web.png" | absolute_url }}" alt>
-    <h5>Web UI</h5>
-    <h4>환율 데이터 수집 자동화</h4>
-    <h7><a href="https://github.com/leewr9/exchangify/blob/master/app/management/commands/crawling.py">[ Code ]</a></h7>
-    <p> 공공 API를 활용하여 주요 통화의 환율 데이터를 Django 매니지먼트 커맨드로 자동 수집하고 데이터베이스에 저장하는 프로세스를 구현했습니다. 최신 데이터를 기준으로 시각화 및 비교 기능에 활용할 수 있도록 구조화했습니다.</p>
-  </div>
-
-  <div class="page-project">
-    <h4>Chart.js 기반 환율 비교 시각화 구현</h4>
-    <h7><a href="https://github.com/leewr9/exchangify/blob/master/static/js/detail.js">[ Code ]</a></h7>
-    <p> Chart.js를 활용하여 통화 간 환율 변동을 시각적으로 확인할 수 있도록 라인 차트를 구현했습니다. 사용자는 통화 및 기간을 선택하여 동적으로 데이터를 비교할 수 있습니다.</p>
-    <img src="{{ "assets/docs/exchangify/chart.png" | absolute_url }}" alt>
-    <h5>Chart</h5>
-    <h4>사용자 입력 기반 통화 비교 기능 개발</h4>
-    <h7><a href="https://github.com/leewr9/exchangify/blob/20dc40240733cf15e47ae28a038fd6fd4c1e65d2/static/js/main.js#L21-L40">[ Code ]</a></h7>
-    <p> 사용자가 선택한 기준 통화와 비교 통화, 그리고 입력한 금액을 바탕으로, 당일 환율을 실시간으로 계산하여 환전 결과를 제공하는 기능을 구현했습니다.</p>
-    <img src="{{ "assets/docs/exchangify/calculator.png" | absolute_url }}" alt>
-    <h5>Calculator</h5>
-  </div>
-
-  <div class="page-project">
-    <h4>UI 개선 및 반응형 구성</h4>
-    <p> 모바일 환경에서도 원활하게 작동할 수 있도록 레이아웃을 조정하고, 반응형 UI를 적용하여 다양한 기기에서 접근이 가능하도록 개선했습니다.</p>
-    <img src="{{ "assets/docs/exchangify/mobile.png" | absolute_url }}" alt>
-    <h5>Mobile UI</h5>
+    <h4>Self-hosted 환경 구성 지원 </h4>
+    <p> Ollama 서버를 로컬에서 실행할 수 있도록 self-hosted runner 연동 기능을 구현했습니다. 리소스 제약 없이 대규모 코드 리뷰를 처리할 수 있는 환경을 구성했습니다.</p>
     <h4>회고</h4>
-    <p> 공공 데이터를 활용한 웹 서비스를 처음부터 끝까지 혼자 설계·구현해보며, 데이터 처리 흐름과 웹 개발 전반에 대한 이해를 크게 넓힐 수 있었습니다. 특히 API 기반 서비스 설계와 Chart.js 연동을 통해 사용자에게 실제 가치를 제공할 수 있는 형태로 데이터를 시각화하는 경험을 얻었고, 단순한 조회를 넘어 비교·분석 가능한 서비스 구성 능력을 향상시킬 수 있었습니다.</p>
+    <p> 자동화된 코드 리뷰 시스템 구축을 통해 수동 리뷰에 비해 개발자들의 부담을 크게 줄이고, 리뷰 품질의 일관성을 확보할 수 있었습니다. 다양한 LLM 백엔드를 유연하게 지원하면서도 로컬 환경과 CI 환경 모두에서 원활히 작동하도록 설계한 점이 큰 성과였습니다. 또한, GitHub Marketplace 배포를 통해 사용자 접근성을 높였으며, 앞으로는 다국어 지원 확대와 코드 스타일 체크, 보안 취약점 탐지 등 기능 확장을 통해 더욱 실용적인 개발 도구로 발전시키고자 합니다.</p>
   </div>
     
 </div>
