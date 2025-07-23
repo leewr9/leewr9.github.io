@@ -1,0 +1,56 @@
+<div class="exchangify">
+
+  <div class="page-project">
+    <h2>Exchangify</h2>
+    <h5>2025.03 - present | <a href="https://github.com/leewr9/exchangify">GitHub</a></h5>
+    <a href="https://github.com/leewr9/exchangify"><img src="{{ "assets/docs/exchangify/title.png" | absolute_url }}" alt></a>
+    <h4>개요</h4>
+    <p> 한국수출입은행이 제공하는 환율 데이터를 기반으로, 다양한 통화의 환율 변동을 손쉽게 조회하고 비교할 수 있는 웹 서비스를 개발했습니다. 환율은 글로벌 비즈니스와 개인 투자에서 중요한 지표로, 본 프로젝트는 환율 정보의 가시성 향상과 사용자 편의성 제공을 목표로 합니다.</p>
+    <h4>역할</h4>
+    <ul>
+      <li>V1 – 한국수출입은행 API를 활용한 환율 데이터 수집 자동화</li>
+      <li>V2 – Django 기반 환율 조회 웹 서비스 구축</li>
+      <li>V3 – Chart.js를 활용한 환율 비교 시각화 기능 구현</li>
+    </ul>
+    <h4>기술 스택</h4>
+    <ul>
+      <li>Python, Django, requests</li>
+      <li>JavaScript, Chart.js, SQLite, GitHub</li>
+    </ul>
+  </div>
+
+  <div class="page-project">
+    
+    <h4>Django 기반 웹 서비스 개발</h4>
+    <h7><a href="https://github.com/leewr9/exchangify">[ Code ]</a></h7>
+    <p> Django 프레임워크를 사용해 백엔드 로직을 구현하고, URL 라우팅 및 템플릿 엔진을 활용해 사용자 인터페이스와 연동되는 웹 애플리케이션을 구성했습니다.</p>
+    <img src="{{ "assets/docs/exchangify/web.png" | absolute_url }}" alt>
+    <h5>Web UI</h5>
+    <h4>환율 데이터 수집 자동화</h4>
+    <h7><a href="https://github.com/leewr9/exchangify/blob/master/app/management/commands/crawling.py">[ Code ]</a></h7>
+    <p> 공공 API를 활용하여 주요 통화의 환율 데이터를 Django 매니지먼트 커맨드로 자동 수집하고 데이터베이스에 저장하는 프로세스를 구현했습니다. 최신 데이터를 기준으로 시각화 및 비교 기능에 활용할 수 있도록 구조화했습니다.</p>
+  </div>
+
+  <div class="page-project">
+    <h4>Chart.js 기반 환율 비교 시각화 구현</h4>
+    <h7><a href="https://github.com/leewr9/exchangify/blob/master/static/js/detail.js">[ Code ]</a></h7>
+    <p> Chart.js를 활용하여 통화 간 환율 변동을 시각적으로 확인할 수 있도록 라인 차트를 구현했습니다. 사용자는 통화 및 기간을 선택하여 동적으로 데이터를 비교할 수 있습니다.</p>
+    <img src="{{ "assets/docs/exchangify/chart.png" | absolute_url }}" alt>
+    <h5>Chart</h5>
+    <h4>사용자 입력 기반 통화 비교 기능 개발</h4>
+    <h7><a href="https://github.com/leewr9/exchangify/blob/20dc40240733cf15e47ae28a038fd6fd4c1e65d2/static/js/main.js#L21-L40">[ Code ]</a></h7>
+    <p> 사용자가 선택한 기준 통화와 비교 통화, 그리고 입력한 금액을 바탕으로, 당일 환율을 실시간으로 계산하여 환전 결과를 제공하는 기능을 구현했습니다.</p>
+    <img src="{{ "assets/docs/exchangify/calculator.png" | absolute_url }}" alt>
+    <h5>Calculator</h5>
+  </div>
+
+  <div class="page-project">
+    <h4>UI 개선 및 반응형 구성</h4>
+    <p> 모바일 환경에서도 원활하게 작동할 수 있도록 레이아웃을 조정하고, 반응형 UI를 적용하여 다양한 기기에서 접근이 가능하도록 개선했습니다.</p>
+    <img src="{{ "assets/docs/exchangify/mobile.png" | absolute_url }}" alt>
+    <h5>Mobile UI</h5>
+    <h4>회고</h4>
+    <p> 공공 데이터를 활용한 웹 서비스를 처음부터 끝까지 혼자 설계·구현해보며, 데이터 처리 흐름과 웹 개발 전반에 대한 이해를 크게 넓힐 수 있었습니다. 특히 API 기반 서비스 설계와 Chart.js 연동을 통해 사용자에게 실제 가치를 제공할 수 있는 형태로 데이터를 시각화하는 경험을 얻었고, 단순한 조회를 넘어 비교·분석 가능한 서비스 구성 능력을 향상시킬 수 있었습니다.</p>
+  </div>
+    
+</div>
