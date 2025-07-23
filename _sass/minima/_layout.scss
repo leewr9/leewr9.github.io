@@ -363,6 +363,12 @@
   .page-project {
     h6 {
       display: block;
+      color: $site-title-color;
+    }
+
+    img {
+      margin-top: 22.5px;
+      margin-bottom: 22.5px;
     }
     
     h1, h2, h5 {
@@ -377,6 +383,15 @@
     
   .picture {
     display: none;
+  }
+
+  .page-link {
+    color: $site-title-color;
+
+    span {
+      color: $border-color-03;
+      margin-left: $spacing-unit * .25;
+    }
   }
 
   h1, h2, h3, h4, h6 {
@@ -892,7 +907,7 @@
   }
 
   .page-about {
-    height: 761px;
+    height: 763px;
   }
 
   .page-project {
