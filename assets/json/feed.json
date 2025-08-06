@@ -9,7 +9,7 @@ layout: null
     {% for item in collection %}
         {% for item in site.[item.label] %}
             {% if item.title != null and item.title != empty %}
-            {% unless first %},{% endunless %}{
+                {% unless first %},{% endunless %}{
                 "title": {{ item.title | jsonify }},
                 "content": {{ item.content | markdownify | strip_html | jsonify }},
                 "preview": {{ item.content | markdownify | strip_html | truncatewords: 25 | jsonify }},
@@ -21,17 +21,15 @@ layout: null
                 "tlink": "{{ site.url }}/tags/{{ item.tag }}",
                 "excerpt": "{{ item.snippet }}",
                 "search_omit": "{{ item.search_omit }}"
-            }
-            {% assign first = false %}
+                }
+                {% assign first = false %}
             {% endif %}
         {% endfor %}
     {% endfor %}
 {% endfor %}
-
-
 {% for post in site.posts %}
     {% if post.title != null and post.title != empty %}
-    {% unless first %},{% endunless %}{
+        {% unless first %},{% endunless %}{
         "title": {{ post.title | jsonify }},
         "content": {{ post.content | markdownify | strip_html | jsonify }},
         "preview": {{ post.content | markdownify | strip_html | truncatewords: 25 | jsonify }},
@@ -43,14 +41,13 @@ layout: null
         "tlink": "{{ site.url }}/tags/{{ post.tag }}",
         "excerpt": "{{ post.snippet }}",
         "search_omit": "{{ post.search_omit }}"
-    }
-    {% assign first = false %}
+        }
+        {% assign first = false %}
     {% endif %}
 {% endfor %}
-
 {% for page in site.pages %}
     {% if page.title != null and page.title != empty %}
-    {% unless first %},{% endunless %}{
+        {% unless first %},{% endunless %}{
         "title": {{ page.title | jsonify }},
         "content": {{ page.content | strip_html | jsonify }},
         "preview": {{ page.content | strip_html | truncatewords: 25 | jsonify }},
@@ -62,8 +59,8 @@ layout: null
         "tlink": "{{ site.url }}/tags/{{ page.tag }}",
         "excerpt": "{{ page.description | jsonify }}",
         "search_omit": "{{ page.search_omit }}"
-    }
-    {% assign first = false %}
+        }
+        {% assign first = false %}
     {% endif %}
 {% endfor %}
 ]

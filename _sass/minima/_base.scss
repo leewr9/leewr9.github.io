@@ -1,6 +1,5 @@
-
 * {
-  -ms-overflow-style: -ms-autohiding-scrollbar; 
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 
   &::-webkit-scrollbar {
     width: $extra-small-font-size;
@@ -9,7 +8,9 @@
   &::-webkit-scrollbar-thumb {
     background-color: $border-color-01;
     border-radius: 3px;
-    &:hover { background-color: $hover-color }
+    &:hover {
+      background-color: $hover-color;
+    }
   }
 }
 
@@ -19,35 +20,46 @@ html {
   letter-spacing: -1px;
 }
 
-
 /**
  * Reset some basic elements
  */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
   margin: 0;
   padding: 0;
-
 }
 
 li::marker {
   color: $brand-color;
 }
 
-
 /**
  * Basic styling
  */
 body {
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height}
+    $base-font-family;
   color: $text-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
-     -moz-font-feature-settings: "kern" 1;
-       -o-font-feature-settings: "kern" 1;
-          font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
   font-kerning: normal;
   display: flex;
   min-height: 100vh;
@@ -55,24 +67,32 @@ body {
   overflow-wrap: break-word;
 }
 
-
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure,
 %vertical-rhythm {
-  margin-bottom: $spacing-unit * .5;
+  margin-bottom: $spacing-unit * 0.5;
 }
 
 hr {
   border: 0;
-  height: .25em;
+  height: 0.25em;
   background-color: $border-color-01;
   margin-top: $base-font-size;
 }
-
 
 /**
  * `main` element
@@ -80,7 +100,6 @@ hr {
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
-
 
 /**
  * Images
@@ -94,9 +113,10 @@ img {
   border-radius: 5px;
   cursor: zoom-in;
 
-  &:hover { transform: scale(1.05) }
+  &:hover {
+    transform: scale(1.05);
+  }
 }
-
 
 /**
  * Figures
@@ -109,11 +129,11 @@ figcaption {
   font-size: $small-font-size;
 }
 
-
 /**
  * Lists
  */
-ul, ol {
+ul,
+ol {
   margin-left: $spacing-unit;
 }
 
@@ -124,14 +144,17 @@ li {
   }
 }
 
-
 /**
  * Headings
  */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: $base-font-weight;
 }
-
 
 /**
  * Links
@@ -158,14 +181,13 @@ a {
   }
 }
 
-
 /**
  * Blockquotes
  */
 blockquote {
   color: $brand-color;
-  border-left: .25em solid $border-color-01;
-  padding-left: $spacing-unit * .5;
+  border-left: 0.25em solid $border-color-01;
+  padding-left: $spacing-unit * 0.5;
   @include relative-font-size(1.125);
   font-style: italic;
 
@@ -173,17 +195,17 @@ blockquote {
     margin-bottom: 0;
   }
 
-  i, em {
+  i,
+  em {
     font-style: normal;
   }
-  
+
   p {
     color: $brand-color;
     font-style: normal;
     font-size: $base-font-size * 1.05;
   }
 }
-
 
 /**
  * Code formatting
@@ -221,7 +243,7 @@ pre {
 }
 
 .highlight {
-  margin-top: $spacing-unit * .5;
+  margin-top: $spacing-unit * 0.5;
   background: $pre-background-color;
   @extend %vertical-rhythm;
 
@@ -237,8 +259,8 @@ pre {
   max-width: calc(#{$content-width} - (#{$spacing-unit}));
   margin-right: auto;
   margin-left: auto;
-  padding-right: $spacing-unit * .5;
-  padding-left: $spacing-unit * .5;
+  padding-right: $spacing-unit * 0.5;
+  padding-left: $spacing-unit * 0.5;
   @extend %clearfix;
 
   @media screen and (min-width: $on-large) {
@@ -248,7 +270,6 @@ pre {
   }
 }
 
-
 /**
  * Clearfix
  */
@@ -257,7 +278,6 @@ pre {
   display: table;
   clear: both;
 }
-
 
 /**
  * Icons
@@ -284,7 +304,6 @@ pre {
   overflow: visible;
 }
 
-
 /**
  * Tables
  */
@@ -294,14 +313,15 @@ table {
   text-align: $table-text-align;
   color: $table-text-color;
   border-collapse: collapse;
-  
+
   tr {
     &:nth-child(even) {
       background-color: $table-zebra-color;
     }
   }
-  th, td {
-    padding: ($spacing-unit * 33.3333333333 * .01) ($spacing-unit * .5);
+  th,
+  td {
+    padding: ($spacing-unit * 33.3333333333 * 0.01) ($spacing-unit * 0.5);
   }
   th {
     border: 1px solid $table-border-color;

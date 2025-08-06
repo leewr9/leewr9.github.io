@@ -2,12 +2,12 @@ name: Weekly Post
 
 on:
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: "0 0 * * 0"
   workflow_dispatch:
 
 permissions:
   contents: write
-  
+
 jobs:
   weekly-post:
     runs-on: ubuntu-latest

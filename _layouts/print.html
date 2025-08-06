@@ -3,15 +3,10 @@ layout: base
 ---
 
 <article class="post">
-
-  <nav class="page-breadcrumb">
-    <a class="page-link" href="{{ "/" | relative_url }}">Home</a> /
-    <a class="page-link" href="{{ "/docs" | relative_url }}">Docs</a> /
-    {{ page.title }}
-  </nav>
-
-  <div class="post-content">      
-    {{ content }}
-  </div>
-  
+    <nav class="page-breadcrumb">
+        <a class="page-link" href="{{ "/" | relative_url }}">Home</a> /
+        <a class="page-link" href="{{ "/docs" | relative_url }}">Docs</a> /
+        {{ page.title }}
+    </nav>
+    <div class="post-content">{{ content }}</div>
 </article>

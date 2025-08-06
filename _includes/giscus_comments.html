@@ -1,13 +1,5 @@
 {%- if page.comments != false -%}
-  <div id="gisucs_thread"></div>
-  <script src="https://giscus.app/client.js"
-          data-repo="{{ site.comments.giscus.repo }}"
-          data-repo-id="{{ site.comments.giscus.repo_id }}"
-          data-category="{{ site.comments.giscus.category }}"
-          data-category-id="{{ site.comments.giscus.category_id }}"
-          data-theme="{{ site.comments.giscus.theme }}"
-          crossorigin="anonymous"
-          async>
-  </script>
+    <div id="gisucs_thread"></div>
+    <script src="https://giscus.app/client.js" data-repo="{{ site.comments.giscus.repo }}" data-repo-id="{{ site.comments.giscus.repo_id }}" data-category="{{ site.comments.giscus.category }}" data-category-id="{{ site.comments.giscus.category_id }}" data-theme="{{ site.comments.giscus.theme }}" crossorigin="anonymous" async>
+    </script>
 {%- endif -%}
-

@@ -6,35 +6,35 @@ search_omit: true
 ---
 
 <div class="tag">
-
-  <div class="post-content">
-    {% if site.tags %}
-    {%- assign sorted_tags = "" -%}
-    {%- for tag in site.tags -%}
-      {%- assign sort_key = tag[1].size | prepend: "00000" | slice: -5, 5 -%}
-      {%- assign title = tag[0] -%}
-      {%- assign size = tag[1].size -%}
-      {%- capture items -%}
-        {{ sort_key | append: ',' | append: title | append: ',' | append: size }}
-      {%- endcapture -%}
-      {%- assign sorted_tags = sorted_tags | append: items | append: '|' -%}
-    {%- endfor -%}
-
-    <div class="tag-list">
-      {%- assign sorted_tags = sorted_tags | split: '|' | sort | reverse -%}
-      {%- for tag in sorted_tags -%}
-        {%- assign items = tag | split: ',' -%}
-        {%- assign title = items[1] -%}
-        {%- assign size = items[2] -%}
-      <a class="tag-item" href="{{ "/" | relative_url }}tags/{{ title | downcase | replace: '#', 'sharp' }}">
-        {{ title }} <span> {{ size }} </span>
-      </a>
-      {%- endfor -%}
-    </div>
+    <div class="post-content">
+        {% if site.tags %}
+            {%- assign sorted_tags = "" -%}
+            {%- for tag in site.tags -%}
+                {%- assign sort_key = tag[1].size | prepend: "00000" | slice: -5, 5 -%}
+                {%- assign title = tag[0] -%}
+                {%- assign size = tag[1].size -%}
+                {%- capture items -%}
+                {{ sort_key | append: ',' | append: title | append: ',' | append: size }}
+            {%- endcapture -%}
+            {%- assign sorted_tags = sorted_tags | append: items | append: '|' -%}
+        {%- endfor -%}
+        <div class="tag-list">
+            {%- assign sorted_tags = sorted_tags | split: '|' | sort | reverse -%}
+            {%- for tag in sorted_tags -%}
+                {%- assign items = tag | split: ',' -%}
+                {%- assign title = items[1] -%}
+                {%- assign size = items[2] -%}
+                <a class="tag-item"
+                   href="{{ "/" | relative_url }}tags/{{ title | downcase | replace: '#', 'sharp' }}">
+                    {{ title }} <span>{{ size }}</span>
+                </a>
+            {%- endfor -%}
+        </div>
     {% else %}
-    <p><strong>Tag not found :(</strong></p>
-    <p>The site does not seem to have any tags yet.</p>
+        <p>
+            <strong>Tag not found :(</strong>
+        </p>
+        <p>The site does not seem to have any tags yet.</p>
     {% endif %}
-  </div>
-
+</div>
 </div>

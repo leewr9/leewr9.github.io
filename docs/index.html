@@ -6,40 +6,65 @@ search_omit: true
 ---
 
 <div class="page">
-
-  <div class="page-header">
-    <a href="{{ "assets/images/profile.png" | absolute_url }}" >
-      <img class="profile" src="{{ "assets/images/profile.png" | absolute_url }}" alt />
-    </a>
-    <a href="{{ "assets/images/picture.png" | absolute_url }}" >
-      <img class="picture" src="{{ "assets/images/picture.png" | absolute_url }}" alt />
-    </a>
-    <h5><i>{{ site.description }}</i></h5>
-    <h5><u>Weekly posts every Sunday on tech & personal insights</u></h5>
-  </div>
-
-  <div class="post-content">
-    <h3 id="resumes">Documents</h3>
-    <ul>
-      <li><a class="page-link" href="{{ "/docs/resume" | relative_url }}">Resume</a></li>
-      <li><a class="page-link" href="{{ "/docs/portfolio" | relative_url }}">Portfolio</a></li>
-      <li><a class="page-link" href="{{ "/docs/cover_letter" | relative_url }}">Cover Letter</a></li>
-    </ul>
-    <h3 id="projects">Projects</h3>
-    <h4 id="project-ongoing">Ongoing</h4>
-    <ul>
-      <li><a class="page-link" href="{{ "/docs/projects/prmate" | relative_url }}">PRMate<span>2025.07 - present</span></a></li>
-      <li><a class="page-link" href="{{ "/docs/projects/kbo-data-portal" | relative_url }}">KBO 데이터 포털<span>2025.03 - present</span></a></li>
-    </ul>
-    <h4 id="project-maintained">Maintained</h4>
-    <ul>
-      <li><a class="page-link" href="{{ "/docs/projects/atlottery" | relative_url }}">AutoLottery<span>2025.07 - 2025.07</span></a></li>
-    </ul>
-    <h4 id="project-completed">Completed</h4>
-    <ul>
-      <li><a class="page-link" href="{{ "/docs/projects/webtoon-grepp" | relative_url }}">WebToon Grepp<span>2025.02 - 2025.03</span></a></li>
-      <li><a class="page-link" href="{{ "/docs/projects/exchangify" | relative_url }}">Exchangify<span>2025.01 - 2025.01</span></a></li>
-    </ul>
-  </div>
-
+    <div class="page-header">
+        <a href="{{ "assets/images/profile.png" | absolute_url }}">
+            <img class="profile"
+                 src="{{ "assets/images/profile.png" | absolute_url }}"
+                 alt />
+        </a>
+        <a href="{{ "assets/images/picture.png" | absolute_url }}">
+            <img class="picture"
+                 src="{{ "assets/images/picture.png" | absolute_url }}"
+                 alt />
+        </a>
+        <h5>
+            <i>{{ site.description }}</i>
+        </h5>
+        <h5>
+            <u>Weekly posts every Sunday on tech & personal insights</u>
+        </h5>
+    </div>
+    <div class="post-content">
+        <h3 id="resumes">Documents</h3>
+        <ul>
+            <li>
+                <a class="page-link" href="{{ "/docs/resume" | relative_url }}">Resume</a>
+            </li>
+            <li>
+                <a class="page-link" href="{{ "/docs/portfolio" | relative_url }}">Portfolio</a>
+            </li>
+            <li>
+                <a class="page-link" href="{{ "/docs/cover-letter" | relative_url }}">Cover Letter</a>
+            </li>
+        </ul>
+        <h3 id="projects">Projects</h3>
+        <h4 id="project-ongoing">Ongoing</h4>
+        <ul>
+            <li>
+                <a class="page-link" href="{{ "/docs/projects/prmate" | relative_url }}">PRMate<span>2025.07 - present</span></a>
+            </li>
+            <li>
+                <a class="page-link"
+                   href="{{ "/docs/projects/kbo-data-portal" | relative_url }}">KBO 데이터 포털<span>2025.03 - present</span></a>
+            </li>
+        </ul>
+        <h4 id="project-maintained">Maintained</h4>
+        <ul>
+            <li>
+                <a class="page-link"
+                   href="{{ "/docs/projects/atlottery" | relative_url }}">AutoLottery<span>2025.07 - 2025.07</span></a>
+            </li>
+        </ul>
+        <h4 id="project-completed">Completed</h4>
+        <ul>
+            <li>
+                <a class="page-link"
+                   href="{{ "/docs/projects/webtoon-grepp" | relative_url }}">WebToon Grepp<span>2025.02 - 2025.03</span></a>
+            </li>
+            <li>
+                <a class="page-link"
+                   href="{{ "/docs/projects/exchangify" | relative_url }}">Exchangify<span>2025.01 - 2025.01</span></a>
+            </li>
+        </ul>
+    </div>
 </div>

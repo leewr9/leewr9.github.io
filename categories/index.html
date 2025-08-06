@@ -6,35 +6,36 @@ search_omit: true
 ---
 
 <div class="category">
-
-  <div class="post-content">
-    {% if site.categories %}
-    {%- assign sorted_categories = "" -%}
-    {%- for category in site.categories -%}
-      {%- assign sort_key = category[1].size | prepend: "00000" | slice: -5, 5 -%}
-      {%- assign title = category[0] -%}
-      {%- assign size = category[1].size -%}
-      {%- capture items -%}
-        {{ sort_key | append: ',' | append: title | append: ',' | append: size }}
-      {%- endcapture -%}
-      {%- assign sorted_categories = sorted_categories | append: items | append: '|' -%}
-    {%- endfor -%}
-
-    <ul class="category-list">
-      {%- assign sorted_categories = sorted_categories | split: '|' | sort | reverse -%}
-      {%- for category in sorted_categories -%}
-        {%- assign items = category | split: ',' -%}
-        {%- assign title = items[1] -%}
-        {%- assign size = items[2] -%}
-      <a href="{{ "/" | relative_url }}categories/{{ title | downcase }}">
-        <li>{{ title }} <span>{{ size }} post</span></li>
-      </a>
-      {%- endfor -%}
-    {% else %}
-    <p><strong>Category not found :(</strong></p>
-    <p>The site does not seem to have any categories yet.</p>
-    {% endif %}
+    <div class="post-content">
+        {% if site.categories %}
+            {%- assign sorted_categories = "" -%}
+            {%- for category in site.categories -%}
+                {%- assign sort_key = category[1].size | prepend: "00000" | slice: -5, 5 -%}
+                {%- assign title = category[0] -%}
+                {%- assign size = category[1].size -%}
+                {%- capture items -%}
+                {{ sort_key | append: ',' | append: title | append: ',' | append: size }}
+            {%- endcapture -%}
+            {%- assign sorted_categories = sorted_categories | append: items | append: '|' -%}
+        {%- endfor -%}
+        <ul class="category-list">
+            {%- assign sorted_categories = sorted_categories | split: '|' | sort | reverse -%}
+            {%- for category in sorted_categories -%}
+                {%- assign items = category | split: ',' -%}
+                {%- assign title = items[1] -%}
+                {%- assign size = items[2] -%}
+                <a href="{{ "/" | relative_url }}categories/{{ title | downcase }}">
+                    <li>
+                        {{ title }} <span>{{ size }} post</span>
+                    </li>
+                </a>
+            {%- endfor -%}
+        {% else %}
+            <p>
+                <strong>Category not found :(</strong>
+            </p>
+            <p>The site does not seem to have any categories yet.</p>
+        {% endif %}
     </ul>
-  </div>
-
+</div>
 </div>

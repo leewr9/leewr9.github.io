@@ -1,28 +1,21 @@
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <title>
-    {% if page.tag %}
-      {{ page.category }} 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% if page.tag %}{{ page.category }}{% endif %}
+        {{ page.title }}
+    </title>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+    {%- feed_meta -%}
+    {%- if jekyll.environment == 'production' and site.google_analytics -%}
+        {%- include google_analytics.html -%}
+    {%- endif -%}
+    {%- include favicon.html -%}
+    <meta property="og:title" content="{{ page.title }}">
+    <meta property="og:image" content="/assets/favicon/favicon.png">
+    {% if page.category && page.tag %}
+        <meta property="og:description"
+              content="{{ page.content | strip_html | truncatewords: 15 }}">
     {% endif %}
-    {{ page.title }}
-  </title>
-  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-
-  {%- feed_meta -%}
-  
-  {%- if jekyll.environment == 'production' and site.google_analytics -%}
-    {%- include google_analytics.html -%}
-  {%- endif -%}
-  
-  {%- include favicon.html -%}
-  
-  <meta property="og:title" content="{{ page.title }}">
-  <meta property="og:image" content="/assets/favicon/favicon.png">
-  {% if page.category && page.tag %}
-    <meta property="og:description" content="{{ page.content | strip_html | truncatewords: 15 }}">
-  {% endif %}
 </head>

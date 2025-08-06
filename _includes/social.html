@@ -1,13 +1,15 @@
 <ul class="social-media-list">
-{%- for entry in site.minima.social_links -%}
-  {%- include social-item.html item = entry -%}
-{%- endfor -%}
-  <li>
-    <a href="{{ site.feed.path | default: 'feed.xml' | absolute_url }}" target="_blank" title="rss">
-      <svg class="svg-icon grey">
-        <use xlink:href="{{ 'assets/social-icons.svg#rss' | relative_url }}"></use>
-      </svg>
-      <span>RSS</span>
-    </a>
-  </li>
+    {%- for entry in site.minima.social_links -%}
+        {%- include social-item.html item = entry -%}
+    {%- endfor -%}
+    <li>
+        <a href="{{ site.feed.path | default: 'feed.xml' | absolute_url }}"
+           target="_blank"
+           title="rss">
+            <svg class="svg-icon grey">
+                <use xlink:href="{{ 'assets/social-icons.svg#rss' | relative_url }}"></use>
+            </svg>
+            <span>RSS</span>
+        </a>
+    </li>
 </ul>
