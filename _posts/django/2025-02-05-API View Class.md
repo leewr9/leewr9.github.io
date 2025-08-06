@@ -9,6 +9,7 @@ tag: [REST Framework, Python, Django]
 ---
 
 ## Function-Based
+
 함수 기반 뷰는 간단한 API 구현에 적합한 방식으로, HTTP 요청에 따라 처리할 로직을 함수로 정의합니다. `DRF`에서는 `@api_view` 데코레이터를 사용하여 함수 기반 뷰를 구현할 수 있습니다.
 
 ```python
@@ -26,7 +27,7 @@ def book_list(request):
         books = Book.objects.all()
         serializer = BookModelSerializer(books, many=True)
         return Response(serializer.data)
-    
+
     elif request.method == 'POST':
         serializer = BookModelSerializer(data=request.data)
         if serializer.is_valid():
@@ -34,11 +35,13 @@ def book_list(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 ```
+
 위 예시에서 `book_list`는 `GET` 요청으로 모든 책을 반환하고, `POST` 요청으로 새로운 책을 추가하는 함수 기반 뷰입니다. DRF의 `@api_view` 데코레이터를 사용하여 이 뷰가 처리할 HTTP 메서드를 지정할 수 있습니다.
 
 ---
 
 ## Class-Based
+
 클래스 기반 API 뷰는 보다 구조적이고 확장 가능한 방식으로, 클래스 내에서 여러 HTTP 메서드를 처리하는 로직을 정의합니다. `DRF`에서는 `APIView` 클래스를 상속받아 메서드를 구현합니다.
 
 ```python
@@ -55,7 +58,7 @@ class BookListView(APIView):
         books = Book.objects.all()
         serializer = BookModelSerializer(books, many=True)
         return Response(serializer.data)
-    
+
     def post(self, request):
         serializer = BookModelSerializer(data=request.data)
         if serializer.is_valid():
@@ -67,6 +70,7 @@ class BookListView(APIView):
 위의 예시에서 `BookListView`는 `GET` 요청으로 모든 책을 반환하고, `POST` 요청으로 새로운 책을 추가하는 API 뷰입니다. 클래스 기반 뷰는 각 HTTP 메서드를 클래스 내 메서드로 구현할 수 있어 관리와 확장이 용이합니다.
 
 ### Mixins
+
 `Mixins`는 DRF에서 기본적인 `CRUD` 작업을 처리할 수 있는 메서드들을 제공하는 클래스입니다. Mixins를 사용하면 클래스 기반 뷰에 `Create`, `List`, `Retrieve`, `Update`, `Destroy` 등의 작업을 처리하는 메서드를 사용할 수 있습니다.
 
 ```python
@@ -87,9 +91,9 @@ class BookListCreateView(mixins.ListModelMixin, mixins.CreateModelMixin, generic
         return self.create(request, *args, **kwargs)
 
 
-class BookRetrieveUpdateDestroyView(mixins.RetrieveModelMixin, 
-                                    mixins.UpdateModelMixin, 
-                                    mixins.DestroyModelMixin, 
+class BookRetrieveUpdateDestroyView(mixins.RetrieveModelMixin,
+                                    mixins.UpdateModelMixin,
+                                    mixins.DestroyModelMixin,
                                     generics.GenericAPIView):
     queryset = Book.objects.all()
     serializer_class = BookModelSerializer
@@ -108,6 +112,7 @@ class BookRetrieveUpdateDestroyView(mixins.RetrieveModelMixin,
 - `BookRetrieveUpdateDestroyView`: GET, PUT, PATCH, DELETE 요청을 처리
 
 ### Generics
+
 `Generics`는 `Mixins`보다 좀 더 추상화된 클래스로, CRUD 작업을 훨씬 간편하게 처리할 수 있도록 도와줍니다. `GenericAPIView`를 상속받아 `queryset`과 `serializer_class`를 지정하는 데 사용됩니다.
 
 ```python
@@ -132,6 +137,7 @@ class BookRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
 ---
 
 ## ViewSet
+
 `ViewSet`은 DRF에서 `CRUD` 기능을 쉽게 구현할 수 있도록 도와주는 클래스입니다. `ViewSet`을 사용하면 RESTful API의 기본적인 CRUD 작업을 한 번에 자동으로 처리할 수 있으며, 이를 `Router`와 함께 사용하여 URL 패턴을 자동으로 생성할 수 있습니다.
 
 ```python
@@ -164,6 +170,7 @@ urlpatterns = [
 BookViewSet은 `ModelViewSet`을 상속받아, Book 모델에 대한 CRUD 작업을 자동으로 처리합니다. `DefaultRouter`는 BookViewSet을 `/api/books/` 경로에 자동으로 매핑해줍니다. 이 방식은 RESTful API의 구현을 매우 간편하게 만들어 줍니다.
 
 ### Override
+
 `APIView`나` ViewSet`에서 제공하는 다양한 메서드를 오버라이드하여 클라이언트의 요청을 효율적으로 처리하고, 추가적인 비즈니스 로직을 적용할 수 있습니다.
 
 ```python
@@ -205,8 +212,10 @@ class BookViewSet(viewsets.ModelViewSet):
 ```
 
 ### Custom Action
+
 기본 제공되는 CRUD 액션(`list`, `retrieve`, `create`, `update`, `destroy`) 외에도,
 ViewSet에 특정 비즈니스 로직을 수행하는 커스텀 엔드포인트를 추가하고 싶을 때 사용할 수 있습니다.
+
 ```python
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -237,6 +246,7 @@ class BookViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(recent_books, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 ```
+
 - `@action`: 커스텀 URL 및 HTTP 메서드를 추가할 때 사용합니다.
 - `detail`: 단일 객체에 대한 액션인지 여부를 나타냅니다. `True`일 경우 URL에 `pk`가 포함됩니다.
 - `methods=['post']`: 커스텀 액션에서 사용할 HTTP 메서드를 지정합니다.
@@ -246,6 +256,7 @@ class BookViewSet(viewsets.ModelViewSet):
 ---
 
 ## Permission
+
 Django REST Framework는 API에 대한 접근을 제어할 수 있도록 `permission_classes` 속성을 제공합니다. 이 시스템을 통해 특정 사용자나 그룹에만 API 접근을 허용하거나, 사용자가 인증되었는지 등을 검사할 수 있습니다.
 
 ```python
@@ -257,17 +268,19 @@ from rest_framework.permissions import IsAuthenticated
 
 class BookView(APIView):
     permission_classes = [IsAuthenticated]
-    
+
     def get(self, request):
         return Response({'message': 'Hello, world!'})
 ```
+
 - `IsAuthenticated`: 사용자가 인증되었는지 확인합니다. 인증되지 않은 사용자는 접근할 수 없습니다.
 - `IsAdminUser`: 사용자가 관리자 권한을 가지고 있는지 확인합니다. 관리자만 접근할 수 있습니다.
-- `IsAuthenticatedOrReadOnly`: 인증된 사용자에게는 읽기/쓰기 권한을 제공하고, 
-인증되지 않은 사용자에게는 읽기 권한만 제공합니다.
+- `IsAuthenticatedOrReadOnly`: 인증된 사용자에게는 읽기/쓰기 권한을 제공하고,
+  인증되지 않은 사용자에게는 읽기 권한만 제공합니다.
 - `AllowAny`: 모든 사용자가 접근할 수 있습니다. 인증 여부에 관계없이 API에 접근할 수 있도록 허용합니다.
 
 ### Custom
+
 기본 제공되는 권한 클래스 외에도, 자체적인 권한 클래스를 만들어 더 복잡한 권한 로직을 구현할 수 있습니다. 커스텀 권한 클래스는 `permissions.BasePermission`을 상속하여 정의합니다.
 
 ```python
@@ -297,6 +310,7 @@ class BookView(APIView):
 ---
 
 ## References
+
 - [Django 공식 문서](https://www.djangoproject.com/)
 - [REST Framework 공식 문서](https://www.django-rest-framework.org/)
 - [Python 공식 문서](https://docs.python.org/3/)

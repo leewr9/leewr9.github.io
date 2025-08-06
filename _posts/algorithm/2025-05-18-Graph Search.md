@@ -9,12 +9,14 @@ tag: [Python, BFS, DFS, Graph, Algorithm]
 ---
 
 ## Traversal Search
+
 `Traversal Search`는 그래프의 모든 노드를 순회하는 기법을 의미하며, 이 탐색 방법은 그래프에서 원하는 데이터를 찾거나 특정 경로를 탐색할 때 유용하게 활용된다.
 
 - **DFS(Depth First Search)**: 깊이 우선 탐색
 - **BFS(Breadth First Search)**: 너비 우선 탐색
 
 ### DFS
+
 **DFS(Depth First Search)**는 한 노드에서 시작하여 가능한 한 깊이 내려간 후, 더 이상 탐색할 곳이 없으면 되돌아가면서 방문하는 방식이다. 이 탐색 방식은 `Stack` 자료구조 또는 재귀 호출을 활용하여 구현할 수 있다.
 
 [![](/assets/posts/2025-05-18-Graph Search.md/dfs.gif)](/assets/posts/2025-05-18-Graph Search.md/dfs.gif)
@@ -50,6 +52,7 @@ Traversal elements: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
 ### BFS
+
 **BFS(Breadth First Search)**는 시작 노드에서 가까운 노드부터 차례대로 방문하는 방식이다. 이 탐색 방식은 `Queue` 자료구조를 활용하여 구현되며, 방문할 노드를 순서대로 저장하고 꺼내면서 탐색을 진행한다.
 
 [![](/assets/posts/2025-05-18-Graph Search.md/bfs.gif)](/assets/posts/2025-05-18-Graph Search.md/bfs.gif)
@@ -66,7 +69,7 @@ def bfs(graph, start):
         if node not in visited:
             visited.append(node)
             queue.extend(graph[node])
-    
+
     return visited
 
 
@@ -93,6 +96,7 @@ Traversal elements: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 ---
 
 ## Shortest Path Search
+
 그래프에서 한 노드에서 다른 노드까지의 최단 경로를 찾는 알고리즘을 의미한다. 이 탐색 방법은 그래프의 가중치와 구조에 따라 다양한 방식으로 구현될 수 있으며, 특정 요구 사항에 맞는 최적의 알고리즘이 선택된다.
 
 - `Dijkstra`: 가중 그래프에서 최단 경로 탐색
@@ -100,6 +104,7 @@ Traversal elements: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 - `Floyd-Warshall`: 모든 노드 간 최단 경로 탐색
 
 ### Dijkstra
+
 `Dijkstra` 알고리즘은 가중 그래프에서 최단 경로를 찾는 대표적인 알고리즘으로, `Priority Queue` 를 활용하여 최단 경로를 점진적으로 탐색한다.
 
 [![](/assets/posts/2025-05-18-Graph Search.md/dijkstra.gif)](/assets/posts/2025-05-18-Graph Search.md/dijkstra.gif)
@@ -153,10 +158,10 @@ Shortest path from node 1:
 6: 11
 ```
 
-
 ---
 
 ## Ranking Search
+
 `Ranking Search`는 그래프 기반의 데이터에서 개별 노드의 중요도를 평가하는 검색 기법을 의미한다. 단순한 탐색이나 최단 경로 탐색과 달리, 각 노드의 중요도나 순위를 결정하는 데 초점을 맞춘다.
 
 - `PageRank`: 웹페이지 중요도 평가
@@ -164,6 +169,7 @@ Shortest path from node 1:
 - `Betweenness Centrality`: 최단 경로에서 중개 역할을 하는 노드 분석
 
 ### PageRank
+
 `PageRank` 알고리즘은 구글 검색 엔진의 핵심 알고리즘으로, 웹페이지의 중요도를 평가하는 기법이다. 웹페이지 간의 링크 구조를 분석하여, 많은 링크를 받거나, 중요한 페이지로부터 링크를 받은 페이지일수록 높은 점수를 얻는다.
 
 [![](/assets/posts/2025-05-18-Graph Search.md/page_rank.png)](/assets/posts/2025-05-18-Graph Search.md/page_rank.png)
@@ -230,6 +236,7 @@ K: 1.36%
 ---
 
 ## References
+
 - [Wikipedia 공식 문서](https://wikipedia.org/wiki/)
 - [Python 공식 문서](https://docs.python.org/3/)
 

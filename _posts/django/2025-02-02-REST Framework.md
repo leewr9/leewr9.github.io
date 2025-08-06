@@ -9,6 +9,7 @@ tag: [REST Framework, Python, Django]
 ---
 
 ## Serializer
+
 `Serializer`는 DRF에서 중요한 역할을 합니다. 데이터 모델을 JSON 형식으로 변환하거나, JSON 데이터를 모델의 필드에 맞는 Python 객체로 변환하는 작업을 합니다. Django에서는 `models.py`에서 정의된 모델을 기반으로 데이터를 JSON 형식으로 출력하거나, 그 반대로 변환할 때 `Serializer`를 사용합니다.
 
 ```bash
@@ -25,6 +26,7 @@ INSTALLED_APPS = [
 ```
 
 ### Usage
+
 ```python
 # serializers.py
 
@@ -58,6 +60,7 @@ else:
 ---
 
 ## ModelSerializer
+
 `ModelSerializer`는 Django 모델을 기반으로 직렬화를 수행하는 데 사용됩니다. `ModelSerializer`는 Django 모델의 필드와 자동으로 매핑되며, 이를 통해 보다 빠르게 데이터를 직렬화할 수 있습니다.
 
 ```python
@@ -90,10 +93,11 @@ print(serializer.data)
 위 코드에서는 `BookModelSerializer`를 사용하여 `Book` 모델을 직렬화합니다. `ModelSerializer`는 모델의 필드 정의를 기반으로 직렬화를 자동으로 처리하기 때문에 `fields` 속성에 모델의 필드 목록만 지정하면 됩니다.
 
 ### Meta Class
+
 Meta 클래스는 `ModelSerializer`에서 사용하는 중요한 설정을 정의합니다. Meta 클래스 안에서 `model`과 `fields`를 정의하여, 직렬화할 모델과 필드를 지정합니다.
 
 - `model`: 직렬화할 모델을 지정합니다.
-- `fields`: 직렬화할 필드 목록을 지정합니다. 기본적으로 모델의 모든 필드가 직렬화됩니다. 
+- `fields`: 직렬화할 필드 목록을 지정합니다. 기본적으로 모델의 모든 필드가 직렬화됩니다.
 - `exclude`: 직렬화에서 제외할 필드를 지정할 수 있습니다. fields와 exclude는 함께 사용되지 않습니다.
 - `read_only_fields`: 읽기 전용 필드를 지정합니다. 이 필드는 직렬화할 수 있지만, 역직렬화에서 제외됩니다.
 
@@ -108,6 +112,7 @@ class Meta:
 Meta 클래스에서 `fields`와 `exclude`를 함께 사용할 수는 없지만, 각기 다른 방식으로 직렬화할 필드를 조정할 수 있습니다. `read_only_fields`를 사용하면 읽기 전용 필드를 지정할 수 있으며, 이를 통해 직렬화된 데이터의 불변 속성을 관리할 수 있습니다.
 
 ### validate
+
 `ModelSerializer`에서 객체와 필드에 대한 유효성 검사를 `validate`나 `validate_<field_name>` 메서드를 사용하여 추가할 수 있습니다. 이는 여러 필드 간의 관계를 검사하거나, 필드들이 특정 조건을 만족하는지 확인할 때 유용합니다.
 
 ```python
@@ -137,6 +142,7 @@ if not serializer.is_valid():
 ---
 
 ## References
+
 - [Django 공식 문서](https://www.djangoproject.com/)
 - [REST Framework 공식 문서](https://www.django-rest-framework.org/)
 - [Python 공식 문서](https://docs.python.org/3/)

@@ -9,9 +9,11 @@ tag: [File, OS, Operating System]
 ---
 
 ## Storage Structures
+
 파일 시스템은 데이터를 효율적으로 저장하고 관리하기 위해 특정 구조를 사용합니다. 이 구조는 파일의 위치, 크기, 접근 권한 등을 관리하며, 저장된 데이터가 빠르고 안정적으로 접근될 수 있도록 설계됩니다. 또한, 디스크 공간을 효율적으로 활용하고 데이터 손실을 방지하기 위한 다양한 메커니즘이 포함됩니다.
 
 ### FAT
+
 **FAT(File Allocation Table)**는 초기 파일 시스템 중 하나로, 파일을 클러스터 단위로 관리합니다. 각 클러스터는 연속된 데이터 블록으로 구성되며, 파일의 각 클러스터가 연결된 정보를 `FAT` 테이블에 저장합니다.
 
 [![](/assets/posts/2025-04-27-File System.md/fat.png)](/assets/posts/2025-04-27-File System.md/fat.png)
@@ -20,6 +22,7 @@ tag: [File, OS, Operating System]
 - 단점: 대용량 파일을 관리하는 데 비효율적이며, 조각화가 발생할 수 있음
 
 ### EXT
+
 **EXT(Extended File System)**는 `Linux` 운영체제에서 사용되는 대표적인 파일 시스템입니다. `EXT`는 `inode` 기반 구조를 사용하여 파일 메타데이터를 관리하며, 파일 크기, 소유자, 권한, 저장 위치 등의 정보를 효율적으로 처리합니다. `EXT3`부터 저널링 기능이 추가되었고, 최신 버전인 `EXT4`는 대용량 파일과 성능 향상을 지원합니다.
 
 [![](/assets/posts/2025-04-27-File System.md/inode.png)](/assets/posts/2025-04-27-File System.md/inode.png)
@@ -28,13 +31,15 @@ tag: [File, OS, Operating System]
 - 단점: Windows에서 기본적으로 지원되지 않으며, 파일 시스템 확장 시 제한이 있을 수 있음
 
 ### NTFS
+
 **NTFS(New Technology File System)**는 `Windows` 운영체제에서 사용하는 파일 시스템으로, **MFT(Master File Table)**를 활용하여 파일 정보를 저장하고 효율적으로 관리합니다. `NTFS`는 파일 시스템 보안, 압축, 복구 기능 등을 지원합니다.
 
 - 장점: 파일 권한 관리, 대용량 파일 지원, 데이터 복구 기능 제공
 - 단점: 구조가 복잡하여 소규모 저장 장치에서는 비효율적일 수 있음
 
 ### DFS
-**DFS(Distributed File Systems)**은 여러 서버나 컴퓨터에 걸쳐 파일을 저장하고 관리하는 시스템입니다. `DFS`는 중앙 서버가 아닌 여러 노드에 데이터를 분산시켜 저장함으로써 데이터의 접근 속도를 높이고, 확장성을 제공합니다. 
+
+**DFS(Distributed File Systems)**은 여러 서버나 컴퓨터에 걸쳐 파일을 저장하고 관리하는 시스템입니다. `DFS`는 중앙 서버가 아닌 여러 노드에 데이터를 분산시켜 저장함으로써 데이터의 접근 속도를 높이고, 확장성을 제공합니다.
 
 - 고가용성: 데이터를 여러 서버에 복제하여 서버 중 하나가 실패해도 데이터를 사용할 수 있도록 합니다.
 - 확장성: 데이터가 많아질수록 서버를 추가하여 확장할 수 있습니다.
@@ -44,19 +49,23 @@ tag: [File, OS, Operating System]
 ---
 
 ## Data Writing
+
 파일 시스템은 데이터를 효율적으로 저장하기 위해 쓰기 버퍼를 활용하며, 데이터를 먼저 메모리에 기록한 후 일정 시간이 지나면 디스크에 반영합니다. 이를 통해 성능을 최적화할 수 있지만, 데이터 안정성을 유지하기 위한 추가적인 전략이 필요합니다.
 
 ### Write-back
+
 `Write-back`은 데이터를 먼저 메모리에 저장한 후, 일정 시간이 지나거나 특정 조건이 충족되었을 때 디스크에 기록하는 방식입니다. 주로 성능을 높이기 위해 사용되며, 캐시가 데이터를 일정 기간 유지함으로써 디스크 I/O를 줄일 수 있습니다. 하지만 시스템 장애가 발생하면 아직 디스크에 기록되지 않은 데이터가 손실될 위험이 있습니다.
 
 [![](\assets\posts\2025-04-27-File System.md\write_back.png)](\assets\posts\2025-04-27-File System.md\write_back.png)
 
 ### Write-through
+
 `Write-through`는 데이터를 메모리뿐만 아니라 즉시 디스크에도 동시에 기록하는 방식입니다. 데이터가 항상 저장 장치에 존재하기 때문에 장애 발생 시에도 데이터 손실이 없습니다. 하지만 모든 쓰기 작업이 디스크까지 반영되어야 하므로 속도가 느려질 수 있으며, 빈번한 디스크 I/O로 인해 성능이 저하될 가능성이 있습니다.
 
 [![](\assets\posts\2025-04-27-File System.md\write_through.png)](\assets\posts\2025-04-27-File System.md\write_through.png)
 
 ### Optimizations
+
 - `Caching`: 자주 사용되는 데이터를 메모리에 저장하여 빠르게 접근하고, 디스크 I/O를 줄여 성능을 개선하며 시스템 반응 속도를 향상시키는 방식
 - `Journaling`: 데이터를 변경하기 전에 로그에 기록하여 시스템 장애 시 데이터 복구를 용이하게 하지만, 쓰기 성능이 감소할 수 있는 방식
 - `Copy-on-Write`: 데이터를 변경할 때 기존 데이터를 수정하지 않고 새 위치에 복사본을 저장하여 데이터 손실을 방지하고, 스냅샷을 효율적으로 구현할 수 있는 방식
@@ -64,6 +73,7 @@ tag: [File, OS, Operating System]
 ---
 
 ## References
+
 - [Wikipedia 공식 문서](https://wikipedia.org/wiki/)
 
 <nav class="post-toc" markdown="1">

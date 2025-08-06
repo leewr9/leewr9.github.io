@@ -9,7 +9,8 @@ tag: [Executor, Airflow]
 ---
 
 ## SequentialExecutor
-SequentialExecutor는 가장 간단한 형태의 Executor입니다. 이 Executor는 단일 프로세스에서 작업을 순차적으로 실행합니다. 
+
+SequentialExecutor는 가장 간단한 형태의 Executor입니다. 이 Executor는 단일 프로세스에서 작업을 순차적으로 실행합니다.
 
 - 단일 프로세스에서 실행
 - 작업을 순차적으로 실행하며, 병렬 처리 불가
@@ -18,8 +19,9 @@ SequentialExecutor는 가장 간단한 형태의 Executor입니다. 이 Executor
 ---
 
 ## LocalExecutor
-LocalExecutor는 단일 머신에서 여러 작업을 병렬로 실행할 수 있는 Executor입니다. 
-작업을 순차적으로 실행하는 대신, 멀티 프로세싱을 사용하여 여러 작업을 동시에 실행할 수 있습니다. 
+
+LocalExecutor는 단일 머신에서 여러 작업을 병렬로 실행할 수 있는 Executor입니다.
+작업을 순차적으로 실행하는 대신, 멀티 프로세싱을 사용하여 여러 작업을 동시에 실행할 수 있습니다.
 
 - 병렬 실행으로 여러 작업을 동시에 실행
 - 단일 머신에서 멀티 프로세싱을 사용
@@ -28,7 +30,8 @@ LocalExecutor는 단일 머신에서 여러 작업을 병렬로 실행할 수 �
 ---
 
 ## CeleryExecutor
-CeleryExecutor는 분산 시스템에서 작업을 실행할 수 있는 Executor입니다. Celery는 메시지 큐를 사용하여 분산 환경에서 작업을 병렬로 처리할 수 있게 해줍니다. 
+
+CeleryExecutor는 분산 시스템에서 작업을 실행할 수 있는 Executor입니다. Celery는 메시지 큐를 사용하여 분산 환경에서 작업을 병렬로 처리할 수 있게 해줍니다.
 여러 Worker들이 각각의 작업을 받아서 실행하는 방식으로, 성능과 확장성이 뛰어나 대규모 환경에서 많이 사용됩니다.
 
 - 분산 시스템에서 여러 작업을 병렬로 처리
@@ -38,7 +41,8 @@ CeleryExecutor는 분산 시스템에서 작업을 실행할 수 있는 Executor
 ---
 
 ## KubernetesExecutor
-KubernetesExecutor는 `Kubernetes` 클러스터를 이용하여 각 작업을 컨테이너화하여 실행하는 Executor입니다. 
+
+KubernetesExecutor는 `Kubernetes` 클러스터를 이용하여 각 작업을 컨테이너화하여 실행하는 Executor입니다.
 각 작업은 독립적인 Pod로 실행되며, `Kubernetes`의 스케줄링과 관리 기능을 활용할 수 있습니다. 클라우드 환경에서 유용하며, 확장성과 유연성을 제공합니다.
 
 ### Inside Cluster
@@ -60,12 +64,13 @@ Kubernetes 클러스터 외부에서 실행하는 경우, Airflow와 작업을 �
 - Airflow가 외부에서 `Kubernetes` 클러스터와 `API`로 상호작용
 - 작업은 클러스터 내의 `Pod`에서 실행되며, `Airflow` 구성 요소는 클러스터 외부에서 실행
 - Airflow와 Kubernetes 클러스터 간의 연결 필요
-   - `kubeconfig` 파일을 사용하여 인증 및 연결 설정
-   - `kubeconfig` 파일은 `Kubernetes` 클러스터 인증 정보를 포함하며, Airflow 환경에 복사하여 사용
+  - `kubeconfig` 파일을 사용하여 인증 및 연결 설정
+  - `kubeconfig` 파일은 `Kubernetes` 클러스터 인증 정보를 포함하며, Airflow 환경에 복사하여 사용
 
 ---
 
 ## References
+
 - [Airflow Kubernetes 공식 문서](https://airflow.apache.org/docs/apache-airflow-providers-cncf-kubernetes/stable/index.html)
 - [Airflow 공식 문서](https://airflow.apache.org/docs/)
 

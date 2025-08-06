@@ -9,6 +9,7 @@ tag: [Syntax, Python]
 ---
 
 ## Variables
+
 Python은 동적 타입 언어로, 변수에 값을 할당할 때 그 타입이 자동으로 결정됩니다. 주요 데이터 타입에는 정수(int), 실수(float), 문자열(str), 불리언(bool) 등이 있습니다.
 
 ```python
@@ -27,6 +28,7 @@ print(is_active) # True
 ---
 
 ## Operators
+
 Python에서는 다양한 연산자를 사용하여 값을 계산하거나 비교할 수 있습니다. 주요 연산자에는 산술 연산자, 비교 연산자, 논리 연산자 등이 있습니다.
 
 ```python
@@ -51,7 +53,8 @@ print(a > b or b == 5)  # True
 
 ---
 
-## Conditionals 
+## Conditionals
+
 Python에서 조건문은 `if`, `elif`, `else` 키워드를 사용하여 조건에 따라 코드 블록을 실행할 수 있습니다.
 
 ```python
@@ -69,9 +72,11 @@ else:
 ---
 
 ## Loops
+
 반복문은 일정한 조건을 만족하는 동안 코드를 반복적으로 실행하는 데 사용됩니다. `for`문과 `while`문이 있습니다.
 
 ### for
+
 ```python
 # for문: 범위 내에서 반복
 for i in range(3):
@@ -82,6 +87,7 @@ for i in range(3):
 ```
 
 ### while
+
 ```python
 # while문: 조건이 참인 동안 반복
 count = 0
@@ -96,6 +102,7 @@ while count < 3:
 ---
 
 ## Function Definition and Call
+
 함수는 특정 작업을 수행하는 코드 블록입니다. def 키워드를 사용하여 함수를 정의하고, 이를 호출하여 사용할 수 있습니다.
 
 ```python
@@ -110,6 +117,7 @@ print(greet("Alice"))  # Hello, Alice!
 ---
 
 ## References
+
 - [Python 공식 문서](https://docs.python.org/3/)
 
 <nav class="post-toc" markdown="1">

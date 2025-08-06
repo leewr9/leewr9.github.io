@@ -4,11 +4,12 @@ category: Crawling
 tag: [Scrapy, Python, Crawling]
 ---
 
-> 웹 크롤링은 웹사이트에서 데이터를 추출하는 작업입니다. 대규모 크롤링을 다룰 때 Scrapy는 매우 유용한 도구입니다. Scrapy는 효율적이고 확장 가능한 웹 크롤링 및 스크래핑 프레임워크로, 대규모 데이터를 쉽게 처리할 수 있습니다. 
+> 웹 크롤링은 웹사이트에서 데이터를 추출하는 작업입니다. 대규모 크롤링을 다룰 때 Scrapy는 매우 유용한 도구입니다. Scrapy는 효율적이고 확장 가능한 웹 크롤링 및 스크래핑 프레임워크로, 대규모 데이터를 쉽게 처리할 수 있습니다.
 
 ---
 
 ## Large-Scale Scraping
+
 `Scrapy`는 대규모 웹 크롤링 프로젝트에 적합한 프레임워크입니다. `Scrapy`는 요청을 처리하고, 응답을 파싱하며, 데이터를 저장하는 기능을 기본적으로 제공합니다. 대규모 크롤링을 할 때는 `Scrapy`를 통해 여러 페이지를 동시에 처리할 수 있습니다.
 
 ```bash
@@ -22,6 +23,7 @@ scrapy genspider myspider example.com
 ```
 
 ### Structure
+
 ```plaintext
 myproject/
 │
@@ -45,6 +47,7 @@ myproject/
 - `myproject/settings.py`: 프로젝트의 설정 파일
 
 ### Usage
+
 `Scrapy`는 비동기식 요청을 처리하며, 각 요청이 끝날 때까지 기다리지 않고 다른 요청을 처리합니다. 이를 통해 크롤링 속도를 크게 향상시킬 수 있습니다. 또한, 분산 크롤링 기능도 지원하여 크롤링 작업을 여러 서버에서 분산시킬 수 있습니다.
 
 ```python
@@ -62,6 +65,7 @@ class MySpider(scrapy.Spider):
 ---
 
 ## Designing a Scraper
+
 Scrapy에서 크롤러는 데이터를 추출하는 역할을 합니다. `parse` 함수는 응답을 처리하고 데이터를 추출하는데 사용됩니다. 기본적으로 웹 페이지의 HTML을 파싱하고, 필요한 데이터를 추출하여 저장합니다.
 
 ```python
@@ -81,6 +85,7 @@ class MySpider(scrapy.Spider):
 ---
 
 ## Data Pipelines
+
 Scrapy는 크롤링한 데이터를 처리하는 `파이프라인(pipeline)` 기능을 제공합니다. 파이프라인은 데이터가 크롤러에서 추출된 후 저장되기 전에 처리할 수 있는 곳입니다.
 
 ```python
@@ -91,6 +96,7 @@ class MyPipeline:
 ```
 
 파이프라인을 활성화하려면 `settings.py`에서 설정을 추가합니다:
+
 ```python
 # settings.py
 ITEM_PIPELINES = {
@@ -101,6 +107,7 @@ ITEM_PIPELINES = {
 ---
 
 ## Handling AJAX
+
 AJAX는 웹 페이지에서 데이터를 동적으로 로드하는 데 사용됩니다. Scrapy는 기본적으로 AJAX 요청을 처리하지 않지만, JavaScript를 통해 동적으로 로드된 데이터를 크롤링할 수 있습니다.
 
 AJAX 요청을 처리하려면 `scrapy-selenium`을 사용하여 JavaScript 렌더링을 처리하거나, 직접 AJAX 요청을 캡처하여 데이터를 추출할 수 있습니다.
@@ -126,7 +133,8 @@ class MySpider(scrapy.Spider):
 
 ---
 
-## API Scraping 
+## API Scraping
+
 웹사이트에서 데이터를 직접 크롤링하는 대신, API를 통해 데이터를 요청하고 받아오는 방법도 있습니다. 많은 웹사이트는 데이터를 API로 제공하며, 이를 사용하여 효율적으로 데이터를 수집할 수 있습니다.
 
 ```python
@@ -171,12 +179,13 @@ class MySpider(scrapy.Spider):
 
 OpenAPI 문서를 통해 API 엔드포인트와 데이터를 요청하는 방법을 이해할 수 있습니다. Scrapy를 사용하면 API로부터 받은 데이터를 크롤링한 웹 페이지의 데이터와 함께 저장할 수 있습니다.
 
-
 ---
 
 ## References
-* [Scrapy 문서](https://scrapy.org/)
-- [Python 공식 문서](https://docs.python.org/3/)
+
+- [Scrapy 문서](https://scrapy.org/)
+
+* [Python 공식 문서](https://docs.python.org/3/)
 
 <nav class='post-toc' markdown='1'>
   <h2>Contents</h2>

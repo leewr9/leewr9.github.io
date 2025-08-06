@@ -9,6 +9,7 @@ tag: [Poetry, uv, Python]
 ---
 
 ## uv
+
 `uv`는 가볍고 직관적인 파이썬 패키지 및 프로젝트 관리 도구입니다. `pyproject.toml` 파일을 기반으로 프로젝트 의존성을 관리하고, 빠르고 간단한 명령어로 개발 워크플로우를 지원합니다.
 
 - Rust 기반으로 매우 빠르고 가벼움
@@ -59,6 +60,7 @@ uv_project
 ---
 
 ## Poetry
+
 `Poetry`는 강력하고 통합적인 파이썬 의존성 및 패키지 관리 도구입니다. 특히 의존성 충돌 해결, 패키지 배포, 가상환경 관리 등 다양한 기능을 공식적으로 지원합니다.
 
 - 의존성 관리, 빌드, 배포까지 통합 지원
@@ -109,6 +111,7 @@ poetry_project
 `poetry new`로 생성된 프로젝트 기본 구조입니다. `src/` 폴더 아래에 실제 패키지 소스가 위치하며, `tests/` 폴더에는 테스트 코드가 들어갑니다.
 
 ## pyproject.toml
+
 `pyproject.toml`은 프로젝트의 메타데이터와 의존성, 빌드 설정 등을 정의하는 중앙 설정 파일로, 패키지 추가, 설치, 빌드, 배포 시 참조됩니다.
 
 - uv
@@ -124,6 +127,7 @@ poetry_project
   ]
   ```
 - Poetry
+
   ```toml
   [project]
   name = "poetry-project"
@@ -150,6 +154,7 @@ poetry_project
 ---
 
 ## References
+
 - [Python 공식 문서](https://docs.python.org/3/)
 
 <nav class="post-toc" markdown="1">

@@ -9,9 +9,11 @@ tag: [Python, Django]
 ---
 
 ## Templates
+
 Django의 템플릿 시스템은 HTML 파일을 관리하고 서버 데이터를 동적으로 렌더링할 수 있도록 합니다.
 
 ### Structure
+
 Django 템플릿은 `settings.py`에서 템플릿 디렉토리를 지정하며, 다음 디렉터리 구조를 가지고 있습니다.
 
 ```python
@@ -55,78 +57,88 @@ project/
 ```
 
 {% raw %}
+
 ### Inheritance
+
 Django 템플릿 상속을 사용하면 반복되는 HTML 코드를 효율적으로 관리할 수 있습니다. 템플릿에서 `블록(Block)`은 상속받는 템플릿에서 특정 영역을 변경하거나 추가할 수 있도록 해줍니다. 블록은 `{% block 블록이름 %}`과 `{% endblock %}` 사이에 정의됩니다.
 {% endraw %}
 
 {% raw %}
+
 ```html
 <!-- base.html -->
 
 <!DOCTYPE html>
-<html lang='ko'>
-<head>
+<html lang="ko">
+  <head>
     <title>{% block title %}My Site{% endblock %}</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>My Site</h1>
+      <h1>My Site</h1>
     </header>
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+    <main>{% block content %}{% endblock %}</main>
     <footer>
-        <p>&copy; 2024 My Site</p>
+      <p>&copy; 2024 My Site</p>
     </footer>
-</body>
+  </body>
 </html>
 ```
+
 {% endraw %}
 
 [![](\assets\posts\2025-02-02-Frontend Resources.md\index.png)](\assets\posts\2025-02-02-Frontend Resources.md\index.png)
 
 {% raw %}
+
 ```html
 <!-- index.html -->
- 
-{% extends 'base.html' %} <!-- base.html 상속 -->
 
-{% block title %}Home - My Site{% endblock %}
+{% extends 'base.html' %}
+<!-- base.html 상속 -->
 
-{% block content %}
-    <h2>Welcome to My Site</h2>
-    <p>This is the home page.</p>
+{% block title %}Home - My Site{% endblock %} {% block content %}
+<h2>Welcome to My Site</h2>
+<p>This is the home page.</p>
 {% endblock %}
 ```
+
 {% endraw %}
 
 ### Filters and Tags
+
 Django 템플릿은 데이터 출력과 제어를 위해 필터와 태그를 제공합니다.
 
 {% raw %}
+
 ```html
-<p>{{ user.username|upper }}</p> <!-- 사용자 이름을 대문자로 표시 -->
-<p>{{ post.created_at|date:'Y-m-d' }}</p> <!-- 날짜 형식 지정 -->
+<p>{{ user.username|upper }}</p>
+<!-- 사용자 이름을 대문자로 표시 -->
+<p>{{ post.created_at|date:'Y-m-d' }}</p>
+<!-- 날짜 형식 지정 -->
 
-{% if user.is_authenticated %} <!-- 조건 태그 -->
-    <p>Welcome, {{ user.username }}!</p>
+{% if user.is_authenticated %}
+<!-- 조건 태그 -->
+<p>Welcome, {{ user.username }}!</p>
 {% else %}
-    <p>Please log in.</p>
-{% endif %}
-
-{% for post in posts %} <!-- 반복 태그 -->
-    <h3>{{ post.title }}</h3>
-    <p>{{ post.content }}</p>
+<p>Please log in.</p>
+{% endif %} {% for post in posts %}
+<!-- 반복 태그 -->
+<h3>{{ post.title }}</h3>
+<p>{{ post.content }}</p>
 {% endfor %}
 ```
+
 {% endraw %}
 
 ---
 
 ## Static
-Django에서 정적 파일은 CSS, JavaScript, 이미지와 같은 리소스를 관리합니다. 
+
+Django에서 정적 파일은 CSS, JavaScript, 이미지와 같은 리소스를 관리합니다.
 
 ### Structure
+
 Django 정적 파일은 `settings.py`에서 정적 파일 디렉토리를 지정하며, 다음 디렉터리 구조를 가지고 있습니다.
 
 ```python
@@ -154,25 +166,29 @@ project/
 ```
 
 ### Using
+
 {% raw %}
+
 ```html
 <!DOCTYPE html>
 <html lang="ko">
-<head>
+  <head>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <img src="{% static 'images/logo.png' %}" alt='Logo'>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <img src="{% static 'images/logo.png' %}" alt="Logo" />
     <script src="{% static 'js/script.js' %}"></script>
-</body>
+  </body>
 </html>
 ```
+
 {% endraw %}
 
 ---
 
 ## References
+
 - [Django 공식 문서](https://www.djangoproject.com/)
 - [Python 공식 문서](https://docs.python.org/3/)
 

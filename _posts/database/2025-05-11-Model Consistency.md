@@ -9,6 +9,7 @@ tag: [NewSQL, NoSQL, RDBMS, Database]
 ---
 
 ## RDBMS
+
 **RDBMS(Relational Database Management System)**는 데이터를 테이블 형식으로 저장하며, `SQL`을 사용하여 데이터를 관리하는 데이터베이스 시스템입니다. `ACID` 속성을 보장하여 데이터 무결성과 일관성을 유지하며, 금융, ERP 등 정형 데이터를 다루는 시스템에서 널리 사용됩니다. 다만, 수평 확장이 어려워 대규모 분산 시스템에서는 성능 문제가 발생할 수 있습니다.
 
 - **테이블 기반 데이터 모델**: 데이터를 `Row`와 `Column`로 저장
@@ -17,6 +18,7 @@ tag: [NewSQL, NoSQL, RDBMS, Database]
 - **스키마 고정**: 사전 정의된 데이터 구조 필요
 
 ### ACID
+
 `ACID` 속성은 데이터베이스에서 트랜잭션의 신뢰성을 보장하고, 데이터 무결성을 유지하는 데 핵심적인 역할을 합니다. 이를 통해 데이터 일관성, 무결성 및 신뢰성을 보장할 수 있으며, 시스템의 오류나 장애로 인한 데이터 손실을 방지할 수 있습니다.
 
 - `Atomicity`: 트랜잭션은 모두 성공하거나 모두 실패해야 하며, 중간에 상태가 불완전하지 않도록 보장합니다.
@@ -27,6 +29,7 @@ tag: [NewSQL, NoSQL, RDBMS, Database]
 ---
 
 ## NoSQL
+
 `NoSQL`은 비정형 및 대용량 데이터를 처리하기 위해 설계된 데이터베이스 시스템으로 다양한 데이터 모델을 지원합니다. 스키마가 고정되지 않아 유연성이 뛰어나며, 수평 확장이 가능해 대규모 트래픽을 처리하는 분산 시스템에서 주로 사용됩니다. 하지만 `ACID` 속성을 완벽히 보장하지 않아 데이터 일관성 관리가 어렵고, `SQL`만큼 강력한 쿼리 기능을 제공하지 않는 경우가 많습니다.
 
 - **다양한 데이터 모델**: `Key-Value`, `Document`, `Columnar`, `Graph` 방식 지원
@@ -34,14 +37,15 @@ tag: [NewSQL, NoSQL, RDBMS, Database]
 - **수평 확장성 우수**: 여러 서버로 데이터를 분산하여 확장 가능
 - **높은 처리 성능**: 빠른 읽기/쓰기 연산 가능
 
-| 데이터 모델 | 특징 | 대표 DB |
-|-|-|-|
-| **Key-Value**  | `Key-Value` 쌍으로 저장, 빠른 조회, 복잡한 쿼리는 어려움 | Redis, DynamoDB |
-| **Document**  | `JSON`, `BSON` 등 문서 형태 저장, 스키마 유연성 높음 | MongoDB, CouchDB |
-| **Columnar**  | 컬럼 단위 저장, 분석 성능 우수, `OLAP`에 적합 | HBase, Cassandra |
-| **Graph**     | `Node`-`Edge` 구조, 관계 데이터 탐색 최적화 | Neo4j, ArangoDB |
+| 데이터 모델   | 특징                                                     | 대표 DB          |
+| ------------- | -------------------------------------------------------- | ---------------- |
+| **Key-Value** | `Key-Value` 쌍으로 저장, 빠른 조회, 복잡한 쿼리는 어려움 | Redis, DynamoDB  |
+| **Document**  | `JSON`, `BSON` 등 문서 형태 저장, 스키마 유연성 높음     | MongoDB, CouchDB |
+| **Columnar**  | 컬럼 단위 저장, 분석 성능 우수, `OLAP`에 적합            | HBase, Cassandra |
+| **Graph**     | `Node`-`Edge` 구조, 관계 데이터 탐색 최적화              | Neo4j, ArangoDB  |
 
 ### CAP
+
 `CAP` 이론은 분산 시스템에서 트랜잭션의 일관성, 가용성, 네트워크 분할 허용성 간의 상충 관계를 정의하는 원리입니다. 이를 통해 시스템이 어떤 속성을 우선할 것인지 결정할 수 있으며, 분산 데이터베이스에서 필수적으로 고려됩니다.
 
 [![](/assets/posts/2025-05-11-Model Consistency.md/cap.png)](/assets/posts/2025-05-11-Model Consistency.md/cap.png)
@@ -51,6 +55,7 @@ tag: [NewSQL, NoSQL, RDBMS, Database]
 - `Partition Tolerance`: 네트워크 장애가 발생해도 시스템이 정상적으로 동작할 수 있도록 보장합니다.
 
 ### BASE
+
 `BASE` 모델은 강한 일관성을 포기하는 대신, 높은 가용성과 성능을 보장하는 분산 시스템 접근 방식입니다. 이를 통해 즉각적인 데이터 정합성 대신 점진적인 일관성을 유지하며, `NoSQL` 데이터베이스에서 널리 사용됩니다.
 
 - `Basically Available`: 항상 응답을 보장하지만, 일부 데이터는 최신이 아닐 수 있습니다.
@@ -60,6 +65,7 @@ tag: [NewSQL, NoSQL, RDBMS, Database]
 ---
 
 ## NewSQL
+
 `NewSQL`은 `RDBMS`의 `ACID` 속성을 유지하면서 `NoSQL`의 수평 확장성을 결합한 데이터베이스 시스템입니다. 기존 RDBMS처럼 `SQL`을 지원하면서도, 분산 환경에서 높은 성능과 확장성을 제공합니다. 다만, 설계 및 운영이 복잡하며, 일부 시스템에서는 복잡한 쿼리에 대한 최적화가 필요할 수 있습니다.
 
 - **SQL 지원**: 기존 `RDBMS`와 동일한 방식으로 데이터 처리
@@ -70,6 +76,7 @@ tag: [NewSQL, NoSQL, RDBMS, Database]
 ---
 
 ## References
+
 - [Wikipedia 공식 문서](https://wikipedia.org/wiki/)
 
 <nav class="post-toc" markdown="1">

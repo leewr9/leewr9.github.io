@@ -9,6 +9,7 @@ tag: [Seaborn, Python, Crawling]
 ---
 
 ## Seaborn Visualization
+
 `Seaborn`은 Python에서 데이터를 시각화하는 데 매우 유용한 라이브러리입니다. `Matplotlib`을 기반으로 하여 통계적 데이터를 쉽게 시각화할 수 있도록 도와줍니다. `Seaborn`을 사용하면 데이터의 분포, 관계, 트렌드 등을 직관적으로 분석할 수 있습니다.
 
 ```bash
@@ -16,7 +17,9 @@ pip install seaborn
 ```
 
 ### Histplot
+
 [![](\assets\posts\2025-01-19-Data Visualization.md\histplot.png)](\assets\posts\2025-01-19-Data Visualization.md\histplot.png)
+
 ```python
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -25,32 +28,40 @@ import matplotlib.pyplot as plt
 tips = sns.load_dataset('tips')
 
 sns.histplot(tips['total_bill'], kde=True) # KDE는 커널 밀도 추정
-plt.show() 
+plt.show()
 ```
 
 ### Boxplot
+
 [![](\assets\posts\2025-01-19-Data Visualization.md\boxplot.png)](\assets\posts\2025-01-19-Data Visualization.md\boxplot.png)
+
 ```python
 sns.boxplot(x='day', y='total_bill', data=tips)
 plt.show()
 ```
 
 ### Scatterplot
+
 [![](\assets\posts\2025-01-19-Data Visualization.md\scatterplot.png)](\assets\posts\2025-01-19-Data Visualization.md\scatterplot.png)
+
 ```python
 sns.scatterplot(x='total_bill', y='tip', data=tips)
 plt.show()
 ```
 
-### Lmplot 
+### Lmplot
+
 [![](\assets\posts\2025-01-19-Data Visualization.md\lmplot.png)](\assets\posts\2025-01-19-Data Visualization.md\lmplot.png)
+
 ```python
 sns.lmplot(x='total_bill', y='tip', data=tips)
 plt.show()
 ```
 
-### Swarmplot 
+### Swarmplot
+
 [![](\assets\posts\2025-01-19-Data Visualization.md\swarmplot.png)](\assets\posts\2025-01-19-Data Visualization.md\swarmplot.png)
+
 ```python
 sns.swarmplot(x='total_bill', y='tip', data=tips)
 plt.show()
@@ -59,16 +70,19 @@ plt.show()
 ---
 
 ## Replot
+
 Seaborn의 `replot()` 기능을 사용하면 기존의 플롯을 분할 또는 재사용하거나 새 데이터를 적용하여 업데이트할 수 있습니다.
 
 ### Splitting
+
 [![](\assets\posts\2025-01-19-Data Visualization.md\replot-splittingl.png)](\assets\posts\2025-01-19-Data Visualization.md\replot-splittingl.png)
+
 ```python
 # relplot을 사용하여 col과 row로 데이터를 분할
 sns.relplot(
-    x='total_bill', 
-    y='tip', 
-    hue='sex', 
+    x='total_bill',
+    y='tip',
+    hue='sex',
     col='time',      # 'time' 컬럼을 기준으로 열을 나누기 (Lunch, Dinner)
     row='sex',       # 'sex' 컬럼을 기준으로 행을 나누기 (Male, Female)
     data=tips
@@ -78,8 +92,10 @@ plt.show() # 'time'과 'sex'에 따른 산점도 플롯
 ```
 
 ### Replotting
+
 [![](\assets\posts\2025-01-19-Data Visualization.md\replot-total_bill.png)](\assets\posts\2025-01-19-Data Visualization.md\replot-total_bill.png)
 [![](\assets\posts\2025-01-19-Data Visualization.md\replot-size.png)](\assets\posts\2025-01-19-Data Visualization.md\replot-size.png)
+
 ```python
 # 첫 번째 플롯
 sns.set_theme(style='whitegrid')
@@ -94,6 +110,7 @@ plt.show()
 ---
 
 ## References
+
 - [Seaborn 공식 문서](https://seaborn.pydata.org/)
 - [Python 공식 문서](https://docs.python.org/3/)
 

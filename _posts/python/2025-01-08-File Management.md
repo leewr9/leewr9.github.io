@@ -9,6 +9,7 @@ tag: [Python]
 ---
 
 ## File
+
 파일을 읽고 쓰는 것은 가장 기본적인 파일 작업입니다. Python에서는 `open()` 함수를 사용하여 파일을 열고, `read()`, `write()` 메서드로 파일을 처리합니다.
 
 ```python
@@ -35,6 +36,7 @@ with open('example.txt', 'r') as file:
 - `a+` 추가 + 읽기: 파일이 존재하면 끝에 추가, 없으면 새로 생성
 
 ### Binary
+
 바이너리 파일은 텍스트 형식이 아닌 이진 데이터를 처리하는 파일입니다. Python에서는 `rb`와 `wb` 모드로 바이너리 파일을 읽고 쓸 수 있습니다.
 
 ```python
@@ -54,6 +56,7 @@ with open('example.bin', 'rb') as file:
 ## File Formats
 
 ### JSON
+
 `JSON` 파일은 데이터를 직렬화하여 저장하는 데 사용됩니다. Python의 `json` 모듈을 사용하면 JSON 파일을 쉽게 읽고 쓸 수 있습니다.
 
 ```python
@@ -71,6 +74,7 @@ with open('data.json', 'r') as file:
 ```
 
 ### CSV
+
 `CSV` 파일은 데이터를 표 형식으로 저장하는 데 사용됩니다. Python의 `csv` 모듈을 사용하면 CSV 파일을 읽고 쓸 수 있습니다.
 
 ```python
@@ -94,6 +98,7 @@ with open('data.csv', 'r') as file:
 ---
 
 ## References
+
 - [Python 공식 문서](https://docs.python.org/3/)
 
 <nav class="post-toc" markdown="1">

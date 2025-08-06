@@ -9,6 +9,7 @@ tag: [Trigger, Procedure, Database, SQL, PostgreSQL]
 ---
 
 ## Function
+
 `Function`은 입력값을 받아 계산 후 값을 반환하는 함수입니다. 주로 `SELECT` 구문 안에서 사용되며, 데이터 처리, 포맷팅, 계산 등에 활용됩니다. `RETURNS`를 통해 반환 타입을 지정하고, `RETURN` 구문으로 값을 반환합니다.
 
 ```sql
@@ -32,6 +33,7 @@ SELECT add_numbers(10, 20);
 ---
 
 ## Procedure
+
 `Procedure`는 값을 반환하지 않고 여러 SQL 작업을 수행하는 데 사용됩니다. 트랜잭션 단위의 일괄 작업 처리나 로깅 등에 활용되며, `CALL` 구문으로 실행합니다.
 
 ```sql
@@ -43,7 +45,7 @@ BEGIN
 END;
 $$;
 
-CALL insert_log('Call Procedure');  
+CALL insert_log('Call Procedure');
 SELECT * FROM action_logs;
 ```
 
@@ -57,6 +59,7 @@ SELECT * FROM action_logs;
 ---
 
 ## Trigger
+
 `Trigger`는 테이블에 `INSERT`, `UPDATE`, `DELETE` 같은 이벤트가 발생했을 때 자동으로 실행되는 동작입니다. 트리거 자체는 시점과 이벤트를 지정하고, 실행할 트리거 함수를 연결합니다. 트리거 함수는 트리거가 실행할 실제 로직을 담은 함수로, `RETURNS TRIGGER`를 반드시 포함해야 합니다. `NEW`, `OLD` 객체를 통해 삽입/수정된 행 데이터에 접근할 수 있습니다.
 
 ### INSERT
@@ -98,7 +101,7 @@ SELECT * FROM user_insert;
 (3 rows)
 ```
 
-### DELETE 
+### DELETE
 
 ```sql
 CREATE OR REPLACE FUNCTION user_delete()
@@ -134,7 +137,7 @@ SELECT * FROM user_delete;
 (1 rows)
 ```
 
-### UPDATE 
+### UPDATE
 
 ```sql
 CREATE OR REPLACE FUNCTION user_update()
@@ -162,7 +165,7 @@ SELECT * FROM user_update;
   2 | Charlie
   3 | BOB
 (2 rows)
-  
+
  id | before  | after | action |          log_time
 ----+---------+-------+--------+----------------------------
   1 | Charlie | ALICE | UPDATE | 2025-05-21 12:11:07.846997
@@ -170,6 +173,7 @@ SELECT * FROM user_update;
 ```
 
 ### FOR EACH
+
 `FOR EACH`는 트리거가 어떤 단위로 실행될지를 지정하는 옵션입니다. 트리거 함수가 실행되는 횟수와 `NEW`, `OLD` 객체 사용 여부에 영향을 줍니다.
 
 - `ROW`: 영향을 받는 각 행마다 트리거가 실행되며, `NEW`, `OLD` 객체 사용 가능
@@ -200,6 +204,7 @@ SELECT * FROM user_insert;
 ---
 
 ## References
+
 - [PostgreSQL 공식 문서](https://www.postgresql.org/docs/current/)
 
 <nav class="post-toc" markdown="1">

@@ -4,14 +4,15 @@ category: Python
 tag: [Algorithm, Structure, Python]
 ---
 
-> 자료구조와 알고리즘은 데이터를 효율적으로 저장하고 처리하는 방법을 제공합니다. 
-Python은 다양한 내장 자료구조와 이를 지원하는 모듈을 제공하며, 이를 활용하면 효과적으로 문제를 해결할 수 있습니다. 
+> 자료구조와 알고리즘은 데이터를 효율적으로 저장하고 처리하는 방법을 제공합니다.
+> Python은 다양한 내장 자료구조와 이를 지원하는 모듈을 제공하며, 이를 활용하면 효과적으로 문제를 해결할 수 있습니다.
 
 ---
 
-## Sequential 
+## Sequential
 
-### List  
+### List
+
 `List`는 순서가 있는 가변 길이의 자료구조입니다.
 
 ```python
@@ -31,7 +32,8 @@ print(numbers[0]) # 1
 print(numbers[1:4]) # [2, 4, 5]
 ```
 
-### Tuple  
+### Tuple
+
 `Tuple`은 순서가 있지만 변경할 수 없는 자료구조입니다.
 
 ```python
@@ -46,7 +48,8 @@ x, y = coordinates
 print(x, y) # 10 20
 ```
 
-### Stack  
+### Stack
+
 `Stack`은 **후입선출(LIFO)** 방식의 자료구조입니다. Python에서는 리스트를 활용해 구현합니다.
 
 ```python
@@ -61,7 +64,8 @@ print(stack.pop()) # 2
 print(stack) # [1]
 ```
 
-### Queue  
+### Queue
+
 `Queue`는 **선입선출(FIFO)** 방식의 자료구조입니다. `collections.deque`를 사용해 효율적으로 구현할 수 있습니다.
 
 ```python
@@ -80,9 +84,10 @@ print(queue) # deque([2])
 
 ---
 
-## Collection 
+## Collection
 
-### Set  
+### Set
+
 `Set`는 중복이 없는 요소들의 집합으로, 순서가 없습니다.
 
 ```python
@@ -100,7 +105,8 @@ other_fruits = {"apple", "grape"}
 print(fruits.intersection(other_fruits)) # {'apple'}
 ```
 
-### Dictionary  
+### Dictionary
+
 `Dictionary`는 키-값 쌍으로 이루어진 자료구조입니다.
 
 ```python
@@ -119,9 +125,10 @@ print(person["name"]) # Alice
 
 ---
 
-## Advanced 
+## Advanced
 
-### Heap  
+### Heap
+
 `Heap`은 우선순위 큐를 구현하는 데 사용되는 자료구조입니다. Python의 `heapq` 모듈을 이용합니다.
 
 ```python
@@ -139,7 +146,8 @@ print(heapq.heappop(heap)) # 1
 print(heap) # [2, 3]
 ```
 
-### Hash  
+### Hash
+
 `Hash`는 키를 이용해 값을 저장하고 검색하는 데 사용됩니다. Python에서는 딕셔너리가 해시 테이블의 역할을 합니다.
 
 ```python
@@ -155,7 +163,8 @@ print(hash_table["key1"]) # value1
 del hash_table["key1"]
 ```
 
-### Tree and Graph  
+### Tree and Graph
+
 `Tree`와 `Graph`는 노드와 엣지로 구성된 자료구조입니다. Python의 `collections.defaultdict`와 재귀를 활용해 구현할 수 있습니다.
 
 ```python
@@ -181,7 +190,8 @@ dfs(1, visited) # 1 2 4 3
 
 ---
 
-## Built-in Modules  
+## Built-in Modules
+
 `collections`, `heapq` 등 모듈로 자료구조를 쉽게 구현할 수 있습니다.
 
 - `collections.Counter`: 요소 개수 세기
@@ -199,6 +209,7 @@ print(counter) # Counter({'apple': 2, 'banana': 1, 'orange': 1})
 ---
 
 ## References
+
 - [Python 공식 문서](https://docs.python.org/3/)
 
 <nav class="post-toc" markdown="1">

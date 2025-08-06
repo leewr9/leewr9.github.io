@@ -9,6 +9,7 @@ tag: [SparkML, Spark]
 ---
 
 ## Regression
+
 `Regression`은 변수 간의 관계를 모델링하고, 이를 바탕으로 연속적인 값을 예측하는 기법입니다. 주로 예측 문제에서 사용되며, 특정 변수들의 값을 입력받아 연속적인 출력값을 예측하는 데 사용됩니다.
 
 - `LinearRegression`: 연속적인 값을 예측하는 기본적인 선형 회귀 모델
@@ -16,7 +17,8 @@ tag: [SparkML, Spark]
 - `RandomForestRegressor`: 여러 개의 결정 트리로 예측을 평균화한 앙상블 모델
 
 ### LinearRegression
-`LinearRegression`는 독립 변수와 종속 변수 간의 관계가 직선으로 표현될 수 있다고 가정하는 기법입니다. 즉, 변수들 간의 관계를 선형 함수로 모델링하여 예측값을 계산합니다. 
+
+`LinearRegression`는 독립 변수와 종속 변수 간의 관계가 직선으로 표현될 수 있다고 가정하는 기법입니다. 즉, 변수들 간의 관계를 선형 함수로 모델링하여 예측값을 계산합니다.
 
 ```python
 from pyspark.ml.regression import LinearRegression
@@ -59,6 +61,7 @@ only showing top 5 rows
 ---
 
 ## Classification
+
 `Classification`은 주어진 데이터를 여러 카테고리나 클래스로 나누는 기법입니다. 주로 이진 분류 또는 다중 클래스 분류 문제에 사용되며, 데이터가 특정 클래스에 속할 확률을 예측합니다.
 
 - `LogisticRegression`: 이진 분류 문제를 해결하는 로지스틱 회귀 모델
@@ -66,7 +69,8 @@ only showing top 5 rows
 - `RandomForestClassifier`: 앙상블 방법으로 여러 트리 예측을 결합한 분류 모델
 
 ### LogisticRegression
-`LogisticRegression`은 선형 회귀의 확장으로, 종속 변수의 값이 연속적인 것이 아니라 이진 분류(0 또는 1)인 경우에 사용됩니다. 즉, 어떤 데이터가 특정 클래스에 속할 확률을 예측하는 모델입니다. 
+
+`LogisticRegression`은 선형 회귀의 확장으로, 종속 변수의 값이 연속적인 것이 아니라 이진 분류(0 또는 1)인 경우에 사용됩니다. 즉, 어떤 데이터가 특정 클래스에 속할 확률을 예측하는 모델입니다.
 
 ```python
 import random
@@ -112,12 +116,14 @@ only showing top 5 rows
 ---
 
 ## Clustering
+
 `Clustering`은 주어진 데이터셋을 유사한 특성을 가진 그룹으로 나누는 비지도 학습 기법입니다. 데이터의 레이블이 없을 때, 비슷한 데이터를 묶는 데 사용됩니다. 그룹화는 데이터의 구조나 패턴을 발견하는 데 유용합니다.
 
 - `KMeans`: 데이터를 K개의 군집으로 나누는 군집화 모델
 - `BisectingKMeans`: `KMeans`의 변형으로, 이진 분할 방식으로 군집화
 
 ### KMeans
+
 `KMeans`는 데이터를 K개의 군집으로 나누는 비지도 학습 기법입니다. `KMeans`는 주어진 데이터를 K개의 군집으로 분할하고, 각 군집의 중심점을 계산하여 데이터를 할당하는 방식으로 작동합니다. 데이터 포인트는 가장 가까운 중심점을 기준으로 군집에 속하게 됩니다.
 
 ```python
@@ -157,7 +163,8 @@ predictions.groupBy("prediction").count().show()
 ```
 
 ## Persistence
-한 번 학습된 모델을 저장하면, 나중에 다시 불러와서 예측에 사용할 수 있습니다. 이를 통해 모델을 재학습하지 않고도 동일한 성능을 유지하면서 빠르게 결과를 도출할 수 있습니다. 
+
+한 번 학습된 모델을 저장하면, 나중에 다시 불러와서 예측에 사용할 수 있습니다. 이를 통해 모델을 재학습하지 않고도 동일한 성능을 유지하면서 빠르게 결과를 도출할 수 있습니다.
 
 ```python
 from pyspark.ml.regression import LinearRegressionModel
@@ -175,6 +182,7 @@ loaded_km_model = LinearRegressionModel.load("kmeans_model")
 ---
 
 ## References
+
 - [Spark 공식 문서](https://spark.apache.org/docs/latest/)
 
 <nav class="post-toc" markdown="1">

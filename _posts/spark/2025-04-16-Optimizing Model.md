@@ -9,9 +9,11 @@ tag: [SparkML, Spark]
 ---
 
 ## Tuning
+
 모델을 최적화하기 위한 방법 중 하나는 하이퍼파라미터 튜닝입니다. 모델 성능을 최적화하기 위해서는 여러 하이퍼파라미터를 테스트하고 가장 적합한 값을 찾아야 합니다.
 
 ### CrossValidator
+
 `CrossValidator`는 데이터셋을 여러 개로 나누어 모델을 학습하고 평가하는 방법입니다. 각 폴드에서 모델을 학습하고, 나머지 데이터를 사용하여 성능을 평가합니다. 이렇게 여러 번 학습과 평가를 반복함으로써 모델의 일반화 성능을 더 정확히 평가할 수 있습니다.
 
 ```python
@@ -40,12 +42,12 @@ paramGrid = ParamGridBuilder() \
     .addGrid(lr.elasticNetParam, [0.0, 0.5, 1.0]) \
     .build()
 
-evaluator = RegressionEvaluator(labelCol="value", predictionCol="prediction", 
+evaluator = RegressionEvaluator(labelCol="value", predictionCol="prediction",
                                 metricName="rmse")
 crossval = CrossValidator(
-  estimator=lr, 
-  estimatorParamMaps=paramGrid, 
-  evaluator=evaluator, 
+  estimator=lr,
+  estimatorParamMaps=paramGrid,
+  evaluator=evaluator,
   numFolds=5
 )
 
@@ -83,6 +85,7 @@ RMSE: 0.05070547812607801
   - 0과 1 사이: L1과 L2를 섞어서 사용
 
 ### TrainValidationSplit
+
 `TrainValidationSplit`은 데이터를 훈련 세트와 검증 세트로 나누어 모델을 평가하는 방법입니다. `CrossValidator`와 달리, 여러 번의 폴드 분할을 하지 않고 한 번의 훈련/검증을 통해 모델을 최적화합니다.
 
 ```python
@@ -113,12 +116,12 @@ paramGrid = ParamGridBuilder() \
     .addGrid(lr.regParam, [0.1, 0.5, 1.0]) \
     .build()
 
-evaluator = BinaryClassificationEvaluator(labelCol="value", rawPredictionCol="prediction", 
-                                          metricName="areaUnderROC") 
+evaluator = BinaryClassificationEvaluator(labelCol="value", rawPredictionCol="prediction",
+                                          metricName="areaUnderROC")
 tvs = TrainValidationSplit(
-  estimator=lr, 
-  estimatorParamMaps=paramGrid, 
-  evaluator=evaluator, 
+  estimator=lr,
+  estimatorParamMaps=paramGrid,
+  evaluator=evaluator,
   trainRatio=0.5)
 
 # 모델 학습
@@ -126,7 +129,7 @@ tvs_model = tvs.fit(train)
 for i, (metric, model) in enumerate(zip(tvs_model.validationMetrics, tvs_model.getEstimatorParamMaps())):
     param = [f"{k.name}: {v}" for k, v in model.items()]
     print(f"Model {i + 1} AUC: {metric} {' '.join(param)}")
-    
+
 # 최적 모델 평가
 tvs_predictions = tvs_model.transform(test)
 auc = evaluator.evaluate(tvs_predictions)
@@ -153,6 +156,7 @@ AUC: 0.8015578223749862
 ---
 
 ## Pipeline
+
 `Pipeline`은 데이터 전처리, 모델 학습, 예측 과정 등을 체계적으로 관리할 수 있게 해주는 중요한 도구입니다. 파이프라인을 사용하면 데이터 변환과 모델 학습을 한 번에 처리할 수 있어 코드가 간결해지고 효율적입니다.
 
 [![](\assets\posts\2025-04-16-Optimizing Model.md\pipeline.png)](\assets\posts\2025-04-16-Optimizing Model.md\pipeline.png)
@@ -167,7 +171,7 @@ from pyspark.ml.feature import Imputer, StringIndexer, VectorAssembler
 spark = SparkSession.builder.appName("Pipeline Example").getOrCreate()
 
 def get_data():
-  data = [(i, random.choice([None, i * 10]), i, random.choice(["Male", "Female", "Other"])) 
+  data = [(i, random.choice([None, i * 10]), i, random.choice(["Male", "Female", "Other"]))
           for i in range(1000)]
   columns = ["id", "label", "value", "gender"]
   df = spark.createDataFrame(data, columns)
@@ -175,11 +179,11 @@ def get_data():
   return df.randomSplit([0.7, 0.3])
 
 def get_stages():
-  imputer = Imputer(inputCols=["id", "label"], outputCols=["id_imputed", "label_imputed"], 
+  imputer = Imputer(inputCols=["id", "label"], outputCols=["id_imputed", "label_imputed"],
                     strategy="mean")
   indexer = StringIndexer(inputCol="gender", outputCol="gender_index")
 
-  assembler = VectorAssembler(inputCols=["id_imputed", "label_imputed", "gender_index"], 
+  assembler = VectorAssembler(inputCols=["id_imputed", "label_imputed", "gender_index"],
                               outputCol="features")
   lr = LinearRegression(featuresCol="features", labelCol="value")
 
@@ -232,6 +236,7 @@ only showing top 5 rows
 ---
 
 ## References
+
 - [Spark 공식 문서](https://spark.apache.org/docs/latest/)
 
 <nav class="post-toc" markdown="1">

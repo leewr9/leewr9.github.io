@@ -11,7 +11,9 @@ tag: [Docker]
 ## Container
 
 ### run
+
 컨테이너를 실행할 때는 `docker run` 명령어를 사용합니다. 여러 옵션을 통해 실행할 수 있습니다.
+
 ```bash
 docker run <options> <image_name>
 # docker container run <options> <image_name>
@@ -22,7 +24,9 @@ docker run <options> <image_name>
 - `-p <host_port>:<container_port>`: 포트 매핑
 
 ### ls
+
 실행 중인 컨테이너 목록을 확인하려면 `docker ps` 명령어를 사용합니다.
+
 ```bash
 docker ps
 # docker container ls
@@ -31,48 +35,61 @@ docker ps
 - `-a`: 종료된 컨테이너까지 포함한 모든 컨테이너 보기
 
 ### logs
+
 컨테이너의 로그를 확인하려면 `docker logs` 명령어를 사용합니다.
+
 ```bash
 docker logs <container_name_or_id>
 # docker container logs <container_name_or_id>
 ```
 
 ### stop
+
 실행 중인 컨테이너를 중지하려면 `docker stop` 명령어를 사용합니다.
+
 ```bash
 docker stop <container_name_or_id>
 # docker container stop <container_name_or_id>
 ```
 
 ### start
+
 중지된 컨테이너를 다시 시작하려면 `docker start` 명령어를 사용합니다.
+
 ```bash
 docker start <container_name_or_id>
 # docker container start <container_name_or_id>
 ```
 
 ### restart
+
 컨테이너를 재시작하려면 `docker restart` 명령어를 사용합니다.
+
 ```bash
 docker restart <container_name_or_id>
 # docker container restart <container_name_or_id>
 ```
 
 ### rm
+
 사용하지 않는 컨테이너를 삭제하려면 `docker rm` 명령어를 사용합니다.
+
 ```bash
 docker rm <container_name_or_id>
 # docker container rm <container_name_or_id>
 ```
 
 ### exec
+
 컨테이너 내에서 명령어를 실행하려면 `docker exec` 명령어를 사용합니다.
+
 ```bash
 docker exec -it <container_name_or_id> <command>
 # docker container exec -it <container_name_or_id> <command>
 ```
 
 - `--user <username_or_uid>`: 옵션으로 특정 사용자로 명령어 실행
+
 ```bash
 docker exec -it --user root <container_name_or_id> bash # 관리자 권한으로 셸을 실행
 ```
@@ -82,28 +99,36 @@ docker exec -it --user root <container_name_or_id> bash # 관리자 권한으로
 ## Image
 
 ### images
+
 로컬에 저장된 Docker 이미지를 확인하려면 `docker images` 명령어를 사용합니다.
+
 ```bash
 docker images
 # docker image ls
 ```
 
 ### pull
+
 Docker Hub에서 이미지를 다운로드하려면 `docker pull` 명령어를 사용합니다.
+
 ```bash
 docker pull <image_name>
 # docker image pull <image_name>
 ```
 
 ### build
+
 새로운 Docker 이미지를 빌드하려면 `docker build` 명령어를 사용합니다.
+
 ```bash
 docker build -t <image_name> <path_to_dockerfile>
 # docker image build -t <image_name> <path_to_dockerfile>
 ```
 
 ### rm
+
 사용하지 않는 이미지를 삭제하려면 `docker rmi` 명령어를 사용합니다.
+
 ```bash
 docker rmi <image_name_or_id>
 # docker image rm -t <image_name> <path_to_dockerfile>
@@ -112,6 +137,7 @@ docker rmi <image_name_or_id>
 ---
 
 ## References
+
 - [Docker 공식 문서](https://docs.docker.com/)
 
 <nav class="post-toc" markdown="1">

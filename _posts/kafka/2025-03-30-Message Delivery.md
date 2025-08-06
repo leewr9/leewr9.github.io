@@ -9,12 +9,14 @@ tag: [Kafka]
 ---
 
 ## Exactly Once
+
 `Exactly Once`는 메시지가 소비자에게 정확히 한 번만 전달되도록 보장하는 전송 보장 방식입니다. 이 방식은 중복된 메시지를 처리하지 않으므로, 시스템에서 중복 메시지로 인한 부작용을 없애는 데 중요한 역할을 합니다.
 
 - 메시지는 정확히 한 번만 소비자에게 전달됩니다.
 - 메시지가 중복으로 처리되지 않도록 보장합니다.
 
 ### Producer
+
 ```python
 from kafka import KafkaProducer
 from kafka.errors import KafkaError
@@ -41,6 +43,7 @@ producer.close()
 ```
 
 ### Consumer
+
 ```python
 from kafka import KafkaConsumer
 
@@ -62,12 +65,14 @@ for message in consumer:
 ---
 
 ## At Least Once
+
 `At Least Once`는 메시지가 적어도 한 번 이상 소비자에게 전달된다는 보장입니다. 이 방식에서는 중복된 메시지가 있을 수 있습니다. 즉, 메시지가 여러 번 소비자에게 전달될 수 있지만, 최소한 한 번은 반드시 전달된다는 보장이 있습니다.
 
 - 메시지가 최소 한 번 전달됩니다.
 - 메시지 중복이 발생할 수 있습니다.
 
 ### Producer
+
 ```python
 from kafka import KafkaProducer
 
@@ -78,11 +83,12 @@ producer = KafkaProducer(
 )
 
 producer.send('test_topic', value=b'Hello, Kafka!')
-producer.flush() 
+producer.flush()
 producer.close()
 ```
 
 ### Consumer
+
 ```python
 from kafka import KafkaConsumer
 
@@ -98,18 +104,21 @@ for message in consumer:
     print(f"Received message: {message.value.decode()}")
     consumer.commit()  # 메시지를 처리하고 명시적으로 커밋
 ```
+
 - 장점: 시스템이 일관되게 메시지를 전달하므로, 소비자는 메시지를 놓치지 않게 됩니다.
 - 단점: 중복 메시지가 발생할 수 있습니다. 이를 처리하려면 소비자 측에서 중복 제거 로직을 추가해야 합니다.
 
 ---
 
 ## At Most Once
+
 `At Most Once`는 메시지가 최대 한 번만 전달된다는 보장을 제공합니다. 이 방식에서는 메시지가 전달되지 않거나, 한 번만 전달되며, 중복된 메시지가 전송되지 않도록 보장합니다.
 
 - 메시지가 최대 한 번 전달됩니다.
 - 메시지가 전달되지 않거나, 한 번만 전달되므로 메시지 손실이 발생할 수 있습니다.
 
 ### Producer
+
 ```python
 from kafka import KafkaProducer
 
@@ -120,11 +129,12 @@ producer = KafkaProducer(
 )
 
 producer.send('test_topic', value=b'Hello, Kafka!')
-producer.flush() 
+producer.flush()
 producer.close()
 ```
 
-### Consumer 
+### Consumer
+
 ```python
 from kafka import KafkaConsumer
 
@@ -148,15 +158,16 @@ for message in consumer:
 
 ## Comparison
 
-| 전송 보장 방식 | 설명 | 적합한 용도 |
-|-|-|-|-|
-| **Exactly Once** | 메시지가 정확히 한 번만 전달되도록 보장 | 금융 거래와 같은 높은 신뢰성을 요구하는 시스템 |
-| **At Least Once** | 메시지가 최소 한 번 전달되도록 보장, 중복 허용 가능 | 대부분의 Kafka 애플리케이션, 데이터 손실 방지 |
-| **At Most Once** | 메시지가 최대 한 번만 전달되도록 보장, 중복 없음 | 성능 우선 시스템, 메시지 손실 허용 |
+| 전송 보장 방식    | 설명                                                | 적합한 용도                                    |
+| ----------------- | --------------------------------------------------- | ---------------------------------------------- |
+| **Exactly Once**  | 메시지가 정확히 한 번만 전달되도록 보장             | 금융 거래와 같은 높은 신뢰성을 요구하는 시스템 |
+| **At Least Once** | 메시지가 최소 한 번 전달되도록 보장, 중복 허용 가능 | 대부분의 Kafka 애플리케이션, 데이터 손실 방지  |
+| **At Most Once**  | 메시지가 최대 한 번만 전달되도록 보장, 중복 없음    | 성능 우선 시스템, 메시지 손실 허용             |
 
 ---
 
 ## References
+
 - [Confluent 공식 문서](https://docs.confluent.io/)
 - [Kafka 공식 문서](https://kafka.apache.org/documentation/)
 

@@ -9,6 +9,7 @@ tag: [Python, Django]
 ---
 
 ## Project Manager
+
 - 빠른 개발: Django는 프로젝트를 빠르게 시작하고 운영할 수 있도록 설계되었습니다. 덕분에 개발자는 웹 애플리케이션을 효율적으로 구축할 수 있습니다.
 - 보안: Django는 SQL 인젝션, 크로스 사이트 스크립팅(XSS), 크로스 사이트 요청 위조(CSRF)와 같은 보안 취약점으로부터 애플리케이션을 보호하는 기능을 제공합니다.
 - 확장성: Django는 고성능 웹 애플리케이션을 구축할 수 있도록 설계되어 있으며, 대규모 트래픽을 처리할 수 있습니다.
@@ -31,6 +32,7 @@ python manage.py runserver
 ---
 
 ## Structure
+
 Django 프로젝트는 명확하게 정의된 디렉터리 구조를 가지고 있습니다.
 
 ```plaintext
@@ -58,9 +60,11 @@ myproject/
 ---
 
 ## Configuration
+
 `settings.py` 파일은 Django 프로젝트의 핵심 설정 파일로, 프로젝트의 다양한 설정을 관리합니다.
 
 ### DEBUG
+
 개발 중 디버깅을 활성화할지 여부를 설정합니다.
 
 ```python
@@ -68,9 +72,11 @@ DEBUG = True # 디버깅 모드 활성화
 ```
 
 ### DATABASES
+
 데이터베이스 설정을 관리합니다. 기본적으로 `SQLite`가 설정되어 있지만, `MySQL`, `PostgreSQL` 등을 사용할 수도 있습니다.
 
-* SQLite
+- SQLite
+
 ```python
 DATABASES = {
     'default': {
@@ -80,7 +86,8 @@ DATABASES = {
 }
 ```
 
-* MySQL
+- MySQL
+
 ```python
 DATABASES = {
     'default': {
@@ -95,6 +102,7 @@ DATABASES = {
 ```
 
 ### INSTALLED_APPS
+
 프로젝트에 포함된 앱 목록을 설정합니다.
 
 ```python
@@ -108,12 +116,14 @@ INSTALLED_APPS = [
     'myapp', # 내가 만든 앱
 ]
 ```
+
 이 외에도 `TEMPLATES`, `MIDDLEWARE`, `STATIC_URL` 등 다양한 설정 항목이 포함되어 있습니다.
 
 ---
 
 ## URL Pattern Mapping
-Django는 URL을 처리할 뷰 함수에 매핑하는 시스템을 제공합니다. 
+
+Django는 URL을 처리할 뷰 함수에 매핑하는 시스템을 제공합니다.
 `urls.py` 파일에서 URL 패턴을 정의하고, 각 URL에 해당하는 뷰를 지정합니다.
 
 ```python
@@ -127,15 +137,18 @@ urlpatterns = [
     path('about/', views.about, name='about'), # about 페이지 URL
 ]
 ```
+
 위 예시에서는 `home`과 `about` 뷰를 각각의 URL에 연결하고 있습니다. `urlpatterns` 목록에 추가되는 각 항목은 URL 경로와 그에 해당하는 뷰 함수를 매핑합니다.
 
 ---
 
 ## View Request Flow
+
 Django의 뷰(Views)는 사용자의 요청에 대한 응답을 처리하는 함수 또는 클래스를 의미합니다. `views.py` 파일에서 요청에 대해 적절한 HTML 페이지를 반환하거나 데이터를 반환하는 등의 작업을 정의할 수 있습니다.
 
 [![](\assets\posts\2025-01-26-Getting Started.md\home.png)](\assets\posts\2025-01-26-Getting Started.md\home.png)
 [![](\assets\posts\2025-01-26-Getting Started.md\about.png)](\assets\posts\2025-01-26-Getting Started.md\about.png)
+
 ```python
 # views.py
 
@@ -147,6 +160,7 @@ def home(request):
 def about(request):
     return HttpResponse("About Us")
 ```
+
 - 사용자가 URL을 통해 요청을 보냅니다.
 - Django는 `urls.py`에 정의된 내용을 통해 요청을 어떤 뷰 함수가 처리할지 결정합니다.
 - 해당 뷰 함수는 요청을 처리하고, 보통 HTML 페이지나 데이터를 반환합니다.
@@ -155,6 +169,7 @@ def about(request):
 ---
 
 ## Custom Command
+
 Django에서는 기본적으로 제공되는 `manage.py` 명령어 외에도 커스텀 명령어를 작성하여 특정 작업을 자동화하거나 프로젝트의 요구에 맞는 명령어를 추가할 수 있습니다. Django의 커스텀 관리 명령어는 `django.core.management.base.BaseCommand`를 상속하여 만듭니다.
 
 ```plaintext
@@ -194,6 +209,7 @@ python manage.py custom_command
 ---
 
 ## References
+
 - [Django 공식 문서](https://www.djangoproject.com/)
 - [Python 공식 문서](https://docs.python.org/3/)
 

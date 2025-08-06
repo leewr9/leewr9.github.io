@@ -8,7 +8,8 @@ tag: [Python, Django]
 
 ---
 
-## Using Form 
+## Using Form
+
 Django의 `forms.Form` 클래스를 사용하면 간단하게 HTML 폼을 생성하고 이를 처리할 수 있습니다. 이 폼 클래스는 사용자 입력을 쉽게 처리하고 검증하는 기능을 제공합니다.
 
 ```python
@@ -47,21 +48,23 @@ def contact_view(request):
 
 [![](\assets\posts\2025-02-05-Form Class.md\form.png)](\assets\posts\2025-02-05-Form Class.md\form.png)
 {% raw %}
+
 ```html
 <!-- contact.html -->
 
 <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Submit</button>
 </form>
 ```
+
 {% endraw %}
 
 위 코드는 `name`, `email`, `message` 필드를 가진 폼을 생성합니다. 이 폼을 템플릿에 `as_p`를 사용하여 렌더링하면 HTML 폼 요소들이 `<p>` 태그 안에 자동으로 생성됩니다. `as_table`, `as_ul` 등의 다양한 렌더링 방식도 제공합니다.
 
 ### clean
-Django는 폼 검증 기능을 제공하여 사용자가 제출한 데이터가 유효한지 `clean`나 `clean_<field_name>` 메서드를 오버라이드하여  확인할 수 있습니다.
+
+Django는 폼 검증 기능을 제공하여 사용자가 제출한 데이터가 유효한지 `clean`나 `clean_<field_name>` 메서드를 오버라이드하여 확인할 수 있습니다.
 
 ```python
 def clean(self):
@@ -72,8 +75,8 @@ def clean(self):
         if name == email:
             raise forms.ValidationError("이름과 이메일은 같을 수 없습니다.")
     return cleaned_data
-    
-    
+
+
 def clean_email(self):
     email = self.cleaned_data.get('email')
     if "example.com" not in email:
@@ -84,6 +87,7 @@ def clean_email(self):
 ---
 
 ## ModelForm
+
 `ModelForm`은 Django 모델을 기반으로 자동으로 폼을 생성하는 클래스입니다. 모델과 폼을 연결하여, 데이터베이스와의 상호작용을 단순화할 수 있습니다.
 
 예를 들어, Article 모델을 기반으로 폼을 생성하는 방법은 다음과 같습니다.
@@ -121,15 +125,16 @@ def create_article(request):
 [![](\assets\posts\2025-02-05-Form Class.md\model.png)](\assets\posts\2025-02-05-Form Class.md\model.png)
 
 {% raw %}
+
 ```html
 <!-- create_article.html -->
 
 <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Submit</button>
 </form>
 ```
+
 {% endraw %}
 
 위 코드는 `title`과 `content` 필드를 가진 폼이 자동으로 생성되며, 이를 템플릿에 렌더링할 수 있습니다.
@@ -138,6 +143,7 @@ def create_article(request):
 ---
 
 ## References
+
 - [Django 공식 문서](https://www.djangoproject.com/)
 - [Python 공식 문서](https://docs.python.org/3/)
 

@@ -8,7 +8,8 @@ tag: [UDAF, UDF, Spark]
 
 ---
 
-## UDF 
+## UDF
+
 **UDF(User Defined Function)**는 PySpark에서 사용자 정의 함수를 사용할 수 있도록 하는 기능입니다. Spark에서 기본 제공하는 함수 외에, 복잡한 로직이나 비즈니스 요구사항에 맞는 커스텀 함수를 작성할 수 있습니다.
 
 ```python
@@ -53,6 +54,7 @@ df.show()
 ---
 
 ## Pandas UDF
+
 `pandas_udf`는 Pandas 라이브러리를 활용한 UDF입니다.벡터화된 방식으로 데이터 처리 속도가 더 빠르며, 대용량 데이터를 처리하는 데 적합합니다. Pandas UDF는 `pandas.Series`를 입력으로 받고 `pandas.Series`를 반환합니다.
 
 ```python
@@ -91,6 +93,7 @@ df.show()
 - 집계 작업에 적합: Pandas UDF는 집계 작업에서 매우 효과적입니다.
 
 ### Aggregate
+
 `pandas_udf`는 집계 함수에서도 유용하게 사용할 수 있습니다. 특히, `groupBy`와 결합할 때 효율적으로 대규모 데이터를 처리할 수 있습니다.
 
 ```python
@@ -128,6 +131,7 @@ result.show()
 ---
 
 ## Spark SQL UDF
+
 UDF와 Pandas UDF는 `Spark SQL`에서 직접 사용할 수 있도록 등록할 수 있습니다. 이를 통해 SQL 쿼리 내에서도 정의한 사용자 함수들을 사용할 수 있습니다.
 
 ```python
@@ -168,6 +172,7 @@ spark.sql("SELECT Age, categorize_age(Age) FROM people").show()
 ---
 
 ## References
+
 - [Spark 공식 문서](https://spark.apache.org/docs/latest/)
 
 <nav class="post-toc" markdown="1">

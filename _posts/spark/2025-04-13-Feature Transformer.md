@@ -4,11 +4,12 @@ category: Spark
 tag: [SparkML, Spark]
 ---
 
-> SparkML에서 Feature Transformer는 데이터를 모델이 처리할 수 있는 형태로 변환하는 중요한 역할을 합니다. 대부분의 머신러닝 알고리즘은 숫자형 데이터만을 처리할 수 있기 때문에, 다양한 변환 작업을 통해 데이터를 모델에 맞게 준비하는 것이 필요합니다. 
+> SparkML에서 Feature Transformer는 데이터를 모델이 처리할 수 있는 형태로 변환하는 중요한 역할을 합니다. 대부분의 머신러닝 알고리즘은 숫자형 데이터만을 처리할 수 있기 때문에, 다양한 변환 작업을 통해 데이터를 모델에 맞게 준비하는 것이 필요합니다.
 
 ---
 
 ## Imputer
+
 `Imputer`는 비어있는 값을 처리하는 데 사용되는 변환기입니다. 주로 데이터셋에서 비어있는 값(NaN)을 평균, 중간 또는 자주 나오는 값으로 대체할 때 사용됩니다. 이 방법은 데이터를 분석할 수 있도록 완전하게 만들어주는 중요한 기법입니다.
 
 - `mean`: 평균값으로 비어있는 값 대체 (기본값)
@@ -31,7 +32,7 @@ data = spark.createDataFrame([
 ], ["col1", "col2"])
 
 # Imputer 설정 (비어있는 값을 각 컬럼의 평균값으로 대체)
-imputer = Imputer(inputCols=["col1", "col2"], outputCols=["col1_imputed", "col2_imputed"], 
+imputer = Imputer(inputCols=["col1", "col2"], outputCols=["col1_imputed", "col2_imputed"],
                   strategy="mean")
 
 # 변환 실행
@@ -54,9 +55,10 @@ imputed_data.show()
 
 ---
 
-## Feature 
+## Feature
 
 ### VectorAssembler
+
 `VectorAssembler`는 여러 개의 개별 컬럼을 하나의 벡터로 결합하는 데 사용됩니다. 이 벡터는 머신러닝 알고리즘에서 입력으로 사용될 수 있습니다.
 
 ```python
@@ -86,6 +88,7 @@ data_transformed.show()
 ```
 
 ### StringIndexer
+
 `StringIndexer`는 범주형 데이터를 숫자형으로 변환하는 데 사용됩니다. 이 변환을 통해 범주형 데이터를 머신러닝 알고리즘이 처리할 수 있는 숫자형 데이터로 변환할 수 있습니다.
 
 ```python
@@ -116,7 +119,8 @@ data_transformed.show()
 ```
 
 ### OneHotEncoder
-`OneHotEncoder`는 범주형 데이터를 원-핫 인코딩 방식으로 변환하는 데 사용됩니다. 원-핫 인코딩은 각 범주형 변수의 고유 값마다 새로운 컬럼을 생성하고, 해당 값에 대해서만 1을 할당하며 나머지는 0으로 채웁니다. 
+
+`OneHotEncoder`는 범주형 데이터를 원-핫 인코딩 방식으로 변환하는 데 사용됩니다. 원-핫 인코딩은 각 범주형 변수의 고유 값마다 새로운 컬럼을 생성하고, 해당 값에 대해서만 1을 할당하며 나머지는 0으로 채웁니다.
 
 ```python
 from pyspark.sql import SparkSession
@@ -127,7 +131,7 @@ spark = SparkSession.builder.appName("OneHotEncoder Example").getOrCreate()
 # 데이터 준비
 data = spark.createDataFrame([("Male",), ("Female",), ("Other",), ("Female",), ("Other",)], ["gender"])
 
-# StringIndexer 설정 
+# StringIndexer 설정
 indexer = StringIndexer(inputCol="gender", outputCol="gender_index")
 
 # OneHotEncoder 설정
@@ -153,9 +157,10 @@ encoded_data.show()
 
 ---
 
-## Scaling 
+## Scaling
 
 ### StandardScaler
+
 `StandardScaler`는 데이터를 평균 0, 표준편차 1로 변환하는 방법입니다. 이 변환은 데이터의 분포가 평균적으로 0에 가까워지고, 표준편차는 1로 맞춰집니다. 이를 통해 다양한 스케일을 가진 특성들이 동일한 기준으로 비교할 수 있습니다.
 
 ```python
@@ -175,7 +180,7 @@ data = spark.createDataFrame([
 ], ["features"])
 
 # StandardScaler 설정
-scaler = StandardScaler(inputCol="features", outputCol="scaled_features", 
+scaler = StandardScaler(inputCol="features", outputCol="scaled_features",
                         withMean=True, withStd=True)
 
 # 변환 실행
@@ -199,7 +204,8 @@ scaled_data.show(truncate=False)
 ```
 
 ### MinMaxScaler
-`MinMaxScaler`는 데이터를 0과 1 사이로 변환하는 방법입니다. 모든 특성(feature)의 값을 최소값과 최대값을 기준으로 0과 1 사이로 스케일링합니다. 이 변환은 각 특성의 범위를 고정된 구간으로 바꾸므로, 정규화와는 다른 방식으로 데이터를 처리합니다. 
+
+`MinMaxScaler`는 데이터를 0과 1 사이로 변환하는 방법입니다. 모든 특성(feature)의 값을 최소값과 최대값을 기준으로 0과 1 사이로 스케일링합니다. 이 변환은 각 특성의 범위를 고정된 구간으로 바꾸므로, 정규화와는 다른 방식으로 데이터를 처리합니다.
 
 ```python
 from pyspark.sql import SparkSession
@@ -240,8 +246,8 @@ scaled_data.show(truncate=False)
 +-----------+----------------------------------------+
 ```
 
+### PCA
 
-### PCA 
 **PCA(Principal Component Analysis)**는 고차원 데이터를 저차원으로 변환하여 데이터 분석의 효율성을 높이는 차원 축소 기법입니다. 이 방법은 데이터의 주요 특성을 유지하면서 불필요한 차원을 제거하는 데 사용됩니다.
 
 ```python
@@ -287,6 +293,7 @@ pca_result.show(truncate=False)
 ---
 
 ## References
+
 - [Spark 공식 문서](https://spark.apache.org/docs/latest/)
 
 <nav class="post-toc" markdown="1">

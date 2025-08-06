@@ -9,6 +9,7 @@ tag: [Consumer, Producer, Kafka]
 ---
 
 ## Producer
+
 `Producer`는 데이터를 **토픽(Topic)**에 전송하며, 이를 **파티션(Partition)**에 저장합니다. 메시지는 **키(Key)**를 기반으로 특정 파티션에 할당되며, **오프셋(Offset)**을 통해 순서를 유지합니다. 또한, 데이터를 전송하기 전에 `Serialization`를 통해 바이트 형태로 변환합니다.
 
 [![](\assets\posts\2025-03-23-Processing Flow.md\producer.png)](\assets\posts\2025-03-23-Processing Flow.md\producer.png)
@@ -32,6 +33,7 @@ producer.close()
 ```
 
 ### Partitioner
+
 `Partitioner`는 프로듀서가 메시지를 보낼 때 어떤 파티션에 저장할지를 결정하는 역할을 합니다. 키가 있는 경우에는 해시 기반으로 파티션이 선택되지만, 키가 없는 경우에는 기본 파티셔너가 적용됩니다.
 
 ```python
@@ -55,11 +57,13 @@ producer.close()
 ---
 
 ## Consumer
+
 `Consumer`는 **토픽(Topic)**에서 데이터를 읽고, **오프셋(Offset)**을 통해 메시지의 순서를 추적합니다. 메시지를 읽을 때마다 오프셋이 증가하며, 처리된 데이터는 **커밋(Commit)**을 통해 저장됩니다. 또한, 전송된 데이터를 사용하기 전에 `Deserialization`하여 원래 형식으로 변환합니다.
 
 [![](\assets\posts\2025-03-23-Processing Flow.md\consumer.png)](\assets\posts\2025-03-23-Processing Flow.md\consumer.png)
 
 ### Consumer Group
+
 `Consumer Group`은 여러 개의 컨슈머가 하나의 그룹으로 묶여 동일한 토픽의 메시지를 분배받아 처리하는 방식입니다. 카프카에서는 각 파티션을 Consumer Group 내의 단 하나의 컨슈머에게만 할당하여, 데이터의 병렬 처리와 메시지 순서를 보장합니다.
 
 [![](\assets\posts\2025-03-23-Processing Flow.md\consumer-group.png)](\assets\posts\2025-03-23-Processing Flow.md\consumer-group.png)
@@ -85,6 +89,7 @@ for message in consumer:
 ```
 
 ### Auto Commit
+
 Kafka는 기본적으로 일정 주기마다 자동으로 오프셋을 커밋합니다. 이는 간단하지만, 컨슈머가 처리 중인 메시지가 커밋되기 전에 실패할 경우 메시지가 중복으로 처리될 위험이 있습니다.
 
 ```python
@@ -101,6 +106,7 @@ for message in consumer:
 ```
 
 ### Manual Commit
+
 `enable_auto_commit`을 설정하면, 컨슈머는 메시지를 처리한 후에 오프셋을 명시적으로 커밋해야 합니다. 이 방식은 실패 시 메시지를 중복 처리하지 않도록 보장할 수 있지만, 커밋을 적절히 관리하는 로직이 필요합니다.
 
 ```python
@@ -120,9 +126,9 @@ for message in consumer:
     consumer.commit()
 ```
 
-
 ### Auto Offset
-`auto_offset_reset`은 컨슈머가 읽을 수 있는 오프셋이 없거나, 오프셋이 더 이상 유효하지 않은 경우(예: 처음 실행할 때 또는 오프셋이 삭제된 경우) 어떤 방식으로 데이터를 읽을지를 설정하는 옵션입니다. 
+
+`auto_offset_reset`은 컨슈머가 읽을 수 있는 오프셋이 없거나, 오프셋이 더 이상 유효하지 않은 경우(예: 처음 실행할 때 또는 오프셋이 삭제된 경우) 어떤 방식으로 데이터를 읽을지를 설정하는 옵션입니다.
 
 - `earliest`: 컨슈머가 읽을 수 있는 오프셋이 없으면, 가장 오래된 메시지부터 처리 (처음부터 데이터를 처리하고 싶을 때 사용)
 - `latest`: 오프셋이 없으면 가장 최신 메시지부터 처리 (새로운 메시지만 처리하고 싶을 때 사용)
@@ -144,6 +150,7 @@ for message in consumer:
 ---
 
 ## References
+
 - [Kafka 공식 문서](https://kafka.apache.org/documentation/)
 
 <nav class="post-toc" markdown="1">

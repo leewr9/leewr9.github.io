@@ -46,6 +46,7 @@ class Post(models.Model):
 ---
 
 ## Filtering
+
 필터링은 조건에 맞는 여러 객체를 쿼리셋 형태로 반환하며, 조건에 맞는 객체가 없으면 빈 쿼리셋을 반환합니다. 여러 조건이 필요하다면 조건을 결합하여 쿼리할 수 있으며, 조건들은 모두 `AND` 연산으로 결합됩니다.
 
 ```python
@@ -65,18 +66,19 @@ start_date = datetime.now() - timedelta(days=7)
 filtered_posts = Post.objects.filter(title__icontains='Python', created_at__gte=start_date)
 ```
 
-| 연산자 | 연산자 (대소문자 구분하지 않음) | 조건 |
-| - | - | - |
-| exact | iexact | 정확히 일치하는 값 |
-| startswith | istartswith | 앞부분 일치 |
-| endswith | iendswith | 뒷부분 일치   |
-| contains | icontains | 부분 일치   |
-| gt | igt | 값이 큰 |
-| lt | ilt | 값이 작은 |
-| gte | igte | 값이 크거나 같은 |
-| lte | ilte | 값이 작거나 같은 |
+| 연산자     | 연산자 (대소문자 구분하지 않음) | 조건               |
+| ---------- | ------------------------------- | ------------------ |
+| exact      | iexact                          | 정확히 일치하는 값 |
+| startswith | istartswith                     | 앞부분 일치        |
+| endswith   | iendswith                       | 뒷부분 일치        |
+| contains   | icontains                       | 부분 일치          |
+| gt         | igt                             | 값이 큰            |
+| lt         | ilt                             | 값이 작은          |
+| gte        | igte                            | 값이 크거나 같은   |
+| lte        | ilte                            | 값이 작거나 같은   |
 
 ### exclude
+
 `exclude` 메서드는 `filter`와는 반대로 조건에 맞지 않는 데이터를 반환합니다.
 
 ```python
@@ -85,6 +87,7 @@ filtered_posts = Post.objects.exclude(title__icontains='Python')
 ```
 
 ### order_by
+
 `order_by` 메서드는 특정 필드를 기준으로 데이터를 정렬합니다.
 
 - `-필드명`: 내림차순 정렬.
@@ -102,6 +105,7 @@ posts = Post.objects.order_by('-created_at', 'views')
 ```
 
 ### distinct
+
 `distinct` 메서드는 쿼리셋에서 중복된 데이터를 제거합니다.
 
 ```python
@@ -110,6 +114,7 @@ authors = Post.objects.values('author').distinct()
 ```
 
 ### Case and When
+
 `Case`와 `When` 객체를 사용하면 조건에 따라 다른 값을 처리할 수 있습니다.
 
 ```python
@@ -134,7 +139,8 @@ posts = Post.objects.annotate(
 ).order_by('-is_popular', '-views')
 ```
 
-### Subquery 
+### Subquery
+
 서브쿼리를 작성할 때 사용됩니다. SQL의 서브쿼리와 유사한 쿼리를 작성할 수 있습니다.
 
 ```python
@@ -148,9 +154,11 @@ posts = Post.objects.annotate(latest_comment=Subquery(recent_comments))
 ---
 
 ## Relationship-Based Filtering
+
 외래키(ForeignKey)와 다대다 관계(ManyToMany) 필드 관계를 통해 연결된 모델을 기준으로 데이터를 필터링할 수 있습니다. 이를 통해 관계된 모델의 데이터를 기반으로 쿼리를 수행할 수 있습니다.
 
 ### ForeignKey
+
 외래키 관계에서 관련된 모델의 필드를 통해 데이터를 필터링할 수 있습니다.
 `__(더블 언더스코어)`를 사용하여 관련 모델의 필드에 접근합니다.
 
@@ -168,6 +176,7 @@ posts = Post.objects.annotate(comment_count=Count('comments')).filter(comment_co
 ```
 
 ### ManyToMany
+
 다대다 관계에서 특정 조건을 만족하는 데이터를 필터링합니다.
 `__(더블 언더스코어)`를 사용하여 관련 모델의 필드에 접근합니다.
 
@@ -179,6 +188,7 @@ posts = Post.objects.filter(tags__name='Django')
 ---
 
 ## References
+
 - [Django 공식 문서](https://www.djangoproject.com/)
 - [Python 공식 문서](https://docs.python.org/3/)
 

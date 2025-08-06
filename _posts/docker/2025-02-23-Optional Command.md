@@ -11,7 +11,9 @@ tag: [Docker Compose, Docker]
 ## Compose
 
 ### up
-Docker Compose로 정의된 서비스를 시작하려면 `docker compose up` 명령어를 사용합니다. 
+
+Docker Compose로 정의된 서비스를 시작하려면 `docker compose up` 명령어를 사용합니다.
+
 ```bash
 docker compose up -d
 ```
@@ -20,7 +22,9 @@ docker compose up -d
 - `-f`: 실행할 파일 지정
 
 ### down
+
 Docker Compose로 실행 중인 서비스를 종료하려면 `docker compose down` 명령어를 사용합니다.
+
 ```bash
 docker compose down
 ```
@@ -30,13 +34,17 @@ docker compose down
 - `--remove-orphans`: 정의되지 않은 서비스의 컨테이너를 삭제
 
 ### ps
+
 실행 중인 서비스의 상태를 확인하려면 `docker compose ps` 명령어를 사용합니다.
+
 ```bash
 docker compose ps
 ```
 
 ### logs
+
 Docker Compose의 로그를 확인하려면 `docker compose logs` 명령어를 사용합니다.
+
 ```bash
 docker compose logs
 ```
@@ -46,25 +54,33 @@ docker compose logs
 ## Network
 
 ### ls
+
 Docker의 네트워크를 확인하려면 `docker network ls` 명령어를 사용합니다.
+
 ```bash
 docker network ls
 ```
 
 ### create
+
 새로운 네트워크를 생성하려면 `docker network create` 명령어를 사용합니다.
+
 ```bash
 docker network create <network_name>
 ```
 
 ### connect
+
 컨테이너를 특정 네트워크에 연결하려면 `docker network connect` 명령어를 사용합니다.
+
 ```bash
 docker network connect <network_name> <container_name_or_id>
 ```
 
 ### disconnect
+
 컨테이너를 네트워크에서 연결 해제하려면 `docker network disconnect` 명령어를 사용합니다.
+
 ```bash
 docker network disconnect <network_name> <container_name_or_id>
 ```
@@ -74,19 +90,25 @@ docker network disconnect <network_name> <container_name_or_id>
 ## Volume
 
 ### ls
+
 Docker 볼륨을 확인하려면 `docker volume ls` 명령어를 사용합니다.
+
 ```bash
 docker volume ls
 ```
 
 ### create
+
 새로운 볼륨을 생성하려면 docker volume create 명령어를 사용합니다.
+
 ```bash
 docker volume create <volume_name>
 ```
 
 ### rm
+
 사용하지 않는 볼륨을 삭제하려면 `docker volume rm` 명령어를 사용합니다.
+
 ```bash
 docker volume rm <volume_name>
 ```
@@ -94,6 +116,7 @@ docker volume rm <volume_name>
 ---
 
 ## References
+
 - [Docker Compose 공식 문서](https://docs.docker.com/compose/)
 - [Docker 공식 문서](https://docs.docker.com/)
 

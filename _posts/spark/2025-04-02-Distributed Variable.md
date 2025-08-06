@@ -9,6 +9,7 @@ tag: [Spark]
 ---
 
 ## Closures
+
 `Closures`는 드라이버에서 정의된 변수나 함수가 클러스터 내 `Task` 단위 작업에서 참조될 때 발생하는 개념입니다. 각 태스크는 독립적으로 실행되며, 드라이버에서 정의된 변수가 워커 노드의 태스크에서 사용될 수 있도록 전송됩니다.
 
 - 드라이버에서 정의된 변수를 클러스터 내 작업에서 사용
@@ -50,6 +51,7 @@ result_df.show()
 ---
 
 ## Broadcast Variables
+
 `Broadcast Variables`는 데이터를 클러스터의 모든 `Worker`에 한 번만 전송하여 여러 작업에서 반복적으로 사용할 수 있게 해주는 변수입니다. 이를 통해 네트워크 비용을 절감하고 성능을 최적화할 수 있습니다.
 
 - 데이터를 한 번만 전송하여 여러 작업에서 사용
@@ -91,6 +93,7 @@ result_df.show()
 ---
 
 ## Accumulators
+
 `Accumulators`는 값을 안전하게 누적할 수 있는 변수로, 주로 디버깅과 성능 분석에 사용됩니다. 값은 한 번에 하나의 작업에서만 수정되며, 작업 완료 후 드라이버에서 최종 값을 읽을 수 있습니다.
 
 - 값 안전하게 누적
@@ -111,7 +114,7 @@ accum_sum = spark.sparkContext.accumulator(0)
 
 def accumulate(x):
     if x % 2 == 0:
-      accum_even.add(1) 
+      accum_even.add(1)
     return x * 2
 
 def accumulate_sum(x):
@@ -146,6 +149,7 @@ Accumulator sum after processing: 10
 ---
 
 ## References
+
 - [Spark 공식 문서](https://spark.apache.org/docs/latest/)
 
 <nav class="post-toc" markdown="1">

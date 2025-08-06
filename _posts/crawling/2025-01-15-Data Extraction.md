@@ -9,6 +9,7 @@ tag: [BeautifulSoup, Python, Crawling]
 ---
 
 ## HTML Structure
+
 `HTML` 문서는 트리 구조로 되어 있으며, 각 요소는 태그라고 불리는 HTML 요소들로 구성됩니다. 이러한 HTML 문서의 구조는 **DOM(Document Object Model)**이라고 불리며, 웹 페이지의 각 요소에 접근하는 방법을 제공합니다.
 
 `DOM`은 HTML 문서의 각 태그를 노드(Node)로 변환하여 구조적으로 표현합니다. 예를 들어, `<div>`, `<a>`, `<p>` 같은 HTML 태그들이 DOM 트리에서 각각 하나의 노드로 나타납니다. BeautifulSoup는 이 DOM 구조를 바탕으로 HTML을 파싱하고, 원하는 데이터를 추출할 수 있게 합니다.
@@ -18,6 +19,7 @@ pip install beautifulsoup4
 ```
 
 ### find
+
 `find` 함수는 HTML 문서에서 첫 번째로 일치하는 요소를 찾습니다. 원하는 태그나 속성에 맞는 첫 번째 요소를 반환합니다.
 
 ```python
@@ -29,6 +31,7 @@ print(title) # 'Title' 출력
 ```
 
 ### find_all
+
 `find_all` 함수는 HTML 문서에서 일치하는 모든 요소를 찾아 리스트로 반환합니다. 동일한 태그를 여러 개 찾을 때 유용합니다.
 
 ```python
@@ -40,6 +43,7 @@ for heading in headings:
 ```
 
 ### select
+
 `select` 함수는 CSS 선택자를 사용하여 원하는 요소를 찾습니다. CSS 스타일 시트를 작성할 때 사용하는 선택자를 이용하여 HTML 요소를 선택할 수 있습니다.
 
 ```python
@@ -50,6 +54,7 @@ print(content[0].text) # 'Content here' 출력
 ```
 
 ### select_one
+
 `select_one` 함수는 CSS 선택자를 사용하여 첫 번째 일치하는 요소를 반환합니다. `select`와 비슷하지만, 첫 번째 요소만 찾을 때 사용합니다.
 
 ```python
@@ -62,9 +67,11 @@ print(main_content.text) # 'Main Content' 출력
 ---
 
 ## Extraction
-HTML에서 데이터를 추출하는 주요 방법은 텍스트 내용, 태그의 속성, 그리고 리스트 형태로 데이터를 가져오는 것입니다. 
+
+HTML에서 데이터를 추출하는 주요 방법은 텍스트 내용, 태그의 속성, 그리고 리스트 형태로 데이터를 가져오는 것입니다.
 
 ### text
+
 `text` 속성을 사용하면 HTML 태그 내부의 텍스트를 추출할 수 있습니다.
 
 ```python
@@ -75,6 +82,7 @@ print(text) # 'Welcome to Python!' 출력
 ```
 
 ### attribute
+
 `get()` 메서드를 사용하면 태그의 속성 값을 추출할 수 있습니다. 예를 들어, `<a>` 태그의 `href` 속성 값을 가져올 수 있습니다.
 
 ```python
@@ -87,6 +95,7 @@ print(link) # 'https://www.example.com' 출력
 ---
 
 ## References
+
 - [BeautifulSoup 공식 문서](https://www.crummy.com/software/BeautifulSoup/)
 - [Python 공식 문서](https://docs.python.org/3/)
 

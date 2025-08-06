@@ -9,6 +9,7 @@ tag: [DataFrame, Spark SQL, Spark]
 ---
 
 ## DataFrame
+
 DataFrame에서는 `join()` 함수를 사용하여 두 개의 DataFrame을 결합할 수 있습니다. 이때 broadcast()를 사용하면 작은 테이블을 클러스터의 모든 작업자 노드에 복제하여 셔플링을 줄일 수 있습니다.
 
 ```python
@@ -30,6 +31,7 @@ result.collect()
 ```
 
 ### Broadcast
+
 DataFrame API에서는 broadcast()를 사용하여 작은 테이블을 브로드캐스트하여 성능을 향상시킬 수 있습니다.
 
 ```python
@@ -65,6 +67,7 @@ result.show()
 ---
 
 ## Spark SQL
+
 Spark SQL에서는 `JOIN`을 `SQL` 쿼리로 처리할 수 있습니다. 기본적인 조인 방식으로 테이블을 결합할 수 있습니다.
 
 ```python
@@ -83,13 +86,14 @@ df2.createOrReplaceTempView("departments")
 
 result = spark.sql("""
   SELECT e.Name, e.DeptID, d.DeptName
-  FROM employees e JOIN departments d 
+  FROM employees e JOIN departments d
   ON e.DeptID = d.DeptID
 """)
 result.collect()
 ```
 
 ### Broadcast
+
 SQL 쿼리에서도 `BROADCAST` 힌트를 사용하여 작은 테이블을 브로드캐스트할 수 있습니다. 이 방법을 사용하면 셔플링을 줄이고 성능을 개선할 수 있습니다.
 
 ```python
@@ -110,7 +114,7 @@ df2.createOrReplaceTempView("departments")
 
 result = spark.sql("""
   SELECT /*+ BROADCAST(d) */ e.Name, e.DeptID, d.DeptName
-  FROM employees e JOIN departments d 
+  FROM employees e JOIN departments d
   ON e.DeptID = d.DeptID
 """)
 result.show()
@@ -129,6 +133,7 @@ result.show()
 ---
 
 ## Broadcast Join
+
 `broadcast()` 조인은 작은 데이터셋을 클러스터의 모든 Executor에 복제하여, 셔플링을 최소화하고 성능을 크게 향상시킬 수 있습니다. 이 방식은 특히 데이터셋의 크기가 매우 다를 때 유용하며, 큰 데이터셋에서 셔플링이 발생하지 않도록 하여 처리 속도를 크게 개선할 수 있습니다.
 
 - 셔플링 감소: 작은 데이터셋을 브로드캐스트하여 셔플링을 줄입니다.
@@ -136,6 +141,7 @@ result.show()
 - 메모리 최적화: 작은 데이터셋을 메모리에 올려놓고 계산하여 디스크 I/O를 줄입니다.
 
 Spark는 기본적으로 `spark.sql.autoBroadcastJoinThreshold` 설정을 통해 자동으로 broadcast 조인을 적용합니다. 이를 변경하려면 설정값을 조정할 수 있습니다.
+
 ```python
 # 기본값 10485760 (10 MB)
 spark.conf.set("spark.sql.autoBroadcastJoinThreshold", "-1") # 해제
@@ -144,6 +150,7 @@ spark.conf.set("spark.sql.autoBroadcastJoinThreshold", "-1") # 해제
 ---
 
 ## References
+
 - [Spark 공식 문서](https://spark.apache.org/docs/latest/)
 
 <nav class="post-toc" markdown="1">

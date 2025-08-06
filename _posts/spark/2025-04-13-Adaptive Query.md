@@ -9,6 +9,7 @@ tag: [Spark]
 ---
 
 ## Adaptive Query Execution
+
 **Adaptive Query Execution (AQE)**는 쿼리 실행 중 각 스테이지가 완료될 때마다 실제 실행 통계 정보를 분석하여 더 나은 전략이 있는지 확인하고 동적으로 실행 계획을 조정합니다. 즉, 초기 실행 계획만 따르는 것이 아니라, 데이터의 분포와 크기 같은 실제 실행 정보를 기반으로 최적의 전략을 선택합니다.
 
 [![](\assets\posts\2025-04-13-Adaptive Query.md\aqe.png)](\assets\posts\2025-04-13-Adaptive Query.md\aqe.png)
@@ -18,7 +19,8 @@ spark.conf.set("spark.sql.adaptive.enabled", "true")
 ```
 
 ### Coalescing Partitions
-`Coalescing Partitions`는 Spark에서 shuffle 이후 생성되는 많은 작은 파티션들을 병합하여 성능을 최적화하는 기능입니다. 
+
+`Coalescing Partitions`는 Spark에서 shuffle 이후 생성되는 많은 작은 파티션들을 병합하여 성능을 최적화하는 기능입니다.
 
 [![](\assets\posts\2025-04-13-Adaptive Query.md\coalescing_before.png)](\assets\posts\2025-04-13-Adaptive Query.md\coalescing_before.png)
 
@@ -42,6 +44,7 @@ df.groupBy("id").count().show()
 ```
 
 ### Switching Join
+
 `Switching Join`은 Spark에서 실행되는 쿼리의 조인 전략을 상황에 맞게 동적으로 변경하는 기능입니다.
 
 [![](\assets\posts\2025-04-13-Adaptive Query.md\join.png)](\assets\posts\2025-04-13-Adaptive Query.md\join.png)
@@ -64,7 +67,8 @@ df1.join(df2, "id").show()
 ```
 
 ### Skew Join
-`Skew Join`은 데이터의 분포가 불균형한 경우, 특히 한쪽 테이블의 특정 파티션에 많은 데이터가 몰려 있을 때 성능 저하를 방지하는 최적화 기능입니다. 
+
+`Skew Join`은 데이터의 분포가 불균형한 경우, 특히 한쪽 테이블의 특정 파티션에 많은 데이터가 몰려 있을 때 성능 저하를 방지하는 최적화 기능입니다.
 
 [![](\assets\posts\2025-04-13-Adaptive Query.md\skewjoin_before.png)](\assets\posts\2025-04-13-Adaptive Query.md\skewjoin_before.png)
 
@@ -88,6 +92,7 @@ df1.join(df2, "id").show()
 ```
 
 ## Skew Sorting
+
 AQE 이전에는 데이터가 특정 키에 치우쳐 파티션이 불균형하게 분배될 때, 이를 해결하기 위한 방법으로 랜덤 키 추가 기법이 사용되었습니다. 이 기법은 파티션 균형을 맞추기 위해 별도의 임시 키(예: 파티션 번호)를 추가하여 데이터를 분산시키고, **그룹화(GroupBy)**나 조인 시 해당 키를 활용하여 파티션 간 **로드 밸런싱(load balancing)**을 유도합니다.
 
 ```python
@@ -111,6 +116,7 @@ final_result.show()
 ---
 
 ## References
+
 - [Databricks 공식 블로그](https://www.databricks.com/blog)
 - [Spark 공식 문서](https://spark.apache.org/docs/latest/)
 
