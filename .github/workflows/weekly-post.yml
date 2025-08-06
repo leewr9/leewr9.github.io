@@ -25,11 +25,11 @@ jobs:
         run: |
           echo "Last updated at $(date -u)" > _temp
 
-      - name: Commit changes
+      - name: Commit temp file
         run: |
           git add _temp
           git commit -m "posts:: weekly post timestamp updated" || echo "Nothing to commit"
 
-      - name: Push changes
+      - name: Push temp file
         run: |
           git push origin HEAD
