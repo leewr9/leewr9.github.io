@@ -11,14 +11,14 @@ The site is built using Jekyll minima, a simple and blog-aware static site gener
 
 ## Installation
 
-1. Clone the Repository
+1. **Clone the Repository**
 
 ```bash
 git clone https://github.com/leewr9/leewr9.github.io.git
 cd leewr9.github.io
 ```
 
-2. Install Dependencies
+2. **Install Dependencies**
 
 - Ensure you have Ruby and Bundler installed. Install Bundler if not present:
 
