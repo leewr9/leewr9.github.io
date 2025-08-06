@@ -1,4 +1,4 @@
-name: Weekly Post
+name: weekly-post
 
 on:
   schedule:
