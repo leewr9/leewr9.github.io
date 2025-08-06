@@ -1,6 +1,6 @@
 # leewr9.github.io
 
-This is my personal GitHub Pages site hosted at  [leewr9.github.io](https://leewr9.github.io).
+This is my personal GitHub Pages site hosted at [leewr9.github.io](https://leewr9.github.io).
 The site is built using Jekyll minima, a simple and blog-aware static site generator.
 
 ## Feature
@@ -19,17 +19,17 @@ cd leewr9.github.io
 ```
 
 2. **Install Dependencies**
+   - Ensure you have Ruby and Bundler installed. Install Bundler if not present:
 
-- Ensure you have Ruby and Bundler installed. Install Bundler if not present:
+     ```bash
+     gem install bundler
+     ```
 
-  ```bash
-  gem install bundler
-  ```
+   - Install Jekyll dependencies:
 
-- Install Jekyll dependencies:
-  ```bash
-  bundle install
-  ```
+     ```bash
+     bundle install
+     ```
 
 ## Usage
 
