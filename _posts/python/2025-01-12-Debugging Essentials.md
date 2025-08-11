@@ -77,7 +77,7 @@ if __name__ == '__main__':
 
 `unittest` 모듈을 사용하면 `assertEqual`, `assertTrue` 등의 메서드를 사용하여 예상 결과와 실제 결과를 비교할 수 있습니다.
 
-### Pytest
+### pytest
 
 `pytest`는 더 간결하고 직관적인 테스트를 작성할 수 있게 해주는 라이브러리입니다. `pytest`는 `unittest`와 호환되지만, 더 많은 기능과 유연성을 제공합니다.
 
