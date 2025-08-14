@@ -1,7 +1,7 @@
 ---
 title: Image Formats
-category: File
-tag: [Image, File]
+category: Operating System
+tag: [Image, File, OS, Operating System]
 ---
 
 > 이미지는 디지털 콘텐츠에서 가장 핵심적인 시각 자료입니다. 하지만 모든 이미지는 같은 방식으로 저장되거나 처리되지 않습니다. 크게 래스터 이미지와 벡터 이미지로 나뉘며, 각각의 포맷은 목적에 따라 선택해야 합니다.
