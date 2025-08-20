@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  weekly-post:
+  post:
     runs-on: ubuntu-latest
 
     steps:
