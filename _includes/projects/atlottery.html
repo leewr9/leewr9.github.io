@@ -9,42 +9,51 @@
         </a>
         <h4>개요</h4>
         <p>
-            동행복권 6/45 자동 구매 프로그램으로, PySide6 기반 GUI와 Selenium을 활용해 별도의 웹 브라우저 없이도 복권 구매를 자동화합니다. 본 프로젝트는 사용자 편의성을 극대화하고, 안정적인 자동 구매 환경을 제공하여 로또 구매 과정을 간소화하는 데 목적이 있습니다.
+            동행복권 6/45 자동 구매를 지원하는 프로그램으로, Selenium을 활용하여 별도의 웹 브라우저 없이 로또 구매를 자동화합니다. PySide6 기반 GUI와 CLI 실행도 지원하여 백그라운드 작업이나 스케줄러와 연동할 수 있으며, 구매 성공 여부와 오류 메시지는 메일 알림을 통해 확인할 수 있어 사용자 편의성을 높였습니다. 이를 통해 안정적이고 간편한 자동 구매 환경을 제공하는 것을 목표로 합니다.
         </p>
         <h4>역할</h4>
         <ul>
-            <li>V1 – PySide6 기반 사용자 인터페이스 설계 및 구현</li>
-            <li>V2 – Selenium 기반 로또 자동 구매 알고리즘 구현</li>
-            <li>V3 – GitHub Actions 연동 자동 배포 체계 구축</li>
+            <li>V1 – Selenium 기반 로또 자동 구매 알고리즘 구현</li>
+            <li>V2 – PySide6 기반 GUI 설계 및 구현</li>
+            <li>V3 – CLI 실행 지원 및 메일 알림 기능 구현</li>
+            <li>V4 – GitHub Actions 연동 자동 빌드 및 배포 체계 구축</li>
         </ul>
         <h4>기술 스택</h4>
         <ul>
-            <li>Python, PySide6, QT, Selenium</li>
+            <li>Python, Selenium, PySide6, QT</li>
             <li>PyInstaller, GitHub Actions</li>
         </ul>
     </div>
     <div class="page-project">
+        <h4>로또 자동 구매 알고리즘 구현</h4>
+        <h7>
+        <a href="https://github.com/leewr9/atlottery/blob/master/app/core/lottery_bot.py">[ Code ]</a>
+        </h7>
+        <p>
+            Selenium을 활용해 동행복권 6/45 복권 구매 과정을 자동화했습니다. 구매 전 예치금 잔액을 확인하고, WebDriverWait으로 페이지 내 필요한 요소가 로드될 때까지 명확히 대기합니다. 또한 예외 처리를 통해 오류 발생 시 프로그램이 안정적으로 동작하도록 하여 중단 없이 신뢰성 있는 자동 구매를 구현했습니다.
+        </p>
         <h4>PySide6 기반 GUI 개발</h4>
         <h7>
-        <a href="https://github.com/leewr9/atlottery/blob/master/main_ui.py">[ Code ]</a>
+        <a href="https://github.com/leewr9/atlottery/blob/master/gui_app.py">[ Code ]</a>
         </h7>
         <p>
             사용자 친화적인 인터페이스를 설계하여, 구매 수량 설정, 예치금 확인, 다양한 메뉴 등 주요 기능을 직관적으로 사용할 수 있도록 구현했습니다. 실시간 UI 상태 반영과 에러 메시지 출력으로 사용자 경험을 향상시켰습니다.
         </p>
         <img src="{{ "assets/docs/atlottery/gui.png" | absolute_url }}" alt>
         <h5>GUI</h5>
-        <h4>로또 자동 구매 알고리즘 구현</h4>
+        <h4>CLI를 통한 백그라운드 자동 실행</h4>
         <h7>
-        <a href="https://github.com/leewr9/atlottery/blob/master/lotto_bot.py">[ Code ]</a>
+        <a href="https://github.com/leewr9/atlottery/blob/master/cli_app.py">[ Code ]</a>
+        <a href="https://github.com/leewr9/atlottery/blob/master/.github/workflows/weekly-purchase.yml">[ Workflow ]</a>
         </h7>
         <p>
-            Selenium을 활용해 동행복권 6/45 복권 구매 과정을 자동화했습니다. 구매 전 예치금 잔액을 확인하고, WebDriverWait으로 페이지 내 필요한 요소가 로드될 때까지 명확히 대기합니다. 또한 예외 처리를 통해 오류 발생 시 프로그램이 안정적으로 동작하도록 하여 중단 없이 신뢰성 있는 자동 구매를 구현했습니다.
+            GUI 없이도 실행 가능한 자동화 스크립트를 제공하여, 백그라운드 작업이나 스케줄러와 연동해 로또 자동 구매를 수행할 수 있습니다. 실행 결과는 콘솔 로그와 메일 알림을 통해 구매 성공 여부와 오류 메시지를 실시간으로 확인할 수 있어 사용자 편의성을 높였습니다.
         </p>
     </div>
     <div class="page-project">
         <h4>자동화된 CI/CD 릴리즈 배포화</h4>
         <h7>
-        <a href="https://github.com/leewr9/atlottery/blob/master/.github/workflows/exe-build-release.yml">[ Code ]</a>
+        <a href="https://github.com/leewr9/atlo치ㅑttery/blob/master/.github/workflows/exe-build-release.yml">[ Code ]</a>
         </h7>
         <p>
             PyInstaller를 사용해 윈도우 환경에서 실행 가능한 exe 파일을 생성하고, GitHub Actions 기반 CI/CD 파이프라인과 연동해 코드 변경 시 자동 빌드 및 테스트를 거쳐, 빌드된 exe 파일을 GitHub 릴리즈에 자동 업로드하는 배포 자동화 체계를 구축했습니다.
@@ -53,7 +62,7 @@
         <h5>Release</h5>
         <h4>회고</h4>
         <p>
-            PySide6와 Selenium을 활용한 GUI 자동화 및 웹 자동화 기술을 실무에 적용해 볼 수 있었습니다. 특히, 안정적인 자동 구매를 위해 예외 처리와 UI 상태 관리에 집중하면서 사용자 경험 향상의 중요성을 체감했습니다. 또한, PyInstaller와 GitHub Actions를 연동한 자동 빌드 및 배포 자동화로 배포 프로세스를 크게 효율화할 수 있었습니다.
+            Selenium을 활용해 로또 자동 구매 서비스를 설계하고 구현하며, 웹 자동화와 백그라운드 실행 흐름 전반에 대한 이해를 넓힐 수 있었습니다. 특히 GUI를 통한 직관적인 조작과 CLI 기반 백그라운드 실행을 모두 지원하며, 메일 알림 기능을 통해 구매 상태를 실시간으로 확인할 수 있는 경험을 얻었습니다. 또한 안정적인 자동 구매를 위해 예외 처리와 상태 관리에 집중하며, PyInstaller와 GitHub Actions를 연동해 자동 빌드 및 배포 환경까지 구축하며 실제 서비스 운영과 배포 과정까지 경험할 수 있었습니다.
         </p>
     </div>
 </div>
