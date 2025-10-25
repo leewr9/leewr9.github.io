@@ -3,19 +3,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        {% if page.tag %}{{ page.category }}{% endif %}
-        {{ page.title }}
+        {% if page.title %}{% if page.tag %}{{ page.category }}{% endif %} {{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}
     </title>
     <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
     {%- feed_meta -%}
+    
+    <!-- Additional Feed Links -->
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS Feed" href="{{ site.url }}/feed.xml">
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }} Atom Feed" href="{{ site.url }}/atom.xml">
+    <link rel="alternate" type="application/json" title="{{ site.title }} JSON Feed" href="{{ site.url }}/feed.json">
+    
     {%- if jekyll.environment == 'production' and site.google_analytics -%}
         {%- include google_analytics.html -%}
     {%- endif -%}
     {%- include favicon.html -%}
-    <meta property="og:title" content="{{ page.title }}">
-    <meta property="og:image" content="/assets/favicon/favicon.png">
-    {% if page.category && page.tag %}
-        <meta property="og:description"
-              content="{{ page.content | strip_html | truncatewords: 15 }}">
-    {% endif %}
+    {%- include structured_data.html -%}
+    {%- include seo_meta.html -%}
 </head>

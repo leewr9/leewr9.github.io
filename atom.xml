@@ -1,0 +1,60 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <generator uri="https://jekyllrb.com/" version="{{ jekyll.version }}">Jekyll</generator>
+  <link href="{{ site.url }}/atom.xml" rel="self" type="application/atom+xml" />
+  <link href="{{ site.url }}/" rel="alternate" type="text/html" />
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.url }}/</id>
+  
+  <title type="html">{{ site.title | xml_escape }}</title>
+  <subtitle>{{ site.description | xml_escape }}</subtitle>
+  
+  <author>
+    <name>{{ site.author.name | xml_escape }}</name>
+    <email>{{ site.author.email | xml_escape }}</email>
+  </author>
+
+  {% for post in site.posts limit:15 %}
+    {% unless post.published == false %}
+    <entry>
+      <title type="html">{{ post.title | xml_escape }}</title>
+      <link href="{{ site.url }}{{ post.url }}" rel="alternate" type="text/html" title="{{ post.title | xml_escape }}" />
+      <published>{{ post.date | date_to_xmlschema }}</published>
+      <updated>{{ post.date | date_to_xmlschema }}</updated>
+      <id>{{ site.url }}{{ post.url }}</id>
+      <content type="html" xml:base="{{ site.url }}{{ post.url }}">
+        {% if post.excerpt %}
+          {{ post.excerpt | strip | xml_escape }}
+        {% else %}
+          {{ post.content | truncatewords: 100 | xml_escape }}
+        {% endif %}
+      </content>
+      
+      <author>
+        <name>
+          {% if post.author %}{{ post.author | xml_escape }}{% else %}{{ site.author.name | xml_escape }}{% endif %}
+        </name>
+      </author>
+      
+      {% for category in post.categories %}
+      <category term="{{ category | xml_escape }}" />
+      {% endfor %}
+      
+      {% for tag in post.tags %}
+      <category term="{{ tag | xml_escape }}" />
+      {% endfor %}
+      
+      <summary type="html">
+        {% if post.excerpt %}
+          {{ post.excerpt | strip_html | xml_escape }}
+        {% else %}
+          {{ post.content | truncatewords: 30 | strip_html | xml_escape }}
+        {% endif %}
+      </summary>
+    </entry>
+    {% endunless %}
+  {% endfor %}
+</feed>

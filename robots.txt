@@ -1,4 +1,22 @@
 User-agent: *
 Allow: /
+
+# Disallow private directories
+Disallow: /assets/docs/
+Disallow: /_site/
+Disallow: /.git/
+Disallow: /script/
+
+# Allow specific paths
+Allow: /assets/
+Allow: /categories/
+Allow: /tags/
+Allow: /search/
+
+# Crawl delay for politeness
+Crawl-delay: 1
+
+# Sitemaps
 Sitemap: https://leewr9.github.io/sitemap.xml
 Sitemap: https://leewr9.github.io/feed.xml
+Sitemap: https://leewr9.github.io/atom.xml
