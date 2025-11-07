@@ -90,6 +90,7 @@ minima:
         title: "GitHub",
         user_url: "https://github.com/leewr9",
       }
+    - { platform: gmail, title: "Gmail", user_url: "mailto:leewr9@gmail.com" }
     - {
         platform: linkedin,
         title: "LinkedIn",
@@ -102,16 +103,10 @@ minima:
         user_url: "https://www.instagram.com/rooam_lee",
       }
     - {
-        platform: youtube,
-        title: "YouTube",
-        user_url: "https://www.youtube.com/@rooam_lee",
-      }
-    - {
         platform: stackoverflow,
         title: "Stack Overflow",
         user_url: "https://stackoverflow.com/users/28407569/rooam-lee",
       }
-    - { platform: gmail, title: "Gmail", user_url: "mailto:leewr9@gmail.com" }
 
 # Display posts with future dates.
 future: false
