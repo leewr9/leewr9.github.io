@@ -97,6 +97,11 @@ minima:
       }
     - { platform: x, title: "Twitter", user_url: "https://x.com/rooam_lee" }
     - {
+        platform: instagram,
+        title: "Instagram",
+        user_url: "https://www.instagram.com/rooam_lee",
+      }
+    - {
         platform: youtube,
         title: "YouTube",
         user_url: "https://www.youtube.com/@rooam_lee",
