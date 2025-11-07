@@ -1,5 +1,6 @@
-<symbol id="{{ include.key }}" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" {% unless entry.platform == 'gmail' %}viewBox="0 0 16 16"
+<symbol id="{{ include.key }}" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" {% if entry.platform == 'gmail'%}viewBox="0 0 25 25"
+{% elsif entry.platform == 'instagram' %}viewBox="0 0 22 22"
 {% else %}
-viewBox="0 0 24 24"{% endunless %}>
+viewBox="0 0 16 16"{% endif %}>
 {%- include social-icons/{{ include.key }}.svg -%}
 </symbol>
