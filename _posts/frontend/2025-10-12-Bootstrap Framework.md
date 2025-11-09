@@ -1,10 +1,11 @@
 ---
-title: Basic Guide
-category: Bootstrap
-tag: [Bootstrap]
+title: Bootstrap Framework
+category: Frontend
+tag: [Bootstrap, Frontend]
 ---
 
-> Bootstrap은 반응형 웹 디자인과 빠른 UI 개발을 위한 가장 널리 쓰이는 오픈소스 CSS 프레임워크입니다. HTML, CSS, JS 컴포넌트와 유틸리티 클래스를 제공하여, 별도의 디자인 없이도 일관된 UI를 빠르게 구현할 수 있습니다.
+
+> 프론트엔드 개발에 있어 디자인은 중요한 요소입니다. Bootstrap은 빠른 UI 개발, 반응형 웹 지원, 다양한 컴포넌트와 유틸리티 클래스를 제공하여 별도의 디자인 없이도 일관된 프론트엔드 화면을 쉽게 만들 수 있는 프레임워크입니다.
 
 ---
 
@@ -54,7 +55,7 @@ tag: [Bootstrap]
 </div>
 ```
 
-[![](\assets\posts\2025-10-12-Basic Guide.md\bootstrap.png)](\assets\posts\2025-10-12-Basic Guide.md\bootstrap.png)
+[![](\assets\posts\2025-10-12-Bootstrap Framework.md\bootstrap.png)](\assets\posts\2025-10-12-Bootstrap Framework.md\bootstrap.png)
 
 ---
 
@@ -75,7 +76,7 @@ tag: [Bootstrap]
 <button class="btn btn-outline-secondary">Outline</button>
 ```
 
-[![](\assets\posts\2025-10-12-Basic Guide.md\button.png)](\assets\posts\2025-10-12-Basic Guide.md\button.png)
+[![](\assets\posts\2025-10-12-Bootstrap Framework.md\button.png)](\assets\posts\2025-10-12-Bootstrap Framework.md\button.png)
 
 ### Form
 
@@ -94,7 +95,7 @@ tag: [Bootstrap]
 </select>
 ```
 
-[![](\assets\posts\2025-10-12-Basic Guide.md\form.png)](\assets\posts\2025-10-12-Basic Guide.md\form.png)
+[![](\assets\posts\2025-10-12-Bootstrap Framework.md\form.png)](\assets\posts\2025-10-12-Bootstrap Framework.md\form.png)
 
 ### Navigation
 
@@ -121,7 +122,7 @@ tag: [Bootstrap]
 </nav>
 ```
 
-[![](\assets\posts\2025-10-12-Basic Guide.md\navbar.png)](\assets\posts\2025-10-12-Basic Guide.md\navbar.png)
+[![](\assets\posts\2025-10-12-Bootstrap Framework.md\navbar.png)](\assets\posts\2025-10-12-Bootstrap Framework.md\navbar.png)
 
 ### Card
 
@@ -141,7 +142,7 @@ tag: [Bootstrap]
 </div>
 ```
 
-[![](\assets\posts\2025-10-12-Basic Guide.md\card.png)](\assets\posts\2025-10-12-Basic Guide.md\card.png)
+[![](\assets\posts\2025-10-12-Bootstrap Framework.md\card.png)](\assets\posts\2025-10-12-Bootstrap Framework.md\card.png)
 
 ### Modal
 
@@ -189,7 +190,7 @@ tag: [Bootstrap]
 </div>
 ```
 
-[![](\assets\posts\2025-10-12-Basic Guide.md\modal.png)](\assets\posts\2025-10-12-Basic Guide.md\modal.png)
+[![](\assets\posts\2025-10-12-Bootstrap Framework.md\modal.png)](\assets\posts\2025-10-12-Bootstrap Framework.md\modal.png)
 
 ---
 
