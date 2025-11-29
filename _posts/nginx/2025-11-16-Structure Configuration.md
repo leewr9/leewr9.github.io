@@ -1,5 +1,5 @@
 ---
-title: Structure Configuration 
+title: Structure Configuration
 category: Nginx
 tag: [Nginx]
 ---
@@ -18,7 +18,6 @@ tag: [Nginx]
 
 ---
 
-
 ## Architecture
 
 `Nginx`의 구조는 `Master` 프로세스 모델을 기반으로 하며, 각 `Worker` 프로세스가 클라이언트 요청을 비동기적으로 처리합니다. 정적 파일 서비스, 리버스 프록시, SSL/TLS, 로드 밸런싱, 캐싱, 압축, 리다이렉트 등 다양한 기능을 제공합니다.
@@ -26,19 +25,20 @@ tag: [Nginx]
 [![](\assets\posts\2025-11-16-Structure Configuration.md\architecture.png)](\assets\posts\2025-11-16-Structure Configuration.md\architecture.png)
 
 ### Master Process
-`Master Process`는 Nginx의 전체 운영을 관리하는 프로세스입니다. 설정 파일을 로드하고, 워커 프로세스를 제어하며, 서버의 안정적인 운영을 책임집니다. 
+
+`Master Process`는 Nginx의 전체 운영을 관리하는 프로세스입니다. 설정 파일을 로드하고, 워커 프로세스를 제어하며, 서버의 안정적인 운영을 책임집니다.
 
 - Worker 프로세스 생성/종료/재시작을 담당
 - 설정 변경 시에 무중단으로 `Worker` 교체
 - 로그 파일 관리, 신호 처리 등 전체 운영
 
 ### Worker Process
+
 `Worker Process`는 실제 클라이언트 요청을 처리하는 프로세스입니다. 비동기 이벤트 기반으로 여러 연결을 동시에 효율적으로 처리합니다.
 
 - 각 프로세스는 독립적으로 동작하며, CPU 코어에 맞춰 여러 개가 생성
 - 장애 발생 시 `Master`가 자동으로 새로운 `Worker`를 생성해 복구
 - 리소스 분배, 요청 큐 관리, Keep-Alive 등 고성능 네트워킹을 담당
-
 
 ---
 
