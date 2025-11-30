@@ -117,6 +117,10 @@ jobs:
       - name: Run tests (only on master branch)
         if: github.ref == 'refs/heads/master' # master 브랜치에서만 실행
         run: pytest
+      - name: Use environment variables # 환경 변수 사용
+        run: |
+          echo "Global Env: ${{ env.GLOBAL_ENV }}"
+          echo "Job Env: ${{ env.JOB_ENV }}" 
       - name: Use secret value
         run: echo "Secret: ${{ secrets.MY_SECRET }}" # 시크릿 값 사용
 
