@@ -102,7 +102,7 @@ git cherry-pick --abort
 - [Git 공식 문서](https://git-scm.com/doc/)
 
 <nav class="post-toc" markdown="1">
-  <h4>Table of Content</h4>
+  <h2>Content</h2>
 * TOC
 {:toc}
 </nav>
