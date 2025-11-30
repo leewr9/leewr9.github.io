@@ -93,10 +93,12 @@ on:
   push:
     branches: [ master ]
 env:
-  GLOBAL_ENV: production
+  GLOBAL_ENV: production # 전체 워크플로우에 적용되는 환경 변수
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      JOB_ENV: testing # 해당 작업에만 적용되는 환경 변수
     strategy:
       matrix:
         python-version: [3.8, 3.9, 3.10] # 여러 Python 버전에서 테스트
