@@ -12,7 +12,7 @@ tag: [GitHub Actions, GitHub]
 
 `GitHub Actions` 워크플로우는 YAML 형식으로 정의되며, 저장소의 `.github/workflows` 디렉터리에 위치합니다. 워크플로우는 특정 이벤트에 반응하여 실행되며, 하나 이상의 작업으로 구성됩니다. 각 작업은 여러 단계로 이루어져 있습니다.
 
-```yaml
+````yaml
 
 ### on
 
@@ -28,7 +28,7 @@ on:
       - master # master 브랜치로의 PR 생성/업데이트 시 실행
   schedule:
     - cron: "0 0 * * *" # 매일 자정에 실행
-```
+````
 
 - `push`: 특정 브랜치에 푸시될 때 실행
 - `pull_request`: 풀 리퀘스트 생성/업데이트 시 실행
@@ -120,7 +120,7 @@ jobs:
       - name: Use environment variables # 환경 변수 사용
         run: |
           echo "Global Env: ${{ env.GLOBAL_ENV }}"
-          echo "Job Env: ${{ env.JOB_ENV }}" 
+          echo "Job Env: ${{ env.JOB_ENV }}"
       - name: Use secret value
         run: echo "Secret: ${{ secrets.MY_SECRET }}" # 시크릿 값 사용
 
