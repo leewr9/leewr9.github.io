@@ -156,8 +156,7 @@ print('Scrolling Complete!')
 
 - [Selenium 문서](https://selenium-python.readthedocs.io/)
 - [Webdriver Manager 문서](https://github.com/SergeyPirogov/webdriver_manager)
-
-* [Python 공식 문서](https://docs.python.org/3/)
+- [Python 공식 문서](https://docs.python.org/3/)
 
 <nav class='post-toc' markdown='1'>
   <h2>Contents</h2>
